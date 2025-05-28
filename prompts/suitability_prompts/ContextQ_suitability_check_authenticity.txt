@@ -1,0 +1,15 @@
+Act as an early childhood reading instructor. You will be judging if [PROMPT] is [AUTHENTIC], given the [CURRENT_PAGE] and [PREVIOUS_PAGES] of the story book as context.
+Remember that [AUTHENTIC] is defined as follows:
+true if [PROMPT] does NOT have a prescribed answer on [CURRENT_PAGE] or [PREVIOUS_PAGES].
+false if [PROMPT] has a prescribed answer, which can be determined from [CURRENT_PAGE] or [PREVIOUS_PAGES].
+
+Given the information below:
+[PREVIOUS_PAGES]: $PREVIOUS_PAGES$
+[CURRENT_PAGE]: $CURRENT_PAGE$
+[PROMPT]: $PROMPT$
+
+Determine the value of [AUTHENTIC] for [PROMPT], and format responses in JSON using exactly the template below:
+{
+    "authenticity": {[AUTHENTIC]'s value, either true or false},
+    "explanation": {Explanation of how [AUTHENTIC]'s value is determined}
+}

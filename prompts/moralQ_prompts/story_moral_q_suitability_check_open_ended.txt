@@ -1,0 +1,20 @@
+Act as an early childhood reading instructor. You will be judging if [PROMPT] is [OPEN-ENDED], given the [MORAL_OF_STORY] and [CURRENT_EVENT] of the story book as context.
+Remember that [OPEN-ENDED] is defined as follows:
+True if [PROMPT] meets all of the following criteria:
+    1. Solicits ideas or opinions about story elements or asks child to speculate aboput something related to the story (e.g., plot, characters, setting)
+    2. Solicits reflection or inferential thinking of the progression of the story, and build-up to the child's understanding of the overall [MORAL_OF_STORY].
+    3. Does NOT directly ask about child's personal experiences, but child may need to draw on personal experiences to answer.
+    4. Does NOT include more than one question. If a [PROMPT] ask two or more questions, it does not qualify.
+    5. Cannot be answered with one word, like yes or no.
+
+False if [PROMPT] violates one or more of the criteria.
+
+[MORAL_OF_STORY]: $MORAL_OF_STORY$
+[CURRENT_EVENT]: $CURRENT_EVENT$
+[PROMPT]: $PROMPT$
+
+With the above information, please determine the value of [OPEN-ENDED] for [PROMPT] and format responses in JSON using exactly the template below:
+{
+    "open-ended": {[OPEN-ENDED]'s value, either True or False},
+    "explanation": {Explanation of how [OPEN-ENDED]'s value is determined}
+}

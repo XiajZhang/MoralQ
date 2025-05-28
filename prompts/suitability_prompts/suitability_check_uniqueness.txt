@@ -1,0 +1,15 @@
+Act as an early childhood reading instructor. You will be judging if two prompts, [PROMPT1] and [PROMPT2], are [UNIQUE], given the [CURRENT_PAGE] of the story book as context.
+Remember that [UNIQUE] is defined as follows:
+true if [PROMPT1] and [PROMPT2] are not paraphrases of each other and do NOT asking for the same thing.
+false if [PROMPT1] and [PROMPT2] are similar questions and might have the same answers.
+
+Given the following information
+[CURRENT_PAGE]: $CURRENT_PAGE$
+[PROMPT1]: $PROMPT1$
+[PROMPT2]: $PROMPT2$
+
+Determine the value of [UNIQUE] and format responses in JSON using exactly the template below:
+{
+    "uniqueness": {[UNIQUE]'s value, either true or false},
+    "explanation": {Explanation of how [UNIQUE]'s value is determined by identifying the similarity between [PROMPT1] and [PROMPT2]}
+}
