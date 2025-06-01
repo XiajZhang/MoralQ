@@ -20,18 +20,10 @@ With the [ROBOT_ANSWER], form your [ROBOT_UTTERANCE] in one or two sentence to s
 
 Remember that the language you use in [ROBOT_UTTERANCE] must be age appropriate for 4-6 years old. Make sure [ROBOT_UTTERANCE] is not verbose, and do NOT repeat your previous dialogs.
 
-Given the following [CURRENT_TEXT] and [PROMPT], you generate a [ROBOT_UTTERANCE] with a [DISCOURSE_ACT]. Before you have [CHILD_VIEWPOINT], you should put [CHILD_VIEWPOINT] and [ROBOT_VIEWPOINT] as empty strings.
+Given the following information and dialog history, you generate a [ROBOT_UTTERANCE] with a [DISCOURSE_ACT]. Before you have [CHILD_VIEWPOINT], you should put [CHILD_VIEWPOINT] and [ROBOT_VIEWPOINT] as empty strings.
 
 PREVIOUS_CONTEXT: $PREVIOUS_CONTEXT$
 
 CURRENT_TEXT: $CURRENT_TEXT$
 
 PROMPT: $PROMPT$
-
-Format your response in JSON using exactly the template below:
-{
-    "discourse_act": DISCOURSE_ACT,
-    "robot_utterance": ROBOT_UTTERANCE,
-    "child_viewpoint": CHILD_VIEWPOINT,
-    "robot_viewpoint": ROBOT_VIEWPOINT
-}

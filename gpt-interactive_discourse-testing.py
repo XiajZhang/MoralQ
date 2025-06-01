@@ -5,6 +5,7 @@ import pandas as pd
 from pprint import pprint
 import json
 from sentence_transformers import SentenceTransformer
+from collab_discourse_responses import ChitchatDiscourseAct, ChitchatResponse, PrspSharingDiscourseAct, PrspSharingResponse, CollaborativeDiscourseAct, CollaborativeDiscourseResponse
 
 class CollaborativeDiscourseAgent:
 
@@ -16,80 +17,134 @@ class CollaborativeDiscourseAgent:
         # self.model = "gpt-4.1-mini-2025-04-14"
         self.model = "gpt-4.1-2025-04-14"
 
-        self.prsp_sharing_prompt = self._load_prompt("./prompts/collab_discourse_prompts/prsp_sharing.txt")
-        self.collab_discourse_prompt = self._load_prompt("./prompts/collab_discourse_prompts/collab_discourse.txt")
+        self.MAXIMUM_TRIES = 3
+
+        self.prsp_sharing_prompt = self._load_prompt("./collab_discourse_prompts/prsp_sharing.txt")
+        self.collab_discourse_prompt = self._load_prompt("./collab_discourse_prompts/collab_discourse.txt")
+
+        self.chitchat_prompts = {
+            "favoriate_book": self._load_prompt("./chitchat_prompts/chitchat_1_favoriate_book.txt"),
+            "favoriate_season": self._load_prompt("./chitchat_prompts/chitchat_2_favoriate_season.txt"),
+            "favoriate_activity": self._load_prompt("./chitchat_prompts/chitchat_3_favoriate_activity.txt")
+        }
 
     def _load_prompt(self, prompt_file):
-        with open(prompt_file, "r") as f:
+        with open(os.path.join(os.path.dirname(__file__), "prompts", prompt_file), "r") as f:
             return f.read()
     
-    def _prsp_sharing_llm_call(self, prompt, current_text, previous_context, dialog_history=[]):
+    def _prsp_sharing_llm_call(self, prompt, current_text, dialog_history=[]):
 
         messages = [
-            {"role": "system", "content": self.prsp_sharing_prompt.replace("$PROMPT$", prompt).replace("$CURRENT_TEXT$", current_text).replace("$PREVIOUS_CONTEXT$", previous_context)},
+            {"role": "system", "content": self.prsp_sharing_prompt.replace("$PROMPT$", prompt).replace("$CURRENT_TEXT$", current_text)},
         ] + dialog_history
 
-        response = self.client.chat.completions.create(
+        response = self.client.responses.parse(
             model=self.model,
-            messages=messages,
+            input=messages,
+            text_format=PrspSharingResponse,
             temperature=self.temperature,
-            # max_tokens=1024,
-            top_p=1,
-            frequency_penalty=self.frequency_panelty,
-            presence_penalty=self.presence_panelty
+            top_p=1
         )
 
-        return response.choices[0].message.content
+        return response.output_parsed
     
-    def generate_prsp_sharing_action(self, prompt, current_text, previous_context, dialog_history=[]):
+    def generate_prsp_sharing_action(self, prompt, current_text, dialog_history=[]):
 
-        ERROR_RETRIES = 3
-        response = None
-        for i in range(ERROR_RETRIES):
+        for i in range(self.MAXIMUM_TRIES):
             finished_prsp_sharing = False
-            response = self._prsp_sharing_llm_call(prompt, current_text, previous_context, dialog_history)
+            response = None
             try:
-                json_response = json.loads(response)
+                response = self._prsp_sharing_llm_call(prompt, current_text, dialog_history)
             except:
-                print("Error parsing response, RETRY...", response.choices[0].message.content)
-                continue
-            
-            # Checking formats
-            if "discourse_act" not in json_response.keys() or "robot_utterance" not in json_response.keys():
-                print("Missing values in response, RETRY...", response.choices[0].message.content)
+                print("Error generating prsp sharing response, RETRY...", response)
                 continue
 
-            if json_response["discourse_act"] in ["CURIOSITY", "SUPPORT_UNDERSTANDING", "QUESTION_BREAKDOWN"]:
+            if response.discourse_act in [PrspSharingDiscourseAct.CURIOSITY, PrspSharingDiscourseAct.SUPPORT_UNDERSTANDING, PrspSharingDiscourseAct.QUESTION_BREAKDOWN]:
                 finished_prsp_sharing = False
-                response = json_response
-            elif json_response["discourse_act"] in ["CREATIVE_IDEATION", "ALTERNATIVE_PERSPECTIVE", "OPPOSING_VIEW"]:
-                if json_response["robot_viewpoint"] == "":
-                    print("Robot viewpoint is empty, RETRY...", response.choices[0].message.content)
+            elif response.discourse_act in [PrspSharingDiscourseAct.CREATIVE_IDEATION, PrspSharingDiscourseAct.ALTERNATIVE_PERSPECTIVE, PrspSharingDiscourseAct.OPPOSING_VIEW]:
+                if response.robot_viewpoint == "" or response.child_viewpoint == "":
+                    print("Robot/Child viewpoint is empty, RETRY...", response)
                     continue
                 finished_prsp_sharing = True
-                response = json_response
-            else:
-                print("Unrecognized discourse act: ", json_response["discourse_act"])
-                continue
+
             return finished_prsp_sharing, response
         
         return False, None
 
-    def generate_collab_discourse_action(self, prompt, current_text, previous_context, robot_viewpoint, child_viewpoint, dialog_history=[]):
+    def _collab_discourse_llm_call(self, prompt, current_text, robot_viewpoint, child_viewpoint, dialog_history=[]):
+
         messages = [
-            {"role": "system", "content": self.collab_discourse_prompt.replace("$PROMPT$", prompt).replace("$CURRENT_TEXT$", current_text).replace("$PREVIOUS_CONTEXT$", previous_context)},
+            {"role": "system", "content": self.collab_discourse_prompt.replace("$PROMPT$", prompt).replace("$CURRENT_TEXT$", current_text)},
         ] + dialog_history
         messages[0]["content"] = messages[0]["content"].replace("$ROBOT_VIEWPOINT$", robot_viewpoint).replace("$CHILD_VIEWPOINT$", child_viewpoint)
 
-        response = self.client.chat.completions.create(
+        response = self.client.responses.parse(
             model=self.model,
-            messages=messages,
+            input=messages,
+            text_format=CollaborativeDiscourseResponse,
             temperature=self.temperature,
-            # max_tokens=1024,
-            top_p=1,
-            frequency_penalty=self.frequency_panelty,
-            presence_penalty=self.presence_panelty
+            top_p=1
         )
+
+        return response.output_parsed
+    
+    def generate_collab_discourse_action(self, prompt, current_text, robot_viewpoint, child_viewpoint, dialog_history=[]):
+        
+        for i in range(self.MAXIMUM_TRIES):
+            finished_discussion = False
+            response = None
+            try:
+                response = self._collab_discourse_llm_call(prompt, current_text, robot_viewpoint, child_viewpoint, dialog_history)
+            except:
+                print("Error generating collaborative discourse response, RETRY...", response)
+                continue
+            
+            if response.discourse_act == CollaborativeDiscourseAct.FINISHED_DISCUSSION:
+                finished_discussion = True
+            return finished_discussion, response
+        
+        return False, None
+    
+    def _chitchat_llm_call(self, session_topic, prior_knowledge="", dialog_history=[]):
+
+        try:
+            chitchat_prompt = self.chitchat_prompts[session_topic]
+        except:
+            print("Invalid session topic, using default prompt for favoriate book...")
+            chitchat_prompt = self.chitchat_prompts["favoriate_book"]
+
+        messages = [
+            {"role": "system", "content": chitchat_prompt.replace("$PRIOR_KNOWLEDGE$", prior_knowledge)},
+        ] + dialog_history
+
+        response = self.client.responses.parse(
+            model=self.model,
+            input=messages,
+            text_format=ChitchatResponse,
+            temperature=self.temperature,
+            top_p=1
+        )
+
+        return response.output_parsed
+    
+    def generate_chitchat_action(self, topic, prior_knowledge="", dialog_history=[]):
+
+        for i in range(self.MAXIMUM_TRIES):
+            finished_chitchat = False
+            chitchat_response = None
+            try:
+                chitchat_response = self._chitchat_llm_call(topic, prior_knowledge, dialog_history)
+            except:
+                print("Error generating chitchat, RETRY...")
+                continue
+
+            if chitchat_response.discourse_act == ChitchatDiscourseAct.FINISHED_CHITCHAT:
+                finished_chitchat = True
+            
+            return finished_chitchat, chitchat_response
+        
+        return False, None
+
 
 def generate_user_utterance(type="user"):
     user_response = ""
@@ -112,6 +167,40 @@ def retrieve_perspectives(viewpoints, user_viewpoint):
     max_similarity_index = similarities.index(max(similarities))
     min_similarity_index = similarities.index(min(similarities))
     return viewpoints[max_similarity_index], viewpoints[min_similarity_index]
+
+def chitchat_interaction_testing(topic="", prior_knowledge=[], dialog_history=[]):
+    collab_agent = CollaborativeDiscourseAgent()
+    for turns in range(10):
+        finished_chitchat, robot_response = collab_agent.generate_chitchat_action(topic, "\n".join(prior_knowledge), dialog_history)
+        if robot_response is None:
+            print("Error generating chitchat, FINISHING CHAT...")
+            break
+
+        print("___________________________")
+        print("Discourse Act: ", robot_response.discourse_act)
+        print("Robot Utterance: ", robot_response.robot_utterance)
+        print("Child Answer: ", robot_response.child_answer)
+        print("___________________________")
+        if finished_chitchat:
+            return robot_response.child_answer
+        
+        dialog_history.append({"role": "assistant", "content": robot_response.robot_utterance})
+        child_response = generate_user_utterance("user")
+        dialog_history.append({"role": "user", "content": child_response})
+    
+    return None
+
+def test_all_chitchat_interactions():
+    prior_knowledge = []
+    for topic in ["favoriate_book", "favoriate_season", "favoriate_activity"]:
+        print("___________________________")
+        print("Topic: ", topic)
+        print("___________________________")
+        dialog_history = []
+        prior = chitchat_interaction_testing(topic, prior_knowledge, dialog_history)
+        if prior is not None and prior != "":
+            prior_knowledge.append(prior)
+
 
 def discourse_interaction_testing(storybook_qna_dir=""):
 
@@ -143,14 +232,16 @@ def discourse_interaction_testing(storybook_qna_dir=""):
         robot_viewpoint = None
         robot_utterance = ""
         for turns in range(10):
-            response = {}
+            response = None
+            discussion_finished = False
+            discourse_act = None
             if discourse_step == "prsp_sharing":
-                prior_context = " ".join(rolling_story_content[:-5]) if len(rolling_story_content) > 5 else " ".join(rolling_story_content)
-                finished_prsp_sharing, response = collab_agent.generate_prsp_sharing_action(prompt, current_text, prior_context, dialog_history)
-                robot_utterance = response["robot_utterance"]
+                finished_prsp_sharing, response = collab_agent.generate_prsp_sharing_action(prompt, current_text, dialog_history)
+                robot_utterance = response.robot_utterance
+                discourse_act = response.discourse_act
                 if finished_prsp_sharing:
-                    robot_viewpoint = response["robot_viewpoint"]
-                    child_viewpoint = response["child_viewpoint"]
+                    robot_viewpoint = response.robot_viewpoint
+                    child_viewpoint = response.child_viewpoint
                     print("****Summary of Child's View****")
                     print(child_viewpoint)
                     print("****Summary of Robot's View****")
@@ -158,27 +249,29 @@ def discourse_interaction_testing(storybook_qna_dir=""):
                     print("****End of Summary*****")
                     discourse_step = "collab_discourse"
             elif discourse_step == "collab_discourse":
-                response = collab_agent.generate_collab_discourse_action(prompt, current_text, prior_context, robot_viewpoint, child_viewpoint, dialog_history)
-                pprint(response)
-                robot_utterance = response["robot_utterance"]
+                discussion_finished, response = collab_agent.generate_collab_discourse_action(prompt, current_text, robot_viewpoint, child_viewpoint, dialog_history)
+                robot_utterance = response.robot_utterance
+                discourse_act = response.discourse_act
                 print("___________________________")
                 print("****Start of Collaborative Discourse****")
                 print("___________________________")
             
+            print("___________________________")
+            print("Discourse Act: ", discourse_act)
+            print("Response: ", robot_utterance)
+            print("___________________________")
+            if discussion_finished:
+                break
 
             dialog_history.append({"role": "assistant", "content": robot_utterance})
-            print("___________________________")
-            print("Discourse Act: ", response["discourse_act"])
-            print("Response: ", response["robot_utterance"])
-            print("___________________________")
-
             child_response = generate_user_utterance("user")
             dialog_history.append({"role": "user", "content": child_response})
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         # main(sys.argv[1])
-        discourse_interaction_testing()
+        # discourse_interaction_testing()
+        chitchat_interaction_testing()
     else:
         print("Usage: ./gpt-interactive_discourse-testing.py")
         exit()
