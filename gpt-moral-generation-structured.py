@@ -1,32 +1,30 @@
 """
-This script generates the moral and segments of a story.
+This script generates the moral lessons and segments of a story.
 """
 
 import json
 from openai import OpenAI
 import os
-import sys
 
 class StoryMoralGeneratorStructured:
     def __init__(self):
         self.client = OpenAI()
         self.client.api_key = os.environ.get('OPENAI_API_KEY')
         self.model = "gpt-4.1-2025-04-14"
-        self.prompt = self.load_prompt("./prompts/moralQ_prompts/story_moral_prompt.txt")
+        with open("./prompts/moralQ_prompts/story_moral_prompt.txt", "r") as f:
+            self.prompt = f.read()
 
-        # Define the expected structured output format (
+        # Define the expected structured output format 
         self.moral_tool_schema = {
             "type": "object",
             "properties": {
                 "moral": {"type": "string"},
                 "segments": {
                     "type": "array",
-                    "minItems": 2,
-                    "maxItems": 7,
                     "items": {
                         "type": "object",
                         "properties": {
-                            "name": {"type": "string"},
+                            "name": {"type": "string", "pattern": "^segment_\\d+$"},
                             "START": {"type": "integer"},
                             "END": {"type": "integer"},
                             "SUMMARY": {"type": "string"},
@@ -34,7 +32,9 @@ class StoryMoralGeneratorStructured:
                         },
                         "required": ["name", "START", "END", "SUMMARY", "REASONING"],
                         "additionalProperties": False
-                    }
+                    },
+                    "minItems": 2,
+                    "maxItems": 7
                 }
             },
             "required": ["moral", "segments"],
@@ -42,52 +42,31 @@ class StoryMoralGeneratorStructured:
         }
     
 
-    def load_prompt(self, prompt_file: str) -> str:
-        """Load prompt from a file."""
-        with open(prompt_file, "r") as f:
-            return f.read()
-
     def load_story_content(self, story_dir: str) -> str:
         """Load story content from JSON files in a directory."""
         story_content = []
-        for filename in os.listdir(story_dir):
-            if filename.endswith('.json'):
-                with open(os.path.join(story_dir, filename), 'r') as f:
-                    page_content = json.load(f)
-                    # Handle if text is nested in a list
-                    text = page_content.get('text', '')
-                    if isinstance(text, list):
-                        text = ' '.join(text)
-                    story_content.append(text)
+        # Get all JSON files and sort them by filename
+        json_files = [f for f in os.listdir(story_dir) if f.endswith('.json')]
+        json_files.sort()  
+        
+        for filename in json_files:
+            with open(os.path.join(story_dir, filename), 'r') as f:
+                page_content = json.load(f)
+                # Handle if text is nested in a list
+                text = page_content.get('text', '')
+                if isinstance(text, list):
+                    text = ' '.join(text)
+                story_content.append(text)
         return ' '.join(story_content)
 
     def generate_story_moral(self, story: str):
         """Use OpenAI structured output (function calling) to generate moral."""
-        # Format the prompt with the story
-        formatted_prompt = self.prompt.replace("$STORY$", story)
-        
-        # Format the prompt to match the new schema format
-        formatted_prompt = f"""{formatted_prompt}
-
-        Please respond in the following JSON format:
-        {json.dumps({
-            "moral": "A simple moral lesson for children aged 4-6",
-            "segments": [{
-                "name": "segment_1",
-                "START": 1,
-                "END": 2,
-                "SUMMARY": "Brief summary of what happens in this segment",
-                "REASONING": "Explanation of why this is a good segment"
-            }]
-        }, indent=2)}
-        """
-
         try:
             response = self.client.responses.create(
                 model=self.model,
                 input=[
-                    {"role": "system", "content": "You are an assistant that generates high-quality educational content for early literacy learning and storybook reading."},
-                    {"role": "user", "content": formatted_prompt}
+                    {"role": "system", "content": self.prompt},
+                    {"role": "user", "content": story}
                 ],
                 text={
                     "format": {
@@ -113,7 +92,6 @@ class StoryMoralGeneratorStructured:
 def main():
     generator = StoryMoralGeneratorStructured()
     
-    # Define paths
     asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
     output_path = "/Users/mariyamohiuddin/Desktop/Outputs/"
     
@@ -121,7 +99,7 @@ def main():
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     
-    # List of stories to process
+
     educare_storybooks = ["ada_twist_scientist", "a_letter_to_amy", "boxitects", "grumpy_monkey", 
                          "if_you_give_a_mouse_a_cookie", "jabari_jumps", "last_stop_on_market_street", 
                          "mango_abuela_and_me", "peters_chair", "stand_tall_molly_lou_melon", 
@@ -159,7 +137,6 @@ def main():
         result = generator.generate_story_moral(story_content)
         
         if result:
-            # Save the result to JSON file in Outputs directory
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(result, f, indent=4, ensure_ascii=False)
             print(f"Saved moral and segments to: {output_file}")
