@@ -1,0 +1,54 @@
+{
+    "moral": "It’s nice to do something special for a friend, and even if you make a mistake, things can still turn out okay.",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 3,
+            "SUMMARY": "Peter decides to write a letter to invite Amy to his birthday party. He wants it to be special, so he writes, folds, and prepares the letter, even though his mom wonders why he doesn't just ask her in person.",
+            "REASONING": "This segment introduces the main idea and sets up Peter’s motivation and actions: why the letter is important to him, and the preparations to send it. The pace is slow and thoughtful, all focused on the creation and mailing of the letter."
+        },
+        {
+            "name": "segment_2",
+            "START": 4,
+            "END": 5,
+            "SUMMARY": "Peter heads out into the windy weather, thinking about inviting a girl to his party. Suddenly, a storm blows the letter from his hands.",
+            "REASONING": "Here, the event transitions from a calm, indoor setting to the outdoors with a new source of tension—the letter is lost in the wind."
+        },
+        {
+            "name": "segment_3",
+            "START": 6,
+            "END": 10,
+            "SUMMARY": "Peter chases the letter through the neighborhood as it gets blown away by the storm, but he can't catch it.",
+            "REASONING": "The action focuses on Peter’s attempts to retrieve the letter. This segment is event-driven and suspenseful, with Peter’s chase as the main focus."
+        },
+        {
+            "name": "segment_4",
+            "START": 11,
+            "END": 14,
+            "SUMMARY": "Amy appears as Peter tries to get his letter back. He bumps into her trying to hide the letter, then mails it, but Amy runs away crying.",
+            "REASONING": "This segment introduces Amy and the important emotional moment—Peter’s desire for a surprise goes wrong, resulting in Amy being upset."
+        },
+        {
+            "name": "segment_5",
+            "START": 15,
+            "END": 17,
+            "SUMMARY": "Peter feels sad and worries that Amy won’t come to his party. When the day comes, everyone but Amy arrives.",
+            "REASONING": "The mood changes to Peter’s sadness and worry after the misunderstanding. This segment focuses on Peter’s feelings and the passage of time up to the party."
+        },
+        {
+            "name": "segment_6",
+            "START": 18,
+            "END": 19,
+            "SUMMARY": "The party is underway, but Peter is still hoping Amy will come. Suddenly, Amy arrives with her parrot, surprising everyone.",
+            "REASONING": "This segment marks the resolution of suspense and the positive turning point—Amy comes to the party after all."
+        },
+        {
+            "name": "segment_7",
+            "START": 20,
+            "END": 22,
+            "SUMMARY": "Everyone celebrates Peter’s birthday together, singing and making wishes. Peter makes his own special wish.",
+            "REASONING": "This closing segment wraps up the story with the party celebration, showing that in the end, things turned out well and everyone is happy."
+        }
+    ]
+}

@@ -1,10 +1,23 @@
 """
-This script generates the moral lessons and segments of a story.
+Generate moral lessons and story segments using OpenAI's structured output API.
 """
 
-import json
 from openai import OpenAI
+from pydantic import BaseModel, Field
+from typing import List
 import os
+import json
+
+class Segment(BaseModel):
+    name: str = Field(..., pattern="^segment_\\d+$")
+    START: int
+    END: int
+    SUMMARY: str
+    REASONING: str
+
+class MoralQResponse(BaseModel):
+    moral: str
+    segments: List[Segment] = Field(..., min_items=2, max_items=7)
 
 class StoryMoralGeneratorStructured:
     def __init__(self):
@@ -14,82 +27,39 @@ class StoryMoralGeneratorStructured:
         with open("./prompts/moralQ_prompts/story_moral_prompt.txt", "r") as f:
             self.prompt = f.read()
 
-        # Define the expected structured output format 
-        self.moral_tool_schema = {
-            "type": "object",
-            "properties": {
-                "moral": {"type": "string"},
-                "segments": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": {"type": "string", "pattern": "^segment_\\d+$"},
-                            "START": {"type": "integer"},
-                            "END": {"type": "integer"},
-                            "SUMMARY": {"type": "string"},
-                            "REASONING": {"type": "string"}
-                        },
-                        "required": ["name", "START", "END", "SUMMARY", "REASONING"],
-                        "additionalProperties": False
-                    },
-                    "minItems": 2,
-                    "maxItems": 7
-                }
-            },
-            "required": ["moral", "segments"],
-            "additionalProperties": False
-        }
-    
+    def generate_story_moral(self, story: str) -> MoralQResponse:
+        response = self.client.responses.parse(
+            model=self.model,
+            input=[
+                {"role": "system", "content": self.prompt},
+                {"role": "user", "content": story}
+            ],
+            text_format=MoralQResponse
+        )
+        return response.output_parsed
 
     def load_story_content(self, story_dir: str) -> str:
-        """Load story content from JSON files in a directory."""
+        """Load story content from JSON files, maintaining page order."""
         story_content = []
-        # Get all JSON files and sort them by filename
         json_files = [f for f in os.listdir(story_dir) if f.endswith('.json')]
-        json_files.sort()  
+        
+        # Sort files by page number (format: storyname_00.json, storyname_01.json, etc.)
+        json_files.sort(key=lambda f: int(f.split('.')[0].split('_')[-1]))
         
         for filename in json_files:
             with open(os.path.join(story_dir, filename), 'r') as f:
                 page_content = json.load(f)
-                # Handle if text is nested in a list
                 text = page_content.get('text', '')
                 if isinstance(text, list):
                     text = ' '.join(text)
                 story_content.append(text)
-        return ' '.join(story_content)
+        
+        return ' '.join(f"[Page {i+1}] {text}" for i, text in enumerate(story_content))
 
-    def generate_story_moral(self, story: str):
-        """Use OpenAI structured output (function calling) to generate moral."""
-        try:
-            response = self.client.responses.create(
-                model=self.model,
-                input=[
-                    {"role": "system", "content": self.prompt},
-                    {"role": "user", "content": story}
-                ],
-                text={
-                    "format": {
-                        "type": "json_schema",
-                        "name": "story_moral",
-                        "schema": self.moral_tool_schema,
-                        "strict": True
-                    }
-                }
-            )
 
-            # Extract the structured response directly from output_text
-            try:
-                return json.loads(response.output_text)
-            except json.JSONDecodeError:
-                print(f"Error parsing JSON response: {response.output_text}")
-                return None
-
-        except Exception as e:
-            print(f"Error using structured output API: {e}")
-            return None
 
 def main():
+
     generator = StoryMoralGeneratorStructured()
     
     asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
@@ -138,7 +108,7 @@ def main():
         
         if result:
             with open(output_file, 'w', encoding='utf-8') as f:
-                json.dump(result, f, indent=4, ensure_ascii=False)
+                json.dump(result.dict(), f, indent=4, ensure_ascii=False)
             print(f"Saved moral and segments to: {output_file}")
         else:
             print(f"Failed to generate moral for story: {story}")

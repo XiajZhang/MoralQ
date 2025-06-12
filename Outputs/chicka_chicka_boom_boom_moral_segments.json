@@ -1,0 +1,40 @@
+{
+    "moral": "It's fun to try things together with friends, but sometimes things get a little messy. If that happens, it's okay—we can help each other and try again!",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 3,
+            "SUMMARY": "The alphabet letters begin inviting each other to climb up the coconut tree. They are excited and eager to see who gets to the top first.",
+            "REASONING": "This segment focuses on the beginning of the adventure, where the first group of letters encourages each other and starts climbing. It’s the setup for the main event, showing the excitement and teamwork among the letters."
+        },
+        {
+            "name": "segment_2",
+            "START": 4,
+            "END": 6,
+            "SUMMARY": "More and more letters join in climbing up the coconut tree until all the alphabet letters are together on the tree.",
+            "REASONING": "This segment covers the growing action and rising tension as more letters fill the tree. It transitions from some letters to the entire alphabet wanting to be part of the fun, leading to the main conflict."
+        },
+        {
+            "name": "segment_3",
+            "START": 7,
+            "END": 8,
+            "SUMMARY": "The coconut tree can’t hold all the letters, so everyone falls down in a big crash. The grown-up letters rush over to help.",
+            "REASONING": "This segment centers on the big event—everyone falling—and the immediate help and care afterward. It's a clear transition from the build-up to the accident, setting up a change in mood and action."
+        },
+        {
+            "name": "segment_4",
+            "START": 9,
+            "END": 13,
+            "SUMMARY": "The alphabet letters dust themselves off, get help from their families, and start to recover from their tumble.",
+            "REASONING": "This part is about the aftermath—recovering and being cared for. Each letter is described with their bumps and scrapes, showing how everyone is looked after, and marks a new phase after the fall."
+        },
+        {
+            "name": "segment_5",
+            "START": 14,
+            "END": 16,
+            "SUMMARY": "When night comes, A challenges the others to climb again, showing the letters are ready to try together once more.",
+            "REASONING": "In this final segment, the story moves into nighttime, and A’s challenge wraps up the story with renewed excitement and the idea of trying again. This serves as a conclusion and connects to the story’s moral."
+        }
+    ]
+}

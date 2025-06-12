@@ -1,0 +1,54 @@
+{
+    "moral": "Everyone in a community is important because they help make our home safe, healthy, and happy. We can all help others, too!",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 2,
+            "SUMMARY": "The story introduces what a community is and explains that helpers make communities better places.",
+            "REASONING": "Pages 1-2 serve as the introduction, explaining the concept of a community and setting up the main idea that helpers play an important role. This is a natural segment because it frames the rest of the book."
+        },
+        {
+            "name": "segment_2",
+            "START": 3,
+            "END": 5,
+            "SUMMARY": "The story lists different helpers and explains how builders help build homes, roads, and other important places using special machines.",
+            "REASONING": "Pages 3-5 shift focus to specific community helpers and highlight builders in detail, marking a new event development. The segment ends after the builder's tools are described."
+        },
+        {
+            "name": "segment_3",
+            "START": 6,
+            "END": 7,
+            "SUMMARY": "This part describes helpers who make sure we have electricity and clean water—electricians and plumbers.",
+            "REASONING": "Pages 6-7 group two types of helpers whose jobs involve household necessities. The segment is unified by the theme of essential services."
+        },
+        {
+            "name": "segment_4",
+            "START": 8,
+            "END": 11,
+            "SUMMARY": "This section focuses on different helpers at school, including teachers, librarians, crossing guards, bus drivers, nurses, principals, and caretakers.",
+            "REASONING": "Pages 8-11 have a school-themed set of helpers, providing a clear event and setting change. This grouping makes sense as the helpers are all connected to the school environment."
+        },
+        {
+            "name": "segment_5",
+            "START": 12,
+            "END": 13,
+            "SUMMARY": "These pages introduce medical helpers like doctors, nurses, and dentists, explaining how they help keep us healthy.",
+            "REASONING": "Pages 12-13 focus on health-related helpers, including a special page for dentists, showing a natural topic transition."
+        },
+        {
+            "name": "segment_6",
+            "START": 14,
+            "END": 18,
+            "SUMMARY": "This segment describes emergency helpers such as paramedics, firefighters, and police officers, and how they keep us safe and help in emergencies.",
+            "REASONING": "Pages 14-18 all discuss emergency and safety helpers who protect the community, forming a logical group unified by their roles in urgent or dangerous situations."
+        },
+        {
+            "name": "segment_7",
+            "START": 19,
+            "END": 20,
+            "SUMMARY": "The story ends by introducing volunteers and encourages children to become helpers, too.",
+            "REASONING": "Pages 19-20 transition to the idea that anyone, even kids, can help by volunteering, providing a hopeful and interactive ending distinct from the previous segments."
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "moral": "Even when something goes wrong, you can turn your problem into something wonderful. Everyone makes mistakes, but you can still do amazing things when you try.",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 6,
+            "SUMMARY": "The story introduces Ganesha, a chubby, sweet-loving Hindu god who is playful and a bit selfish with his treats. He enjoys magical adventures with his best friend, Mr. Mouse.",
+            "REASONING": "This segment sets the stage, showing who Ganesha is, his friendship, and his love for sweets. The focus is on introducing the characters and setting, with no real problem or major event occurring yet."
+        },
+        {
+            "name": "segment_2",
+            "START": 7,
+            "END": 11,
+            "SUMMARY": "Ganesha finds a super jumbo jawbreaker laddoo and, despite a warning from Mr. Mouse, tries to eat it. It breaks his tusk, causing him distress.",
+            "REASONING": "This segment introduces the main problem of the story: Ganesha's broken tusk. The event is focused on his excitement, ignoring advice, and the immediate consequence."
+        },
+        {
+            "name": "segment_3",
+            "START": 12,
+            "END": 14,
+            "SUMMARY": "Ganesha tries different ways to fix his tusk, but nothing works. He feels embarrassed and angry, worrying about what others will think.",
+            "REASONING": "This part focuses on Ganesha's attempts to solve his problem and his emotional response, marking a transition from the physical event to dealing with feelings and reactions."
+        },
+        {
+            "name": "segment_4",
+            "START": 15,
+            "END": 18,
+            "SUMMARY": "Ganesha's tusk accidentally hits Vyasa, the old poet. Vyasa asks Ganesha to use his tusk as a pen to help write a very long poem.",
+            "REASONING": "Here, the story shifts from Ganesha's personal problem to meeting Vyasa and being given a new, special task. It marks the turn toward finding a positive use for his lost tusk."
+        },
+        {
+            "name": "segment_5",
+            "START": 19,
+            "END": 23,
+            "SUMMARY": "Ganesha discovers his tusk can write and agrees to help Vyasa write the Mahabharata, with some fun conditions agreed upon by Ganesha and Mr.Mouse.",
+            "REASONING": "This segment is about Ganesha's realization of his tusk's new purpose and the preparation for the big writing project, setting up the next action."
+        },
+        {
+            "name": "segment_6",
+            "START": 24,
+            "END": 28,
+            "SUMMARY": "Ganesha writes the Mahabharata, finishing the great epic. He forgets about wanting sweets and being upset, and is happy to share laddoos with his friends.",
+            "REASONING": "This is the resolution: Ganesha succeeds in his task, learns to focus on what's important, and ends up happy, showing how he grew from his earlier problem and feelings."
+        }
+    ]
+}

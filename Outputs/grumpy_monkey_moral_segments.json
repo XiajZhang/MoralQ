@@ -1,0 +1,47 @@
+{
+    "moral": "It's okay to feel grumpy sometimes. Everyone has days when they don’t feel happy, and that’s normal. Just remember, your feelings will change and you’ll feel better soon.",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 2,
+            "SUMMARY": "Jim Panzee wakes up feeling like nothing is right. Even good things seem bad to him.",
+            "REASONING": "This segment introduces the problem. It covers Jim realizing he isn’t feeling well, setting up the main feeling of the story."
+        },
+        {
+            "name": "segment_2",
+            "START": 3,
+            "END": 7,
+            "SUMMARY": "Jim meets friends who all see he might be grumpy. They suggest ways to look or act happy, and Jim tries to hide his feelings.",
+            "REASONING": "This segment includes interactions with Norman, Marabou, Lemur, and Snake. Each friend notices Jim’s grumpiness and tries to help, but Jim insists he’s not grumpy. The tone and event (friends noticing and trying to help) remains consistent."
+        },
+        {
+            "name": "segment_3",
+            "START": 8,
+            "END": 11,
+            "SUMMARY": "Jim’s friends keep offering ideas to help him feel better, but nothing works. Jim gets frustrated and shouts that he is not grumpy.",
+            "REASONING": "This segment is all about the different attempts by friends and animals to cheer Jim up, leading to Jim’s big outburst. It is a key turning point as Jim expresses his feelings clearly."
+        },
+        {
+            "name": "segment_4",
+            "START": 12,
+            "END": 13,
+            "SUMMARY": "Jim stomps off, feels sorry for yelling, and finally admits to himself that he is grumpy.",
+            "REASONING": "This short segment marks an emotional transition—Jim’s realization and acceptance of his emotions. The event changes from denial to self-reflection."
+        },
+        {
+            "name": "segment_5",
+            "START": 14,
+            "END": 15,
+            "SUMMARY": "Jim finds Norman who is slumped and grumpy too. They talk about feeling bad, and Norman says it’s okay to be grumpy for now.",
+            "REASONING": "This segment focuses on Jim finding comfort and understanding through Norman, shifting from being alone with his feelings to sharing them with a friend."
+        },
+        {
+            "name": "segment_6",
+            "START": 16,
+            "END": 16,
+            "SUMMARY": "Jim feels a little bit better after sharing his feelings with Norman.",
+            "REASONING": "This single-page segment is the story’s resolution, where Jim’s mood is already starting to improve. It closes the story with a positive note."
+        }
+    ]
+}

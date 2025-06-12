@@ -1,0 +1,40 @@
+{
+    "moral": "It's better to work together and share ideas. When we cooperate and help each other, we can make wonderful things and have more fun.",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 4,
+            "SUMMARY": "Meg is introduced as a creative boxitect who loves making things from boxes. Her mother is proud and sends her to Maker School, where Meg feels special.",
+            "REASONING": "This segment establishes the main character, Meg, her passion, and the new setting of Maker School. It covers Meg's background and sets the stage for the main events."
+        },
+        {
+            "name": "segment_2",
+            "START": 5,
+            "END": 7,
+            "SUMMARY": "Meg learns at Maker School and meets Simone, another talented boxitect. Tension starts as they both want to be the best and critique each other's work.",
+            "REASONING": "There’s a clear shift in the story with the introduction of Simone, creating a new dynamic and conflict for Meg. The focus moves from Meg’s experience to their rivalry."
+        },
+        {
+            "name": "segment_3",
+            "START": 8,
+            "END": 10,
+            "SUMMARY": "The Maker Match begins. Meg and Simone argue instead of cooperating, building bigger and bigger until they run out of boxes.",
+            "REASONING": "This section details the main event - the competition - and highlights the failed teamwork between Meg and Simone. The rising conflict and their choices mark this as a separate phase."
+        },
+        {
+            "name": "segment_4",
+            "START": 11,
+            "END": 14,
+            "SUMMARY": "Meg and Simone’s creation falls apart. They blame each other and realize most of their work is ruined.",
+            "REASONING": "There’s an event transition here with the collapse of their creation, leading to disappointment and reflection. This is a key turning point in the story."
+        },
+        {
+            "name": "segment_5",
+            "START": 15,
+            "END": 17,
+            "SUMMARY": "Meg and Simone decide to work together. They combine their ideas and build something new, discovering that teamwork is better and becoming friends.",
+            "REASONING": "This final segment resolves the conflict and shows the positive outcome of cooperation, concluding the emotional and narrative arc."
+        }
+    ]
+}

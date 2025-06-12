@@ -1,0 +1,54 @@
+{
+    "moral": "Firefighters work hard together to help people and keep everyone safe. Helping others can make you feel proud and happy.",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 3,
+            "SUMMARY": "Rob gets ready for his day as a firefighter, packs his things, says goodbye to his family, and arrives at the fire station.",
+            "REASONING": "This segment covers the introduction to Rob and the beginning of his day, up to when he starts his shift at the fire station. It establishes the setting and the main character's role."
+        },
+        {
+            "name": "segment_2",
+            "START": 4,
+            "END": 6,
+            "SUMMARY": "The firefighters receive their tasks for the day, and everyone checks their equipment to make sure it works.",
+            "REASONING": "This segment focuses on the start of the workday at the fire station, assigning jobs and doing safety checks, which is a clear new event after arrival."
+        },
+        {
+            "name": "segment_3",
+            "START": 7,
+            "END": 8,
+            "SUMMARY": "Rob and Pete inspect the new restaurant to make sure it is safe from fires.",
+            "REASONING": "Pages 7 and 8 describe a visit and inspection to the restaurant, which is a specific work-related event separate from the earlier station chores."
+        },
+        {
+            "name": "segment_4",
+            "START": 9,
+            "END": 9,
+            "SUMMARY": "The firefighters have lunch together and talk about catching fish for supper.",
+            "REASONING": "Lunch time is a brief, distinct moment of camaraderie and break from work before the afternoon activities."
+        },
+        {
+            "name": "segment_5",
+            "START": 10,
+            "END": 11,
+            "SUMMARY": "A second-grade class visits the fire station, and the firefighters teach them about fire safety.",
+            "REASONING": "This is a separate event where the focus shifts to teaching children about fire safety, which is different from inspection or eating lunch."
+        },
+        {
+            "name": "segment_6",
+            "START": 12,
+            "END": 12,
+            "SUMMARY": "Rob prepares supper for the team by cooking the fish in the firehouse kitchen.",
+            "REASONING": "Cooking supper forms a transition between the day's events and the emergency that is about to happen, and is a unique activity."
+        },
+        {
+            "name": "segment_7",
+            "START": 13,
+            "END": 16,
+            "SUMMARY": "The fire alarm rings. The firefighters jump into action as Rob learns there is a dog inside the house.",
+            "REASONING": "This section marks the start of the emergency event, covers the team’s immediate response and Rob's mission to rescue the dog."
+        }
+    ]
+}

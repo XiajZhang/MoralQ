@@ -1,0 +1,54 @@
+{
+    "moral": "It's good to be curious and ask questions. Trying new things and learning, even if it gets messy, helps us discover and understand the world around us.",
+    "segments": [
+        {
+            "name": "segment_1",
+            "START": 1,
+            "END": 3,
+            "SUMMARY": "Ada is a curious little girl who observes the world quietly and does not speak until she turns three. Her parents are patient, waiting to see what she will say.",
+            "REASONING": "These opening pages introduce Ada, set up her quiet curiosity, and show the patience and care of her parents. The event centers on Ada's early years, her silence, and the anticipation surrounding her first words. It's a unified introduction to the main character and her family."
+        },
+        {
+            "name": "segment_2",
+            "START": 4,
+            "END": 5,
+            "SUMMARY": "Ada starts to speak and asks many questions, starting with 'Why?' Her parents encourage her curiosity as she tries to understand everything she sees.",
+            "REASONING": "Ada's transition from being quiet to suddenly asking many questions is an important event shift. These pages focus on her new way of exploring the world—by asking questions—and her parents' supportive response."
+        },
+        {
+            "name": "segment_3",
+            "START": 6,
+            "END": 7,
+            "SUMMARY": "Ada grows up, continues to be curious and even causes chaos at home and school, but everyone recognizes her as a budding scientist.",
+            "REASONING": "Here, the story moves forward in time. Ada's curiosity grows with her, and this segment highlights her school experiences and her scientific nature. It's a new setting (school) and escalation of her curiosity."
+        },
+        {
+            "name": "segment_4",
+            "START": 8,
+            "END": 10,
+            "SUMMARY": "On the first day of spring, Ada discovers a mysterious bad smell and begins a science investigation with questions and experiments to find its source.",
+            "REASONING": "This part introduces a new problem—a bad smell—and Ada's active attempt to solve it using scientific thinking. The shift is clear from general curiosity to a specific scientific investigation."
+        },
+        {
+            "name": "segment_5",
+            "START": 11,
+            "END": 12,
+            "SUMMARY": "Ada's experiments cause trouble at home, and her parents get frustrated. Ada is told to sit and think by herself, feeling sad and unsure.",
+            "REASONING": "There is a clear emotional and event transition as Ada's curiosity results in a mess and her parents' reaction changes. The focus here is Ada's setback, her feelings, and her time spent alone."
+        },
+        {
+            "name": "segment_6",
+            "START": 13,
+            "END": 14,
+            "SUMMARY": "Ada continues to ask questions and think, filling the hallway with her ideas. Her parents calm down and realize that Ada is simply very curious, and they decide to support her.",
+            "REASONING": "This segment is about Ada's resilience and her family's turn from frustration to understanding and support. It deals with resolution of conflict and reestablishes family unity."
+        },
+        {
+            "name": "segment_7",
+            "START": 15,
+            "END": 16,
+            "SUMMARY": "Ada's family and friends help her explore and learn, and Ada keeps searching for answers, showing that curiosity and teamwork can solve mysteries—even if some questions remain.",
+            "REASONING": "These closing pages shift to a more general and optimistic conclusion about ongoing curiosity, learning, and collaboration. The focus moves from Ada's specific investigation to her future and her family's support, bringing closure and reinforcing the moral."
+        }
+    ]
+}
