@@ -1,0 +1,72 @@
+{
+    "questions": [
+        {
+            "question": "What happened when all the letters tried to climb the coconut tree together?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children remember the main event in the story and understand that sometimes things don’t go as planned, which is part of the moral lesson."
+        },
+        {
+            "question": "How did the letters feel after they fell out of the tree?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "By thinking about the letters’ feelings, children relate to what it’s like when something goes wrong, connecting with the story’s emotional side and the importance of caring for others."
+        },
+        {
+            "question": "Who helped the letters when they got hurt?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Naming who gave help shows children that friends and family can support us, which is part of the moral about helping each other."
+        },
+        {
+            "question": "Have you ever fallen down or gotten hurt like the letters did? What happened, and who helped you?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question lets children connect the story to their own lives, helping them see the value of getting help and helping others."
+        },
+        {
+            "question": "What did the letters do after they got help from their family and friends?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Reviewing what the letters did next teaches children about recovery and trying again, a key part of the story’s moral."
+        },
+        {
+            "question": "Why do you think A wanted to try climbing the tree again at the end of the story?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This helps children think about trying new things even after a mistake and being brave enough to try again, which connects directly to the moral."
+        },
+        {
+            "question": "If you see a friend fall down or get hurt, what can you do to help like the mamas and papas in the story?",
+            "type": "application",
+            "difficulty": "easy",
+            "explanation": "This question encourages children to apply the story’s lesson to their own behavior, turning the moral into concrete action."
+        },
+        {
+            "question": "How do you feel when you have to try again after something goes wrong? Is it hard? How can we help each other feel better?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "By sharing feelings about trying again, children learn that it’s okay not to succeed the first time, reinforcing resilience and empathy."
+        },
+        {
+            "question": "What could the letters do differently if they want to climb the tree again without falling?",
+            "type": "extension",
+            "difficulty": "hard",
+            "explanation": "This helps children think creatively about problem-solving and working together, practicing how to learn from mistakes."
+        }
+    ],
+    "moral": "Even when things don't go as planned and we all fall down, we can get back up, help each other, and try again—just like the letters climbing the coconut tree.",
+    "story_title": "chicka_chicka_boom_boom",
+    "learning_objectives": [
+        "Children will understand that it’s okay to make mistakes and try again.",
+        "Children will be able to describe ways to help others who are hurt or need support.",
+        "Children will learn to connect the actions and feelings of story characters to their own experiences.",
+        "Children will be encouraged to work together and show kindness after setbacks."
+    ],
+    "discussion_points": [
+        "How did the letters feel before and after falling from the tree?",
+        "Why is it important to help friends and family when they get hurt?",
+        "What does it mean to try again after something doesn’t go right?",
+        "How can we make sure everyone has enough room or a turn, just like the letters wondered about the tree?"
+    ]
+}

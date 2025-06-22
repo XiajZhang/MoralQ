@@ -1,0 +1,79 @@
+{
+    "questions": [
+        {
+            "question": "What did Ada like to do when she was little and didn't talk yet?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps kids remember Ada's curiosity before she could speak, showing that being curious can start in simple ways just by looking and exploring."
+        },
+        {
+            "question": "Why did Ada ask so many 'why' questions?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This encourages children to notice Ada's curiosity and connect it to learning, reinforcing the idea that asking questions is part of discovering new things."
+        },
+        {
+            "question": "How did Ada's parents feel when her experiments made a mess at home?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "Helps children see that sometimes curiosity can cause problems, but that's okay—it’s part of learning, and feelings like frustration are normal."
+        },
+        {
+            "question": "How did Ada feel when she had to sit in the Thinking Chair?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This helps children relate to Ada’s feelings and understand that learning can include feelings like sadness, but we can use those feelings to keep being curious."
+        },
+        {
+            "question": "What did Ada do after she felt sad in the Thinking Chair?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This shows children that even when something goes wrong, like getting in trouble, we can keep thinking, asking questions, and learning."
+        },
+        {
+            "question": "Have you ever made a big mess while you were trying to learn or make something? What happened?",
+            "type": "application",
+            "difficulty": "easy",
+            "explanation": "Encourages children to connect their real-life experiences with making messes to Ada’s story, helping them see that messes and mistakes are okay parts of learning."
+        },
+        {
+            "question": "What could you do if someone at home or school gets upset because you asked a lot of questions or made a mess?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This gives children a chance to problem-solve real situations, showing that being curious is good, but we can also help others understand why we ask questions."
+        },
+        {
+            "question": "Why is it good to keep asking questions, even if you don't always get the right answer at first?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Helps children see that learning is about trying, asking, and not giving up, which connects strongly to the story’s moral."
+        },
+        {
+            "question": "Who helped Ada at the end of the story? How did that help her keep being curious?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Focuses on family support, helping children understand that encouragement from others helps us stay curious and keep learning."
+        },
+        {
+            "question": "Can you think of something you are very curious about? What questions do you want to ask about it?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "Invites children to practice being curious, just like Ada, and celebrates their own interests and questions."
+        }
+    ],
+    "moral": "It's okay to be curious and ask lots of questions. Learning and discovering new things is wonderful, and making mistakes or messes is part of how we learn. Always be curious and keep trying, just like Ada!",
+    "story_title": "ada_twist_scientist",
+    "learning_objectives": [
+        "Children will understand that asking questions is a natural and important way to learn.",
+        "Children will recognize that making mistakes or messes can be part of learning and are not something to feel bad about.",
+        "Children will relate Ada's curiosity and persistence to their own experiences and feelings.",
+        "Children will practice expressing their curiosity and discussing ways to keep learning, even when things get messy or go wrong."
+    ],
+    "discussion_points": [
+        "Why is it good to ask lots of questions like Ada did?",
+        "How do you feel when you don’t know the answer to something?",
+        "What should you do if you make a mess while trying to learn something new?",
+        "How can you help friends or family understand why you’re curious?",
+        "Who helps you when you want to learn something new, and how does it feel to be supported?"
+    ]
+}

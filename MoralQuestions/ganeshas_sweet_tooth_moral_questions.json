@@ -1,0 +1,73 @@
+{
+    "questions": [
+        {
+            "question": "What did Ganesha love to eat the most?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This checks understanding of Ganesha's character and sets up thinking about what makes each person special or different."
+        },
+        {
+            "question": "How do you think Ganesha felt after he broke his tusk? Can you show with your face how he might have looked?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Encourages children to imagine and empathize with Ganesha's feelings, connecting to times they have felt upset about something different about themselves."
+        },
+        {
+            "question": "Ganesha used his broken tusk to help Vyasa write a long poem. Can you think of something broken or different you turned into something special?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Helps children relate the story to their own lives and see that being different or having a problem can lead to something good."
+        },
+        {
+            "question": "Why was Ganesha proud at the end of the story?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "Encourages recall of the story’s solution and helps kids see pride in using what makes them unique."
+        },
+        {
+            "question": "If you lost a tooth or broke something important to you, what could you do to feel better or to use it in a new way?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Encourages children to brainstorm positive ways to handle disappointment or change, linking to the moral."
+        },
+        {
+            "question": "Did Ganesha’s friends stop loving him when he looked different?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Reinforces the message that even if you look different, friends still care about you."
+        },
+        {
+            "question": "How did Ganesha’s feelings change from the beginning to the end of the story?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Helps children notice that feelings can change, and good things can happen after a problem."
+        },
+        {
+            "question": "Can you think of something that makes you special? How can that help you or others?",
+            "type": "application",
+            "difficulty": "easy",
+            "explanation": "Connects the story’s lesson to the child’s own self-esteem and encourages them to value their differences."
+        },
+        {
+            "question": "What would you say to someone who feels sad because they look different?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Promotes kindness and empathy, helping children think about supporting others."
+        }
+    ],
+    "moral": "Even when something unexpected or bad happens, you can find new ways to use what makes you special and do important things. It’s okay to look different — you can still help others and be happy.",
+    "story_title": "Ganesha's Sweet Tooth",
+    "learning_objectives": [
+        "Children will recall and understand the main events of the story.",
+        "Children will identify emotions experienced by story characters and themselves.",
+        "Children will recognize the value of differences and finding new ways to solve problems.",
+        "Children will connect the moral of the story to their own experiences."
+    ],
+    "discussion_points": [
+        "How did Ganesha feel when he broke his tusk? What helped him feel better?",
+        "What are some ways people or animals can look or be different? Is that okay?",
+        "How can something that seems like a problem become something good?",
+        "What does it mean to help someone or use your special talent?",
+        "Have you ever shared something you love, like Ganesha did with his laddoos?"
+    ]
+}

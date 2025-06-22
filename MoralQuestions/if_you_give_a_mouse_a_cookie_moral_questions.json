@@ -1,0 +1,73 @@
+{
+    "questions": [
+        {
+            "question": "What did the mouse want after he got the cookie?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This helps children remember the story's events and notice that one thing (the cookie) led to another (the milk), starting the chain of requests."
+        },
+        {
+            "question": "How did the mouse’s requests change as the story went on? Did they get bigger or stay the same?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This encourages children to think about how the mouse kept asking for more things, showing how helping once can sometimes lead to more and more help."
+        },
+        {
+            "question": "Has someone ever asked you for more help after you already helped them? What did you do?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Relating the story to the child’s own life makes the moral lesson real, helping them reflect on their own experiences with helping."
+        },
+        {
+            "question": "The mouse wanted to hang his picture on the refrigerator. What might happen if he thinks of something else he wants to do next?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "This question encourages prediction and recognizes the repeating cycle in the story, reinforcing the idea that helping can continue."
+        },
+        {
+            "question": "How do you feel when someone keeps asking you for more and more things? Is it okay to say 'I need a break' sometimes?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question supports emotional learning, helping children understand their feelings about helping and setting gentle boundaries."
+        },
+        {
+            "question": "Can being kind to someone sometimes mean you have to do a lot more than you first thought?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question links the events of the story directly to the moral, helping kids grasp that kindness can involve more effort than expected."
+        },
+        {
+            "question": "What’s something nice you could do for someone that might lead to more things to help with?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This lets children brainstorm real-life examples, making the story’s lesson more meaningful and memorable."
+        },
+        {
+            "question": "If you were the one giving the mouse things, how would you feel by the end of the story?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question builds empathy by putting the child in the position of the helper in the story, helping them imagine the effort involved."
+        },
+        {
+            "question": "Do you think the mouse was thankful for all the help? How can we show we appreciate help from others?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "This encourages thinking about gratitude and manners, which connects to making helping feel good for everyone."
+        }
+    ],
+    "moral": "Sometimes, when you help someone or give them something, it can lead to lots of new requests! It’s okay to be kind, but it’s also good to know things might take more time and effort than you expect.",
+    "story_title": "if_you_give_a_mouse_a_cookie",
+    "learning_objectives": [
+        "Children will recall and sequence story events.",
+        "Children will understand that helping others can sometimes take extra time and effort.",
+        "Children will relate the story's events to their own experiences with being kind and helping.",
+        "Children will practice expressing their feelings about helping and setting boundaries."
+    ],
+    "discussion_points": [
+        "What happened after the mouse got the cookie? How did one thing lead to another?",
+        "How do you feel when you help a friend and they keep asking for more?",
+        "Is it okay to say 'that’s enough for now'? How can we do that kindly?",
+        "Why is it important to say thank you when someone helps us?",
+        "What are ways we can help others without getting too tired or upset?"
+    ]
+}

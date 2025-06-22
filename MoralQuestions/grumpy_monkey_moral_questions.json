@@ -1,0 +1,73 @@
+{
+    "questions": [
+        {
+            "question": "How did Jim feel when he woke up? Was everything okay for him?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question checks if children notice Jim’s grumpy feelings at the start, helping them identify feelings in themselves and others."
+        },
+        {
+            "question": "Why do Jim’s friends tell him to stand up straight or smile? Did this make Jim feel better inside?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question helps children see that changing how you look outside doesn’t always change how you feel inside."
+        },
+        {
+            "question": "What did Jim say or do when everyone kept asking him to do things to feel better?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This helps kids follow the story events and notice how Jim’s mood does not instantly improve by others’ ideas."
+        },
+        {
+            "question": "Have you ever felt grumpy, like Jim? What happened? What did you want to do?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This connects the story to the children's own experiences, showing it’s normal to feel grumpy sometimes."
+        },
+        {
+            "question": "Is it okay to feel grumpy, or do we always have to be happy? Why?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This helps children accept that all feelings, including grumpiness, are a part of life and don’t need to be hidden."
+        },
+        {
+            "question": "What did Jim do that showed he was sorry after he shouted at his friends?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children recognize how we can feel sorry and make up with others after we feel upset."
+        },
+        {
+            "question": "When Jim met Norman at the end, what did they do that helped Jim feel better?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This shows children the power of having someone with you, even if you still feel grumpy, and that friends help just by being there."
+        },
+        {
+            "question": "What can you do when you feel grumpy? Who can you talk to?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Encourages children to think about ways to handle their own grumpy feelings and identify people they trust."
+        },
+        {
+            "question": "If a friend is feeling grumpy, what could you do to help them? Would you make them do something, or just be with them?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "Helps children understand empathy, and that sometimes friends need company, not fixing, when they are sad."
+        }
+    ],
+    "moral": "It's okay to feel grumpy sometimes, and you don't always have to pretend you feel happy. Talking about your feelings or just having a friend with you can help you feel better.",
+    "story_title": "grumpy_monkey",
+    "learning_objectives": [
+        "Children will identify and name feelings, especially grumpiness.",
+        "Children will understand that it is normal and okay to feel all kinds of emotions.",
+        "Children will recognize that pretending to be happy does not always make grumpy feelings disappear.",
+        "Children will learn how to support themselves and friends when feeling grumpy or sad."
+    ],
+    "discussion_points": [
+        "Why do you think Jim wanted to say he wasn’t grumpy even when he felt that way inside?",
+        "How can we tell when someone feels grumpy or sad, even if they are smiling?",
+        "Can you think of a time when you wanted to just sit with someone when you felt upset?",
+        "What are some kind things we can do when a friend is feeling grumpy?",
+        "Are there times when it is helpful to talk about your feelings with someone you trust?"
+    ]
+}

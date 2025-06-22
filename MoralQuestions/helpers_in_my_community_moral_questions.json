@@ -1,0 +1,79 @@
+{
+    "questions": [
+        {
+            "question": "Who are some helpers you see in your community?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Asking children to name helpers in their own community checks if they understood the different types introduced in the story and connects the ideas to their real-life experiences."
+        },
+        {
+            "question": "What do builders do to help people?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This checks the child’s understanding of a specific segment (builders) and helps them see how each helper makes life better for the community."
+        },
+        {
+            "question": "Do you know someone who is a teacher, nurse, or librarian? How do they help people?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Encourages children to connect the helpers in the story with real people they know, building appreciation and recognition of community helpers."
+        },
+        {
+            "question": "How do police officers and firefighters help keep us safe?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "Helps children recall and explain the roles of emergency workers, understanding their importance in the community."
+        },
+        {
+            "question": "If you saw someone drop their books at school, what could you do to help?",
+            "type": "application",
+            "difficulty": "easy",
+            "explanation": "Gives children a simple, relatable way to apply the moral by thinking of ways they can help others in their daily lives."
+        },
+        {
+            "question": "Why do you think volunteers are important, even though they do not get paid?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Encourages thinking about kindness, helping for the sake of helping, and understanding that anyone can make a difference without expecting a reward."
+        },
+        {
+            "question": "Can kids be helpers too? What are some ways you have helped at home or school?",
+            "type": "application",
+            "difficulty": "easy",
+            "explanation": "Helps children see themselves as community helpers, reinforcing the moral that everyone can help, even them."
+        },
+        {
+            "question": "How would our community change if there were no people to fix the water or electricity?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "Promotes thinking about the value of behind-the-scenes helpers like plumbers and electricians, and what could happen without their work."
+        },
+        {
+            "question": "Why is it important to say thank you to helpers in your community?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Connections are made between appreciating helpers and building a caring community, as the moral encourages."
+        },
+        {
+            "question": "How do you feel when you help someone or when someone helps you?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Encourages empathy and emotional connection to the moral, making it more meaningful for young children."
+        }
+    ],
+    "moral": "There are many helpers in our community, and everyone can help make our community better, even you! We should appreciate those who help us and try to help others, too.",
+    "story_title": "Helpers in My Community",
+    "learning_objectives": [
+        "Identify different types of community helpers and describe how they help.",
+        "Understand that everyone, including children, can help make the community better.",
+        "Recognize the importance of appreciating and thanking helpers.",
+        "Develop ideas for ways they can help others at home, school, and in the community."
+    ],
+    "discussion_points": [
+        "What are some of your favorite community helpers and why?",
+        "How does it feel when someone helps you? How do you think helpers feel when they help others?",
+        "What are small ways you can be a helper at home or school?",
+        "Why should we say thank you or show kindness to our helpers?",
+        "How would life be different if there were no helpers in our community?"
+    ]
+}
