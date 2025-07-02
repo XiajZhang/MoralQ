@@ -1,79 +1,82 @@
 {
     "questions": [
         {
-            "question": "Why did Peter write a special letter to Amy and not to his other friends?",
+            "question": "Why did Peter want to write a special letter just for Amy to invite her to his party?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question checks children’s understanding of what makes Amy’s invitation special, helping them notice ways we can make someone feel special."
+            "explanation": "This question helps children understand that Peter wanted Amy to feel special, connecting to the idea of making friends feel important.",
+            "page_number": 2
         },
         {
-            "question": "How did Peter feel when he thought about what his other friends might say about inviting Amy to the party?",
-            "type": "comprehension",
+            "question": "How do you think Peter felt when the wind blew his letter away? Why do you think he chased it so much?",
+            "type": "reflection",
             "difficulty": "easy",
-            "explanation": "This helps children recognize Peter’s feelings and relate to the worry of doing something kind when others might not agree."
+            "explanation": "This question encourages children to put themselves in Peter's shoes, linking his actions to caring about his friend and being determined.",
+            "page_number": 5
         },
         {
-            "question": "Have you ever wanted to invite someone to your party or game when other friends didn’t want you to? What did you do?",
+            "question": "When Peter worried about what his friends would say about inviting a girl to his party, what would you say to him if you were there?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "This encourages children to connect the story to their own experiences and think about including others, supporting the moral of friendship and inclusion."
+            "explanation": "This question asks children to reflect on the importance of not worrying about what others think when including friends, making the moral personal and relatable.",
+            "page_number": 5
         },
         {
-            "question": "How do you think Amy felt when Peter bumped into her and grabbed the letter? What could Peter have done to make her feel better?",
-            "type": "reflection",
-            "difficulty": "medium",
-            "explanation": "This helps children consider others’ feelings and understand how actions (even accidents) can affect someone, deepening empathy."
-        },
-        {
-            "question": "What happened at the party when Amy arrived? How did everyone act? Why do you think it’s nice that everyone was together?",
-            "type": "comprehension",
-            "difficulty": "easy",
-            "explanation": "This checks recall about the happy ending and opens discussion about the joy of being together and making everyone feel welcome."
-        },
-        {
-            "question": "If you see someone sitting alone or feeling sad, what could you do to help them feel included?",
+            "question": "Have you ever made a friend feel special, like Peter tried to make Amy feel special? What did you do?",
             "type": "application",
             "difficulty": "medium",
-            "explanation": "Children are prompted to take the lesson of inclusiveness and apply it to real life, practicing being kind to others."
+            "explanation": "This question invites children to connect the story to their real-life experiences and think about ways they can be kind friends.",
+            "page_number": 3
         },
         {
-            "question": "Do you think it’s okay to be friends with everyone, even if your friends are different from you? Why or why not?",
-            "type": "reflection",
+            "question": "How did Amy feel when Peter bumped into her and tried to hide the letter? How do you know?",
+            "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question builds understanding that friendships can be with anyone and celebrates differences, linking to the story’s moral."
+            "explanation": "This question helps children notice and understand emotions, which is important for empathy and understanding how actions affect others.",
+            "page_number": 14
         },
         {
-            "question": "Can you think of a nice thing you could do to make a friend feel special, like Peter did for Amy?",
+            "question": "Why do you think it’s okay for everyone, including girls and boys, to be friends and celebrate together?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "This question opens up a conversation about inclusiveness and friendship, relating the story to real-life social situations.",
+            "page_number": 19
+        },
+        {
+            "question": "What could Peter have done after Amy ran away crying to help her feel better?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "This question encourages children to think about how to fix hurt feelings and be a good friend, making the moral lesson more concrete.",
+            "page_number": 15
+        },
+        {
+            "question": "How did everyone feel at the end of the story when Amy came to the party? Why do you think everyone was happy?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question focuses on the outcome of the moral lesson—togetherness and joy—helping children see the result of being inclusive.",
+            "page_number": 22
+        },
+        {
+            "question": "Can you think of a time when someone worried about inviting a friend because they were different, like Peter worried? What happened and how did it make people feel?",
+            "type": "application",
+            "difficulty": "hard",
+            "explanation": "This question helps children apply the story’s lesson to real-life situations, promoting empathy and understanding about friendship and inclusion.",
+            "page_number": 5
+        },
+        {
+            "question": "If you had a birthday party, who would you want to invite and how could you make them feel special?",
             "type": "application",
             "difficulty": "medium",
-            "explanation": "Children are invited to brainstorm kind actions, showing how they can put the moral into practice."
-        },
-        {
-            "question": "Why shouldn’t we worry too much about what other people say when we want to include someone or be kind?",
-            "type": "extension",
-            "difficulty": "medium",
-            "explanation": "This question gets children thinking about the importance of kindness over peer pressure, reinforcing the story’s deeper moral."
-        },
-        {
-            "question": "What do you think Peter might wish for at the end of the story? What would you wish for if all your friends were together with you?",
-            "type": "extension",
-            "difficulty": "easy",
-            "explanation": "Encourages children to imagine the joy of friendship and sharing good times, connecting personally to the positive ending."
+            "explanation": "This question lets children imagine putting the moral into practice, making it personally meaningful.",
+            "page_number": 21
         }
     ],
     "moral": "It is nice to make your friends feel special, and it’s important not to worry too much about what others might say. Everybody can be friends and celebrate together.",
-    "story_title": "A Letter to Amy",
+    "story_title": "a_letter_to_amy",
     "learning_objectives": [
-        "Children will be able to identify ways to make friends feel special.",
-        "Children will understand that it’s okay to include everyone, even if others don't agree.",
-        "Children will practice thinking about other people's feelings.",
-        "Children will be encouraged to make kind choices in their own lives."
-    ],
-    "discussion_points": [
-        "Why is it important to make our friends feel special?",
-        "How can we be a good friend to someone who feels left out?",
-        "What would you do if your friends didn't agree with your choice to invite someone new?",
-        "How can we celebrate together, even if we are all different?",
-        "When was a time you felt happy to be included by others?"
+        "Children will understand the importance of making friends feel special and cared for.",
+        "Children will recognize that boys and girls can all be friends and celebrate together.",
+        "Children will express their own feelings and experiences with friendship and inclusiveness.",
+        "Children will practice ways to make their friends feel happy and included."
     ]
 }

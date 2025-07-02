@@ -11,15 +11,15 @@ import json
 class MoralQuestion(BaseModel):
     question: str
     type: str = Field(..., description="Type of question: comprehension, reflection, application, or extension")
-    difficulty: str = Field(..., description="Difficulty level: easy, medium, or hard")
+    difficulty: str = Field(..., description="Difficulty level: easy, medium, hard")
     explanation: str = Field(..., description="Explanation of why this question helps understand the moral")
+    page_number: int = Field(..., description="Page number where this question should be discussed")
 
 class MoralQuestionsResponse(BaseModel):
     questions: List[MoralQuestion] = Field(..., min_items=5, max_items=10)
     moral: str
     story_title: str
     learning_objectives: List[str] = Field(..., min_items=3)
-    discussion_points: List[str] = Field(..., min_items=3)
 
 class MoralQuestionGenerator:
     def __init__(self):
@@ -76,10 +76,16 @@ For each question, provide:
 - Question type (comprehension, reflection, application, extension)
 - Difficulty level (easy, medium, hard) - keep in mind the age group
 - Explanation of how this question helps young children understand the moral
+- Page number where this question should be discussed (based on where it appears in the story)
 
 Also provide:
-- 3-4 learning objectives for this lesson
-- 3-5 discussion points to guide classroom discussion with young children
+- 3-4 learning objectives for this lesson, appropriate for 4-6 year olds
+
+Make sure that the questions cover these key discussion topics:
+- How characters show their curiosity or moral behavior
+- How different parts of the story contribute to the moral lesson
+- Real-life situations that connect to the story's moral
+- How to apply the moral lesson in everyday life
 
 """
 

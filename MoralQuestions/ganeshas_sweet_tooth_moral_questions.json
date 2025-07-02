@@ -1,73 +1,75 @@
 {
     "questions": [
         {
-            "question": "What did Ganesha love to eat the most?",
+            "question": "What does Ganesha love to do with Mr. Mouse? How do they have fun together?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This checks understanding of Ganesha's character and sets up thinking about what makes each person special or different."
+            "explanation": "Helps children connect with the characters and see how they are curious and enjoy exploring together, setting up why the story matters to them.",
+            "page_number": 4
         },
         {
-            "question": "How do you think Ganesha felt after he broke his tusk? Can you show with your face how he might have looked?",
-            "type": "reflection",
-            "difficulty": "easy",
-            "explanation": "Encourages children to imagine and empathize with Ganesha's feelings, connecting to times they have felt upset about something different about themselves."
-        },
-        {
-            "question": "Ganesha used his broken tusk to help Vyasa write a long poem. Can you think of something broken or different you turned into something special?",
-            "type": "application",
-            "difficulty": "medium",
-            "explanation": "Helps children relate the story to their own lives and see that being different or having a problem can lead to something good."
-        },
-        {
-            "question": "Why was Ganesha proud at the end of the story?",
-            "type": "comprehension",
-            "difficulty": "medium",
-            "explanation": "Encourages recall of the story’s solution and helps kids see pride in using what makes them unique."
-        },
-        {
-            "question": "If you lost a tooth or broke something important to you, what could you do to feel better or to use it in a new way?",
-            "type": "application",
-            "difficulty": "medium",
-            "explanation": "Encourages children to brainstorm positive ways to handle disappointment or change, linking to the moral."
-        },
-        {
-            "question": "Did Ganesha’s friends stop loving him when he looked different?",
+            "question": "Why shouldn’t Ganesha eat the super jumbo jawbreaker laddoo? What happened when he tried?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "Reinforces the message that even if you look different, friends still care about you."
+            "explanation": "Makes sure children understand Ganesha’s mistake and the unexpected thing that happened, a key part of the moral lesson.",
+            "page_number": 10
         },
         {
-            "question": "How did Ganesha’s feelings change from the beginning to the end of the story?",
+            "question": "How did Ganesha feel when his tusk broke? Have you ever felt worried about how you look?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "Helps children notice that feelings can change, and good things can happen after a problem."
+            "explanation": "Encourages children to relate to Ganesha’s feelings about looking different and start to reflect on accepting themselves.",
+            "page_number": 13
         },
         {
-            "question": "Can you think of something that makes you special? How can that help you or others?",
-            "type": "application",
+            "question": "What do Ganesha and Mr. Mouse do when they try to fix the tusk? How do you feel when you try to fix a problem and it doesn’t work right away?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Helps children recognize frustration and perseverance, linking to using what makes you special even when things seem hard.",
+            "page_number": 12
+        },
+        {
+            "question": "What did Ganesha do with his broken tusk that made him feel happy again?",
+            "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "Connects the story’s lesson to the child’s own self-esteem and encourages them to value their differences."
+            "explanation": "Connects the turning point in the story to the moral—Ganesha finds a new purpose with his difference.",
+            "page_number": 20
         },
         {
-            "question": "What would you say to someone who feels sad because they look different?",
-            "type": "reflection",
+            "question": "Can you think of something about you that is special, even if it’s different from your friends? How can you use it in a good way?",
+            "type": "application",
             "difficulty": "medium",
-            "explanation": "Promotes kindness and empathy, helping children think about supporting others."
+            "explanation": "Helps children relate the story’s message to their own lives, encouraging self-acceptance and thinking positively about differences.",
+            "page_number": 21
+        },
+        {
+            "question": "Why was Ganesha proud at the end of the story? What made him happy?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Encourages children to see the value in Ganesha’s actions rather than his appearance, connecting to the lesson of helping others and feeling fulfilled.",
+            "page_number": 26
+        },
+        {
+            "question": "Have you ever helped a friend or done something important in your own special way, even if it was different from others?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Encourages children to make personal connections and share how being different can help them do good things, linking real life to the story’s moral.",
+            "page_number": 28
+        },
+        {
+            "question": "If you see someone who looks or does things differently, how can you be a good friend to them?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "Promotes empathy and acceptance in everyday life, teaching that you can help and support others no matter what they look like.",
+            "page_number": 28
         }
     ],
     "moral": "Even when something unexpected or bad happens, you can find new ways to use what makes you special and do important things. It’s okay to look different — you can still help others and be happy.",
-    "story_title": "Ganesha's Sweet Tooth",
+    "story_title": "ganeshas_sweet_tooth",
     "learning_objectives": [
-        "Children will recall and understand the main events of the story.",
-        "Children will identify emotions experienced by story characters and themselves.",
-        "Children will recognize the value of differences and finding new ways to solve problems.",
-        "Children will connect the moral of the story to their own experiences."
-    ],
-    "discussion_points": [
-        "How did Ganesha feel when he broke his tusk? What helped him feel better?",
-        "What are some ways people or animals can look or be different? Is that okay?",
-        "How can something that seems like a problem become something good?",
-        "What does it mean to help someone or use your special talent?",
-        "Have you ever shared something you love, like Ganesha did with his laddoos?"
+        "Children will be able to describe what makes Ganesha special and how he uses his differences to do something important.",
+        "Children will be able to share times they felt different or faced a challenge and discuss how they felt.",
+        "Children will be able to think of ways to be kind and accepting of others who may look or act differently.",
+        "Children will be able to relate the story’s moral to their own experiences, understanding that everyone has special qualities to share."
     ]
 }

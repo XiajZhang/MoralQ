@@ -1,73 +1,75 @@
 {
     "questions": [
         {
-            "question": "How did Jim feel when he woke up? Was everything okay for him?",
+            "question": "How does Jim feel when he wakes up? Can you remember what was wrong for him?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question checks if children notice Jim’s grumpy feelings at the start, helping them identify feelings in themselves and others."
+            "explanation": "This question helps children show they understand how someone can feel grumpy even if nothing is really wrong, making the concept of 'bad moods for no reason' relatable.",
+            "page_number": 2
         },
         {
-            "question": "Why do Jim’s friends tell him to stand up straight or smile? Did this make Jim feel better inside?",
+            "question": "What do Jim’s friends, like Norman and Marabou, do when they notice Jim is grumpy?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question invites children to discuss how friends notice and show curiosity about how others feel, reinforcing the importance of paying attention to others’ feelings.",
+            "page_number": 3
+        },
+        {
+            "question": "Do you think Jim feels better when he tries smiling or loosening up, even though his friends tell him to?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "This question helps children see that changing how you look outside doesn’t always change how you feel inside."
+            "explanation": "Helps children think about the difference between pretending to feel happy and actually feeling happy, connecting to their own experiences.",
+            "page_number": 6
         },
         {
-            "question": "What did Jim say or do when everyone kept asking him to do things to feel better?",
+            "question": "When the animals suggest lots of fun things to cheer Jim up, does it work? What does Jim do instead?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This helps kids follow the story events and notice how Jim’s mood does not instantly improve by others’ ideas."
+            "explanation": "Shows kids that sometimes, when you feel down, doing fun things is not always what you need, helping them recognize different ways to handle emotions.",
+            "page_number": 10
         },
         {
-            "question": "Have you ever felt grumpy, like Jim? What happened? What did you want to do?",
+            "question": "Has there been a day when you felt grumpy, even if other people tried to cheer you up?",
             "type": "application",
             "difficulty": "medium",
-            "explanation": "This connects the story to the children's own experiences, showing it’s normal to feel grumpy sometimes."
+            "explanation": "Encourages children to connect the story to their own lives, normalizing the feeling of being grumpy and not always wanting to join in.",
+            "page_number": 11
         },
         {
-            "question": "Is it okay to feel grumpy, or do we always have to be happy? Why?",
+            "question": "What did Jim do after he shouted at everyone? How did he feel?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Helps children see how handling big feelings can sometimes lead to saying or doing things you didn’t mean, and how it’s okay to feel sorry afterwards.",
+            "page_number": 13
+        },
+        {
+            "question": "Why do you think Jim started to feel a little better when he was with his friend Norman at the end?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "This helps children accept that all feelings, including grumpiness, are a part of life and don’t need to be hidden."
+            "explanation": "Gets children thinking about the power of friendship and how just being with someone can help you feel better, even if you are still grumpy.",
+            "page_number": 16
         },
         {
-            "question": "What did Jim do that showed he was sorry after he shouted at his friends?",
-            "type": "comprehension",
-            "difficulty": "easy",
-            "explanation": "This question helps children recognize how we can feel sorry and make up with others after we feel upset."
-        },
-        {
-            "question": "When Jim met Norman at the end, what did they do that helped Jim feel better?",
-            "type": "comprehension",
-            "difficulty": "easy",
-            "explanation": "This shows children the power of having someone with you, even if you still feel grumpy, and that friends help just by being there."
-        },
-        {
-            "question": "What can you do when you feel grumpy? Who can you talk to?",
+            "question": "What would you do if you saw a friend looking sad or grumpy? What could you say to them?",
             "type": "application",
             "difficulty": "medium",
-            "explanation": "Encourages children to think about ways to handle their own grumpy feelings and identify people they trust."
+            "explanation": "This question helps children practice empathy and caring behavior, learning ways to support friends who feel down.",
+            "page_number": 14
         },
         {
-            "question": "If a friend is feeling grumpy, what could you do to help them? Would you make them do something, or just be with them?",
+            "question": "Is it okay to feel grumpy sometimes? Why or why not?",
             "type": "extension",
             "difficulty": "medium",
-            "explanation": "Helps children understand empathy, and that sometimes friends need company, not fixing, when they are sad."
+            "explanation": "Offers a chance to summarize and generalize the moral lesson in simple terms, helping children accept their own and others' feelings.",
+            "page_number": 15
         }
     ],
     "moral": "It's okay to feel grumpy sometimes, and you don't always have to pretend you feel happy. Talking about your feelings or just having a friend with you can help you feel better.",
     "story_title": "grumpy_monkey",
     "learning_objectives": [
-        "Children will identify and name feelings, especially grumpiness.",
-        "Children will understand that it is normal and okay to feel all kinds of emotions.",
-        "Children will recognize that pretending to be happy does not always make grumpy feelings disappear.",
-        "Children will learn how to support themselves and friends when feeling grumpy or sad."
-    ],
-    "discussion_points": [
-        "Why do you think Jim wanted to say he wasn’t grumpy even when he felt that way inside?",
-        "How can we tell when someone feels grumpy or sad, even if they are smiling?",
-        "Can you think of a time when you wanted to just sit with someone when you felt upset?",
-        "What are some kind things we can do when a friend is feeling grumpy?",
-        "Are there times when it is helpful to talk about your feelings with someone you trust?"
+        "Children will be able to identify and name feelings like grumpy, happy, and sad.",
+        "Children will learn that it's okay to feel grumpy sometimes and you don't always have to pretend to be happy.",
+        "Children will learn simple ways to support friends who feel sad or grumpy.",
+        "Children will practice sharing their own feelings and talking about what makes them feel better."
     ]
 }

@@ -1,72 +1,82 @@
 {
     "questions": [
         {
-            "question": "What did Rob do to get ready for his day at the fire station?",
+            "question": "What does Rob do before he goes to work at the fire station?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question helps children recall the beginning of the story and understand that firefighters get ready to help others, introducing the idea of preparing to be helpful."
+            "explanation": "This question checks if children remember that Rob says goodbye to his family and gets ready for work, connecting his caring attitude to his important job.",
+            "page_number": 2
         },
         {
-            "question": "How did Rob and his friends work together at the fire station?",
+            "question": "Why do Rob and his friends check their equipment at the fire station?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "Children can see how teamwork is important for keeping everyone safe, connecting the firefighters’ actions with the moral of working together."
+            "explanation": "This question helps children see how preparation and teamwork keep everyone safe, showing how firefighters work together.",
+            "page_number": 4
         },
         {
-            "question": "How did Rob help Michelle and her dog Pickles?",
-            "type": "comprehension",
-            "difficulty": "medium",
-            "explanation": "This helps children focus on a specific act of caring and making a difference, reinforcing the idea of helping others."
-        },
-        {
-            "question": "What other jobs did the firefighters do besides fighting fires?",
-            "type": "comprehension",
-            "difficulty": "medium",
-            "explanation": "By thinking of all the important jobs firefighters do, children understand that helping and caring comes in many forms, not just emergencies."
-        },
-        {
-            "question": "Have you ever helped someone or worked together with friends? How did it make you feel?",
-            "type": "reflection",
-            "difficulty": "easy",
-            "explanation": "This encourages children to connect the story to their own lives and reflect on the positive feelings from helping and teamwork."
-        },
-        {
-            "question": "Why is it important for firefighters (and all of us) to work together?",
+            "question": "Can you remember a time when you helped a friend or worked together with others? What did you do?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "This question helps children see the value of teamwork in keeping everyone safe and happy, making the moral more personal."
+            "explanation": "Encourages children to connect the story's teamwork to their own lives, building empathy and the habit of helping others.",
+            "page_number": 4
         },
         {
-            "question": "What can you do if you see a classmate who needs help?",
-            "type": "application",
+            "question": "What did the firefighters do when the second-grade class visited? Why do you think they did that?",
+            "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This lets children apply the moral lesson to their everyday experiences, showing that helping makes a difference for everyone."
+            "explanation": "Helps children see how firefighters care for others by teaching them to be safe.",
+            "page_number": 10
         },
         {
-            "question": "If you had a special job at school, what could you do to help your teacher or classmates?",
+            "question": "How did Rob help Michelle's dog, Pickles? How do you think Michelle felt when her dog was safe?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Allows children to imagine the feelings of others, understanding kindness and bravery in helping.",
+            "page_number": 18
+        },
+        {
+            "question": "What did the other firefighters do while Rob helped Pickles? How did everyone work together?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "Shows how helping and teamwork keep people and pets safe, reinforcing that everyone has an important job.",
+            "page_number": 20
+        },
+        {
+            "question": "If you saw someone who needed help, what could you do?",
             "type": "application",
             "difficulty": "medium",
-            "explanation": "This helps children imagine themselves as helpers, like the firefighters, and think about ways they can care for others."
+            "explanation": "Applies the story's lesson to real life, encouraging children to think about helping others in ways they can.",
+            "page_number": 24
         },
         {
-            "question": "Can you think of another job where people work together to help others?",
+            "question": "Why do you think Rob smiled at the end of the story?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Prompts children to think about the happiness we feel after helping others, reinforcing the story’s moral.",
+            "page_number": 24
+        },
+        {
+            "question": "What are some ways you can be safe, like the children in Ms. Hill’s class learned?",
             "type": "extension",
             "difficulty": "medium",
-            "explanation": "Children will understand that helping and teamwork are important in many jobs and situations, not just firefighting."
+            "explanation": "Encourages children to remember fire safety and think of their own actions, making the lesson personal.",
+            "page_number": 11
+        },
+        {
+            "question": "Rob had many jobs at the fire station. Why is it important for everyone to help with different jobs?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Helps children understand the value of teamwork and doing our part, connecting to the story’s lesson about working together.",
+            "page_number": 4
         }
     ],
     "moral": "Firefighters work hard to help people and keep everyone safe. They do many important jobs, and they care about others. Working together and helping people makes a difference.",
-    "story_title": "A Day in the Life of a Firefighter",
+    "story_title": "a_day_in_the_life_of_a_firefighter",
     "learning_objectives": [
-        "Children will understand the many ways firefighters help people.",
-        "Children will recognize the importance of teamwork and caring for others.",
-        "Children will connect examples of kindness and teamwork to their own lives.",
-        "Children will think of ways they can help others at home and school."
-    ],
-    "discussion_points": [
-        "Talk about how firefighters help people every day, not just when there is a fire.",
-        "Share stories about a time when someone helped you or you helped someone else.",
-        "Discuss why teamwork makes hard jobs easier and more fun.",
-        "Brainstorm ways we can all work together to help our friends, families, and teachers."
+        "Children will understand how firefighters help people and keep everyone safe.",
+        "Children will recognize examples of teamwork and caring for others.",
+        "Children will reflect on ways they can help others and work together in their own lives.",
+        "Children will discuss basic fire safety rules and why they matter."
     ]
 }

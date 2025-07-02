@@ -1,73 +1,82 @@
 {
     "questions": [
         {
-            "question": "What did the mouse want after he got the cookie?",
+            "question": "What does the mouse want after you give him a cookie?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This helps children remember the story's events and notice that one thing (the cookie) led to another (the milk), starting the chain of requests."
+            "explanation": "This question helps children remember the sequence of events and notice how one small act of kindness can lead to more requests.",
+            "page_number": 3
         },
         {
-            "question": "How did the mouse’s requests change as the story went on? Did they get bigger or stay the same?",
+            "question": "How do you think the boy feels when the mouse keeps asking for more things?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "This encourages children to think about how the mouse kept asking for more things, showing how helping once can sometimes lead to more and more help."
+            "explanation": "This question encourages children to put themselves in another's place and think about how it feels to help someone when it takes more time and effort.",
+            "page_number": 4
         },
         {
-            "question": "Has someone ever asked you for more help after you already helped them? What did you do?",
+            "question": "Can you think of a time when you helped someone, and they asked for something else after?",
             "type": "application",
             "difficulty": "medium",
-            "explanation": "Relating the story to the child’s own life makes the moral lesson real, helping them reflect on their own experiences with helping."
+            "explanation": "Connecting the story to their own experiences helps children understand the moral by making it real and relatable.",
+            "page_number": 6
         },
         {
-            "question": "The mouse wanted to hang his picture on the refrigerator. What might happen if he thinks of something else he wants to do next?",
-            "type": "extension",
-            "difficulty": "medium",
-            "explanation": "This question encourages prediction and recognizes the repeating cycle in the story, reinforcing the idea that helping can continue."
-        },
-        {
-            "question": "How do you feel when someone keeps asking you for more and more things? Is it okay to say 'I need a break' sometimes?",
+            "question": "Why do you think the mouse keeps wanting new things after getting his cookie?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "This question supports emotional learning, helping children understand their feelings about helping and setting gentle boundaries."
+            "explanation": "This helps children think about curiosity and how sometimes getting one thing makes us think of another thing we want.",
+            "page_number": 5
         },
         {
-            "question": "Can being kind to someone sometimes mean you have to do a lot more than you first thought?",
+            "question": "When the mouse cleans the whole house, is he being helpful or asking for help?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question links the events of the story directly to the moral, helping kids grasp that kindness can involve more effort than expected."
+            "explanation": "This question helps children see how characters can be helpers too, showing different types of behavior in the story.",
+            "page_number": 6
         },
         {
-            "question": "What’s something nice you could do for someone that might lead to more things to help with?",
-            "type": "application",
-            "difficulty": "medium",
-            "explanation": "This lets children brainstorm real-life examples, making the story’s lesson more meaningful and memorable."
-        },
-        {
-            "question": "If you were the one giving the mouse things, how would you feel by the end of the story?",
-            "type": "reflection",
-            "difficulty": "medium",
-            "explanation": "This question builds empathy by putting the child in the position of the helper in the story, helping them imagine the effort involved."
-        },
-        {
-            "question": "Do you think the mouse was thankful for all the help? How can we show we appreciate help from others?",
+            "question": "What do you think would happen if you kept saying yes to every time someone asked for help?",
             "type": "extension",
             "difficulty": "medium",
-            "explanation": "This encourages thinking about gratitude and manners, which connects to making helping feel good for everyone."
+            "explanation": "This encourages children to think about limits and the importance of caring for themselves, not just others.",
+            "page_number": 7
+        },
+        {
+            "question": "The mouse wants to hang his drawing on the refrigerator. How do you feel when someone likes your art or work?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "This helps children think about recognition, sharing, and how kindness can make people feel good.",
+            "page_number": 12
+        },
+        {
+            "question": "If your friend asks for a snack and then asks for more things, what could you do?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This question invites children to problem-solve and apply the story’s moral to situations they may face themselves.",
+            "page_number": 16
+        },
+        {
+            "question": "Why does the story end with the mouse wanting another cookie?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This helps highlight the cycle in the story and reinforces the moral that helping can sometimes lead to more requests.",
+            "page_number": 16
+        },
+        {
+            "question": "How can you be kind to your friends AND make sure you have enough time for yourself?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "This helps children learn to balance kindness with self-care, an important part of the moral lesson.",
+            "page_number": 16
         }
     ],
     "moral": "Sometimes, when you help someone or give them something, it can lead to lots of new requests! It’s okay to be kind, but it’s also good to know things might take more time and effort than you expect.",
     "story_title": "if_you_give_a_mouse_a_cookie",
     "learning_objectives": [
-        "Children will recall and sequence story events.",
-        "Children will understand that helping others can sometimes take extra time and effort.",
-        "Children will relate the story's events to their own experiences with being kind and helping.",
-        "Children will practice expressing their feelings about helping and setting boundaries."
-    ],
-    "discussion_points": [
-        "What happened after the mouse got the cookie? How did one thing lead to another?",
-        "How do you feel when you help a friend and they keep asking for more?",
-        "Is it okay to say 'that’s enough for now'? How can we do that kindly?",
-        "Why is it important to say thank you when someone helps us?",
-        "What are ways we can help others without getting too tired or upset?"
+        "Children will be able to retell the sequence of events in the story.",
+        "Children will recognize how helping others can sometimes lead to more requests.",
+        "Children will reflect on personal experiences with helping and asking for help.",
+        "Children will practice ways to be kind to others while also thinking about their own needs."
     ]
 }

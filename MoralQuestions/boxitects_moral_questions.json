@@ -1,67 +1,75 @@
 {
     "questions": [
         {
-            "question": "Why did Meg and Simone's big creation fall down?",
+            "question": "What did Meg like to build with boxes before she went to Maker School?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question helps children remember how not working together made their creation weak, connecting the event to the idea that teamwork makes things stronger."
+            "explanation": "Helps children recall Meg's passion and curiosity, connecting her interests to the idea that everyone can be creative in their own way.",
+            "page_number": 2
         },
         {
-            "question": "How did Meg and Simone feel at the beginning when they worked alone?",
+            "question": "How did Meg feel when Simone made box creations too? Why do you think she felt that way?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Encourages children to recognize and talk about feelings when meeting someone similar or when feeling challenged, which can help build empathy and understand social situations.",
+            "page_number": 6
+        },
+        {
+            "question": "What happened when Meg and Simone argued and didn't want to work together during the Maker Match?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This question helps children notice the feelings of Meg and Simone when they didn’t get along, which shows that not working together can make people upset or frustrated."
+            "explanation": "Shows the direct outcome of not working together and helps children see why cooperation is important.",
+            "page_number": 9
         },
         {
-            "question": "What happened when Meg and Simone decided to help each other?",
-            "type": "comprehension",
-            "difficulty": "easy",
-            "explanation": "Children will see the positive change that happens when the characters start working together, highlighting the benefit of teamwork."
-        },
-        {
-            "question": "Have you ever built something or played a game with a friend? What happened when you worked together?",
-            "type": "application",
-            "difficulty": "medium",
-            "explanation": "This question lets children think about their own lives and connect the story to their experiences, helping them see why working together is important."
-        },
-        {
-            "question": "Why do you think Meg and Simone became friends at the end of the story?",
+            "question": "Why do you think the big box creation fell down? What could Meg and Simone have done differently?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "Children will consider how sharing and teamwork can help people become friends, tying it back to the moral lesson."
+            "explanation": "Encourages kids to think about consequences of actions and to problem-solve ways to do better through teamwork.",
+            "page_number": 13
         },
         {
-            "question": "If you and a friend each had different ideas for a game, what could you do to play together?",
+            "question": "What did Meg and Simone do to fix their project after it broke? How did working together help them?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Highlights the positive results of teamwork, reinforcing the story's moral in a concrete way.",
+            "page_number": 15
+        },
+        {
+            "question": "Have you ever worked on something with a friend or family member? How did it feel to work together?",
             "type": "application",
-            "difficulty": "medium",
-            "explanation": "This question encourages problem-solving and thinking about how to combine ideas, just like in the story."
+            "difficulty": "easy",
+            "explanation": "Connects the moral lesson to real-life situations so children can relate and share times they've worked together with others.",
+            "page_number": 16
         },
         {
-            "question": "What can happen if we don't listen to each other's ideas when we work together?",
-            "type": "reflection",
-            "difficulty": "medium",
-            "explanation": "Responding to this helps children understand that listening is a big part of teamwork and friendships."
-        },
-        {
-            "question": "Can you think of something amazing you could make or do by sharing ideas with your friends?",
+            "question": "What are some things you could build or make with friends if you shared ideas, like Meg and Simone did?",
             "type": "extension",
             "difficulty": "medium",
-            "explanation": "This question encourages children to be creative and imagine what teamwork can look like in their own lives."
+            "explanation": "Promotes creative thinking and shows children how sharing ideas can lead to more fun and exciting projects.",
+            "page_number": 17
+        },
+        {
+            "question": "How did Meg and Simone feel at the end of the story? Why do you think they became friends?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Helps children understand the reward of cooperation—friendship—and makes a clear connection between positive behavior and positive outcomes.",
+            "page_number": 17
+        },
+        {
+            "question": "If you and a friend want to make different things, what could you do to work together like Meg and Simone did?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Encourages practical thinking about solving disagreements and finding ways to combine ideas, reinforcing the moral of teamwork and sharing.",
+            "page_number": 15
         }
     ],
     "moral": "When we work together and share ideas, we can create amazing things and make new friends.",
     "story_title": "boxitects",
     "learning_objectives": [
-        "Children will understand the story's main events and the importance of teamwork.",
-        "Children will be able to describe how sharing ideas and working together can help everyone succeed.",
-        "Children will connect the story's lessons to their own life situations with friends and teamwork.",
-        "Children will practice reflecting on feelings and actions in group settings."
-    ],
-    "discussion_points": [
-        "Why is it sometimes hard to work with others?",
-        "What are some ways we can listen to each other's ideas when we play or build together?",
-        "How does working with friends make things more fun or easier?",
-        "Can you share a time when you and a friend worked on something together? What happened?",
-        "What new things could we try making together in our class or at home?"
+        "Children will recognize the value of working together and sharing ideas.",
+        "Children will identify feelings that come from working alone versus working as a team.",
+        "Children will learn how to connect the story's lesson to their own experiences at home or school.",
+        "Children will practice thinking of ways to solve disagreements in a kind, cooperative manner."
     ]
 }

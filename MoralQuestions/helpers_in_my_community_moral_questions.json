@@ -1,79 +1,75 @@
 {
     "questions": [
         {
-            "question": "Who are some helpers you see in your community?",
+            "question": "Who are some of the helpers in your community?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "Asking children to name helpers in their own community checks if they understood the different types introduced in the story and connects the ideas to their real-life experiences."
+            "explanation": "Helps children recall and name community helpers, connecting story characters to real life and grounding the moral in concrete examples.",
+            "page_number": 3
         },
         {
-            "question": "What do builders do to help people?",
+            "question": "How do builders help make our community better?",
             "type": "comprehension",
             "difficulty": "easy",
-            "explanation": "This checks the child’s understanding of a specific segment (builders) and helps them see how each helper makes life better for the community."
+            "explanation": "Encourages understanding of a specific helper’s role, showing that everyone’s job helps the community in a special way.",
+            "page_number": 4
         },
         {
-            "question": "Do you know someone who is a teacher, nurse, or librarian? How do they help people?",
+            "question": "Why do you think it is important to say thank you to helpers like plumbers or electricians?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "Encourages children to connect the helpers in the story with real people they know, building appreciation and recognition of community helpers."
+            "explanation": "Promotes appreciation for unseen helpers and builds empathy, reinforcing the moral of valuing everyone's contributions.",
+            "page_number": 6
         },
         {
-            "question": "How do police officers and firefighters help keep us safe?",
-            "type": "comprehension",
-            "difficulty": "medium",
-            "explanation": "Helps children recall and explain the roles of emergency workers, understanding their importance in the community."
-        },
-        {
-            "question": "If you saw someone drop their books at school, what could you do to help?",
+            "question": "Who helps you at school, and how do they make your day better?",
             "type": "application",
             "difficulty": "easy",
-            "explanation": "Gives children a simple, relatable way to apply the moral by thinking of ways they can help others in their daily lives."
+            "explanation": "Connects story helpers with helpers in the child's own world, making the moral personal and relatable.",
+            "page_number": 11
         },
         {
-            "question": "Why do you think volunteers are important, even though they do not get paid?",
+            "question": "Have you ever seen a police officer, firefighter, or doctor helping someone? What did they do?",
             "type": "reflection",
             "difficulty": "medium",
-            "explanation": "Encourages thinking about kindness, helping for the sake of helping, and understanding that anyone can make a difference without expecting a reward."
+            "explanation": "Encourages children to share stories and observe helpers in real life, deepening their understanding of how people help in the community.",
+            "page_number": 14
         },
         {
-            "question": "Can kids be helpers too? What are some ways you have helped at home or school?",
+            "question": "Can you think of ways you could be a helper, like the volunteers in the story?",
             "type": "application",
-            "difficulty": "easy",
-            "explanation": "Helps children see themselves as community helpers, reinforcing the moral that everyone can help, even them."
+            "difficulty": "medium",
+            "explanation": "Helps children see themselves as potential helpers, which is a key part of the story's moral message.",
+            "page_number": 20
         },
         {
-            "question": "How would our community change if there were no people to fix the water or electricity?",
+            "question": "Why is it important for everyone in a community to help each other?",
             "type": "extension",
+            "difficulty": "hard",
+            "explanation": "Encourages thinking about the bigger idea that working together makes a place better for everyone, deepening the moral understanding.",
+            "page_number": 2
+        },
+        {
+            "question": "What could you do to help someone in your family or at school today?",
+            "type": "application",
             "difficulty": "medium",
-            "explanation": "Promotes thinking about the value of behind-the-scenes helpers like plumbers and electricians, and what could happen without their work."
+            "explanation": "Connects the story directly to everyday actions children can take, helping them practice the moral lesson.",
+            "page_number": 20
         },
         {
-            "question": "Why is it important to say thank you to helpers in your community?",
+            "question": "How would you feel if someone helped you when you needed it?",
             "type": "reflection",
             "difficulty": "easy",
-            "explanation": "Connections are made between appreciating helpers and building a caring community, as the moral encourages."
-        },
-        {
-            "question": "How do you feel when you help someone or when someone helps you?",
-            "type": "reflection",
-            "difficulty": "easy",
-            "explanation": "Encourages empathy and emotional connection to the moral, making it more meaningful for young children."
+            "explanation": "Builds empathy and helps children understand why being a helper is important for people's feelings.",
+            "page_number": 19
         }
     ],
     "moral": "There are many helpers in our community, and everyone can help make our community better, even you! We should appreciate those who help us and try to help others, too.",
-    "story_title": "Helpers in My Community",
+    "story_title": "helpers_in_my_community",
     "learning_objectives": [
-        "Identify different types of community helpers and describe how they help.",
-        "Understand that everyone, including children, can help make the community better.",
-        "Recognize the importance of appreciating and thanking helpers.",
-        "Develop ideas for ways they can help others at home, school, and in the community."
-    ],
-    "discussion_points": [
-        "What are some of your favorite community helpers and why?",
-        "How does it feel when someone helps you? How do you think helpers feel when they help others?",
-        "What are small ways you can be a helper at home or school?",
-        "Why should we say thank you or show kindness to our helpers?",
-        "How would life be different if there were no helpers in our community?"
+        "Identify different helpers in the community and describe what they do.",
+        "Recognize ways to appreciate and thank helpers in real life.",
+        "Reflect on how helping others makes the community a better place.",
+        "Come up with simple actions they can do to help others at home, school, or in their community."
     ]
 }
