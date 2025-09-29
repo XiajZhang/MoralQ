@@ -1,0 +1,10 @@
+# Frontend Interface Dependencies
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# Backend Server Dependencies  
+Flask-SocketIO==5.3.6
+Flask-JWT==0.4.0
+firebase-admin==6.2.0
+requests==2.31.0
+python-dotenv==1.0.0
