@@ -43,10 +43,10 @@ const TabPanel: React.FC<TabPanelProps> = ({
         </div>
       )}
       
-      {questions.generated.length > 0 && (
+      {questions && questions.length > 0 && (
         <div className="questions">
           <h4>Generated Questions:</h4>
-          {questions.generated.map((question, qIndex) => {
+          {questions.map((question, qIndex) => {
             const globalIndex = startQuestionIndex + qIndex;
             return (
               <QuestionItem

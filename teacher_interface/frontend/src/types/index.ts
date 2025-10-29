@@ -25,8 +25,19 @@ export interface Segment {
   END: number;
 }
 
+export interface MoralCandidate {
+  moral: string;
+  segments: Segment[];
+  candidate_id: number | string;
+  quality_score: number;
+  generation_method: string;
+  is_gepa_improved?: boolean;
+}
+
 export interface MoralData {
   generated: string;
+  candidates: MoralCandidate[];
+  optimization_applied: boolean;
   status: 'pending' | 'approved' | 'rejected';
   feedback: 'positive' | 'negative' | null;
   regenerations: number;
@@ -46,7 +57,7 @@ export interface StorybookResult {
   objective: string;
   moral: MoralData;
   segments: Segment[];
-  questions: QuestionsData;
+  questions: Question[];
   learning_objectives?: string[];
 }
 

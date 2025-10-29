@@ -8,3 +8,9 @@ Flask-JWT==0.4.0
 firebase-admin==6.2.0
 requests==2.31.0
 python-dotenv==1.0.0
+
+# API/LLM and utilities needed by backend services
+flask-cors
+openai>=1.0.0
+dspy-ai
+eventlet

@@ -71,7 +71,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
           {results.map((result, index) => {
             const startQuestionIndex = results
               .slice(0, index)
-              .reduce((acc, r) => acc + (r.questions?.generated?.length || 0), 0);
+              .reduce((acc, r) => acc + (r.questions?.length || 0), 0);
             
             return (
               <TabPanel
@@ -154,10 +154,10 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
           </div>
         )}
         
-        {questions.generated.length > 0 && (
+        {questions && questions.length > 0 && (
           <div className="questions">
             <h4>Generated Questions:</h4>
-            {questions.generated.map((question, qIndex) => (
+            {questions.map((question, qIndex) => (
               <QuestionItem
                 key={qIndex}
                 question={question}

@@ -6,6 +6,8 @@ Tests connection to MIT Firebase server using JWT authentication
 import requests
 import json
 from typing import Optional, Dict, Any
+from dotenv import load_dotenv
+import os
 
 class FirebaseClientAuth:
     """Client for authenticating with Firebase server using JWT"""
@@ -124,12 +126,14 @@ class FirebaseClientAuth:
 
 def main():
     """Test Firebase client authentication"""
+    # Load env from teacher_interface/.env
+    load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
     
-    # Configuration - you'll need to update these with your actual credentials
-    SERVER_URL = "https://prg-webhost.media.mit.edu"
-    USERNAME = "your_username_here"  # Update this
-    PASSWORD = "your_password_here"   # Update this
-    TOP_LEVEL_NODE = "storybook-list-by-school"  # Update this if different
+    # Configuration from environment
+    SERVER_URL = os.getenv("SERVER_URL", "")
+    USERNAME = os.getenv("USERNAME", "")
+    PASSWORD = os.getenv("PASSWORD", "")
+    TOP_LEVEL_NODE = os.getenv("TOP_LEVEL_NODE", "storybook-list-by-school")
     
     print("Firebase Client Authentication Test")
     print("=" * 50)

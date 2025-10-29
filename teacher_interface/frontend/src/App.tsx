@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Storybook, StorybookResult, Configuration, FeedbackData } from './types';
+import { Storybook, StorybookResult, Configuration, FeedbackData } from './types/index';
 import { storybookApi, questionApi, firebaseApi } from './services/api';
 import StorybookCard from './components/StorybookCard';
 import ConfigurationForm from './components/ConfigurationForm';
@@ -7,7 +7,7 @@ import MoralApproval from './components/MoralApproval';
 import ResultsDisplay from './components/ResultsDisplay';
 import './App.css';
 
-type AppStep = 'selection' | 'configuration' | 'moral_approval' | 'results';
+type AppStep = 'selection' | 'configuration' | 'results';
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<AppStep>('selection');
@@ -84,23 +84,24 @@ const App: React.FC = () => {
     setCurrentStep('selection');
   };
 
-  const generateMoral = async (config: Configuration) => {
+  const generateQuestions = async (config: Configuration) => {
     try {
       setLoading(true);
       setError(null);
-      setCurrentStep('moral_approval');
+      setCurrentStep('results');
       
+      // Generate moral lessons and questions directly
       const data = await questionApi.generateMoral(config);
       
       if (data.success) {
         setResults(data.results);
         setQuestionFeedbacks(new Map());
       } else {
-        setError(data.error || 'Failed to generate moral lessons');
+        setError(data.error || 'Failed to generate questions');
       }
     } catch (err) {
       setError('Network error. Please try again.');
-      console.error('Error generating moral lessons:', err);
+      console.error('Error generating questions:', err);
     } finally {
       setLoading(false);
     }
@@ -170,11 +171,20 @@ const App: React.FC = () => {
       
       // Only send storybooks that have feedback
       const storybooksWithFeedback = new Set<number>();
+      
+      // If there's general feedback, include all storybooks
+      if (generalFeedback.trim()) {
+        for (let i = 0; i < results.length; i++) {
+          storybooksWithFeedback.add(i);
+        }
+      }
+      
+      // Also include storybooks with individual question feedback
       questionFeedbacks.forEach((_, globalIndex) => {
         // Find which storybook this question belongs to
         let currentIndex = 0;
         for (let i = 0; i < results.length; i++) {
-          const questionCount = results[i].questions.generated.length;
+          const questionCount = results[i].questions.length;
           if (globalIndex < currentIndex + questionCount) {
             storybooksWithFeedback.add(i);
             break;
@@ -188,7 +198,7 @@ const App: React.FC = () => {
         objective: results[0].objective,
         generalFeedback: generalFeedback,
         questionFeedbacks: questionFeedbacksObj,
-        originalQuestions: Array.from(storybooksWithFeedback).map(index => results[index].questions.generated)
+        originalQuestions: Array.from(storybooksWithFeedback).map(index => results[index].questions)
       };
       
       const data = await questionApi.regenerateQuestions(config);
@@ -292,52 +302,18 @@ const App: React.FC = () => {
           
           <ConfigurationForm
             selectedStorybooks={selectedStorybooks}
-            onGenerate={generateMoral}
+            onGenerate={generateQuestions}
             onBack={goBackToSelection}
           />
         </section>
       )}
 
-      {/* Step 2.5: Moral Approval */}
-      {currentStep === 'moral_approval' && (
-        <section className="step-section">
-          <div className="step-header">
-            <h2>Step 2.5: Review Moral Lessons</h2>
-            <p>Review the generated moral lessons before proceeding to question generation</p>
-          </div>
-          
-          {loading ? (
-            <div className="loading">Generating Moral Lessons...</div>
-          ) : error ? (
-            <div className="error">
-              <h4>Error</h4>
-              <p>{error}</p>
-              <button className="btn btn-secondary" onClick={() => setCurrentStep('configuration')}>
-                Try Again
-              </button>
-            </div>
-          ) : (
-            <MoralApproval
-              results={results}
-              onApprove={approveMoral}
-              onRegenerate={regenerateMoral}
-              isLoading={loading}
-            />
-          )}
-          
-          <div className="step-actions">
-            <button className="btn btn-secondary" onClick={() => setCurrentStep('configuration')}>
-              Back to Configuration
-            </button>
-          </div>
-        </section>
-      )}
 
-      {/* Step 3: Results */}
+      {/* Step 2: Results */}
       {currentStep === 'results' && (
         <section className="step-section">
           <div className="step-header">
-            <h2>Step 3: Generated Questions</h2>
+            <h2>Step 2: Generated Questions</h2>
             <p>Review and customize your generated questions</p>
           </div>
           

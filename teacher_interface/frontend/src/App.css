@@ -1026,6 +1026,86 @@ body.action-bar-visible {
     font-size: 0.8em;
 }
 
+/* Moral Candidates Styles */
+.moral-candidates {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.moral-candidate {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+.moral-candidate:hover {
+    border-color: #3498db;
+    background: #f0f8ff;
+}
+
+.candidate-header {
+    margin-bottom: 10px;
+}
+
+.candidate-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.candidate-radio input[type="radio"] {
+    margin: 0;
+    transform: scale(1.2);
+}
+
+.candidate-radio label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.candidate-label {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.quality-score {
+    background: #27ae60;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.generation-method {
+    background: #3498db;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.candidate-moral {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #2c3e50;
+    padding-left: 25px;
+    border-left: 3px solid #3498db;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
 .approval-actions {
     display: flex;
     justify-content: center;

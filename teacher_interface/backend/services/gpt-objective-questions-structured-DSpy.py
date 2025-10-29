@@ -8,6 +8,10 @@ import os
 import argparse
 from typing import List, Dict, Any
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
 
 # Configure DSPy with OpenAI
 dspy.configure(lm=dspy.LM("openai/gpt-4.1-2025-04-14"))
@@ -61,27 +65,134 @@ class ObjectiveQuestionGenerator(dspy.Module):
 class FeedbackCollector:
     """Collect and manage teacher feedback for learning optimization."""
     
-    def __init__(self, feedback_file: str = "feedback_dataset.json"):
+    def __init__(self, feedback_file: str = "teacher_interface/backend/teacher_feedback_records.json"):
         self.feedback_file = feedback_file
+        self.question_evaluations_file = "teacher_interface/backend/question_evaluations.json"
         self.feedback_data = self.load_feedback()
     
     def load_feedback(self) -> List[Dict]:
-        """Load existing feedback data."""
+        """Load existing feedback data from teacher_feedback_records.json and question_evaluations.json."""
+        feedback_records = []
+        
+        # Load teacher feedback records
         if os.path.exists(self.feedback_file):
             try:
                 with open(self.feedback_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)
-                    # Ensure we always return a list
-                    if isinstance(data, list):
-                        return data
-                    elif isinstance(data, dict):
-                        # If it's a dict, wrap it in a list
-                        return [data]
-                    else:
-                        return []
+                    
+                    # Parse hierarchical structure: school -> teacher -> records
+                    for school_id, school_data in data.items():
+                        if isinstance(school_data, dict):
+                            for teacher_id, teacher_records in school_data.items():
+                                if isinstance(teacher_records, list):
+                                    for record in teacher_records:
+                                        # Convert to DSPy training format
+                                        dspy_record = self._convert_to_dspy_format(record)
+                                        if dspy_record:
+                                            feedback_records.append(dspy_record)
+                
+                print(f"[INFO] Loaded {len(feedback_records)} feedback records from {self.feedback_file}")
             except Exception as e:
-                print(f"Error loading feedback data: {e}")
+                print(f"Error loading feedback data from {self.feedback_file}: {e}")
+        
+        # Load question evaluations
+        question_evaluations = self._load_question_evaluations()
+        if question_evaluations:
+            print(f"[INFO] Loaded question evaluations: {len(question_evaluations)} records")
+        
+        return feedback_records
+    
+    def _load_question_evaluations(self) -> List[Dict]:
+        """Load question evaluations from question_evaluations.json."""
+        if os.path.exists(self.question_evaluations_file):
+            try:
+                with open(self.question_evaluations_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    return data.get("evaluations", [])
+            except Exception as e:
+                print(f"Error loading question evaluations: {e}")
         return []
+    
+    def _convert_to_dspy_format(self, record: Dict) -> Dict:
+        """Convert teacher_feedback_records.json format to DSPy training format."""
+        
+        # Get story_title and objective
+        story_title = record.get("story_title", "")
+        objective = record.get("objective", "")
+        
+        # Extract inputs and outputs for DSPy
+        inputs = {
+            "story_title": story_title,
+            "objective": objective,
+        }
+        
+        outputs = {
+            "questions": [],  # Will be populated from question_evaluations
+            "evaluator_scores": record.get("evaluator_scores", {}),
+        }
+        
+        # Check if this is a positive feedback record
+        feedback = record.get("teacher_feedback", {})
+        feedback_type = feedback.get("feedback", "")
+        
+        # Try to get story and segments from question_evaluations.json
+        # by matching story_title
+        question_evaluations = self._load_question_evaluations()
+        
+        # Find evaluations for this story
+        story_evaluations = [
+            eval_record for eval_record in question_evaluations
+            if eval_record.get("storybook_id") == story_title or eval_record.get("story_title") == story_title
+        ]
+        
+        # Extract questions from evaluations
+        generated_questions = []
+        story_content = ""
+        segments_data = []
+        
+        if story_evaluations:
+            # Get story content from the first evaluation
+            story_content = story_evaluations[0].get("story_context", "")
+            
+            # Extract questions
+            generated_questions = [
+                eval_record.get("question", "") 
+                for eval_record in story_evaluations 
+                if eval_record.get("question")
+            ]
+            
+            # For segments, we'll need to create a basic structure
+            # This is a limitation - segments aren't stored in question_evaluations
+            segments_data = [
+                {
+                    "name": f"Segment {i+1}",
+                    "START": i,
+                    "END": i+1,
+                    "summary": f"Segment summary {i+1}",
+                    "reasoning": "Generated from story"
+                }
+                for i in range(min(len(generated_questions), 3))
+            ]
+        
+        # Add to inputs and outputs
+        if story_content:
+            inputs["story"] = story_content
+        if segments_data:
+            inputs["segments"] = segments_data
+        
+        if generated_questions:
+            outputs["questions"] = generated_questions
+        
+        if feedback_type == "positive":
+            return {
+                "inputs": inputs,
+                "outputs": outputs,
+                "feedback_type": "positive",
+                "iteration_id": record.get("iteration_id", ""),
+                "course_of_action": record.get("course_of_action", {})
+            }
+        
+        return None
     
     def save_feedback(self):
         """Save feedback data to file."""
@@ -192,7 +303,7 @@ class FeedbackCollector:
     
     def get_positive_examples(self) -> List[Dict]:
         """Get all positive feedback examples for training."""
-        return [entry for entry in self.feedback_data if entry.get("feedback", {}).get("overall") == "positive"]
+        return [entry for entry in self.feedback_data if entry.get("feedback_type") == "positive"]
     
     def _get_timestamp(self) -> str:
         """Get current timestamp."""
@@ -422,10 +533,11 @@ def main():
     
     # Batch mode (original behavior)
     if args.batch:
-        # Configuration paths
-        asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
-        moral_path = "/Users/mariyamohiuddin/Desktop/Outputs/"
-        output_path = "/Users/mariyamohiuddin/Desktop/ObjectiveQuestions/"
+        # Configuration paths - read from environment
+        assets_base = os.getenv('ASSETS_PATH', '/path/to/interactive-storybook-assets')
+        asset_path = os.path.join(assets_base, "qna_json") + "/"
+        moral_path = os.getenv('OUTPUT_PATH', '/path/to/output') + "/"
+        output_path = os.getenv('OBJECTIVE_QUESTIONS_OUTPUT_PATH', '/path/to/output/questions') + "/"
         
         # Create output directory if it doesn't exist
         Path(output_path).mkdir(parents=True, exist_ok=True)

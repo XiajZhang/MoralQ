@@ -7,6 +7,10 @@ from pydantic import BaseModel, Field
 from typing import List
 import os
 import json
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
 
 class Segment(BaseModel):
     name: str = Field(..., pattern="^segment_\\d+$")
@@ -21,11 +25,24 @@ class MoralQResponse(BaseModel):
 
 class StoryMoralGeneratorStructured:
     def __init__(self):
-        self.client = OpenAI()
-        self.client.api_key = os.environ.get('OPENAI_API_KEY')
+        # Load environment variables from teacher_interface/.env
+        load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
+        
+        # Get API key from environment
+        api_key = os.environ.get('OPENAI_API_KEY')
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable not set")
+        
+        self.client = OpenAI(api_key=api_key)
         self.model = "gpt-4.1-2025-04-14"
-        with open("./prompts/moralQ_prompts/story_moral_prompt.txt", "r") as f:
-            self.prompt = f.read()
+        # Prompt file is in the parent MoralQ directory
+        prompt_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "prompts", "moralQ_prompts", "story_moral_prompt.txt")
+        if os.path.exists(prompt_path):
+            with open(prompt_path, "r") as f:
+                self.prompt = f.read()
+        else:
+            # Fallback prompt if file not found
+            self.prompt = "Extract the main moral lesson and segment the story into meaningful parts."
 
     def generate_story_moral(self, story: str) -> MoralQResponse:
         response = self.client.responses.parse(
@@ -62,8 +79,10 @@ def main():
 
     generator = StoryMoralGeneratorStructured()
     
-    asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
-    output_path = "/Users/mariyamohiuddin/Desktop/Outputs/"
+    # Load paths from environment variables
+    assets_base = os.getenv('ASSETS_PATH', '/path/to/interactive-storybook-assets')
+    asset_path = os.path.join(assets_base, "qna_json") + "/"
+    output_path = os.getenv('OUTPUT_PATH', '/path/to/output') + "/"
     
     # Create output directory if it doesn't exist
     if not os.path.exists(output_path):

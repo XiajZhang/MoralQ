@@ -105,9 +105,42 @@ const MoralApproval: React.FC<MoralApprovalProps> = ({
             
             <div className="moral-content">
               <h4>Generated Moral Lesson:</h4>
-              <div className="moral-text">
-                {result.moral.generated}
-              </div>
+              {result.moral.candidates && result.moral.candidates.length > 0 ? (
+                <div className="moral-candidates">
+                  {result.moral.candidates.map((candidate, candidateIndex) => (
+                    <div key={candidate.candidate_id} className="moral-candidate">
+                      <div className="candidate-header">
+                        <div className="candidate-radio">
+                          <input
+                            type="radio"
+                            name={`moral-${index}`}
+                            id={`moral-${index}-candidate-${candidateIndex}`}
+                            defaultChecked={candidateIndex === 0}
+                          />
+                          <label htmlFor={`moral-${index}-candidate-${candidateIndex}`}>
+                            <span className="candidate-label">
+                              Candidate {candidateIndex + 1}
+                            </span>
+                            <span className="quality-score">
+                              Quality: {(candidate.quality_score * 100).toFixed(0)}%
+                            </span>
+                            <span className="generation-method">
+                              {candidate.generation_method}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="candidate-moral">
+                        {candidate.moral}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="moral-text">
+                  {result.moral.generated}
+                </div>
+              )}
             </div>
 
             {result.moral.timestamp && (
