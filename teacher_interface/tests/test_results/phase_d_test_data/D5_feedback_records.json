@@ -1,0 +1,700 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:16:13.499180",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 0",
+          "Question 1 from iteration 0",
+          "Question 2 from iteration 0",
+          "Question 3 from iteration 0",
+          "Question 4 from iteration 0"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_002",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "timestamp": "2025-11-03T12:16:15.087415",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 1",
+          "Question 1 from iteration 1",
+          "Question 2 from iteration 1",
+          "Question 3 from iteration 1",
+          "Question 4 from iteration 1"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_003",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions don't encourage enough elaboration. Make them more open-ended."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "open_ended_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "open_ended_suitability"
+          ],
+          "delta": {
+            "open_ended_suitability": 0.2
+          },
+          "reason": "Orchestrator determined: increase (0.2) for ['open_ended_suitability']",
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: increase (0.2) for ['open_ended_suitability']",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "weight_changes": {
+            "open_ended_suitability": 0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "open_ended_suitability"
+          ],
+          "instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "timestamp": "2025-11-03T12:16:16.741059",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 2",
+          "Question 1 from iteration 2",
+          "Question 2 from iteration 2",
+          "Question 3 from iteration 2",
+          "Question 4 from iteration 2"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_004",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:16:16.744235",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 3",
+          "Question 1 from iteration 3",
+          "Question 2 from iteration 3",
+          "Question 3 from iteration 3",
+          "Question 4 from iteration 3"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_005",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "timestamp": "2025-11-03T12:16:16.746577",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 4",
+          "Question 1 from iteration 4",
+          "Question 2 from iteration 4",
+          "Question 3 from iteration 4",
+          "Question 4 from iteration 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_006",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions don't encourage enough elaboration. Make them more open-ended."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "open_ended_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "open_ended_suitability"
+          ],
+          "delta": {
+            "open_ended_suitability": 0.2
+          },
+          "reason": "Orchestrator determined: increase (0.2) for ['open_ended_suitability']",
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: increase (0.2) for ['open_ended_suitability']",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "weight_changes": {
+            "open_ended_suitability": 0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "open_ended_suitability"
+          ],
+          "instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "timestamp": "2025-11-03T12:16:16.748458",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 5",
+          "Question 1 from iteration 5",
+          "Question 2 from iteration 5",
+          "Question 3 from iteration 5",
+          "Question 4 from iteration 5"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_007",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:16:16.750702",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 6",
+          "Question 1 from iteration 6",
+          "Question 2 from iteration 6",
+          "Question 3 from iteration 6",
+          "Question 4 from iteration 6"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_008",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that focus on simple recall of plot details and memorization; instead, generate questions that require deeper thinking or understanding beyond just recalling facts."
+        },
+        "timestamp": "2025-11-03T12:16:16.752846",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 7",
+          "Question 1 from iteration 7",
+          "Question 2 from iteration 7",
+          "Question 3 from iteration 7",
+          "Question 4 from iteration 7"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_009",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions don't encourage enough elaboration. Make them more open-ended."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "open_ended_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "open_ended_suitability"
+          ],
+          "delta": {
+            "open_ended_suitability": 0.2
+          },
+          "reason": "Orchestrator determined: increase (0.2) for ['open_ended_suitability']",
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: increase (0.2) for ['open_ended_suitability']",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "weight_changes": {
+            "open_ended_suitability": 0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "open_ended_suitability"
+          ],
+          "instruction": "Make questions require more detailed explanations and encourage children to elaborate on their thoughts and feelings."
+        },
+        "timestamp": "2025-11-03T12:16:16.754536",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 8",
+          "Question 1 from iteration 8",
+          "Question 2 from iteration 8",
+          "Question 3 from iteration 8",
+          "Question 4 from iteration 8"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_010",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:16:16.756240",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "Test story content for optimization",
+        "generated_questions": [
+          "Question 0 from iteration 9",
+          "Question 1 from iteration 9",
+          "Question 2 from iteration 9",
+          "Question 3 from iteration 9",
+          "Question 4 from iteration 9"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

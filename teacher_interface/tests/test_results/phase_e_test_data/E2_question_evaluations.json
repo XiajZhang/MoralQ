@@ -1,0 +1,270 @@
+{
+  "evaluations": [
+    {
+      "question": "How did Grumpy Monkey feel at the start of the story?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Recall",
+      "evaluation_reasoning": "This question asks about the character's feelings at the start of the story, which is not a plot element or a sequence of events, but rather a character state. Additionally, the answer can be found on the current page if that page describes the start of the story. Therefore, it does not meet the criteria for a recall question focused on plot elements or event sequences, resulting in a low suitability score and a decision to regenerate. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "What did Norman say to Grumpy Monkey?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Recall",
+      "evaluation_reasoning": "This question asks for a specific line of dialogue (\"What did Norman say to Grumpy Monkey?\"), which is a detail rather than a description of plot elements or sequences of events. Additionally, the answer can be found on the current page if Norman's dialogue is present, so it does not require referencing other parts of the story. Therefore, it does not meet the criteria for a suitable recall question focused on plot elements or event sequences. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "Can you remember a time when you felt grumpy or had a bad day?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Recall",
+      "evaluation_reasoning": "This question does not ask the child to describe plot elements or sequences of events from the story; instead, it asks for a personal experience. Additionally, the answer cannot be determined from the current page or the story at all, as it is not related to the text. Therefore, it does not meet the criteria for a suitable recall question. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "What could you do when you feel grumpy, like Grumpy Monkey?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Wh",
+      "evaluation_reasoning": "The question references \"Grumpy Monkey,\" a character from a story, and asks what actions could be taken when feeling grumpy like the character. This directly relates to the story's details and themes, making it a suitable Wh- question for story comprehension or discussion.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 1.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "How did Grumpy Monkey feel after talking to Norman?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Wh",
+      "evaluation_reasoning": "This question specifically asks about Grumpy Monkey's feelings after an event in the story (talking to Norman), which is a detail from the narrative. It is a Wh- question that focuses on story details, making it suitable.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 1.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "Why is it okay to have a bad day sometimes?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Wh",
+      "evaluation_reasoning": "This question does not focus on specific details from a story. Instead, it asks a general, reflective question about emotions and well-being, which is not directly related to story content or comprehension. Therefore, it does not meet the criteria for a suitable Wh- question focused on story details. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "What could you say to a friend who is feeling grumpy?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Completion",
+      "evaluation_reasoning": "The question does not specifically deal with rhyming or repeated phrases. It is a general prompt about what to say to a friend who is feeling grumpy, which does not meet the criteria for completion questions focused on rhyming or repeated phrases. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_003"
+      }
+    },
+    {
+      "question": "Why was Grumpy Monkey having a bad day?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Wh",
+      "evaluation_reasoning": "The question specifically asks about the main character's emotional state and the reasons behind it, which are key details in the story \"Grumpy Monkey.\" It is a Wh- question that directly focuses on story details, making it fully suitable.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 1.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    },
+    {
+      "question": "How did Norman try to help Grumpy Monkey?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Wh",
+      "evaluation_reasoning": "The question specifically asks about Norman's actions to help Grumpy Monkey, which is a detail from the story. It is a Wh- question (\"How\") and directly focuses on story details, making it fully suitable.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 1.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    },
+    {
+      "question": "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+      "suitability_score": 4.67,
+      "decision": "pass",
+      "question_type": "Distancing",
+      "evaluation_reasoning": "This question directly asks the child to reflect on their own experiences with feeling grumpy, which is highly explicit (score 5). It encourages elaboration by asking what the child did, making a one-word answer difficult (score 4). The question is closely tied to the story's content, referencing Grumpy Monkey and the theme of grumpiness (score 5). The average suitability score is well above the threshold, making this a strong distancing question.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 4.67,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    },
+    {
+      "question": "What can you do when you feel grumpy or sad?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Wh",
+      "evaluation_reasoning": "The question \"What can you do when you feel grumpy or sad?\" is a general inquiry about emotions and coping strategies, not about specific details from a story. It does not reference or require knowledge of any story elements, characters, or events, so it does not meet the criteria for focusing on story details. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    },
+    {
+      "question": "Why is it okay to have a bad day sometimes?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Wh",
+      "evaluation_reasoning": "This question does not focus on specific details from a story. Instead, it asks a general, reflective question about emotions and well-being, which is not directly related to story content or comprehension. Therefore, it does not meet the criteria for a suitable Wh- question focused on story details. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    },
+    {
+      "question": "How can friends help when you are feeling sad or grumpy?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Wh",
+      "evaluation_reasoning": "This question is general and asks about friends helping when someone is sad or grumpy, but it does not focus on specific details from a story. Suitable Wh- questions should reference or inquire about particular events, characters, or actions within a given story. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    },
+    {
+      "question": "What did Grumpy Monkey learn at the end of the story?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Recall",
+      "evaluation_reasoning": "This question asks about what Grumpy Monkey learned at the end of the story, which requires knowledge of the story's resolution and the character's development\u2014information that is not typically found on a single page. It also requires the child to recall plot elements and the sequence of events leading to the story's conclusion. Therefore, it does not meet the criteria for a recall question that can be answered from the current page alone. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_004"
+      }
+    }
+  ]
+}

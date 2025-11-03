@@ -1,0 +1,486 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions are too factual. We need questions that encourage deeper thinking and personal connection, not just recalling story details."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed personal_connection - orchestrator determined: add_new_evaluator",
+          "attribute": "personal_connection",
+          "action_type": "add_new_evaluator",
+          "affected_evaluators": [
+            "personal_connection"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "personal_connection",
+          "confidence": 0.95,
+          "reformulated_instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "personal_connection"
+          ],
+          "delta": {},
+          "reason": "Orchestrator determined: new evaluator needed for personal_connection",
+          "reformulated_instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story.",
+          "details": {
+            "evaluator_name": "personal_connection",
+            "evaluator_description": "Evaluates questions for personal connection based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.9,
+          "distancing_suitability": 0.3,
+          "open_ended_suitability": 0.4
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.9,
+              "distancing_suitability": 0.3,
+              "open_ended_suitability": 0.4
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "Orchestrator determined: new evaluator needed for personal_connection",
+          "affected_evaluators": [
+            "personal_connection"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "personal_connection",
+          "new_evaluator_description": "Evaluates questions for personal_connection based on teacher feedback",
+          "instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story."
+        },
+        "timestamp": "2025-11-03T12:43:42.367223",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "How do you think Grumpy Monkey felt at the start of the story?",
+          "What did Norman say to Grumpy Monkey when he was feeling grumpy?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "Why do you think it’s okay to have a bad day sometimes?",
+          "What are some things you can do when you feel grumpy?",
+          "How did Norman help Grumpy Monkey feel better?",
+          "If you see a friend feeling grumpy, what could you say or do to help them?"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_002",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions use vocabulary that's too complex for 4-6 year olds. Please simplify the language and use shorter, more common words."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed complexity - orchestrator determined: add_new_evaluator",
+          "attribute": "complexity",
+          "action_type": "add_new_evaluator",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "complexity",
+          "confidence": 0.95,
+          "reformulated_instruction": "Simplify the vocabulary in the questions so that they use shorter, more common words appropriate for 4-6 year olds."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {},
+          "reason": "Orchestrator determined: new evaluator needed for complexity",
+          "reformulated_instruction": "Simplify the vocabulary in the questions so that they use shorter, more common words appropriate for 4-6 year olds.",
+          "details": {
+            "evaluator_name": "complexity",
+            "evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.5,
+          "distancing_suitability": 0.5
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.5,
+              "distancing_suitability": 0.5
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "Orchestrator determined: new evaluator needed for complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Simplify the vocabulary in the questions so that they use shorter, more common words appropriate for 4-6 year olds.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "complexity",
+          "new_evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+          "instruction": "Simplify the vocabulary in the questions so that they use shorter, more common words appropriate for 4-6 year olds."
+        },
+        "timestamp": "2025-11-03T12:44:45.753225",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "Why was Grumpy Monkey having a bad day?",
+          "How did Norman try to help Grumpy Monkey?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "What could you do if you are having a bad day?",
+          "Why is it okay to feel grumpy sometimes?",
+          "How can friends help when you feel sad or grumpy?"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_003",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Perfect for kids! These questions are engaging, age-appropriate, and encourage good thinking."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating engaging, age-appropriate questions that encourage children to think and elaborate on their answers."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.85,
+          "distancing_suitability": 0.8,
+          "recall_suitability": 0.7
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.85,
+              "distancing_suitability": 0.8,
+              "recall_suitability": 0.7
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:45:13.479058",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "Why was Grumpy Monkey having a bad day?",
+          "How did Norman try to help Grumpy Monkey?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "What could you do if you are having a bad day?",
+          "Why is it okay to feel grumpy sometimes?",
+          "How can friends help when you feel sad or grumpy?"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_004",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Perfect for kids! These questions are engaging, age-appropriate, and encourage good thinking."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating engaging, age-appropriate questions that encourage children to think and elaborate on their answers."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.85,
+          "distancing_suitability": 0.8,
+          "recall_suitability": 0.7
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.85,
+              "distancing_suitability": 0.8,
+              "recall_suitability": 0.7
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:45:13.483072",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "Why was Grumpy Monkey having a bad day?",
+          "How did Norman try to help Grumpy Monkey?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "What could you do if you are having a bad day?",
+          "Why is it okay to feel grumpy sometimes?",
+          "How can friends help when you feel sad or grumpy?"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_005",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Perfect for kids! These questions are engaging, age-appropriate, and encourage good thinking."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating engaging, age-appropriate questions that encourage children to think and elaborate on their answers."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.85,
+          "distancing_suitability": 0.8,
+          "recall_suitability": 0.7
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.85,
+              "distancing_suitability": 0.8,
+              "recall_suitability": 0.7
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:45:13.485566",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "Why was Grumpy Monkey having a bad day?",
+          "How did Norman try to help Grumpy Monkey?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "What could you do if you are having a bad day?",
+          "Why is it okay to feel grumpy sometimes?",
+          "How can friends help when you feel sad or grumpy?"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_006",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Perfect for kids! These questions are engaging, age-appropriate, and encourage good thinking."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating engaging, age-appropriate questions that encourage children to think and elaborate on their answers."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.85,
+          "distancing_suitability": 0.8,
+          "recall_suitability": 0.7
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.85,
+              "distancing_suitability": 0.8,
+              "recall_suitability": 0.7
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:45:13.487906",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "Why was Grumpy Monkey having a bad day?",
+          "How did Norman try to help Grumpy Monkey?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "What could you do if you are having a bad day?",
+          "Why is it okay to feel grumpy sometimes?",
+          "How can friends help when you feel sad or grumpy?"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_007",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Perfect for kids! These questions are engaging, age-appropriate, and encourage good thinking."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating engaging, age-appropriate questions that encourage children to think and elaborate on their answers."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.85,
+          "distancing_suitability": 0.8,
+          "recall_suitability": 0.7
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.85,
+              "distancing_suitability": 0.8,
+              "recall_suitability": 0.7
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:45:13.490983",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "Why was Grumpy Monkey having a bad day?",
+          "How did Norman try to help Grumpy Monkey?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "What could you do if you are having a bad day?",
+          "Why is it okay to feel grumpy sometimes?",
+          "How can friends help when you feel sad or grumpy?"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

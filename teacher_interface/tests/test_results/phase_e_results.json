@@ -1,0 +1,153 @@
+{
+  "test_suite": "Phase E: Full Pedagogical Loop Validation",
+  "timestamp": "2025-11-03T12:49:45.838249",
+  "total_tests": 3,
+  "completed": 3,
+  "failed": 0,
+  "test_results": [
+    {
+      "test_id": "E1",
+      "description": "Initial generation + 'too factual' feedback → Verify improvement",
+      "timestamp": "2025-11-03T12:49:55.427575",
+      "initial_questions": 7,
+      "regenerated_questions": 7,
+      "optimizer_used": true,
+      "initial_generator_type": "base",
+      "regenerated_generator_type": "optimized",
+      "initial_metrics": {
+        "avg_suitability_score": 1.7385714285714287,
+        "avg_recall_suitability": 0.14285714285714285,
+        "avg_open_ended_suitability": 0.6428571428571429,
+        "avg_distancing_suitability": 0.6671428571428571,
+        "pass_rate": 0.7142857142857143,
+        "avg_word_length": 4.035714285714286,
+        "total_questions": 7,
+        "passing_questions": 5
+      },
+      "regenerated_metrics": {
+        "avg_suitability_score": 1.0714285714285714,
+        "avg_recall_suitability": 0.14285714285714285,
+        "avg_open_ended_suitability": 0.6428571428571429,
+        "avg_distancing_suitability": 0.0,
+        "pass_rate": 0.5714285714285714,
+        "avg_word_length": 4.08235294117647,
+        "total_questions": 7,
+        "passing_questions": 4
+      },
+      "distancing_improvement": -0.6671,
+      "open_ended_improvement": 0.0,
+      "suitability_improvement": -0.6671,
+      "improved": false,
+      "status": "completed"
+    },
+    {
+      "test_id": "E2",
+      "description": "'too complex' feedback → Verify simpler vocabulary",
+      "timestamp": "2025-11-03T12:50:11.836965",
+      "optimizer_used": true,
+      "previous_metrics": {
+        "avg_suitability_score": 0.2857142857142857,
+        "avg_recall_suitability": 0.0,
+        "avg_open_ended_suitability": 0.0,
+        "avg_distancing_suitability": 0.0,
+        "pass_rate": 0.2857142857142857,
+        "avg_word_length": 4.0,
+        "total_questions": 7,
+        "passing_questions": 2
+      },
+      "regenerated_metrics": {
+        "avg_suitability_score": 0.9528571428571428,
+        "avg_recall_suitability": 0.0,
+        "avg_open_ended_suitability": 0.0,
+        "avg_distancing_suitability": 0.6671428571428571,
+        "pass_rate": 0.42857142857142855,
+        "avg_word_length": 3.9285714285714284,
+        "total_questions": 7,
+        "passing_questions": 3
+      },
+      "word_length_reduction": 0.0714,
+      "simplified": false,
+      "complexity_evaluator_created": true,
+      "status": "completed"
+    },
+    {
+      "test_id": "E3",
+      "description": "Positive feedback → Weight stabilization",
+      "timestamp": "2025-11-03T12:50:13.373948",
+      "optimizer_used": true,
+      "initial_weights": {
+        "completion_suitability": 0.15,
+        "recall_suitability": 0.2,
+        "open_ended_suitability": 0.25,
+        "wh_suitability": 0.2,
+        "distancing_suitability": 0.2
+      },
+      "final_weights": {
+        "completion_suitability": 0.15,
+        "recall_suitability": 0.2,
+        "open_ended_suitability": 0.25,
+        "wh_suitability": 0.2,
+        "distancing_suitability": 0.2
+      },
+      "weight_history": [
+        {
+          "completion_suitability": 0.15,
+          "recall_suitability": 0.2,
+          "open_ended_suitability": 0.25,
+          "wh_suitability": 0.2,
+          "distancing_suitability": 0.2
+        },
+        {
+          "completion_suitability": 0.15,
+          "recall_suitability": 0.2,
+          "open_ended_suitability": 0.25,
+          "wh_suitability": 0.2,
+          "distancing_suitability": 0.2
+        },
+        {
+          "completion_suitability": 0.15,
+          "recall_suitability": 0.2,
+          "open_ended_suitability": 0.25,
+          "wh_suitability": 0.2,
+          "distancing_suitability": 0.2
+        },
+        {
+          "completion_suitability": 0.15,
+          "recall_suitability": 0.2,
+          "open_ended_suitability": 0.25,
+          "wh_suitability": 0.2,
+          "distancing_suitability": 0.2
+        },
+        {
+          "completion_suitability": 0.15,
+          "recall_suitability": 0.2,
+          "open_ended_suitability": 0.25,
+          "wh_suitability": 0.2,
+          "distancing_suitability": 0.2
+        },
+        {
+          "completion_suitability": 0.15,
+          "recall_suitability": 0.2,
+          "open_ended_suitability": 0.25,
+          "wh_suitability": 0.2,
+          "distancing_suitability": 0.2
+        }
+      ],
+      "weight_changes": {
+        "completion_suitability": 0.0,
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "distancing_suitability": 0.0
+      },
+      "max_weight_change": 0.0,
+      "is_stable": true,
+      "status": "completed"
+    }
+  ],
+  "summary": {
+    "e1_improved": false,
+    "e2_simplified": false,
+    "e3_stable": true
+  }
+}

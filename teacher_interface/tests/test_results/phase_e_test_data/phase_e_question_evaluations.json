@@ -1,0 +1,137 @@
+{
+  "evaluations": [
+    {
+      "question": "How do you think Grumpy Monkey felt at the start of the story?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Wh",
+      "evaluation_reasoning": "The question specifically asks about Grumpy Monkey's feelings at the start of the story, which is a detail directly related to the narrative. It is a suitable Wh- question that focuses on story details and encourages comprehension and inference.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    },
+    {
+      "question": "What did Norman say to Grumpy Monkey when he was feeling grumpy?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Recall",
+      "evaluation_reasoning": "The question asks the child to recall what Norman said to Grumpy Monkey when he was feeling grumpy, which requires remembering a specific event or dialogue from the story. This is a clear example of recalling a plot element or sequence of events. Additionally, the answer cannot be determined from a single page alone, as it requires knowledge of the interaction between Norman and Grumpy Monkey, which may be spread across multiple pages. Both criteria are fully met, so the question passes.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    },
+    {
+      "question": "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+      "suitability_score": 4.67,
+      "decision": "pass",
+      "question_type": "Distancing",
+      "evaluation_reasoning": "This question directly asks the child to reflect on their own experiences with feeling grumpy, which is highly explicit (score 5). It encourages elaboration by asking what the child did, making a one-word answer difficult (score 4). The question is closely tied to the story's content, referencing Grumpy Monkey and the theme of grumpiness (score 5). The average suitability score is well above the threshold, making this a strong distancing question.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    },
+    {
+      "question": "Why do you think it\u2019s okay to have a bad day sometimes?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Wh",
+      "evaluation_reasoning": "This question does not focus on specific details from a story. Instead, it asks for a personal opinion or general reflection about having a bad day, which is not directly related to story content or comprehension. Therefore, it does not meet the criteria for a suitable Wh- question focused on story details. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    },
+    {
+      "question": "What are some things you can do when you feel grumpy?",
+      "suitability_score": 0.0,
+      "decision": "regenerate",
+      "question_type": "Wh",
+      "evaluation_reasoning": "The question \"What are some things you can do when you feel grumpy?\" is a general inquiry about actions to take when feeling grumpy, not about specific details from a story. It does not focus on story elements such as characters, events, or settings, and therefore does not meet the criteria for a Wh- question that focuses on story details. Score 0.0 indicates criteria not met.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    },
+    {
+      "question": "How did Norman help Grumpy Monkey feel better?",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "question_type": "Wh",
+      "evaluation_reasoning": "This Wh- question specifically asks about an event or action within the story (\"How did Norman help Grumpy Monkey feel better?\"), focusing on character actions and their impact. It is directly related to story details and meets the criteria for a suitable Wh- question.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    },
+    {
+      "question": "If you see a friend feeling grumpy, what could you say or do to help them?",
+      "suitability_score": 4.5,
+      "decision": "pass",
+      "question_type": "Open-Ended",
+      "evaluation_reasoning": "This question strongly encourages children to generate ideas or opinions about how to help a grumpy friend, inviting them to think creatively and empathetically. It discourages one-word answers because it asks for actions or words, prompting more detailed responses. It is somewhat difficult to opt out, as the question is direct and personal, but a child could still say \"I don't know.\" The question is highly relatable and allows children to draw on their own experiences with friends and emotions. Overall, it is well-suited as an open-ended question for discussion or reflection.",
+      "scores": {
+        "recall_suitability": 0.0,
+        "open_ended_suitability": 0.0,
+        "distancing_suitability": 0.0,
+        "wh_suitability": 0.0,
+        "completion_suitability": 0.0
+      },
+      "set_metadata": {
+        "storybook_id": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "set_number": "set_001"
+      }
+    }
+  ]
+}

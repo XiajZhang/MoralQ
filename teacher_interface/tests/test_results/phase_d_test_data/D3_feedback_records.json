@@ -1,0 +1,671 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great open-ended questions that encourage thinking!"
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.98,
+          "reformulated_instruction": "Continue generating open-ended questions that encourage children to think and elaborate on their ideas."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.9
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.9
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:37.290204",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0",
+          "Question 1",
+          "Question 2",
+          "Question 3",
+          "Question 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_002",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great open-ended questions that encourage thinking!"
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.98,
+          "reformulated_instruction": "Continue generating open-ended questions that encourage children to think and elaborate on their ideas."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.9
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.9
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:37.293324",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0",
+          "Question 1",
+          "Question 2",
+          "Question 3",
+          "Question 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_003",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great open-ended questions that encourage thinking!"
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.98,
+          "reformulated_instruction": "Continue generating open-ended questions that encourage children to think and elaborate on their ideas."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.9
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.9
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:37.296054",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0",
+          "Question 1",
+          "Question 2",
+          "Question 3",
+          "Question 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_004",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great open-ended questions that encourage thinking!"
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.98,
+          "reformulated_instruction": "Continue generating open-ended questions that encourage children to think and elaborate on their ideas."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.9
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.9
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:37.298501",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0",
+          "Question 1",
+          "Question 2",
+          "Question 3",
+          "Question 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_005",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great open-ended questions that encourage thinking!"
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.98,
+          "reformulated_instruction": "Continue generating open-ended questions that encourage children to think and elaborate on their ideas."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.9
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.9
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:37.301019",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0",
+          "Question 1",
+          "Question 2",
+          "Question 3",
+          "Question 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_006",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "timestamp": "2025-11-03T12:12:37.303916",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 0",
+          "Question 1 from iteration 0",
+          "Question 2 from iteration 0",
+          "Question 3 from iteration 0",
+          "Question 4 from iteration 0"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_007",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "timestamp": "2025-11-03T12:12:37.305968",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 1",
+          "Question 1 from iteration 1",
+          "Question 2 from iteration 1",
+          "Question 3 from iteration 1",
+          "Question 4 from iteration 1"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_008",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "timestamp": "2025-11-03T12:12:37.308198",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 2",
+          "Question 1 from iteration 2",
+          "Question 2 from iteration 2",
+          "Question 3 from iteration 2",
+          "Question 4 from iteration 2"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_009",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "timestamp": "2025-11-03T12:12:37.310428",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 3",
+          "Question 1 from iteration 3",
+          "Question 2 from iteration 3",
+          "Question 3 from iteration 3",
+          "Question 4 from iteration 3"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_010",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "The recall questions focus too much on factual details and memorization. We need questions that go beyond simple recall of plot elements."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability - orchestrator determined: adjust_evaluator",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": -0.2
+          },
+          "reason": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.3
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.3
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator determined: decrease (0.2) for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Reduce the number of questions that require simple recall of plot details and memorization; instead, generate more questions that encourage deeper thinking and understanding beyond factual recall."
+        },
+        "timestamp": "2025-11-03T12:12:37.312329",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 4",
+          "Question 1 from iteration 4",
+          "Question 2 from iteration 4",
+          "Question 3 from iteration 4",
+          "Question 4 from iteration 4"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,623 @@
+{
+  "test_suite": "Phase A: Moral and Question Generation Quality",
+  "timestamp": "2025-11-02T19:54:59.863843",
+  "total_tests": 5,
+  "completed": 5,
+  "partial": 0,
+  "failed": 0,
+  "test_results": [
+    {
+      "test_id": "A1",
+      "story_title": "A Letter to Amy",
+      "story_id": "a_letter_to_amy",
+      "objective": "Empathy",
+      "timestamp": "2025-11-02T19:54:59.863870",
+      "expected_outcomes": {
+        "moral_focus": "Should emphasize being proud of friends and kindness, NOT about having fun at birthday",
+        "question_focus": "Should encourage reflection on friendship, empathy, and being proud of others"
+      },
+      "generated_results": {
+        "story_length": 2764,
+        "moral": "True friendship is worth overcoming worries and misunderstandings, and sometimes special gestures and forgiveness bring people closer.",
+        "segments": [
+          {
+            "name": "segment_1",
+            "start": 0,
+            "end": 7,
+            "summary": "Peter decides to write a special letter inviting Amy to his birthday party, even though he could have just asked her directly.",
+            "reasoning": "Peter wants Amy to feel special, which shows his thoughtful nature and desire for genuine friendship."
+          },
+          {
+            "name": "segment_2",
+            "start": 8,
+            "end": 19,
+            "summary": "Peter prepares the letter carefully, taking advice from his mother about including the time and placing a stamp.",
+            "reasoning": "Peter’s attention to detail and care in inviting Amy shows his nervousness and how important this is to him; he wants everything to go perfectly, which is relatable to anyone attempting something meaningful."
+          },
+          {
+            "name": "segment_3",
+            "start": 20,
+            "end": 34,
+            "summary": "On his way to mail the letter, Peter worries about what his friends will say about inviting a girl, but a sudden storm blows the letter away.",
+            "reasoning": "This segment highlights Peter’s internal conflict about social acceptance and the unexpected challenges that can arise despite careful planning."
+          },
+          {
+            "name": "segment_4",
+            "start": 35,
+            "end": 47,
+            "summary": "Peter frantically chases the runaway letter. Amy suddenly appears, and both race for the letter. In the rush, Peter accidentally makes Amy cry.",
+            "reasoning": "Peter’s strong desire to keep the invitation a surprise leads to an accidental misunderstanding, showing how trying to do something special can sometimes go wrong."
+          },
+          {
+            "name": "segment_5",
+            "start": 48,
+            "end": 54,
+            "summary": "Peter returns home feeling sad, fearing Amy won’t come to his party because she left upset.",
+            "reasoning": "Peter’s disappointment and worry reflect the pain of misunderstandings and the fear of losing a friend due to an accident."
+          },
+          {
+            "name": "segment_6",
+            "start": 55,
+            "end": 60,
+            "summary": "On the day of the party, everyone arrives except Amy. Peter loses hope.",
+            "reasoning": "Peter’s sense of loss and regret is built up, deepening the impact of what friendship means to him."
+          },
+          {
+            "name": "segment_7",
+            "start": 61,
+            "end": 68,
+            "summary": "To Peter’s surprise, Amy arrives with her parrot. The boys react, but Amy warmly wishes him a happy birthday. Peter makes a secret wish and blows out the candles.",
+            "reasoning": "Amy’s arrival and joyful participation show forgiveness and the value of friendship, overcoming Peter’s worries and the earlier misunderstanding. The focus on Peter’s secret wish suggests he values his friendships and the happiness they bring."
+          }
+        ],
+        "questions": [
+          {
+            "question": "How do you think Peter felt when he was writing a special letter to Amy?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "This question helps children imagine Peter's feelings and begin to understand why he wanted to make Amy feel special, supporting empathy.",
+            "page_number": 2
+          },
+          {
+            "question": "What do you think Amy felt when Peter bumped into her and she ran away crying?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "By considering Amy's feelings, children practice putting themselves in someone else's shoes, which is key to developing empathy.",
+            "page_number": 44
+          },
+          {
+            "question": "Have you ever tried to do something nice for a friend, but it didn’t go as planned? How did that make you feel?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This question encourages children to connect their own experiences to the story, deepening their understanding of emotions and empathy.",
+            "page_number": 48
+          },
+          {
+            "question": "Why do you think Peter was worried about what the boys would say if Amy came to his party?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question helps children think about social pressures and how they can affect our feelings and actions, building empathy for Peter's situation.",
+            "page_number": 22
+          },
+          {
+            "question": "How did Peter feel when he thought Amy wouldn’t come to his party? What would you say to Peter to help him feel better?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "Children are encouraged to recognize and respond to others' feelings, practicing supportive and empathetic responses.",
+            "page_number": 54
+          },
+          {
+            "question": "How do you think Peter felt when Amy finally came to his party? How do you think Amy felt?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "This question helps children recognize positive emotions and the importance of forgiveness and friendship.",
+            "page_number": 62
+          },
+          {
+            "question": "If you were Amy, would you have come to the party after what happened? Why or why not?",
+            "type": "extension",
+            "difficulty": "hard",
+            "explanation": "This question asks children to imagine themselves in Amy's place, encouraging deeper empathetic thinking and perspective-taking.",
+            "page_number": 65
+          },
+          {
+            "question": "What could Peter do next time to make sure his friend doesn’t feel sad by accident?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This question encourages children to think about how to be more thoughtful and caring in their own friendships.",
+            "page_number": 68
+          }
+        ],
+        "learning_objectives": [
+          "Recognize and describe the feelings of story characters in different situations.",
+          "Practice perspective-taking by imagining how others might feel.",
+          "Connect personal experiences to story events to build empathy.",
+          "Suggest ways to show care and understanding in friendships."
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "A2",
+      "story_title": "Grumpy Monkey",
+      "story_id": "grumpy_monkey",
+      "objective": "Emotional regulation",
+      "timestamp": "2025-11-02T19:55:39.428986",
+      "expected_outcomes": {
+        "moral_focus": "Should focus on understanding emotions and emotional regulation, NOT simply avoiding grumpiness",
+        "question_focus": "Should explore emotional awareness, acceptance of feelings, and healthy ways to express emotions"
+      },
+      "generated_results": {
+        "story_length": 2727,
+        "moral": "It's okay to feel grumpy sometimes, and you don't always have to pretend to be happy just because others expect you to be.",
+        "segments": [
+          {
+            "name": "segment_1",
+            "start": 0,
+            "end": 5,
+            "summary": "Jim Panzee wakes up feeling that nothing is right. Everything feels off to him, but he doesn't understand why.",
+            "reasoning": "This sets the stage for the story by showing that sometimes, bad moods just happen without a clear reason."
+          },
+          {
+            "name": "segment_2",
+            "start": 6,
+            "end": 21,
+            "summary": "Norman and other animals point out Jim's grumpiness, suggesting ways to 'fix' it. Jim denies being grumpy and tries to change his behavior (loosening up, raising his brow, smiling), but still feels unsettled.",
+            "reasoning": "This shows how others often try to 'solve' a person's emotions, sometimes without understanding or helping."
+          },
+          {
+            "name": "segment_3",
+            "start": 22,
+            "end": 40,
+            "summary": "The animals suggest many activities to cheer Jim up, but none of them work. Jim doesn't feel like doing anything and finally loses his temper.",
+            "reasoning": "This demonstrates that well-meaning attempts to 'cheer someone up' aren't always helpful when someone isn't ready or able to feel better yet."
+          },
+          {
+            "name": "segment_4",
+            "start": 41,
+            "end": 46,
+            "summary": "Jim feels sorry for yelling and finally admits to himself that he is grumpy. He accepts his feelings rather than fighting against them.",
+            "reasoning": "Admitting and accepting your feelings is important—it helps you start to feel better, even if things aren't perfect right away."
+          },
+          {
+            "name": "segment_5",
+            "start": 47,
+            "end": 56,
+            "summary": "Jim finds Norman, who is also having a bad day. They share their feelings and realize it's okay to feel grumpy sometimes. This understanding helps Jim feel a little better.",
+            "reasoning": "Sometimes just having someone listen and accept your feelings, instead of trying to fix them, is what you need. Shared understanding brings comfort."
+          }
+        ],
+        "questions": [
+          {
+            "question": "How did Jim feel when he woke up? Can you show me with your face?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children recognize and name emotions, which is the first step in emotional regulation.",
+            "page_number": 1
+          },
+          {
+            "question": "What did Jim’s friends do when they thought he was grumpy?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Understanding how others respond to emotions helps children see different ways people try to help.",
+            "page_number": 8
+          },
+          {
+            "question": "Have you ever felt grumpy like Jim, even when it was a nice day? What did you do?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Reflecting on personal experiences helps children connect the story to their own feelings and practice talking about emotions.",
+            "page_number": 10
+          },
+          {
+            "question": "Why didn’t Jim feel better when he tried to smile or do fun things with his friends?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This question encourages children to think about how pretending to feel happy doesn’t always work, supporting emotional awareness.",
+            "page_number": 20
+          },
+          {
+            "question": "What did Jim do after he shouted at his friends? How do you think he felt?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Recognizing the consequences of actions and the feelings that follow helps children understand self-regulation.",
+            "page_number": 41
+          },
+          {
+            "question": "What helped Jim start to feel a little better at the end of the story?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Identifying what helped Jim feel better shows children the value of sharing feelings and being understood.",
+            "page_number": 50
+          },
+          {
+            "question": "If you see a friend who looks grumpy, what could you do to help them feel better?",
+            "type": "extension",
+            "difficulty": "medium",
+            "explanation": "This question encourages empathy and problem-solving, key parts of emotional regulation.",
+            "page_number": 55
+          },
+          {
+            "question": "Is it okay to feel grumpy sometimes? Why or why not?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question helps children accept all emotions as normal, which is important for healthy emotional regulation.",
+            "page_number": 56
+          }
+        ],
+        "learning_objectives": [
+          "Recognize and name different emotions, especially grumpiness.",
+          "Understand that it’s okay to feel grumpy and that feelings can change.",
+          "Learn ways to talk about and accept emotions instead of hiding them.",
+          "Practice empathy by thinking about how to help others with their feelings."
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "A3",
+      "story_title": "Last Stop on Market Street",
+      "story_id": "last_stop_on_market_street",
+      "objective": "Gratitude",
+      "timestamp": "2025-11-02T19:55:58.639782",
+      "expected_outcomes": {
+        "moral_focus": "Should encourage seeing beauty in everyday experiences and being grateful",
+        "question_focus": "Should encourage reflection on seeing beauty in everyday life and appreciating what we have"
+      },
+      "generated_results": {
+        "story_length": 4033,
+        "moral": "The main moral lesson is to appreciate and find beauty in the world around you, even in places or situations that may first appear unpleasant or ordinary. True richness comes from how you see and experience the world, the kindness you share, and the community you build with others.",
+        "segments": [
+          {
+            "name": "segment_1",
+            "start": 0,
+            "end": 5,
+            "summary": "CJ leaves church with his nana, complaining about the rain and why they have to wait for the bus. His nana offers a different perspective, finding beauty and purpose in the situation.",
+            "reasoning": "This sets up CJ's initial attitude of seeing inconvenience, while Nana models gratitude and a broader view."
+          },
+          {
+            "name": "segment_2",
+            "start": 6,
+            "end": 15,
+            "summary": "Waiting at the bus stop, CJ feels left out watching his friend drive away. On the bus, Nana shows how to appreciate the unique things and people they encounter, emphasizing the value of their ritual and community.",
+            "reasoning": "This segment deepens CJ’s longing for what he doesn’t have, while Nana continues to redirect his attention to what makes their journey special."
+          },
+          {
+            "name": "segment_3",
+            "start": 16,
+            "end": 28,
+            "summary": "CJ continues to question why things aren’t easier or better for him (like having a car or not visiting after church). Nana helps him see how their experience is rich in unique opportunities, such as meeting different people and witnessing the world in new ways.",
+            "reasoning": "CJ’s desire to belong and feel special is gently reframed by Nana, who celebrates their experiences and community connections."
+          },
+          {
+            "name": "segment_4",
+            "start": 29,
+            "end": 43,
+            "summary": "CJ gives up his seat for a blind man and learns from Nana and the man about different ways of seeing the world. Music fills the bus, creating a moment where CJ’s perspective shifts, and he feels wonder and magic.",
+            "reasoning": "Here, CJ directly experiences the joy and beauty of the moment by opening himself to new experiences, guided by his nana’s example and the kindness of others."
+          },
+          {
+            "name": "segment_5",
+            "start": 44,
+            "end": 60,
+            "summary": "Arriving at their stop in a rough neighborhood, CJ’s initial reaction is negativity. Nana helps him notice the beauty, like the rainbow, amidst the apparent ugliness. CJ ultimately feels grateful for the experience and the people he meets.",
+            "reasoning": "This concluding segment solidifies the lesson; beauty exists everywhere if you choose to look for it, and sharing kindness in community brings true fulfillment."
+          }
+        ],
+        "questions": [
+          {
+            "question": "What did CJ's nana say about the rain when they were waiting for the bus?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children recall how Nana finds something good in the rain, encouraging them to notice positive things in everyday situations.",
+            "page_number": 2
+          },
+          {
+            "question": "How did CJ feel when he saw his friend Colby drive away in a car? Why do you think he felt that way?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question asks children to think about feelings of wanting what others have, and sets up a discussion about being thankful for what you do have.",
+            "page_number": 6
+          },
+          {
+            "question": "Nana says the bus 'breathes fire' and has Mr. Dennis who does tricks. What are some fun things about riding the bus that CJ might be thankful for?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "This encourages children to look for special or fun things in their own routines, practicing gratitude for everyday experiences.",
+            "page_number": 8
+          },
+          {
+            "question": "Why did CJ give up his seat for the man with the spotted dog? How do you think that made the man feel?",
+            "type": "reflection",
+            "difficulty": "easy",
+            "explanation": "This question helps children recognize acts of kindness and how being helpful can make others feel good, which is part of being grateful for each other.",
+            "page_number": 29
+          },
+          {
+            "question": "When the man played music on the bus, how did CJ feel? What did he imagine?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children remember a moment when CJ felt wonder and happiness, showing how being open to new experiences can bring joy.",
+            "page_number": 35
+          },
+          {
+            "question": "When CJ saw the neighborhood was dirty, what did Nana help him notice instead?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "This question encourages children to look for good things even when things seem bad, practicing gratitude for beauty in unexpected places.",
+            "page_number": 50
+          },
+          {
+            "question": "Can you think of a time when you found something nice or fun in a place you didn’t expect? How did that make you feel?",
+            "type": "extension",
+            "difficulty": "hard",
+            "explanation": "This question helps children connect the story to their own lives, practicing gratitude by remembering their own experiences.",
+            "page_number": 55
+          },
+          {
+            "question": "At the end, CJ says, 'I'm glad we came.' Why do you think he felt that way?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "This question helps children think about how being thankful for experiences and people can change how we feel.",
+            "page_number": 58
+          }
+        ],
+        "learning_objectives": [
+          "Recognize and express gratitude for everyday experiences and people.",
+          "Identify positive aspects in situations that may seem unpleasant at first.",
+          "Reflect on acts of kindness and their impact on others.",
+          "Connect personal experiences to the story’s message of gratitude."
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "A4",
+      "story_title": "If You Give a Mouse a Cookie",
+      "story_id": "if_you_give_a_mouse_a_cookie",
+      "objective": "Consequence awareness",
+      "timestamp": "2025-11-02T19:56:23.627691",
+      "expected_outcomes": {
+        "moral_focus": "Should emphasize understanding consequences and cause-effect relationships",
+        "question_focus": "Should connect actions to reactions and avoid abstract reasoning, using concrete examples"
+      },
+      "generated_results": {
+        "story_length": 1488,
+        "moral": "Small acts of kindness can lead to ongoing requests and unintended consequences. Helping others is important but being aware of boundaries is also necessary.",
+        "segments": [
+          {
+            "name": "segment_1",
+            "start": 0,
+            "end": 2,
+            "summary": "The mouse is given a cookie and immediately requests a glass of milk.",
+            "reasoning": "The story begins with a simple act of kindness that quickly leads to more requests."
+          },
+          {
+            "name": "segment_2",
+            "start": 3,
+            "end": 7,
+            "summary": "Each time you fulfill the mouse's request, he asks for something new (a straw, a napkin, a mirror, nail scissors).",
+            "reasoning": "This shows a chain reaction where one favor leads to another, illustrating how initial generosity can escalate."
+          },
+          {
+            "name": "segment_3",
+            "start": 8,
+            "end": 13,
+            "summary": "The mouse's activities expand: after tidying up, he wants a nap, and you must set up a place for him to sleep.",
+            "reasoning": "The requests grow larger and require more effort, showing how helping can become more involved over time."
+          },
+          {
+            "name": "segment_4",
+            "start": 14,
+            "end": 19,
+            "summary": "After his nap, the mouse asks for a story, looks at pictures, gets excited, and wants to draw.",
+            "reasoning": "Even once he's comfortable, new ideas for what he wants keep coming, signifying an ongoing cycle."
+          },
+          {
+            "name": "segment_5",
+            "start": 20,
+            "end": 27,
+            "summary": "The mouse needs materials to finish and display his drawing, and seeing the refrigerator reminds him he’s thirsty again, leading to the original request restarting.",
+            "reasoning": "The story comes full circle, showing how small favors can create endless loops if boundaries aren't set."
+          }
+        ],
+        "questions": [
+          {
+            "question": "What happened after the mouse got a cookie?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children recall the sequence of events, supporting their understanding of how one action leads to another.",
+            "page_number": 2
+          },
+          {
+            "question": "How do you think the mouse felt when he got everything he asked for?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Encourages children to think about feelings and the results of getting many things, building awareness of consequences.",
+            "page_number": 13
+          },
+          {
+            "question": "Why do you think the mouse kept asking for more things?",
+            "type": "critical thinking",
+            "difficulty": "medium",
+            "explanation": "Promotes thinking about cause and effect, helping children understand how one choice can lead to another.",
+            "page_number": 7
+          },
+          {
+            "question": "What would you do if a friend kept asking you for more and more things?",
+            "type": "application",
+            "difficulty": "hard",
+            "explanation": "Connects the story to real life, encouraging children to consider their own actions and the consequences of saying yes or no.",
+            "page_number": 19
+          },
+          {
+            "question": "Can you remember a time when you asked for something and then wanted something else right after? What happened?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Helps children make personal connections to the story and think about the results of their own actions.",
+            "page_number": 14
+          },
+          {
+            "question": "What happened at the end of the story? Did the mouse stop asking for things?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Checks understanding of the story’s circular structure and the idea that actions can repeat if boundaries aren’t set.",
+            "page_number": 27
+          },
+          {
+            "question": "If you were the person helping the mouse, how would you feel? Why?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Encourages empathy and awareness of how actions affect others, supporting consequence awareness.",
+            "page_number": 13
+          },
+          {
+            "question": "What might happen if the mouse keeps asking for more and more things every day?",
+            "type": "extension",
+            "difficulty": "hard",
+            "explanation": "Promotes thinking about long-term consequences and the importance of setting limits.",
+            "page_number": 27
+          }
+        ],
+        "learning_objectives": [
+          "Children will understand how one action can lead to another (cause and effect).",
+          "Children will reflect on the consequences of giving or asking for many things.",
+          "Children will connect story events to their own experiences and feelings.",
+          "Children will consider the importance of setting boundaries and thinking ahead."
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "A5",
+      "story_title": "Ada Twist, Scientist",
+      "story_id": "ada_twist_scientist",
+      "objective": "Curiosity",
+      "timestamp": "2025-11-02T19:56:42.504564",
+      "expected_outcomes": {
+        "moral_focus": "Should stress perseverance and curiosity, avoiding moral drift to unrelated themes",
+        "question_focus": "Should encourage scientific curiosity, asking questions, and persistence in learning"
+      },
+      "generated_results": {
+        "story_length": 4846,
+        "moral": "The main moral lesson is to encourage curiosity and questions, even when they lead to chaos or mess, because asking questions and seeking answers is how we learn and grow.",
+        "segments": [
+          {
+            "name": "segment_1",
+            "start": 0,
+            "end": 19,
+            "summary": "Ada Twist was a quiet baby who observed everything without speaking, until, at age three, she finally spoke—asking 'Why?' about the world around her.",
+            "reasoning": "This segment introduces Ada's curiosity and her tendency to observe and question, setting up the central theme of inquisitiveness."
+          },
+          {
+            "name": "segment_2",
+            "start": 20,
+            "end": 38,
+            "summary": "Ada begins asking countless questions about everything she sees, overwhelming her parents, but they recognize her thirst for knowledge.",
+            "reasoning": "Ada’s curiosity is shown to be endless, and while challenging for her parents, it’s respected as a sign of intelligence and scientific thinking."
+          },
+          {
+            "name": "segment_3",
+            "start": 39,
+            "end": 61,
+            "summary": "Ada starts school and continues her explorations, which sometimes result in chaos. She becomes especially interested in solving the mystery of a terrible smell.",
+            "reasoning": "Ada’s curiosity leads to real scientific methods—forming hypotheses, testing, observing results—even though it creates disruption."
+          },
+          {
+            "name": "segment_4",
+            "start": 62,
+            "end": 91,
+            "summary": "Ada’s experiments spiral into messes, causing her frustrated parents to shout and send her to the Thinking Chair. Ada feels lost and sad at first.",
+            "reasoning": "Here we see the challenge of maintaining curiosity when others are frustrated by it, and the emotional impact on Ada."
+          },
+          {
+            "name": "segment_5",
+            "start": 92,
+            "end": 115,
+            "summary": "Ada sits and thinks, wondering if mess and failure are part of learning. She continues to ask questions, writing them on the wall, which her parents notice—realizing her persistence.",
+            "reasoning": "Ada’s scientific process continues even when she’s isolated; her parents begin to understand the value of her curiosity and determination."
+          },
+          {
+            "name": "segment_6",
+            "start": 116,
+            "end": 140,
+            "summary": "Ada’s parents join in, supporting her curiosity and turning their home into a place of learning. The story ends with Ada and her friends continuing to ask questions, showing that seeking answers is an ongoing journey.",
+            "reasoning": "This resolution reinforces the moral: support for curiosity and inquiry leads to growth for everyone, and the pursuit of knowledge is a continuous adventure."
+          }
+        ],
+        "questions": [
+          {
+            "question": "What did Ada do when she turned three that surprised her parents?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "This question helps children recall a key event that shows Ada's curiosity beginning to shine.",
+            "page_number": 5
+          },
+          {
+            "question": "Why do you think Ada asked so many questions like 'Why?' and 'How?'",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Encourages children to think about the reasons behind Ada's curiosity and relate it to their own experiences.",
+            "page_number": 15
+          },
+          {
+            "question": "How did Ada try to find out where the bad smell was coming from?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "Helps children understand how Ada used curiosity to solve a problem, showing the process of investigation.",
+            "page_number": 45
+          },
+          {
+            "question": "Have you ever been curious about something and asked lots of questions? What happened?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Connects Ada's curiosity to the children's own lives, encouraging them to value their own questions.",
+            "page_number": 50
+          },
+          {
+            "question": "What did Ada do when her experiments made a mess and her parents got upset?",
+            "type": "comprehension",
+            "difficulty": "easy",
+            "explanation": "Focuses on Ada's reaction to challenges, showing that curiosity sometimes leads to mistakes or messes.",
+            "page_number": 70
+          },
+          {
+            "question": "Why do you think Ada kept asking questions, even when things got hard?",
+            "type": "reflection",
+            "difficulty": "medium",
+            "explanation": "Encourages children to think about persistence and the importance of staying curious.",
+            "page_number": 95
+          },
+          {
+            "question": "If you could help Ada solve the mystery of the stinky smell, what would you do?",
+            "type": "application",
+            "difficulty": "medium",
+            "explanation": "Invites children to use their own curiosity and problem-solving skills, applying the story to a new situation.",
+            "page_number": 110
+          },
+          {
+            "question": "How did Ada’s parents change by the end of the story?",
+            "type": "comprehension",
+            "difficulty": "medium",
+            "explanation": "Helps children notice how curiosity can inspire others and change how people think and act.",
+            "page_number": 125
+          },
+          {
+            "question": "Why is it good to keep asking questions, even if you don’t find the answer right away?",
+            "type": "extension",
+            "difficulty": "hard",
+            "explanation": "Encourages deeper thinking about the value of curiosity and the process of learning.",
+            "page_number": 135
+          }
+        ],
+        "learning_objectives": [
+          "Recognize and appreciate the value of curiosity in learning and discovery.",
+          "Connect personal experiences of curiosity to those of the story’s character.",
+          "Understand that asking questions and making mistakes are important parts of learning.",
+          "Encourage persistence and creative thinking when solving problems."
+        ]
+      },
+      "status": "completed"
+    }
+  ]
+}

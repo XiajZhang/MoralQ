@@ -1,0 +1,420 @@
+{
+  "test_suite": "Phase C: Orchestrator Interpretation Accuracy",
+  "timestamp": "2025-11-03T11:56:45.402081",
+  "num_runs_per_test": 3,
+  "total_tests": 5,
+  "completed": 5,
+  "partial": 0,
+  "failed": 0,
+  "average_accuracy": 0.9,
+  "tests_meeting_threshold": 3,
+  "threshold": 0.85,
+  "test_results": [
+    {
+      "test_id": "C1",
+      "teacher_feedback": "Great questions — keep them this way.",
+      "story_context": "Story: Ada Twist, Scientist\nObjective: Teaching curiosity and scientific thinking",
+      "existing_evaluators": [
+        "completion_suitability",
+        "recall_suitability",
+        "open_ended_suitability",
+        "wh_suitability",
+        "distancing_suitability"
+      ],
+      "description": "Positive feedback should trigger reinforce_existing",
+      "expected_action_type": "reinforce_existing",
+      "expected_attribute": null,
+      "expected_adjustment_direction": "none",
+      "expected_confidence_min": 0.8,
+      "timestamp": "2025-11-03T11:56:45.402112",
+      "orchestrator_runs": [
+        {
+          "polarity": "Positive",
+          "attribute": "completion_suitability",
+          "action_type": "reinforce_existing",
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "reformulated_instruction": "Maintain the current style and types of questions, as they are well-suited for the learning objective.",
+          "confidence": 0.98
+        },
+        {
+          "polarity": "Positive",
+          "attribute": "completion_suitability",
+          "action_type": "reinforce_existing",
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "reformulated_instruction": "Maintain the current style and types of questions, as they are well-suited for the learning objective.",
+          "confidence": 0.98
+        },
+        {
+          "polarity": "Positive",
+          "attribute": "completion_suitability",
+          "action_type": "reinforce_existing",
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "reformulated_instruction": "Maintain the current style and types of questions, as they are well-suited for the learning objective.",
+          "confidence": 0.98
+        }
+      ],
+      "consistency_metrics": {
+        "action_type_consistent": true,
+        "action_types": [
+          "reinforce_existing"
+        ],
+        "attribute_consistent": true,
+        "attributes": [
+          "completion_suitability"
+        ],
+        "adjustment_direction_consistent": true,
+        "adjustment_directions": [
+          "none"
+        ],
+        "average_confidence": 0.98,
+        "confidence_range": [
+          0.98,
+          0.98
+        ],
+        "confidence_consistent": true
+      },
+      "accuracy_check": {
+        "action_type_match": true,
+        "actual_action_type": "reinforce_existing",
+        "attribute_match": true,
+        "actual_attribute": "completion_suitability",
+        "adjustment_direction_match": true,
+        "actual_adjustment_direction": "none",
+        "confidence_adequate": true,
+        "average_confidence": 0.98,
+        "expected_confidence_min": 0.8,
+        "overall_accuracy": 1.0,
+        "meets_threshold": true
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "C2",
+      "teacher_feedback": "They're too factual; add more reasoning.",
+      "story_context": "Story: Grumpy Monkey\nObjective: Emotional regulation",
+      "existing_evaluators": [
+        "completion_suitability",
+        "recall_suitability",
+        "open_ended_suitability",
+        "wh_suitability",
+        "distancing_suitability"
+      ],
+      "description": "Feedback about being too factual should adjust recall evaluator",
+      "expected_action_type": "adjust_evaluator",
+      "expected_attribute": "recall_suitability",
+      "expected_adjustment_direction": "increase",
+      "expected_confidence_min": 0.7,
+      "timestamp": "2025-11-03T11:56:45.404347",
+      "orchestrator_runs": [
+        {
+          "polarity": "Negative",
+          "attribute": "open_ended_suitability",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "reformulated_instruction": "Generate more questions that require children to explain their reasoning or provide explanations, rather than just stating facts.",
+          "confidence": 0.9
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "open_ended_suitability",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "reformulated_instruction": "Generate more questions that require children to explain their reasoning or provide explanations, rather than just stating facts.",
+          "confidence": 0.9
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "open_ended_suitability",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "reformulated_instruction": "Generate more questions that require children to explain their reasoning or provide explanations, rather than just stating facts.",
+          "confidence": 0.9
+        }
+      ],
+      "consistency_metrics": {
+        "action_type_consistent": true,
+        "action_types": [
+          "adjust_evaluator"
+        ],
+        "attribute_consistent": true,
+        "attributes": [
+          "open_ended_suitability"
+        ],
+        "adjustment_direction_consistent": true,
+        "adjustment_directions": [
+          "increase"
+        ],
+        "average_confidence": 0.9,
+        "confidence_range": [
+          0.9,
+          0.9
+        ],
+        "confidence_consistent": true
+      },
+      "accuracy_check": {
+        "action_type_match": true,
+        "actual_action_type": "adjust_evaluator",
+        "attribute_match": false,
+        "actual_attribute": "open_ended_suitability",
+        "adjustment_direction_match": true,
+        "actual_adjustment_direction": "increase",
+        "confidence_adequate": true,
+        "average_confidence": 0.9,
+        "expected_confidence_min": 0.7,
+        "overall_accuracy": 0.75,
+        "meets_threshold": false
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "C3",
+      "teacher_feedback": "These need emotional depth.",
+      "story_context": "Story: A Letter to Amy\nObjective: Empathy",
+      "existing_evaluators": [
+        "completion_suitability",
+        "recall_suitability",
+        "open_ended_suitability",
+        "wh_suitability",
+        "distancing_suitability"
+      ],
+      "description": "Feedback about emotional depth should create new evaluator",
+      "expected_action_type": "add_new_evaluator",
+      "expected_attribute": "emotional_resonance",
+      "expected_adjustment_direction": "none",
+      "expected_confidence_min": 0.7,
+      "timestamp": "2025-11-03T11:56:45.406641",
+      "orchestrator_runs": [
+        {
+          "polarity": "Negative",
+          "attribute": "emotional_depth",
+          "action_type": "add_new_evaluator",
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "reformulated_instruction": "Add questions that encourage children to explore and express the emotions of the characters or their own feelings related to the story.",
+          "confidence": 0.95
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "emotional_depth",
+          "action_type": "add_new_evaluator",
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "reformulated_instruction": "Add questions that encourage children to explore and express the emotions of the characters or their own feelings related to the story.",
+          "confidence": 0.95
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "emotional_depth",
+          "action_type": "add_new_evaluator",
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "reformulated_instruction": "Add questions that encourage children to explore and express the emotions of the characters or their own feelings related to the story.",
+          "confidence": 0.95
+        }
+      ],
+      "consistency_metrics": {
+        "action_type_consistent": true,
+        "action_types": [
+          "add_new_evaluator"
+        ],
+        "attribute_consistent": true,
+        "attributes": [
+          "emotional_depth"
+        ],
+        "adjustment_direction_consistent": true,
+        "adjustment_directions": [
+          "none"
+        ],
+        "average_confidence": 0.95,
+        "confidence_range": [
+          0.95,
+          0.95
+        ],
+        "confidence_consistent": true
+      },
+      "accuracy_check": {
+        "action_type_match": true,
+        "actual_action_type": "add_new_evaluator",
+        "attribute_match": true,
+        "actual_attribute": "emotional_depth",
+        "adjustment_direction_match": true,
+        "actual_adjustment_direction": "none",
+        "confidence_adequate": true,
+        "average_confidence": 0.95,
+        "expected_confidence_min": 0.7,
+        "overall_accuracy": 1.0,
+        "meets_threshold": true
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "C4",
+      "teacher_feedback": "Questions were fine, but too complex for my group.",
+      "story_context": "Story: If You Give a Mouse a Cookie\nObjective: Consequence awareness",
+      "existing_evaluators": [
+        "completion_suitability",
+        "recall_suitability",
+        "open_ended_suitability",
+        "wh_suitability",
+        "distancing_suitability",
+        "complexity"
+      ],
+      "description": "Feedback about complexity should adjust complexity evaluator",
+      "expected_action_type": "adjust_evaluator",
+      "expected_attribute": "complexity",
+      "expected_adjustment_direction": "decrease",
+      "expected_confidence_min": 0.7,
+      "timestamp": "2025-11-03T11:56:45.408642",
+      "orchestrator_runs": [
+        {
+          "polarity": "Negative",
+          "attribute": "complexity",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "reformulated_instruction": "Regenerate questions that are simpler and more appropriate for younger or less advanced learners.",
+          "confidence": 0.95
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "complexity",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "reformulated_instruction": "Regenerate questions that are simpler and more appropriate for younger or less advanced learners.",
+          "confidence": 0.95
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "complexity",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "reformulated_instruction": "Regenerate questions that are simpler and more appropriate for younger or less advanced learners.",
+          "confidence": 0.95
+        }
+      ],
+      "consistency_metrics": {
+        "action_type_consistent": true,
+        "action_types": [
+          "adjust_evaluator"
+        ],
+        "attribute_consistent": true,
+        "attributes": [
+          "complexity"
+        ],
+        "adjustment_direction_consistent": true,
+        "adjustment_directions": [
+          "decrease"
+        ],
+        "average_confidence": 0.95,
+        "confidence_range": [
+          0.95,
+          0.95
+        ],
+        "confidence_consistent": true
+      },
+      "accuracy_check": {
+        "action_type_match": true,
+        "actual_action_type": "adjust_evaluator",
+        "attribute_match": true,
+        "actual_attribute": "complexity",
+        "adjustment_direction_match": true,
+        "actual_adjustment_direction": "decrease",
+        "confidence_adequate": true,
+        "average_confidence": 0.95,
+        "expected_confidence_min": 0.7,
+        "overall_accuracy": 1.0,
+        "meets_threshold": true
+      },
+      "status": "completed"
+    },
+    {
+      "test_id": "C5",
+      "teacher_feedback": "These are off-topic.",
+      "story_context": "Story: Last Stop on Market Street\nObjective: Gratitude",
+      "existing_evaluators": [
+        "completion_suitability",
+        "recall_suitability",
+        "open_ended_suitability",
+        "wh_suitability",
+        "distancing_suitability"
+      ],
+      "description": "Feedback about off-topic should adjust relevance",
+      "expected_action_type": "adjust_evaluator",
+      "expected_attribute": "relevance",
+      "expected_adjustment_direction": "increase",
+      "expected_confidence_min": 0.7,
+      "timestamp": "2025-11-03T11:56:45.410163",
+      "orchestrator_runs": [
+        {
+          "polarity": "Negative",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "large",
+          "reformulated_instruction": "Ensure all questions are directly related to the story's main events and the learning objective of gratitude.",
+          "confidence": 0.85
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "large",
+          "reformulated_instruction": "Ensure all questions are directly related to the story's main events and the learning objective of gratitude.",
+          "confidence": 0.85
+        },
+        {
+          "polarity": "Negative",
+          "attribute": "recall_suitability",
+          "action_type": "adjust_evaluator",
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "large",
+          "reformulated_instruction": "Ensure all questions are directly related to the story's main events and the learning objective of gratitude.",
+          "confidence": 0.85
+        }
+      ],
+      "consistency_metrics": {
+        "action_type_consistent": true,
+        "action_types": [
+          "adjust_evaluator"
+        ],
+        "attribute_consistent": true,
+        "attributes": [
+          "recall_suitability"
+        ],
+        "adjustment_direction_consistent": true,
+        "adjustment_directions": [
+          "increase"
+        ],
+        "average_confidence": 0.85,
+        "confidence_range": [
+          0.85,
+          0.85
+        ],
+        "confidence_consistent": true
+      },
+      "accuracy_check": {
+        "action_type_match": true,
+        "actual_action_type": "adjust_evaluator",
+        "attribute_match": false,
+        "actual_attribute": "recall_suitability",
+        "adjustment_direction_match": true,
+        "actual_adjustment_direction": "increase",
+        "confidence_adequate": true,
+        "average_confidence": 0.85,
+        "expected_confidence_min": 0.7,
+        "overall_accuracy": 0.75,
+        "meets_threshold": false
+      },
+      "status": "completed"
+    }
+  ]
+}

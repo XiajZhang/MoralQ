@@ -1,0 +1,646 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.866624",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 0",
+          "Question 1 from iteration 0",
+          "Question 2 from iteration 0",
+          "Question 3 from iteration 0",
+          "Question 4 from iteration 0"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_002",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.868618",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 1",
+          "Question 1 from iteration 1",
+          "Question 2 from iteration 1",
+          "Question 3 from iteration 1",
+          "Question 4 from iteration 1"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_003",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.869916",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 2",
+          "Question 1 from iteration 2",
+          "Question 2 from iteration 2",
+          "Question 3 from iteration 2",
+          "Question 4 from iteration 2"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_004",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.871160",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 3",
+          "Question 1 from iteration 3",
+          "Question 2 from iteration 3",
+          "Question 3 from iteration 3",
+          "Question 4 from iteration 3"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_005",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.872482",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 4",
+          "Question 1 from iteration 4",
+          "Question 2 from iteration 4",
+          "Question 3 from iteration 4",
+          "Question 4 from iteration 4"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_006",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.873911",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 5",
+          "Question 1 from iteration 5",
+          "Question 2 from iteration 5",
+          "Question 3 from iteration 5",
+          "Question 4 from iteration 5"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_007",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.875269",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 6",
+          "Question 1 from iteration 6",
+          "Question 2 from iteration 6",
+          "Question 3 from iteration 6",
+          "Question 4 from iteration 6"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_008",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.876627",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 7",
+          "Question 1 from iteration 7",
+          "Question 2 from iteration 7",
+          "Question 3 from iteration 7",
+          "Question 4 from iteration 7"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_009",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.878004",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 8",
+          "Question 1 from iteration 8",
+          "Question 2 from iteration 8",
+          "Question 3 from iteration 8",
+          "Question 4 from iteration 8"
+        ],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_010",
+        "teacher_feedback": {
+          "feedback": "positive",
+          "reason": "Great questions! The questions are engaging and appropriate."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed open_ended_suitability - orchestrator determined: reinforce_existing",
+          "attribute": "open_ended_suitability",
+          "action_type": "reinforce_existing",
+          "affected_evaluators": [
+            "open_ended_suitability"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Continue generating questions that are engaging and appropriate for the story and learning objective."
+        },
+        "action_taken": {
+          "type": "reinforce_existing",
+          "affected": [],
+          "delta": {},
+          "reason": "Orchestrator determined: reinforce existing evaluator weights"
+        },
+        "evaluator_scores": {
+          "completion_suitability": 0.8,
+          "recall_suitability": 0.9,
+          "open_ended_suitability": 0.85
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "completion_suitability": 0.8,
+              "recall_suitability": 0.9,
+              "open_ended_suitability": 0.85
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "reinforce_existing",
+          "rationale": "Orchestrator determined: reinforce existing evaluator weights",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "maintain_current_weights",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-03T12:12:33.879448",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 9",
+          "Question 1 from iteration 9",
+          "Question 2 from iteration 9",
+          "Question 3 from iteration 9",
+          "Question 4 from iteration 9"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Test Story",
+        "objective": "Empathy",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions lack creativity. We need questions that spark imagination."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed creativity - orchestrator determined: add_new_evaluator",
+          "attribute": "creativity",
+          "action_type": "add_new_evaluator",
+          "affected_evaluators": [
+            "creativity"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "creativity",
+          "confidence": 0.95,
+          "reformulated_instruction": "Generate questions that encourage imaginative thinking and creative responses from children."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "creativity"
+          ],
+          "delta": {},
+          "reason": "Orchestrator determined: new evaluator needed for creativity",
+          "reformulated_instruction": "Generate questions that encourage imaginative thinking and creative responses from children.",
+          "details": {
+            "evaluator_name": "creativity",
+            "evaluator_description": "Evaluates questions for creativity based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "Orchestrator determined: new evaluator needed for creativity",
+          "affected_evaluators": [
+            "creativity"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Generate questions that encourage imaginative thinking and creative responses from children.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "creativity",
+          "new_evaluator_description": "Evaluates questions for creativity based on teacher feedback",
+          "instruction": "Generate questions that encourage imaginative thinking and creative responses from children."
+        },
+        "timestamp": "2025-11-03T12:12:39.576261",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": null,
+        "generated_questions": [
+          "Question 0 from iteration 0",
+          "Question 1 from iteration 0",
+          "Question 2 from iteration 0",
+          "Question 3 from iteration 0",
+          "Question 4 from iteration 0"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

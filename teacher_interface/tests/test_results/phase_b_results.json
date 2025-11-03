@@ -1,0 +1,858 @@
+{
+  "test_suite": "Phase B: Evaluator Scoring & Consistency",
+  "timestamp": "2025-11-03T11:39:24.892814",
+  "num_runs_per_test": 5,
+  "total_tests": 5,
+  "completed": 5,
+  "partial": 0,
+  "failed": 0,
+  "test_results": [
+    {
+      "test_id": "B1",
+      "question": "Why do you think Ada keeps asking questions?",
+      "story_context": "Ada Twist, Scientist is a story about a curious young girl who asks many questions about the world around her.",
+      "description": "Open-ended question requiring elaboration and opinion",
+      "expected_evaluator": "open_ended_suitability",
+      "expected_score_range": [
+        4,
+        5
+      ],
+      "score_scale": "1-5",
+      "expected_other_scores": "≈ 1–2",
+      "timestamp": "2025-11-03T11:39:24.892871",
+      "evaluation_runs": [
+        {
+          "question": "Why do you think Ada keeps asking questions?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "Why do you think Ada keeps asking questions?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "Why do you think Ada keeps asking questions?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "Why do you think Ada keeps asking questions?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "Why do you think Ada keeps asking questions?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        }
+      ],
+      "scores_by_evaluator": {
+        "wh_suitability": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "consistency_metrics": {
+        "wh_suitability": {
+          "mean": 1.0,
+          "std_dev": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0,
+          "is_stable": true,
+          "scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "status": "completed",
+      "run_details": [
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 1
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 2
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 3
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 4
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "The question specifically references a character (Ada) and her behavior (asking questions), which are details likely found within a story. It prompts discussion or analysis of character motivation, which is a key aspect of story comprehension. Therefore, it meets the criteria for focusing on story details and is suitable as a Wh- question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reasoning behind Ada's behavior, rather than a simple recall, completion, or open-ended opinion.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 5
+        }
+      ],
+      "expected_evaluator_check": {
+        "evaluator": "open_ended_suitability",
+        "did_not_run": true,
+        "actual_evaluators": [
+          "wh_suitability"
+        ],
+        "note": "Expected evaluator was not selected by type classifier"
+      }
+    },
+    {
+      "test_id": "B2",
+      "question": "What color was Ada's dress?",
+      "story_context": "Ada Twist, Scientist is a story about a curious young girl who asks many questions about the world around her.",
+      "description": "Recall question about plot details",
+      "expected_evaluator": "recall_suitability",
+      "expected_score_range": [
+        0.8,
+        1.0
+      ],
+      "score_scale": "0-1",
+      "expected_other_scores": "≈ 0–0.5",
+      "timestamp": "2025-11-03T11:39:24.897245",
+      "evaluation_runs": [
+        {
+          "question": "What color was Ada's dress?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress?",
+          "question_type": "Wh",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "dynamic_evaluations": {},
+          "details": {}
+        }
+      ],
+      "scores_by_evaluator": {
+        "wh_suitability": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "consistency_metrics": {
+        "wh_suitability": {
+          "mean": 1.0,
+          "std_dev": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0,
+          "is_stable": true,
+          "scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "status": "completed",
+      "run_details": [
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 1
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 2
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 3
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 4
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This Wh- question specifically asks about a detail from the story (the color of Ada's dress), which is a concrete story element. It is clear, focused, and meets the criteria for a suitable Wh- question about story details.",
+          "type_confidence": "High",
+          "type_reasoning": "The question begins with \"What,\" which is a classic indicator of a Wh-question. It seeks a specific piece of information (the color of Ada's dress) rather than an open-ended response, completion, or recall from a previous context.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 5
+        }
+      ],
+      "expected_evaluator_check": {
+        "evaluator": "recall_suitability",
+        "did_not_run": true,
+        "actual_evaluators": [
+          "wh_suitability"
+        ],
+        "note": "Expected evaluator was not selected by type classifier"
+      }
+    },
+    {
+      "test_id": "B3",
+      "question": "What did Ada's parents do when she made a mess?",
+      "story_context": "Ada Twist, Scientist is a story about a curious young girl who asks many questions about the world around her.",
+      "description": "Wh- question about story details",
+      "expected_evaluator": "wh_suitability",
+      "expected_score_range": [
+        0.8,
+        1.0
+      ],
+      "score_scale": "0-1",
+      "expected_other_scores": "N/A",
+      "timestamp": "2025-11-03T11:39:24.900730",
+      "evaluation_runs": [
+        {
+          "question": "What did Ada's parents do when she made a mess?",
+          "question_type": "Recall",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What did Ada's parents do when she made a mess?",
+          "question_type": "Recall",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What did Ada's parents do when she made a mess?",
+          "question_type": "Recall",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What did Ada's parents do when she made a mess?",
+          "question_type": "Recall",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What did Ada's parents do when she made a mess?",
+          "question_type": "Recall",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "dynamic_evaluations": {},
+          "details": {}
+        }
+      ],
+      "scores_by_evaluator": {
+        "recall_suitability": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "consistency_metrics": {
+        "recall_suitability": {
+          "mean": 1.0,
+          "std_dev": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0,
+          "is_stable": true,
+          "scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "status": "completed",
+      "run_details": [
+        {
+          "question_type": "Recall",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "primary_evaluator": "recall_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 1
+        },
+        {
+          "question_type": "Recall",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "primary_evaluator": "recall_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 2
+        },
+        {
+          "question_type": "Recall",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "primary_evaluator": "recall_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 3
+        },
+        {
+          "question_type": "Recall",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "primary_evaluator": "recall_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 4
+        },
+        {
+          "question_type": "Recall",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "This question asks the child to recall a specific event (what Ada's parents did in response to her making a mess), which is a plot element or sequence of events. The answer should be available on the current page where the mess occurs, so it does not require information from other parts of the story. Both criteria are met, so the question is suitable for a recall task.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks for a specific action taken by Ada's parents in response to a particular event (\"when she made a mess\"), which requires recalling a detail from a text or story.",
+          "primary_evaluator": "recall_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 5
+        }
+      ],
+      "expected_evaluator_check": {
+        "evaluator": "wh_suitability",
+        "did_not_run": true,
+        "actual_evaluators": [
+          "recall_suitability"
+        ],
+        "note": "Expected evaluator was not selected by type classifier"
+      }
+    },
+    {
+      "test_id": "B4",
+      "question": "How would you feel if your experiment failed?",
+      "story_context": "Ada Twist, Scientist is a story about a curious young girl who asks many questions about the world around her.",
+      "description": "Distancing question connecting to child's experience",
+      "expected_evaluator": "distancing_suitability",
+      "expected_score_range": [
+        4,
+        5
+      ],
+      "score_scale": "1-5",
+      "expected_other_scores": "N/A",
+      "timestamp": "2025-11-03T11:39:24.904661",
+      "evaluation_runs": [
+        {
+          "question": "How would you feel if your experiment failed?",
+          "question_type": "Distancing",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "evaluation_reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "How would you feel if your experiment failed?",
+          "question_type": "Distancing",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "evaluation_reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "How would you feel if your experiment failed?",
+          "question_type": "Distancing",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "evaluation_reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "How would you feel if your experiment failed?",
+          "question_type": "Distancing",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "evaluation_reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "How would you feel if your experiment failed?",
+          "question_type": "Distancing",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "evaluation_reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "dynamic_evaluations": {},
+          "details": {}
+        }
+      ],
+      "scores_by_evaluator": {
+        "distancing_suitability": [
+          4.33,
+          4.33,
+          4.33,
+          4.33,
+          4.33
+        ]
+      },
+      "consistency_metrics": {
+        "distancing_suitability": {
+          "mean": 4.33,
+          "std_dev": 0.0,
+          "min": 4.33,
+          "max": 4.33,
+          "range": 0.0,
+          "is_stable": true,
+          "scores": [
+            4.33,
+            4.33,
+            4.33,
+            4.33,
+            4.33
+          ]
+        }
+      },
+      "status": "completed",
+      "run_details": [
+        {
+          "question_type": "Distancing",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "primary_evaluator": "distancing_suitability",
+          "evaluator_score": 4.33,
+          "score_scale": "1-5",
+          "run": 1
+        },
+        {
+          "question_type": "Distancing",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "primary_evaluator": "distancing_suitability",
+          "evaluator_score": 4.33,
+          "score_scale": "1-5",
+          "run": 2
+        },
+        {
+          "question_type": "Distancing",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "primary_evaluator": "distancing_suitability",
+          "evaluator_score": 4.33,
+          "score_scale": "1-5",
+          "run": 3
+        },
+        {
+          "question_type": "Distancing",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "primary_evaluator": "distancing_suitability",
+          "evaluator_score": 4.33,
+          "score_scale": "1-5",
+          "run": 4
+        },
+        {
+          "question_type": "Distancing",
+          "suitability_score": 4.33,
+          "decision": "pass",
+          "reasoning": "This question directly asks the child to imagine their own feelings in a hypothetical situation, which is highly relevant to their personal experiences (score 5). It is difficult to answer in just one word, as it invites elaboration about emotions and reasoning (score 4). The question is also likely to relate well to a story page involving an experiment, especially if the story involves a character conducting an experiment that could fail (score 4). The average score is above 3, so the question is suitable as a distancing question.",
+          "type_confidence": "High",
+          "type_reasoning": "The question asks the respondent to imagine themselves in a hypothetical situation (\"if your experiment failed\"), which is characteristic of Distancing questions. It is not asking for a factual recall, a completion, or an open-ended opinion about a real event, but rather about a possible scenario.",
+          "primary_evaluator": "distancing_suitability",
+          "evaluator_score": 4.33,
+          "score_scale": "1-5",
+          "run": 5
+        }
+      ],
+      "expected_evaluator_check": {
+        "evaluator": "distancing_suitability",
+        "mean_score": 4.33,
+        "in_expected_range": true,
+        "expected_range": [
+          4,
+          5
+        ],
+        "actual_scores": [
+          4.33,
+          4.33,
+          4.33,
+          4.33,
+          4.33
+        ]
+      }
+    },
+    {
+      "test_id": "B5",
+      "question": "What color was Ada's dress? xyz abc random ungrammatical nonsense off-topic",
+      "story_context": "Ada Twist, Scientist is a story about a curious young girl who asks many questions about the world around her.",
+      "description": "Ungrammatical/off-topic question should score low",
+      "expected_evaluator": "all",
+      "expected_score_range": [
+        0,
+        0.5
+      ],
+      "score_scale": "varies",
+      "expected_other_scores": "All low",
+      "timestamp": "2025-11-03T11:39:24.908481",
+      "evaluation_runs": [
+        {
+          "question": "What color was Ada's dress? xyz abc random ungrammatical nonsense off-topic",
+          "question_type": "Wh",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress? xyz abc random ungrammatical nonsense off-topic",
+          "question_type": "Wh",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress? xyz abc random ungrammatical nonsense off-topic",
+          "question_type": "Wh",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress? xyz abc random ungrammatical nonsense off-topic",
+          "question_type": "Wh",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "dynamic_evaluations": {},
+          "details": {}
+        },
+        {
+          "question": "What color was Ada's dress? xyz abc random ungrammatical nonsense off-topic",
+          "question_type": "Wh",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "evaluation_reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "dynamic_evaluations": {},
+          "details": {}
+        }
+      ],
+      "scores_by_evaluator": {
+        "wh_suitability": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "consistency_metrics": {
+        "wh_suitability": {
+          "mean": 1.0,
+          "std_dev": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0,
+          "is_stable": true,
+          "scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "status": "completed",
+      "run_details": [
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 1
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 2
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 3
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 4
+        },
+        {
+          "question_type": "Wh",
+          "suitability_score": 1.0,
+          "decision": "pass",
+          "reasoning": "Despite the presence of ungrammatical and off-topic text at the end, the core Wh- question \"What color was Ada's dress?\" clearly focuses on a specific story detail (the color of Ada's dress). The extraneous text does not detract from the suitability of the main question for evaluating story comprehension.",
+          "type_confidence": "Medium",
+          "type_reasoning": "The question begins with \"What color,\" which is a classic Wh-question format, seeking specific information. However, the rest of the input contains ungrammatical and off-topic text, which introduces some ambiguity. Despite this, the core of the question is still a Wh-question.",
+          "primary_evaluator": "wh_suitability",
+          "evaluator_score": 1.0,
+          "score_scale": "0-1",
+          "run": 5
+        }
+      ],
+      "expected_evaluator_check": {
+        "all_means": {
+          "wh_suitability": 1.0
+        },
+        "all_low": false,
+        "expected_max": 0.5
+      }
+    }
+  ]
+}

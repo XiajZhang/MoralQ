@@ -1,0 +1,83 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions use vocabulary that's too complex for 4-6 year olds. Please simplify the language and use shorter, more common words."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed complexity - orchestrator determined: add_new_evaluator",
+          "attribute": "complexity",
+          "action_type": "add_new_evaluator",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "complexity",
+          "confidence": 0.95,
+          "reformulated_instruction": "Add an evaluator to ensure questions use simple, age-appropriate vocabulary and short, common words suitable for 4-6 year olds."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {},
+          "reason": "Orchestrator determined: new evaluator needed for complexity",
+          "reformulated_instruction": "Add an evaluator to ensure questions use simple, age-appropriate vocabulary and short, common words suitable for 4-6 year olds.",
+          "details": {
+            "evaluator_name": "complexity",
+            "evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {
+          "open_ended_suitability": 0.5,
+          "distancing_suitability": 0.5
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "open_ended_suitability": 0.5,
+              "distancing_suitability": 0.5
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "Orchestrator determined: new evaluator needed for complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Add an evaluator to ensure questions use simple, age-appropriate vocabulary and short, common words suitable for 4-6 year olds.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "complexity",
+          "new_evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+          "instruction": "Add an evaluator to ensure questions use simple, age-appropriate vocabulary and short, common words suitable for 4-6 year olds."
+        },
+        "timestamp": "2025-11-03T12:50:11.807131",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "How did Grumpy Monkey feel at the start of the story?",
+          "What did Norman say to Grumpy Monkey?",
+          "Can you remember a time when you felt grumpy or had a bad day?",
+          "What could you do when you feel grumpy, like Grumpy Monkey?",
+          "How did Grumpy Monkey feel after talking to Norman?",
+          "Why is it okay to have a bad day sometimes?",
+          "What could you say to a friend who is feeling grumpy?"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

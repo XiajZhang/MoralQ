@@ -1,0 +1,85 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "Grumpy Monkey",
+        "objective": "Emotional regulation",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "These questions are too factual. We need questions that encourage deeper thinking and personal connection, not just recalling story details."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed personal_connection - orchestrator determined: add_new_evaluator",
+          "attribute": "personal_connection",
+          "action_type": "add_new_evaluator",
+          "affected_evaluators": [
+            "personal_connection"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "personal_connection",
+          "confidence": 0.95,
+          "reformulated_instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "personal_connection"
+          ],
+          "delta": {},
+          "reason": "Orchestrator determined: new evaluator needed for personal_connection",
+          "reformulated_instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story.",
+          "details": {
+            "evaluator_name": "personal_connection",
+            "evaluator_description": "Evaluates questions for personal connection based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {
+          "recall_suitability": 0.9,
+          "distancing_suitability": 0.3,
+          "open_ended_suitability": 0.4
+        },
+        "question_evaluations": [
+          {
+            "scores": {
+              "recall_suitability": 0.9,
+              "distancing_suitability": 0.3,
+              "open_ended_suitability": 0.4
+            }
+          }
+        ],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "Orchestrator determined: new evaluator needed for personal_connection",
+          "affected_evaluators": [
+            "personal_connection"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "personal_connection",
+          "new_evaluator_description": "Evaluates questions for personal_connection based on teacher feedback",
+          "instruction": "Generate more questions that encourage children to make personal connections and think deeply about their own feelings and experiences related to the story."
+        },
+        "timestamp": "2025-11-03T12:49:47.736669",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "\nGrumpy Monkey was having a bad day. Nothing was going right. His friend Norman tried to help.\nNorman said, \"Sometimes I feel grumpy too. It's okay to feel that way.\"\nGrumpy Monkey learned that it's normal to have bad days, and friends can help you feel better.\n",
+        "generated_questions": [
+          "How do you think Grumpy Monkey felt at the start of the story?",
+          "What did Norman say to Grumpy Monkey when he was feeling grumpy?",
+          "Have you ever felt grumpy like Grumpy Monkey? What did you do?",
+          "Why do you think it’s okay to have a bad day sometimes?",
+          "What are some things you can do when you feel grumpy?",
+          "How did Norman help Grumpy Monkey feel better?",
+          "If you see a friend feeling grumpy, what could you say or do to help them?"
+        ],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}
