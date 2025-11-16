@@ -8,10 +8,6 @@ import os
 import argparse
 from typing import List, Dict, Any
 from pathlib import Path
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
 
 # Configure DSPy with OpenAI
 dspy.configure(lm=dspy.LM("openai/gpt-4.1-2025-04-14"))
@@ -65,9 +61,13 @@ class ObjectiveQuestionGenerator(dspy.Module):
 class FeedbackCollector:
     """Collect and manage teacher feedback for learning optimization."""
     
-    def __init__(self, feedback_file: str = "teacher_interface/backend/teacher_feedback_records.json"):
-        self.feedback_file = feedback_file
-        self.question_evaluations_file = "teacher_interface/backend/question_evaluations.json"
+    def __init__(self, feedback_file: str = None):
+        storage_dir = Path(__file__).resolve().parent.parent / "storage"
+        os.makedirs(storage_dir, exist_ok=True)
+        if feedback_file is None:
+            feedback_file = storage_dir / "teacher_feedback_records.json"
+        self.feedback_file = str(feedback_file)
+        self.question_evaluations_file = str(storage_dir / "question_evaluations.json")
         self.feedback_data = self.load_feedback()
     
     def load_feedback(self) -> List[Dict]:
@@ -534,10 +534,9 @@ def main():
     # Batch mode (original behavior)
     if args.batch:
         # Configuration paths - read from environment
-        assets_base = os.getenv('ASSETS_PATH', '/path/to/interactive-storybook-assets')
-        asset_path = os.path.join(assets_base, "qna_json") + "/"
-        moral_path = os.getenv('OUTPUT_PATH', '/path/to/output') + "/"
-        output_path = os.getenv('OBJECTIVE_QUESTIONS_OUTPUT_PATH', '/path/to/output/questions') + "/"
+        asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
+        moral_path = "/Users/mariyamohiuddin/Desktop/Outputs/"
+        output_path = "/Users/mariyamohiuddin/Desktop/ObjectiveQuestions/"
         
         # Create output directory if it doesn't exist
         Path(output_path).mkdir(parents=True, exist_ok=True)

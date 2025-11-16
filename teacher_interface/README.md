@@ -2,7 +2,7 @@
 
 - For installation and running instructions, see: `SETUP.md`
 - For a detailed module-level architecture, see: `ARCHITECTURE.md`
-- See `question_evaluations.json` and `teacher_feedback_records.json` for examples
+- See `backend/storage/question_evaluations.json` and `backend/storage/teacher_feedback_records.json` for examples
 
 ## Conceptual Overview
 
@@ -49,8 +49,8 @@ The system turns a storybook and a teacher-provided objective into a vetted set 
 ### 6) Optimization with DSPy (Learning from History)
 - The system uses DSPy’s BootstrapFewShot-style learning to improve generation prompts over time.
 - Training examples are built by correlating:
-  - Question-level outcomes and evaluation diagnostics from `question_evaluations.json`
-  - Teacher feedback and orchestrator decisions from `teacher_feedback_records.json`
+  - Question-level outcomes and evaluation diagnostics from `backend/storage/question_evaluations.json`
+  - Teacher feedback and orchestrator decisions from `backend/storage/teacher_feedback_records.json`
 - This builds a memory of what failed, why, and how to improve. The generator incorporates this guidance in subsequent attempts.
 
 ### 7) Regeneration Based on Action
@@ -62,7 +62,7 @@ The system turns a storybook and a teacher-provided objective into a vetted set 
 
 ## Data Stores and What They Log
 
-### `backend/question_evaluations.json`
+### `backend/storage/question_evaluations.json`
 - Purpose: A detailed log of each evaluated question and its final decision.
 - Organized by set metadata:
   - `set_metadata`: `{storybook_id, objective, set_number, timestamp}`
@@ -75,7 +75,7 @@ The system turns a storybook and a teacher-provided objective into a vetted set 
 - Notes:
   - The full story content is not stored; only identifiers like `storybook_id` and `objective` are recorded.
 
-### `backend/teacher_feedback_records.json`
+### `backend/storage/teacher_feedback_records.json`
 - Purpose: A structured record of teacher feedback sessions, orchestrator interpretation, and actions taken.
 - Hierarchy: `{school_id: {teacher_id: [records...]}}`
 - For each record, you’ll find:
@@ -111,7 +111,7 @@ The system turns a storybook and a teacher-provided objective into a vetted set 
 - Defined by a concise description and an instruction derived from the feedback.
 - Evaluated as a separate check in `contextq_evaluators.py`.
 - Pass criteria are thresholded (e.g., score ≥ 3) and contribute to the final decision.
-- Persisted implicitly via `teacher_feedback_records.json` (as part of the course of action) and their results appear in `question_evaluations.json` under `dynamic_evaluations`.
+- Persisted implicitly via `backend/storage/teacher_feedback_records.json` (as part of the course of action) and their results appear in `backend/storage/question_evaluations.json` under `dynamic_evaluations`.
 
 ## How the Optimizer Learns
 
@@ -133,7 +133,7 @@ The system turns a storybook and a teacher-provided objective into a vetted set 
 
 - Environment variables live in `teacher_interface/.env` (template in `.env.example`).
 - `ASSETS_PATH` points to local storybook assets and must include `qna_json/` and `image/` subfolders.
-- Output paths are configurable; for the primary flow, JSON files are stored in `teacher_interface/backend/`.
+- Output paths are configurable; for the primary flow, JSON files are stored in `teacher_interface/backend/storage/`.
 
 ## Running the System
 
@@ -142,10 +142,10 @@ The system turns a storybook and a teacher-provided objective into a vetted set 
 
 ## Troubleshooting at a Glance
 
-- No results in `question_evaluations.json`:
+- No results in `backend/storage/question_evaluations.json`:
   - Confirm the evaluation pipeline executed; check backend logs for evaluation steps
 - No `dynamic_evaluations` despite feedback:
-  - Confirm the orchestrator chose `add_new_evaluator`; verify its instruction in `teacher_feedback_records.json`
+  - Confirm the orchestrator chose `add_new_evaluator`; verify its instruction in `backend/storage/teacher_feedback_records.json`
   - Ensure the backend regeneration path is re-evaluating with dynamic evaluators
 - Optimizer not learning:
   - Ensure question texts align across JSONs; mismatches can prevent example construction

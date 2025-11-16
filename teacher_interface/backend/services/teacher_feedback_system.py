@@ -20,9 +20,18 @@ New issue → Create new evaluator agent dynamically
 import dspy
 import json
 import os
-from typing import List, Dict, Any, Optional, Tuple
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional, Tuple, Set
 from datetime import datetime
 import uuid
+
+from teacher_interface.backend.evaluators.manager import EvaluatorManager
+from teacher_interface.backend.evaluators import persist_dynamic_metadata, register_dynamic_evaluator
+from teacher_interface.backend.evaluators.dynamic_template import (
+    make_dynamic_evaluator_class,
+    make_dynamic_signature,
+)
+from teacher_interface.backend.models import FeedbackRecordModel
 
 # Configure DSPy with OpenAI
 dspy.configure(lm=dspy.LM("openai/gpt-4.1-2025-04-14"))
@@ -110,6 +119,155 @@ class FeedbackOrchestrator(dspy.Module):
         }
 
 
+@dataclass
+class FeedbackMessage:
+    """Normalized message emitted by the orchestrator router."""
+
+    action: str
+    affected: List[str] = field(default_factory=list)
+    delta: Dict[str, float] = field(default_factory=dict)
+    new_evaluator: Optional[Dict[str, Any]] = None
+    reformulated_instruction: str = ""
+    confidence: float = 0.0
+    raw_feedback: str = ""
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "action": self.action,
+            "affected": self.affected,
+            "delta": self.delta,
+            "new_evaluator": self.new_evaluator,
+            "reformulated_instruction": self.reformulated_instruction,
+            "confidence": self.confidence,
+            "raw_feedback": self.raw_feedback,
+            "metadata": self.metadata,
+        }
+
+
+class OrchestratorRouter:
+    """Routes interpreted feedback messages to the evaluator manager."""
+
+    def __init__(self, interpreter: FeedbackOrchestrator, evaluator_manager: EvaluatorManager):
+        self.interpreter = interpreter
+        self.evaluator_manager = evaluator_manager
+
+    def handle_feedback(
+        self,
+        *,
+        feedback_text: str,
+        feedback_type: str,
+        story_context: str,
+        existing_evaluators: List[str],
+    ) -> Dict[str, Any]:
+        orchestrator_result = self.interpreter(
+            feedback_text=feedback_text,
+            story_context=story_context,
+            current_questions=None,
+            existing_evaluators=existing_evaluators,
+        )
+
+        message = self._build_message(
+            orchestrator_result=orchestrator_result,
+            feedback_text=feedback_text,
+            feedback_type=feedback_type,
+            existing_evaluators=existing_evaluators,
+        )
+
+        manager_info = self.evaluator_manager.process_message(message)
+
+        return {
+            "interpretation": orchestrator_result,
+            "message": message,
+            "manager_info": manager_info,
+        }
+
+    def _build_message(
+        self,
+        *,
+        orchestrator_result: Dict[str, Any],
+        feedback_text: str,
+        feedback_type: str,
+        existing_evaluators: List[str],
+    ) -> FeedbackMessage:
+        attribute = orchestrator_result.get("attribute", "").strip()
+        action_type = orchestrator_result.get("action_type", "no_action")
+        adjustment_direction = orchestrator_result.get("adjustment_direction", "none").lower()
+        adjustment_magnitude = orchestrator_result.get("adjustment_magnitude", "medium").lower()
+
+        if feedback_type == "positive" and action_type != "add_new_evaluator":
+            action_type = "reinforce_existing"
+
+        affected: List[str] = []
+        delta: Dict[str, float] = {}
+        new_evaluator: Optional[Dict[str, Any]] = None
+        reason = f"Feedback addressed {attribute}" if attribute else "Feedback interpreted by orchestrator"
+
+        if action_type == "adjust_evaluator":
+            magnitude_map = {"small": 0.1, "medium": 0.2, "large": 0.3}
+            base_adjustment = magnitude_map.get(adjustment_magnitude, 0.2)
+
+            if adjustment_direction == "increase":
+                adjustment_value = base_adjustment
+            elif adjustment_direction in {"decrease", "reduce"}:
+                adjustment_value = -base_adjustment
+            elif adjustment_direction == "modify":
+                adjustment_value = base_adjustment * 0.5
+            else:
+                adjustment_value = 0.0
+
+            target = attribute or orchestrator_result.get("target", "")
+            if target:
+                affected = [target]
+                delta[target] = adjustment_value
+            reason = f"Orchestrator suggests {adjustment_direction} ({adjustment_magnitude}) for {target}"
+
+        elif action_type == "add_new_evaluator":
+            evaluator_name = attribute or orchestrator_result.get("new_evaluator_name", "")
+            if evaluator_name:
+                affected = [evaluator_name]
+                description = f"Evaluates questions for {evaluator_name.replace('_', ' ')} based on teacher feedback"
+                new_evaluator = {
+                    "name": evaluator_name,
+                    "description": description,
+                    "rubric": {
+                        "instruction": orchestrator_result.get("reformulated_instruction", "")
+                    },
+                    "weight": 0.1,
+                    "status": "active",
+                    "prompt": orchestrator_result.get("reformulated_instruction", "") or reason,
+                    "template": "llm_dynamic",
+                    "origin": {
+                        "feedback_text": feedback_text,
+                        "attribute": attribute,
+                        "timestamp": datetime.now().isoformat(),
+                    },
+                }
+                reason = f"Orchestrator determined new evaluator required: {evaluator_name}"
+
+        elif action_type == "reinforce_existing":
+            reason = "Positive or stable feedback – reinforcing current evaluator weights"
+
+        metadata = {
+            "attribute": attribute,
+            "feedback_type": feedback_type,
+            "existing_evaluators": existing_evaluators,
+            "adjustment_direction": adjustment_direction,
+            "adjustment_magnitude": adjustment_magnitude,
+            "reason": reason,
+        }
+
+        return FeedbackMessage(
+            action=action_type,
+            affected=affected,
+            delta=delta,
+            new_evaluator=new_evaluator,
+            reformulated_instruction=orchestrator_result.get("reformulated_instruction", ""),
+            confidence=orchestrator_result.get("confidence", 0.0),
+            raw_feedback=feedback_text,
+            metadata=metadata,
+        )
+
 class FeedbackInterpreter(dspy.Signature):
     """Legacy feedback interpreter (kept for backward compatibility).
     
@@ -144,25 +302,22 @@ class TeacherFeedbackCollector:
     def __init__(self, storage_file: str = "teacher_feedback_records.json"):
         """Initialize the feedback collector."""
         self.storage_file = storage_file
+        if not os.path.isabs(self.storage_file):
+            storage_dir = os.path.join(os.path.dirname(__file__), "storage")
+            os.makedirs(storage_dir, exist_ok=True)
+            self.storage_file = os.path.join(storage_dir, self.storage_file)
+        else:
+            os.makedirs(os.path.dirname(self.storage_file), exist_ok=True)
         self.feedback_records = self._load_feedback_records()
         
         # Use orchestrator for semantic feedback interpretation (not rule-based)
         self.orchestrator = FeedbackOrchestrator()
+        self.evaluator_manager = EvaluatorManager(dynamic_creator=DynamicEvaluatorCreator())
+        self.evaluator_weights = self.evaluator_manager.weights
+        self.router = OrchestratorRouter(self.orchestrator, self.evaluator_manager)
         
         # Legacy interpreter kept for backward compatibility
         self.interpreter = dspy.Predict(FeedbackInterpreter)
-        
-        # Default suitability-based evaluation weights (NOT the old quality evaluators)
-        # These correspond to the ContextQ suitability criteria we now use
-        self.evaluator_weights = {
-            "completion_suitability": 0.15,  # For rhyming/repeated phrases questions
-            "recall_suitability": 0.20,      # For plot element/sequence questions  
-            "open_ended_suitability": 0.25,  # For opinion/elaboration questions
-            "wh_suitability": 0.20,          # For story details questions
-            "distancing_suitability": 0.20   # For personal experience questions
-        }
-        # Note: Old quality evaluators (relevance, clarity, depth, engagement, appropriateness) are DEPRECATED
-        # We now use type-specific suitability criteria instead
         
         print("Teacher Feedback Collector initialized")
         print(f"   - Storage: {storage_file}")
@@ -228,13 +383,13 @@ class TeacherFeedbackCollector:
         # Get current evaluator scores (average across questions)
         evaluator_scores = self._calculate_evaluator_scores(question_evaluations)
         
-        # Interpret feedback using LLM
-        interpretation_result = self._interpret_feedback(
+        # Interpret feedback using orchestrator router
+        interpretation_result, message, manager_info = self._interpret_feedback(
             story_title, objective, teacher_feedback, feedback_type, evaluator_scores
         )
         
-        # Determine action based on interpretation
-        action_result = self._determine_action(interpretation_result, feedback_type)
+        # Determine action payload based on routed message
+        action_result = self._determine_action(message, manager_info)
         
         # Create feedback record
         feedback_record = {
@@ -255,23 +410,21 @@ class TeacherFeedbackCollector:
             "school_id": school_id,
             "story_context": story_context,  # Full story text for DSPy optimizer
             "generated_questions": generated_questions or [],  # Generated question texts for DSPy optimizer
-            "question_feedbacks": question_feedbacks or {}  # Individual question good/bad feedback
+            "question_feedbacks": question_feedbacks or {},  # Individual question good/bad feedback
+            "routed_message": message.to_dict(),
+            "manager_response": manager_info,
         }
+
+        feedback_record = FeedbackRecordModel.parse_obj(feedback_record).dict()
         
         # Store feedback record
         self._store_feedback_record(feedback_record, school_id, teacher_id)
         
         # Log individual question feedback if present
         if question_feedbacks:
-            print(f"✅ Stored individual feedback for {len(question_feedbacks)} questions")
+            print(f"Stored individual feedback for {len(question_feedbacks)} questions")
         
-        # Update evaluator weights if needed
-        if action_result["type"] == "adjust_evaluator":
-            self._update_evaluator_weights(action_result)
-        elif action_result["type"] == "reinforce_existing":
-            self._reinforce_evaluator_weights()
-        
-        print(f"✅ Feedback processed and stored")
+        print(f"Feedback processed and stored")
         print(f"   Action: {action_result['type']}")
         if action_result["type"] == "adjust_evaluator":
             print(f"   Affected evaluators: {action_result['affected']}")
@@ -334,13 +487,15 @@ class TeacherFeedbackCollector:
         
         return dynamic_evaluator_names
     
-    def _interpret_feedback(self, 
-                           story_title: str,
-                           objective: str,
-                           teacher_feedback: str,
-                           feedback_type: str,
-                           evaluator_scores: Dict[str, float]) -> Dict[str, Any]:
-        """Use orchestrator agent to semantically interpret teacher feedback and determine action type."""
+    def _interpret_feedback(
+        self,
+        story_title: str,
+        objective: str,
+        teacher_feedback: str,
+        feedback_type: str,
+        evaluator_scores: Dict[str, float],
+    ) -> Tuple[Dict[str, Any], FeedbackMessage, Dict[str, Any]]:
+        """Use orchestrator router to interpret teacher feedback and emit a normalized message."""
         
         # Build comprehensive list of existing evaluators:
         # 1. Built-in suitability evaluators (from evaluator_weights)
@@ -358,46 +513,57 @@ class TeacherFeedbackCollector:
         story_context = f"Story: {story_title}\nObjective: {objective}"
         
         try:
-            # Use orchestrator for semantic interpretation and decision
-            orchestrator_result = self.orchestrator(
+            routing_result = self.router.handle_feedback(
                 feedback_text=teacher_feedback,
+                feedback_type=feedback_type,
                 story_context=story_context,
-                current_questions=None,  # Will be filled when available
-                existing_evaluators=current_evaluators
+                existing_evaluators=current_evaluators,
             )
-            
-            # Map orchestrator output to interpretation structure
-            # The orchestrator now directly outputs action_type, so we use it directly
+
+            orchestrator_result = routing_result["interpretation"]
+            message: FeedbackMessage = routing_result["message"]
+            manager_info: Dict[str, Any] = routing_result["manager_info"]
+
             action_type = orchestrator_result['action_type']
             attribute = orchestrator_result['attribute']
-            
+
             interpretation = {
-                "interpretation": f"Feedback addressed {attribute} - orchestrator determined: {action_type}",
+                "interpretation": message.metadata.get("reason", ""),
                 "attribute": attribute,
-                "action_type": action_type,
-                "affected_evaluators": [attribute] if attribute else [],
-                "adjustment_direction": orchestrator_result['adjustment_direction'] if action_type == "adjust_evaluator" else "none",
-                "adjustment_magnitude": orchestrator_result['adjustment_magnitude'] if action_type == "adjust_evaluator" else "none",
-                "new_evaluator_needed": (action_type == "add_new_evaluator"),
-                "new_evaluator_name": attribute if action_type == "add_new_evaluator" else "none",
-                "confidence": orchestrator_result['confidence'],
-                "reformulated_instruction": orchestrator_result['reformulated_instruction']
+                "action_type": message.action,
+                "affected_evaluators": list(message.affected),
+                "adjustment_direction": orchestrator_result.get('adjustment_direction', 'none') if message.action == "adjust_evaluator" else "none",
+                "adjustment_magnitude": orchestrator_result.get('adjustment_magnitude', 'none') if message.action == "adjust_evaluator" else "none",
+                "new_evaluator_needed": (message.action == "add_new_evaluator"),
+                "new_evaluator_name": (message.new_evaluator or {}).get("name", "none") if message.action == "add_new_evaluator" else "none",
+                "confidence": message.confidence,
+                "reformulated_instruction": message.reformulated_instruction,
             }
             
             print(f"   Orchestrator interpretation: {interpretation['interpretation']}")
             print(f"   Attribute: {attribute}")
-            print(f"   Action Type: {action_type}")
-            if action_type == "adjust_evaluator":
+            print(f"   Action Type: {message.action}")
+            if message.action == "adjust_evaluator":
                 print(f"   Adjustment: {interpretation['adjustment_direction']} ({interpretation['adjustment_magnitude']})")
             print(f"   Reformulated instruction: {interpretation['reformulated_instruction']}")
             print(f"   Confidence: {interpretation['confidence']}")
             
-            return interpretation
+            return interpretation, message, manager_info
             
         except Exception as e:
             print(f"   Error interpreting feedback: {e}")
             # Return default interpretation
-            return {
+            fallback_message = FeedbackMessage(
+                action="no_action",
+                raw_feedback=teacher_feedback,
+                metadata={
+                    "reason": f"Teacher provided {feedback_type} feedback: {teacher_feedback}",
+                    "attribute": "",
+                    "feedback_type": feedback_type,
+                    "existing_evaluators": current_evaluators,
+                },
+            )
+            interpretation = {
                 "interpretation": f"Teacher provided {feedback_type} feedback: {teacher_feedback}",
                 "attribute": "",
                 "action_type": "no_action",
@@ -408,103 +574,27 @@ class TeacherFeedbackCollector:
                 "new_evaluator_name": "none",
                 "confidence": 0.3
             }
+            return interpretation, fallback_message, {}
     
-    def _determine_action(self, interpretation: Dict[str, Any], feedback_type: str) -> Dict[str, Any]:
-        """
-        Determine what action to take based on orchestrator's decision.
-        
-        The orchestrator now directly outputs the action_type, so this function
-        primarily validates and formats the action with necessary details.
-        """
-        
-        # Override with reinforce if explicitly positive feedback (for backward compatibility)
-        action_type = interpretation.get("action_type", "no_action")
-        if feedback_type == "positive" and action_type != "add_new_evaluator":
-            action_type = "reinforce_existing"
-        
-        # Handle each action type based on orchestrator's decision
-        if action_type == "reinforce_existing":
-            return {
-                "type": "reinforce_existing",
-                "affected": [],
-                "delta": {},
-                "reason": "Orchestrator determined: reinforce existing evaluator weights"
-            }
-        
-        elif action_type == "add_new_evaluator":
-            evaluator_name = interpretation.get("new_evaluator_name") or interpretation.get("attribute", "")
-            if not evaluator_name:
-                return {
-                    "type": "no_action",
-                    "affected": [],
-                    "delta": {},
-                    "reason": "Orchestrator indicated add_new_evaluator but no evaluator name provided"
-                }
-            
-            description = f"Evaluates questions for {evaluator_name.replace('_', ' ')} based on teacher feedback"
-            
-            evaluator_details = {
-                "evaluator_name": evaluator_name,
-                "evaluator_description": description,
-                "status": "active"
-            }
-            
-            print(f"   Creating new evaluator: {evaluator_name}")
-            print(f"   Description: {description}")
-            
-            return {
-                "type": "add_new_evaluator",
-                "affected": [evaluator_name],
-                "delta": {},
-                "reason": f"Orchestrator determined: new evaluator needed for {evaluator_name}",
-                "reformulated_instruction": interpretation.get("reformulated_instruction", ""),
-                "details": evaluator_details
-            }
-        
-        elif action_type == "adjust_evaluator":
-            # Calculate delta based on adjustment direction and magnitude
-            delta = {}
-            magnitude_map = {"small": 0.1, "medium": 0.2, "large": 0.3}
-            adjustment_magnitude = magnitude_map.get(interpretation.get("adjustment_magnitude", "medium"), 0.2)
-            
-            adjustment_direction = interpretation.get("adjustment_direction", "none").lower()
-            if adjustment_direction == "increase":
-                adjustment_value = adjustment_magnitude
-            elif adjustment_direction in ["decrease", "reduce"]:
-                adjustment_value = -adjustment_magnitude
-            elif adjustment_direction == "modify":
-                # For modify, apply a small adjustment
-                adjustment_value = adjustment_magnitude * 0.5
-            else:
-                adjustment_value = 0
-            
-            # Apply delta to affected evaluators
-            affected_evaluators = interpretation.get("affected_evaluators", [])
-            if not affected_evaluators:
-                # Fallback to attribute if no affected evaluators listed
-                attribute = interpretation.get("attribute", "")
-                if attribute:
-                    affected_evaluators = [attribute]
-            
-            for evaluator in affected_evaluators:
-                delta[evaluator] = adjustment_value
-            
-            return {
-                "type": "adjust_evaluator",
-                "affected": affected_evaluators,
-                "delta": delta,
-                "reason": f"Orchestrator determined: {adjustment_direction} ({adjustment_magnitude}) for {affected_evaluators}",
-                "reformulated_instruction": interpretation.get("reformulated_instruction", "")
-            }
-        
-        else:
-            # No action or unclear
-            return {
-                "type": "no_action",
-                "affected": [],
-                "delta": {},
-                "reason": f"Orchestrator returned action_type: {action_type} (not recognized or no action needed)"
-            }
+    def _determine_action(self, message: FeedbackMessage, manager_info: Dict[str, Any]) -> Dict[str, Any]:
+        """Convert a routed feedback message into the legacy action payload structure."""
+
+        action_payload = {
+            "type": message.action,
+            "affected": list(message.affected),
+            "delta": dict(message.delta),
+            "reason": message.metadata.get("reason", ""),
+            "reformulated_instruction": message.reformulated_instruction,
+            "confidence": message.confidence,
+        }
+
+        details = manager_info.get("details")
+        if details:
+            action_payload["details"] = details
+        elif message.new_evaluator:
+            action_payload["details"] = message.new_evaluator
+
+        return action_payload
     
     def _determine_course_of_action(self, action_taken: Dict[str, Any], interpretation: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -563,51 +653,16 @@ class TeacherFeedbackCollector:
         self.feedback_records[school_id][teacher_id].append(feedback_record)
         self._save_feedback_records()
     
-    def _update_evaluator_weights(self, action_result: Dict[str, Any]):
-        """Update evaluator weights based on feedback action."""
-        
-        if action_result["type"] != "adjust_evaluator":
-            return
-        
-        delta = action_result["delta"]
-        
-        for evaluator, adjustment in delta.items():
-            if evaluator in self.evaluator_weights:
-                # Apply adjustment (clamp between 0.05 and 0.4)
-                new_weight = max(0.05, min(0.4, self.evaluator_weights[evaluator] + adjustment))
-                self.evaluator_weights[evaluator] = new_weight
-                print(f"   Updated {evaluator} weight: {self.evaluator_weights[evaluator]:.3f}")
-        
-        # Renormalize weights to sum to 1.0
-        total_weight = sum(self.evaluator_weights.values())
-        for evaluator in self.evaluator_weights:
-            self.evaluator_weights[evaluator] /= total_weight
-        
-        print(f"   Renormalized weights: {self.evaluator_weights}")
-
-    def _reinforce_evaluator_weights(self, stabilization_rate: float = 0.05):
-        """Slightly reinforce current evaluator weights (positive feedback)."""
-        # Increase each weight by a small factor, then renormalize
-        for key in list(self.evaluator_weights.keys()):
-            self.evaluator_weights[key] = min(
-                0.5,  # hard cap to avoid any single weight dominating
-                round(self.evaluator_weights[key] * (1.0 + stabilization_rate), 4)
-            )
-        total = sum(self.evaluator_weights.values())
-        if total > 0:
-            for key in self.evaluator_weights:
-                self.evaluator_weights[key] = round(self.evaluator_weights[key] / total, 4)
-        print(f"   Reinforced weights: {self.evaluator_weights}")
-
-
 # ============================================================================
 # DSPy-COMPATIBLE TRAINING DATA FORMAT
 # ============================================================================
 
 class DSPyTrainingDataFormatter:
     """
-    Formats feedback data into DSPy-compatible training examples.
-    Creates normalized training records for optimizer consumption.
+    Legacy helper kept for backward compatibility/export use.
+    Generates DSPy-style training records for inspection/export.
+    The live optimizer path (EvaluatorManager/SuitabilityProgram) does not
+    consume these records.
     """
     
     def __init__(self):
@@ -705,68 +760,15 @@ class DSPyTrainingDataFormatter:
 
 class QuestionQualityMetric:
     """
-    Multi-objective metric for DSPy optimizer.
-    Aggregates evaluator scores while respecting teacher feedback.
+    Legacy metric stub retained for backward compatibility.
+    Not used by the active suitability/optimizer pipeline.
     """
-    
+
     def __init__(self, evaluator_weights: Dict[str, float] = None):
-        """Initialize the metric with evaluator weights."""
-        self.evaluator_weights = evaluator_weights or {
-            "relevance": 0.2,
-            "clarity": 0.2,
-            "depth": 0.25,
-            "engagement": 0.2,
-            "appropriateness": 0.15
-        }
-        
-        print(f"Question Quality Metric initialized")
-        print(f"   Evaluator weights: {self.evaluator_weights}")
-    
-    def __call__(self, prediction, target=None) -> float:
-        """
-        Compute the quality metric for a prediction.
-        
-        Args:
-            prediction: DSPy prediction object
-            target: Target metrics (if available)
-            
-        Returns:
-            Quality score (0.0-1.0)
-        """
-        
-        if target is None:
-            # If no target, return a default score
-            return 0.5
-        
-        metrics = target.get("metrics", {})
-        
-        # Calculate weighted sum of evaluator scores
-        weighted_sum = 0.0
-        total_weight = 0.0
-        
-        for evaluator, weight in self.evaluator_weights.items():
-            if evaluator in metrics:
-                weighted_sum += metrics[evaluator] * weight
-                total_weight += weight
-        
-        if total_weight == 0:
-            return 0.5  # Default score if no weights
-        
-        base_score = weighted_sum / total_weight
-        
-        # Apply teacher feedback reinforcement
-        teacher_feedback = metrics.get("teacher_feedback", 0.5)
-        feedback_weight = 1.1 if teacher_feedback > 0.5 else 0.9
-        
-        final_score = base_score * feedback_weight
-        
-        # Clamp to valid range
-        return max(0.0, min(1.0, final_score))
-    
+        self.evaluator_weights = evaluator_weights or {}
+
     def update_weights(self, new_weights: Dict[str, float]):
-        """Update evaluator weights."""
         self.evaluator_weights.update(new_weights)
-        print(f"Updated evaluator weights: {self.evaluator_weights}")
 
 
 # ============================================================================
@@ -783,7 +785,6 @@ class TeacherFeedbackSystem:
         """Initialize the feedback system."""
         self.collector = TeacherFeedbackCollector(storage_file)
         self.formatter = DSPyTrainingDataFormatter()
-        self.metric = QuestionQualityMetric(self.collector.evaluator_weights)
         
         print("\n" + "="*80)
         print("Teacher Feedback System Initialized")
@@ -825,13 +826,10 @@ class TeacherFeedbackSystem:
             question_evaluations, story_context, generated_questions, question_feedbacks, teacher_id, school_id
         )
         
-        # Format as DSPy training data
+        # Format as DSPy training data (legacy export support)
         training_record = self.formatter.format_training_record(
             feedback_record, story_context, generated_questions or []
         )
-        
-        # Update metric weights
-        self.metric.update_weights(self.collector.evaluator_weights)
         
         result = {
             "feedback_record": feedback_record,
@@ -840,7 +838,7 @@ class TeacherFeedbackSystem:
             "evaluator_weights": self.collector.evaluator_weights
         }
         
-        print(f"\n✅ Feedback processing complete")
+        print(f"\n Feedback processing complete")
         print(f"   Action: {result['action_taken']['type']}")
         print(f"   Training record created for DSPy optimization")
         
@@ -944,39 +942,11 @@ class DynamicEvaluatorCreator:
         self.created_evaluators = {}
         self.evaluator_registry_file = "dynamic_evaluator_registry.json"
     
-    def create_evaluator_signature(self, evaluator_name: str, evaluator_description: str) -> type:
-        """
-        Dynamically create a new DSPy Signature class for an evaluator.
-        
-        Args:
-            evaluator_name: Name of the new evaluator (e.g., "emotional_resonance")
-            evaluator_description: Description of what this evaluator checks
-            
-        Returns:
-            A new DSPy Signature class for the evaluator
-        """
-        signature_class_name = f"{evaluator_name.capitalize()}EvaluatorSignature"
-        
-        # Create the signature using exec (dynamic class creation)
-        signature_code = f'''
-class {signature_class_name}(dspy.Signature):
-    """Evaluator for: {evaluator_description}"""
-    
-    question = dspy.InputField(desc="The question to evaluate")
-    story_context = dspy.InputField(desc="The story context")
-    moral_or_objective = dspy.InputField(desc="The moral or learning objective")
-    
-    score = dspy.OutputField(desc="Score (1-5) indicating quality for this evaluator")
-    rationale = dspy.OutputField(desc="Brief explanation of the score")
-'''
-        
-        namespace = {'dspy': dspy}
-        exec(signature_code, namespace)
-        
-        signature_class = namespace[signature_class_name]
-        
-        print(f"✅ Created new evaluator signature: {signature_class_name}")
-        return signature_class
+    def create_evaluator_signature(self, evaluator_name: str, prompt: str) -> type:
+        """Build a DSPy signature for the dynamic evaluator."""
+        signature = make_dynamic_signature(evaluator_name, prompt)
+        print(f"Created new evaluator signature: {signature.__name__}")
+        return signature
     
     def create_evaluator_agent(self, signature_class: type) -> dspy.Predict:
         """
@@ -991,51 +961,90 @@ class {signature_class_name}(dspy.Signature):
         agent = dspy.Predict(signature_class)
         return agent
     
-    def create_new_evaluator(self, evaluator_name: str, evaluator_description: str) -> Optional[dspy.Predict]:
+    def create_new_evaluator(self, metadata: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Create a complete evaluator agent with prompt engineering.
-        
+        Create a complete evaluator definition with prompt engineering.
+
         Args:
-            evaluator_name: Name of the new evaluator
-            evaluator_description: Description of what it checks
-            
+            metadata: Evaluator specification containing name, description, prompt, etc.
+
         Returns:
-            A DSPy Predict agent that can evaluate questions
+            Persisted metadata for the created evaluator.
         """
-        if evaluator_name in self.created_evaluators:
-            print(f"✅ Evaluator '{evaluator_name}' already exists")
-            return self.created_evaluators[evaluator_name]
-        
-        # Create the signature
-        signature_class = self.create_evaluator_signature(evaluator_name, evaluator_description)
-        
-        # Create the agent
+        evaluator_name = metadata.get("name")
+        if not evaluator_name:
+            raise ValueError("Dynamic evaluator metadata must include a 'name'.")
+
+        existing = self.created_evaluators.get(evaluator_name)
+        if existing:
+            print(f"Evaluator '{evaluator_name}' already exists")
+            if isinstance(existing, dict):
+                return existing.get("metadata", {})
+            return existing
+
+        description = metadata.get("description") or evaluator_name.replace("_", " ").title()
+        prompt = metadata.get("prompt") or metadata.get("instruction") or description
+        default_weight = float(metadata.get("default_weight", 0.1))
+        rubric = metadata.get("rubric") or {}
+
+        signature_class = self.create_evaluator_signature(evaluator_name, prompt)
         agent = self.create_evaluator_agent(signature_class)
-        
-        # Store in registry
-        self.created_evaluators[evaluator_name] = agent
-        
-        # Save to file
+        evaluator_cls = make_dynamic_evaluator_class(
+            evaluator_name,
+            description,
+            {
+                "description": description,
+                "prompt": prompt,
+                "default_weight": default_weight,
+                "rubric": rubric,
+                "status": metadata.get("status", "active"),
+                "template": metadata.get("template", "llm_dynamic"),
+                "origin": metadata.get("origin", {}),
+            },
+            agent,
+        )
+
+        persist_metadata = {
+            "description": description,
+            "prompt": prompt,
+            "default_weight": default_weight,
+            "rubric": rubric,
+            "status": metadata.get("status", "active"),
+            "module": "teacher_interface.backend.evaluators.suitability_evaluators",
+            "template": metadata.get("template", "llm_dynamic"),
+            "origin": metadata.get("origin", {}),
+            "created_at": metadata.get("created_at", datetime.now().isoformat()),
+        }
+        persist_metadata["name"] = evaluator_name
+
+        persist_dynamic_metadata(evaluator_name, persist_metadata)
+        register_dynamic_evaluator(evaluator_name)(evaluator_cls)
+
+        self.created_evaluators[evaluator_name] = {
+            "class": evaluator_cls.__name__,
+            "metadata": persist_metadata,
+        }
+
         self._save_evaluator_registry()
-        
-        print(f"✅ Created complete evaluator agent: {evaluator_name}")
-        return agent
+        print(f" Created dynamic evaluator '{evaluator_name}' with template class.")
+        return persist_metadata
     
     def _save_evaluator_registry(self):
         """Save the registry of created evaluators."""
-        registry = {
-            evaluator_name: str(type(agent).__name__)
-            for evaluator_name, agent in self.created_evaluators.items()
-        }
-        
-        with open(self.evaluator_registry_file, 'w') as f:
-            json.dump(registry, f, indent=2)
+        with open(self.evaluator_registry_file, 'w', encoding='utf-8') as f:
+            json.dump(self.created_evaluators, f, indent=2, ensure_ascii=False)
     
     def load_evaluator_registry(self) -> Dict[str, str]:
         """Load existing evaluator registry."""
         if os.path.exists(self.evaluator_registry_file):
-            with open(self.evaluator_registry_file, 'r') as f:
-                return json.load(f)
+            with open(self.evaluator_registry_file, 'r', encoding='utf-8') as f:
+                try:
+                    data = json.load(f)
+                    if isinstance(data, dict):
+                        self.created_evaluators.update(data)
+                    return data
+                except json.JSONDecodeError:
+                    return {}
         return {}
 
 
@@ -1049,6 +1058,10 @@ class FeedbackBasedOptimizer:
     
     def __init__(self, feedback_file: str = "teacher_feedback_records.json"):
         self.feedback_file = feedback_file
+        if not os.path.isabs(self.feedback_file):
+            storage_dir = os.path.join(os.path.dirname(__file__), "storage")
+            os.makedirs(storage_dir, exist_ok=True)
+            self.feedback_file = os.path.join(storage_dir, self.feedback_file)
         self.evaluator_creator = DynamicEvaluatorCreator()
         self.evaluator_registry = self.evaluator_creator.load_evaluator_registry()
     
@@ -1158,19 +1171,36 @@ class FeedbackBasedOptimizer:
                 "details": {}
             }
         
-        # Create a description for the new evaluator
         description = f"Evaluates questions for {evaluator_name.replace('_', ' ')} based on teacher feedback"
-        
-        # Create the evaluator
-        evaluator_agent = self.evaluator_creator.create_new_evaluator(evaluator_name, description)
-        
+        prompt = interpretation.get("reformulated_instruction", "")
+        metadata = {
+            "name": evaluator_name,
+            "description": description,
+            "prompt": prompt,
+            "default_weight": 0.1,
+            "rubric": {"instruction": prompt},
+            "status": "active",
+            "template": "llm_dynamic",
+            "origin": {
+                "feedback_record": {
+                    "story_title": feedback_record.get("story_title"),
+                    "objective": feedback_record.get("objective"),
+                    "teacher_feedback": feedback_record.get("teacher_feedback", {}),
+                    "timestamp": feedback_record.get("timestamp"),
+                }
+            },
+        }
+
+        created_metadata = self.evaluator_creator.create_new_evaluator(metadata)
+
         return {
             "action": "create_new_evaluator",
             "message": f"Created new evaluator: {evaluator_name}",
             "details": {
                 "evaluator_name": evaluator_name,
                 "evaluator_description": description,
-                "status": "active"
+                "status": "active",
+                "metadata": created_metadata,
             }
         }
 

@@ -6,6 +6,7 @@ This refactored version uses DSPy's declarative approach for better modularity a
 import dspy
 import os
 import json
+import argparse
 from typing import List
 from pathlib import Path
 
@@ -13,19 +14,19 @@ from pathlib import Path
 dspy.configure(lm=dspy.LM("openai/gpt-4.1-2025-04-14"))
 
 class MoralExtractor(dspy.Signature):
-    """Extract moral lessons and segment stories for children aged 4-6 using the original prompt format."""
+    """Extract moral lessons and segment stories for children aged 4-6 using the educational content prompt."""
     
     story = dspy.InputField(desc="Children's storybook content with page markers")
-    moral = dspy.OutputField(desc="Age-appropriate moral lesson for children aged 4-6, simplified to their language level")
-    segments = dspy.OutputField(desc="""Return a JSON array of 3-7 story segments (maximum 7). Each segment must be a JSON object with exactly these fields:
+    moral = dspy.OutputField(desc="""The main lessons or takeaways from the character's experience in the story. The lessons need to be age appropriate for a child aged 4 to 6, and simplified to their language levels.""")
+    segments = dspy.OutputField(desc="""Return a JSON array of story segments. Each segment is a sub-sequence of the storybook that conveys a same event, shares the same linguistic style, or falls into the same time frame. Each segment must be a JSON object with exactly these fields:
     {
         "START": <page_number>,
         "END": <page_number>,
-        "SUMMARY": "<brief summary>",
-        "REASONING": "<explanation>"
+        "SUMMARY": "<brief summary of main development during this segment>",
+        "REASONING": "<explanation of why this subset constitutes a good segment>"
     }
     
-    Ensure the output is valid JSON with proper quotes and structure. Limit to maximum 7 segments.""")
+    The combined pages from all segments must cover the entire storybook without skipping or overlapping pages. From one segment to the next, there must be a clear transition of development in event, time, or style. Ensure the output is valid JSON with proper quotes and structure.""")
 
 class StoryMoralGeneratorDSPy:
     def __init__(self):
@@ -35,10 +36,23 @@ class StoryMoralGeneratorDSPy:
         
        
     def generate_story_moral(self, story: str) -> dict:
-        """Generate moral lesson and story segments using DSPy."""
+        """Generate moral lesson and story segments using DSPy with educational content prompt."""
         try:
+            # Use the educational content prompt format
+            prompt = f"""You are an assistant that generates high-quality educational content for early literacy learning and storybook reading.
+
+Given a storybook, your task is to synthesize the [MORAL] of the story for children age 4 to 6. A [MORAL] is the main lessons or takeaways from the character's experience in the story. The lessons in the [MORAL] need to age appropriate for a child aged 4 to 6, and it needs to be simplified to their language levels.
+
+With the generated [MORAL], you need to split the entire story into different segments based on the transition and development of the events following the rules in [SEGMENT_RULES]. Each [SEGMENT] is a sub-sequence of the storybook that conveys a same event, shares the same linguistic style, or falls into the same time frame (e.g., spring, summer, fall, morning, afternoon, etc.)
+
+For each [SEGMENT], you need to report the $START$ and $END$ page of the sement, and summarize the main development during this segment as $SUMMARY$. In addition, you need to explain the logic of why this subset constitute as a good segment and save it in $REASONING$.
+
+[STORY]: {story}
+
+[SEGMENT_RULES]: The combined pages from all of the segments need to cover the entire storybook without skipping or overlapping pages. From one segment to the next segment, there need to be a clear transition of development in event, time, or style."""
+            
             # DSPy handles the prompting and model interaction automatically
-            result = self.moral_extractor(story=story)
+            result = self.moral_extractor(story=prompt)
             
             segments = result.segments
             if isinstance(segments, str):
@@ -139,16 +153,44 @@ class StoryMoralGeneratorDSPy:
         return 0.0
 
 def main():
-    """Main function to process multiple storybooks."""
+    """Main function to process storybooks."""
+    
+    parser = argparse.ArgumentParser(description='Generate moral lessons and story segments using DSPy')
+    parser.add_argument('--story', type=str, help='Story content to process')
+    parser.add_argument('--file', type=str, help='Path to story file')
+    parser.add_argument('--batch', action='store_true', help='Process all storybooks in batch mode')
+    
+    args = parser.parse_args()
     
     generator = StoryMoralGeneratorDSPy()
     
-    # Configuration paths
-    asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
-    output_path = "/Users/mariyamohiuddin/Desktop/Outputs/Dspy Outputs"
+    # If story content is provided directly
+    if args.story:
+        result = generator.generate_story_moral(args.story)
+        if result:
+            print(json.dumps(result, indent=2))
+        return
     
-    # Create output directory if it doesn't exist
-    Path(output_path).mkdir(parents=True, exist_ok=True)
+    # If file path is provided
+    if args.file:
+        try:
+            with open(args.file, 'r', encoding='utf-8') as f:
+                story_content = f.read()
+            result = generator.generate_story_moral(story_content)
+            if result:
+                print(json.dumps(result, indent=2))
+        except Exception as e:
+            print(f"Error reading file {args.file}: {e}")
+        return
+    
+    # Batch mode (original behavior)
+    if args.batch:
+        # Configuration paths
+        asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
+        output_path = "/Users/mariyamohiuddin/Desktop/Outputs/Dspy Outputs"
+        
+        # Create output directory if it doesn't exist
+        Path(output_path).mkdir(parents=True, exist_ok=True)
     
     # Storybook collections
     educare_storybooks = [

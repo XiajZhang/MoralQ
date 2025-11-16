@@ -19,6 +19,9 @@ from typing import List, Dict, Any, Optional
 from pathlib import Path
 from datetime import datetime
 
+from teacher_interface.backend.models import EvaluationLogModel
+from teacher_interface.backend.evaluators import EvaluatorManager
+
 # Configure DSPy with OpenAI
 dspy.configure(lm=dspy.LM("openai/gpt-4.1-2025-04-14"))
 
@@ -254,6 +257,50 @@ Respond with ONLY a single number between 0.0 and 1.0 representing overall quali
             }
 
 
+class SuitabilityProgram(dspy.Module):
+    """Aggregate evaluator scores using current weights for DSPy optimization."""
+
+    def __init__(self, evaluator_manager: EvaluatorManager):
+        super().__init__()
+        self.evaluator_manager = evaluator_manager
+        self.weight_params: Dict[str, dspy.Parameter] = {}
+        self.refresh_parameters()
+
+    def forward(self, question: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        context = context or {}
+        raw_scores = self.evaluator_manager.evaluate_all(question, context)
+
+        weighted_sum = 0.0
+        weight_total = 0.0
+        for name, result in raw_scores.items():
+            score = result.get("score")
+            if score is None:
+                continue
+            param = self.weight_params.get(name)
+            if param is not None:
+                try:
+                    weight = float(param())
+                except TypeError:
+                    weight = float(getattr(param, "value", self.evaluator_manager.weights.get(name, 0.0)))
+            else:
+                weight = self.evaluator_manager.weights.get(name, 0.0)
+            weighted_sum += score * weight
+            weight_total += weight
+
+        weighted_score = weighted_sum / weight_total if weight_total > 0 else 0.0
+        return {
+            "raw_scores": raw_scores,
+            "weighted_score": weighted_score,
+            "weight_total": weight_total,
+        }
+
+    def refresh_parameters(self) -> None:
+        self.weight_params = {
+            name: dspy.Parameter(init=weight)
+            for name, weight in self.evaluator_manager.weights.items()
+        }
+
+
 class QuestionGeneratorModule:
     """
     Sub-module for generating educational questions.
@@ -267,6 +314,9 @@ class QuestionGeneratorModule:
         self.optimize_with_feedback = optimize_with_feedback
         self.optimizer = None
         self.optimized = False
+
+        self.evaluator_manager = EvaluatorManager()
+        self.suitability_program = SuitabilityProgram(self.evaluator_manager)
         
         # Initialize optimizer if feedback exists
         if optimize_with_feedback:
@@ -286,8 +336,14 @@ class QuestionGeneratorModule:
         try:
             # Load feedback records (using absolute path from this file's location)
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            feedback_file = os.path.join(current_dir, "..", "backend", "teacher_feedback_records.json")
-            question_eval_file = os.path.join(current_dir, "..", "backend", "question_evaluations.json")
+            storage_dir = os.path.join(current_dir, "..", "storage")
+            os.makedirs(storage_dir, exist_ok=True)
+            feedback_file = os.path.join(storage_dir, "teacher_feedback_records.json")
+            question_eval_file = os.path.join(storage_dir, "question_evaluations.json")
+
+            # Refresh evaluator metadata to include newly registered dynamics
+            self.evaluator_manager.refresh()
+            self.suitability_program.refresh_parameters()
             
             if not os.path.exists(feedback_file) or not os.path.exists(question_eval_file):
                 print("[INFO] No feedback files found yet. Will generate without optimization.")
@@ -298,7 +354,11 @@ class QuestionGeneratorModule:
                 feedback_data = json.load(f)
             
             with open(question_eval_file, 'r') as f:
-                eval_data = json.load(f)
+                raw_eval = json.load(f)
+                if isinstance(raw_eval, dict):
+                    eval_data = EvaluationLogModel.parse_obj(raw_eval).dict()
+                else:
+                    eval_data = EvaluationLogModel.parse_obj({"evaluations": raw_eval}).dict()
             
             # Count feedback records (check all school/teacher combinations)
             records = []
@@ -332,14 +392,11 @@ class QuestionGeneratorModule:
             traceback.print_exc()
     
     def _initialize_optimizer(self, feedback_data: dict, eval_data: dict):
-        """Initialize DSPy BootstrapFewShot optimizer with feedback data.
+        """Initialize and compile the DSPy optimizer using SuitabilityProgram.
         
-        Uses rubric-based evaluation traces for optimization.
-        Each training example includes:
-        - Input: story, segments, objective, question_type
-        - Output: generated question
-        - Rubric scores: suitability sub-criteria scores (0-1)
-        - Dynamic evaluator scores: from orchestrator's created evaluators
+        Builds training examples from stored evaluation logs and feedback
+        records, then compiles BootstrapFewShot with the weighted suitability
+        metric (SuitabilityProgram + evaluator weights).
         """
         try:
             from dspy.teleprompt import BootstrapFewShot
@@ -484,6 +541,7 @@ class QuestionGeneratorModule:
                 
                 self.optimized = True
                 print("[INFO] Question generator optimized with rubric-based feedback!")
+                self._update_weights_from_parameters()
             else:
                 print("[WARN]  Not enough training examples (need at least 1)")
                 
@@ -492,6 +550,31 @@ class QuestionGeneratorModule:
             import traceback
             traceback.print_exc()
     
+    def _update_weights_from_parameters(self) -> None:
+        """Synchronize evaluator manager weights from learned DSPy parameters."""
+        if not hasattr(self, "suitability_program"):
+            return
+
+        param_values: Dict[str, float] = {}
+        for name, param in self.suitability_program.weight_params.items():
+            try:
+                value = float(param())
+            except TypeError:
+                value = float(getattr(param, "value", self.evaluator_manager.weights.get(name, 0.0)))
+            if value < 0.0:
+                value = 0.0
+            param_values[name] = value
+
+        total = sum(param_values.values())
+        if total <= 0:
+            return
+
+        for name, value in param_values.items():
+            self.evaluator_manager.weights[name] = round(value / total, 4)
+
+        self.evaluator_manager.renormalize()
+        self.suitability_program.refresh_parameters()
+
     def _rubric_based_quality_metric(self, example, prediction, trace=None):
         """Rubric-based quality metric for DSPy optimizer.
         
@@ -506,52 +589,66 @@ class QuestionGeneratorModule:
             target_score = getattr(example, 'suitability_score', 0.5)
             target_decision = getattr(example, 'decision', 'pass')
             
-            # Get dynamic evaluator scores if they exist in the example
             dynamic_evaluations = getattr(example, 'dynamic_evaluations', {})
-            
-            # Try to parse questions from prediction
+
             questions_str = prediction.questions
             if isinstance(questions_str, str):
-                questions = json.loads(questions_str)
+                try:
+                    questions = json.loads(questions_str)
+                except json.JSONDecodeError:
+                    questions = []
             else:
                 questions = questions_str
-            
-            # Base score on whether questions were generated
+
             if isinstance(questions, list) and len(questions) >= 5:
-                # Good: generated questions
                 base_score = 1.0
             else:
-                # Bad: no questions or too few
                 base_score = 0.0
-            
-            # Calculate dynamic evaluator penalty/adjustment
+
+            weighted_scores = []
+            if isinstance(questions, list):
+                for q in questions:
+                    if isinstance(q, dict):
+                        q_text = q.get("question", "")
+                    else:
+                        q_text = str(q)
+                    if not q_text:
+                        continue
+                    context = {
+                        "story": getattr(example, 'story', ""),
+                        "objective": getattr(example, 'objective', ""),
+                        "story_title": getattr(example, 'story_title', ""),
+                    }
+                    suitability_result = self.suitability_program(question=q_text, context=context)
+                    weighted_scores.append(suitability_result.get("weighted_score", 0.0))
+
+            suitability_signal = 0.0
+            if weighted_scores:
+                suitability_signal = sum(weighted_scores) / len(weighted_scores)
+                # Normalize assuming evaluator scores are 1-5
+                suitability_signal = max(0.0, min(suitability_signal / 5.0, 1.0))
+            else:
+                suitability_signal = target_score
+
             dynamic_adjustment = 1.0
             if dynamic_evaluations:
-                # Average the dynamic evaluator scores (1-5 scale, normalized to 0-1)
                 dynamic_scores = []
-                for eval_name, eval_data in dynamic_evaluations.items():
+                for eval_data in dynamic_evaluations.values():
                     score = eval_data.get("score", 0.0)
-                    # Normalize from 1-5 to 0-1
                     normalized_score = (score - 1) / 4 if score > 0 else 0
                     dynamic_scores.append(normalized_score)
-                
                 if dynamic_scores:
                     avg_dynamic = sum(dynamic_scores) / len(dynamic_scores)
-                    dynamic_adjustment = max(0.5, avg_dynamic)  # Ensure minimum 0.5
-            
-            # Get individual question feedback (good/bad) from teacher
-            teacher_feedback_score = getattr(example, 'teacher_feedback', 0.5)  # Default to neutral
-            
-            # Weight by suitability score from rubric evaluation AND teacher feedback
-            # If target says "pass" and score >= 0.7, reward it
+                    dynamic_adjustment = max(0.5, avg_dynamic)
+
+            teacher_feedback_score = getattr(example, 'teacher_feedback', 0.5)
+
             if target_decision == "pass":
-                if target_score >= 0.7:
-                    return base_score * target_score * dynamic_adjustment * teacher_feedback_score  # Include teacher feedback
-                else:
-                    return base_score * 0.5 * dynamic_adjustment * teacher_feedback_score  # Include teacher feedback
+                optimization_signal = max(suitability_signal, target_score)
             else:
-                # target_decision == "regenerate" - this was a failed question
-                return base_score * 0.2 * dynamic_adjustment * teacher_feedback_score  # Include teacher feedback
+                optimization_signal = min(suitability_signal, 0.2)
+
+            return base_score * optimization_signal * dynamic_adjustment * teacher_feedback_score
             
         except Exception as e:
             print(f"[WARN]  Error in rubric-based quality metric: {e}")

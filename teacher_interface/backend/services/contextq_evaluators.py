@@ -2,7 +2,7 @@
 ContextQ Suitability-Based Evaluator
 =====================================
 
-Replaces the 5-agent quality scoring system with a suitability-based approach.
+A suitability-based approach.
 Uses the ContextQ Suitability Rubric to evaluate questions based on pedagogical criteria only.
 
 Based on: "ContextQ: Generated Questions to Support Meaningful Parent-Child Dialogue While Co-Reading"
@@ -14,6 +14,8 @@ import os
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
+from teacher_interface.backend.models import EvaluationLogModel, EvaluationResultModel
+
 
 # ============================================================================
 # SUITABILITY-BASED EVALUATION
@@ -23,111 +25,20 @@ from datetime import datetime
 dspy.configure(lm=dspy.LM("openai/gpt-4.1-2025-04-14"))
 
 
-class TypeClassificationSignature(dspy.Signature):
-    """Classifies the question type based on the rubric."""
-    question = dspy.InputField(desc="The question to classify")
-    question_type = dspy.OutputField(
-        desc="One of: Completion, Recall, Open-Ended, Wh, Distancing"
-    )
-    confidence = dspy.OutputField(
-        desc="High, Medium, or Low confidence in classification"
-    )
-    reasoning = dspy.OutputField(
-        desc="Brief explanation of the classification"
-    )
-
-
-class CompletionSuitabilitySignature(dspy.Signature):
-    """Evaluates suitability for Completion questions."""
-    question = dspy.InputField(desc="The completion question")
-    deals_with_rhyming_or_repeated_phrases = dspy.OutputField(
-        desc="True or False: Does this deal with rhyming or repeated phrases?"
-    )
-    suitability_score = dspy.OutputField(
-        desc="Score from 0-1 (1 if criteria met, 0 otherwise)"
-    )
-    decision = dspy.OutputField(
-        desc="'pass' if criteria met, 'regenerate' otherwise"
-    )
-    reasoning = dspy.OutputField(desc="Explanation of the evaluation")
-
-
-class RecallSuitabilitySignature(dspy.Signature):
-    """Evaluates suitability for Recall questions."""
-    question = dspy.InputField(desc="The recall question")
-    plot_elements_or_sequences = dspy.OutputField(
-        desc="True or False: Does this ask child to describe plot elements or sequences of events?"
-    )
-    answer_beyond_current_page = dspy.OutputField(
-        desc="True or False: Answer cannot be determined from the current page alone? (Must reference other parts of story)"
-    )
-    suitability_score = dspy.OutputField(
-        desc="Average of two subcriteria (0-1)"
-    )
-    decision = dspy.OutputField(
-        desc="'pass' if all criteria met, 'regenerate' otherwise"
-    )
-    reasoning = dspy.OutputField(desc="Explanation of the evaluation")
-
-
-class OpenEndedSuitabilitySignature(dspy.Signature):
-    """Evaluates suitability for Open-Ended questions."""
-    question = dspy.InputField(desc="The open-ended question")
-    solicits_ideas_or_opinions_score = dspy.OutputField(
-        desc="Score from 1-5: How well does this solicit ideas or opinions about story elements or encourage speculation about something related to the story (example plot, characters, setting, etc)?"
-    )
-    discourages_one_word_answers_score = dspy.OutputField(
-        desc="Score from 1-5: How well does this discourage one-word answers?"
-    )
-    child_cannot_opt_out_score = dspy.OutputField(
-        desc="Score from 1-5: How difficult is it for children to opt-out of answering this question?"
-    )
-    may_connect_to_personal_experience_score = dspy.OutputField(
-        desc="Score from 1-5: How well does this allow child to draw on personal experiences (without directly asking)?"
-    )
-    suitability_score = dspy.OutputField(
-        desc="Average score from 1-5 across all four criteria"
-    )
-    decision = dspy.OutputField(
-        desc="'pass' if suitability_score >= 3, 'regenerate' otherwise"
-    )
-    reasoning = dspy.OutputField(desc="Explanation of the evaluation")
-
-
-class WhSuitabilitySignature(dspy.Signature):
-    """Evaluates suitability for Wh- questions."""
-    question = dspy.InputField(desc="The Wh- question")
-    focuses_on_story_details = dspy.OutputField(
-        desc="True or False: Does this focus on story details?"
-    )
-    suitability_score = dspy.OutputField(
-        desc="Score from 0-1 (1 if criteria met, 0 otherwise)"
-    )
-    decision = dspy.OutputField(
-        desc="'pass' if criteria met, 'regenerate' otherwise"
-    )
-    reasoning = dspy.OutputField(desc="Explanation of the evaluation")
-
-
-class DistancingSuitabilitySignature(dspy.Signature):
-    """Evaluates suitability for Distancing questions."""
-    question = dspy.InputField(desc="The distancing question")
-    asks_about_child_experiences_score = dspy.OutputField(
-        desc="Score from 1-5: How explicitly does this ask about the child's personal experiences?"
-    )
-    cannot_answer_one_word_score = dspy.OutputField(
-        desc="Score from 1-5: How impossible is it to answer this in one word?"
-    )
-    relates_to_current_page_score = dspy.OutputField(
-        desc="Score from 1-5: How well does this relate to the current page of the story?"
-    )
-    suitability_score = dspy.OutputField(
-        desc="Average score from 1-5 across all three criteria"
-    )
-    decision = dspy.OutputField(
-        desc="'pass' if suitability_score >= 3, 'regenerate' otherwise"
-    )
-    reasoning = dspy.OutputField(desc="Explanation of the evaluation")
+#
+# LEGACY NOTE:
+# Signatures are now defined centrally in
+# teacher_interface.backend.evaluators.suitability_evaluators.
+# This module imports and uses them to avoid duplication.
+#
+from teacher_interface.backend.evaluators.suitability_evaluators import (
+    TypeClassificationSignature,
+    CompletionSuitabilitySignature,
+    RecallSuitabilitySignature,
+    OpenEndedSuitabilitySignature,
+    WhSuitabilitySignature,
+    DistancingSuitabilitySignature,
+)
 
 
 # ============================================================================
@@ -135,11 +46,8 @@ class DistancingSuitabilitySignature(dspy.Signature):
 # ============================================================================
 
 class UniversalEvaluatorSignature(dspy.Signature):
-    """Universal evaluator signature for dynamically created evaluators.
-    
-    This evaluator applies custom criteria to questions regardless of their type.
-    It evaluates how well a question meets the specific criteria defined in evaluator_criteria.
-    """
+    """Legacy fallback signature used before templated dynamic evaluators.
+    Currently unused because dynamic_template creates evaluator-specific signatures."""
     question = dspy.InputField(desc="The question to evaluate")
     story_context = dspy.InputField(desc="The story context for the question")
     question_type = dspy.InputField(desc="Type of question (Completion, Recall, Open-Ended, Wh, Distancing)")
@@ -295,11 +203,17 @@ class SuitabilityEvaluationProgram(dspy.Module):
 # ============================================================================
 
 class EvaluationManager:
-    """Manages storage and retrieval of suitability evaluations."""
+    """
+    Manages storage/retrieval of suitability evaluation logs only.
+    (Not the same as evaluator weight manager in backend/evaluators/manager.py.)
+    """
     
     def __init__(self, storage_file: str = None):
+        storage_dir = os.path.join(os.path.dirname(__file__), "..", "storage")
+        os.makedirs(storage_dir, exist_ok=True)
         self.storage_file = storage_file or os.path.join(
-            os.path.dirname(__file__), "..", "backend", "question_evaluations.json"
+            storage_dir,
+            "question_evaluations.json"
         )
         self.evaluations = self._load_evaluations()
     
@@ -308,7 +222,12 @@ class EvaluationManager:
         if os.path.exists(self.storage_file):
             try:
                 with open(self.storage_file, 'r', encoding='utf-8') as f:
-                    return json.load(f)
+                    raw = json.load(f)
+                    if isinstance(raw, dict):
+                        log = EvaluationLogModel.parse_obj(raw)
+                    else:
+                        log = EvaluationLogModel.parse_obj({"evaluations": raw})
+                    return log.dict()
             except Exception as e:
                 print(f"Error loading evaluations: {e}")
                 return {}
@@ -334,7 +253,11 @@ class EvaluationManager:
         if "evaluations" not in self.evaluations:
             self.evaluations["evaluations"] = []
         
-        self.evaluations["evaluations"].extend(evaluations)
+        validated = [
+            EvaluationResultModel.parse_obj(record).dict(exclude_none=True)
+            for record in evaluations
+        ]
+        self.evaluations["evaluations"].extend(validated)
         self._save_evaluations()
     
     def get_evaluation_stats(self) -> Dict[str, Any]:

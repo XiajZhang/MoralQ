@@ -122,10 +122,11 @@ class PhaseETester:
             Dict with questions and optimizer status
         """
         try:
-            # Set up backend paths for optimizer
-            backend_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'backend')
-            backend_feedback_file = os.path.join(backend_dir, 'teacher_feedback_records.json')
-            backend_eval_file = os.path.join(backend_dir, 'question_evaluations.json')
+            # Set up backend storage paths for optimizer
+            storage_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'backend', 'storage')
+            os.makedirs(storage_dir, exist_ok=True)
+            backend_feedback_file = os.path.join(storage_dir, 'teacher_feedback_records.json')
+            backend_eval_file = os.path.join(storage_dir, 'question_evaluations.json')
             
             # Backup existing files
             import shutil

@@ -1,0 +1,338 @@
+{
+  "default_school": {
+    "default_teacher": [
+      {
+        "story_title": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "Some questions are too complex for 4-6 year olds."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed complexity with Decrease action",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "complexity",
+          "confidence": 0.95,
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate for 4-6 year olds, using simpler language and concepts."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {},
+          "reason": "New evaluator needed: complexity",
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate for 4-6 year olds, using simpler language and concepts.",
+          "details": {
+            "evaluator_name": "complexity",
+            "evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "New evaluator needed: complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate for 4-6 year olds, using simpler language and concepts.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "complexity",
+          "new_evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+          "instruction": "Simplify the questions so they are more age-appropriate for 4-6 year olds, using simpler language and concepts."
+        },
+        "timestamp": "2025-10-28T18:59:26.089035",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "A Letter to Amy\n\"I’m writing a letter to Amy.\" \"I’m inviting her to my party\",Peter announced. \"Why don’t you just ask her?\" \"You didn’t write to anyone else\", said his mother. Peter stared at the sheet of paper for a while and said, \"Well, this way it’s sort special.\"\nHe folded the letter quite a few times, put it in the envelope, and sealed it. \"Now I’ll mail it\", he said. \"What did you write?\" his mother asked. WILL YOU PLEASE COME TO MY BIRTHDAY PARTY. \"PETER. You should tell her when to come.\" So he wrote on the back of the envelope: IT IS THIS SATURDAY AT 2. \"Now I’ll mail it.\" \"Put on a stamp.\" He did, and started to leave. \"Wear your raincoat.\" \"It looks like rain.\" He put it on and said, \"It looks like rain.\" \"You’d better stay in, Willie,\" and ran out to mail his letter.\nWalking to the mailbox, Peter looked at the sky. Dark clouds raced across it like wild horses. He glanced up at Amy’s window. She wasn’t there. Only Pepe, her parrot, sat peering down. \"Willie! Didn’t I tell you to stay home?\"\nPeter thought. What will the boys say when they see a girl at my party? Suddenly there was a flash of lightning and a roar of thunder! A strong wind blew the letter out of his hand!\nPeter chased the letter. He tried to stop it with his foot, but it blew away.\nThen it flew high into the air –\nAnd landed, skipping across a hopscotch game.\nThe letter blew this way and that. Peter chased it this way and that. He couldn’t catch it.\nBig drops of rain began to fall.\nJust then someone turned the corner. It was Amy! She waved to him. The letter flew right toward her. She mustn’t see it, or the surprise will be spoiled! They both ran for the letter.\nIn his great hurry, Peter bumped into Amy. He caught the letter before she could see it was for her.\nQuickly he stuffed the letter into the mailbox.\nHe looked for Amy, but she had run off crying.\nNow she’ll never come to my party, thought Peter. He saw his reflection in the street. It looked all mixed up.\nWhen Peter got back to his house, his mother asked, \"Did you mail your letter?\" \"Yes\", he said sadly.\nSaturday came at last. Everybody arrived but Amy.\n\"Shall I bring the cake out now?\" his mother asked Peter. \"Let’s wait a little\", said Peter. \"Now! Bring it out now!\" chanted the boys. \"All right\", said Peter slowly, \"bring it out now.\"\nJust then the door opened. In walked Amy with her parrot! \"A girl – ugh!\" said Eddie.\n\"Happy Birthday\", Peter!\" said Amy. \"Haappy Birrrthday, PEEETERRR!\" repeated the parrot.\nPeter’s mother brought in the cake she had baked and lit the candles. Everyone sang. \"Make a wish!\" cried Amy. \"Wish for a truck full of ice cream!\" shouted Eddie. \"A store full of candy and no stomach-ache!\"\nBut Peter made his own wish, and blew out all the candles at once.",
+        "generated_questions": [
+          "What did Peter do to invite Amy to his party?",
+          "Why did Peter want to write a letter to Amy instead of just asking her?",
+          "What happened to Peter’s letter when he tried to mail it?",
+          "How do you think Peter felt when Amy ran away crying? Why?",
+          "Who came to Peter’s party at the end, and how did everyone react?",
+          "If you were Peter, what would you do differently to invite Amy?",
+          "Who did Peter want to invite to his party?",
+          "Why did Peter decide to write a letter instead of just asking Amy?",
+          "How do you think Peter felt when the letter blew away?",
+          "What did Peter do when he saw Amy running toward the letter?"
+        ],
+        "question_feedbacks": {
+          "0": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "1": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "2": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "3": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "4": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "5": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "6": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "7": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "8": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "9": {
+            "feedback": "negative",
+            "reasoning": ""
+          }
+        }
+      },
+      {
+        "story_title": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "iteration_id": "set_002",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "Better overall but the questions are too repetitive and targeting the same segment of the story."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability with Modify action",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "modify",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "recall_suitability",
+          "confidence": 0.9,
+          "reformulated_instruction": "Generate questions that cover a wider range of story events and avoid focusing repeatedly on the same segment."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {},
+          "reason": "New evaluator needed: recall_suitability",
+          "reformulated_instruction": "Generate questions that cover a wider range of story events and avoid focusing repeatedly on the same segment.",
+          "details": {
+            "evaluator_name": "recall_suitability",
+            "evaluator_description": "Evaluates questions for recall suitability based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "New evaluator needed: recall_suitability",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Generate questions that cover a wider range of story events and avoid focusing repeatedly on the same segment.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "recall_suitability",
+          "new_evaluator_description": "Evaluates questions for recall_suitability based on teacher feedback",
+          "instruction": "Generate questions that cover a wider range of story events and avoid focusing repeatedly on the same segment."
+        },
+        "timestamp": "2025-10-28T19:07:52.570854",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "A Letter to Amy\n\"I’m writing a letter to Amy.\" \"I’m inviting her to my party\",Peter announced. \"Why don’t you just ask her?\" \"You didn’t write to anyone else\", said his mother. Peter stared at the sheet of paper for a while and said, \"Well, this way it’s sort special.\"\nHe folded the letter quite a few times, put it in the envelope, and sealed it. \"Now I’ll mail it\", he said. \"What did you write?\" his mother asked. WILL YOU PLEASE COME TO MY BIRTHDAY PARTY. \"PETER. You should tell her when to come.\" So he wrote on the back of the envelope: IT IS THIS SATURDAY AT 2. \"Now I’ll mail it.\" \"Put on a stamp.\" He did, and started to leave. \"Wear your raincoat.\" \"It looks like rain.\" He put it on and said, \"It looks like rain.\" \"You’d better stay in, Willie,\" and ran out to mail his letter.\nWalking to the mailbox, Peter looked at the sky. Dark clouds raced across it like wild horses. He glanced up at Amy’s window. She wasn’t there. Only Pepe, her parrot, sat peering down. \"Willie! Didn’t I tell you to stay home?\"\nPeter thought. What will the boys say when they see a girl at my party? Suddenly there was a flash of lightning and a roar of thunder! A strong wind blew the letter out of his hand!\nPeter chased the letter. He tried to stop it with his foot, but it blew away.\nThen it flew high into the air –\nAnd landed, skipping across a hopscotch game.\nThe letter blew this way and that. Peter chased it this way and that. He couldn’t catch it.\nBig drops of rain began to fall.\nJust then someone turned the corner. It was Amy! She waved to him. The letter flew right toward her. She mustn’t see it, or the surprise will be spoiled! They both ran for the letter.\nIn his great hurry, Peter bumped into Amy. He caught the letter before she could see it was for her.\nQuickly he stuffed the letter into the mailbox.\nHe looked for Amy, but she had run off crying.\nNow she’ll never come to my party, thought Peter. He saw his reflection in the street. It looked all mixed up.\nWhen Peter got back to his house, his mother asked, \"Did you mail your letter?\" \"Yes\", he said sadly.\nSaturday came at last. Everybody arrived but Amy.\n\"Shall I bring the cake out now?\" his mother asked Peter. \"Let’s wait a little\", said Peter. \"Now! Bring it out now!\" chanted the boys. \"All right\", said Peter slowly, \"bring it out now.\"\nJust then the door opened. In walked Amy with her parrot! \"A girl – ugh!\" said Eddie.\n\"Happy Birthday\", Peter!\" said Amy. \"Haappy Birrrthday, PEEETERRR!\" repeated the parrot.\nPeter’s mother brought in the cake she had baked and lit the candles. Everyone sang. \"Make a wish!\" cried Amy. \"Wish for a truck full of ice cream!\" shouted Eddie. \"A store full of candy and no stomach-ache!\"\nBut Peter made his own wish, and blew out all the candles at once.",
+        "generated_questions": [
+          "What happened to Peter’s letter when he tried to mail it?",
+          "How do you think Peter felt when Amy ran away crying? Why?",
+          "If you were Peter, what would you do to make Amy feel better after she ran away?",
+          "If you could invite anyone to your birthday party, who would you invite and why?",
+          "Who is Peter writing a letter to?",
+          "What happens to Peter’s letter when he tries to mail it?",
+          "How do you think Peter felt when the letter blew away? Why?",
+          "What did Peter do when he saw Amy running toward the letter?",
+          "What did Peter worry about after Amy ran away?",
+          "If you were Peter, what would you do to make Amy feel better?"
+        ],
+        "question_feedbacks": {
+          "0": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "1": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "2": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "3": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "4": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "5": {
+            "feedback": "positive",
+            "reasoning": ""
+          },
+          "6": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "7": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "8": {
+            "feedback": "negative",
+            "reasoning": ""
+          },
+          "9": {
+            "feedback": "positive",
+            "reasoning": ""
+          }
+        }
+      },
+      {
+        "story_title": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "iteration_id": "set_003",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "Recall questions are weak; increase recall_suitability by a medium amount."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability with Increase action",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "recall_suitability",
+          "confidence": 1.0,
+          "reformulated_instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {},
+          "reason": "New evaluator needed: recall_suitability",
+          "reformulated_instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story.",
+          "details": {
+            "evaluator_name": "recall_suitability",
+            "evaluator_description": "Evaluates questions for recall suitability based on teacher feedback",
+            "status": "active"
+          }
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "New evaluator needed: recall_suitability",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "recall_suitability",
+          "new_evaluator_description": "Evaluates questions for recall_suitability based on teacher feedback",
+          "instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story."
+        },
+        "timestamp": "2025-10-28T19:28:30.231360",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "",
+        "generated_questions": [],
+        "question_feedbacks": {}
+      },
+      {
+        "story_title": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "iteration_id": "set_004",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "Recall questions are weak; increase recall_suitability by a medium amount."
+        },
+        "interpretation": {
+          "interpretation": "Feedback addressed recall_suitability with Increase action",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "adjustment_direction": "increase",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 1.0,
+          "reformulated_instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "recall_suitability"
+          ],
+          "delta": {
+            "recall_suitability": 0.2
+          },
+          "reason": "Orchestrator recommended increase for ['recall_suitability']",
+          "reformulated_instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story."
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator recommended increase for ['recall_suitability']",
+          "affected_evaluators": [
+            "recall_suitability"
+          ],
+          "weight_changes": {
+            "recall_suitability": 0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "recall_suitability"
+          ],
+          "instruction": "Generate more recall questions that focus on key plot elements and the sequence of events in the story."
+        },
+        "timestamp": "2025-10-28T19:29:14.544660",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "",
+        "generated_questions": [],
+        "question_feedbacks": {}
+      }
+    ]
+  }
+}

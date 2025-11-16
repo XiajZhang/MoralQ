@@ -26,9 +26,13 @@ CORS(app)  # Enable CORS for all routes
 env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 load_dotenv(env_path)
 
+# Directory for persisted feedback/evaluation artifacts
+STORAGE_DIR = os.path.join(os.path.dirname(__file__), "storage")
+os.makedirs(STORAGE_DIR, exist_ok=True)
+
 # Configuration
-# Read assets path from .env; fallback to generic path if not set
-ASSETS_PATH = os.getenv('ASSETS_PATH', "/path/to/interactive-storybook-assets")
+# Read assets path from .env; fallback to previous default if not set
+ASSETS_PATH = os.getenv('ASSETS_PATH', "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets")
 QNA_JSON_PATH = os.path.join(ASSETS_PATH, "qna_json")
 IMAGES_PATH = os.path.join(ASSETS_PATH, "image")
 
@@ -541,7 +545,7 @@ def call_objective_question_generation_script(story_content, segments, objective
             dynamic_evaluators = []
             try:
                 import json
-                feedback_file = os.path.join(os.path.dirname(__file__), "teacher_feedback_records.json")
+                feedback_file = os.path.join(STORAGE_DIR, "teacher_feedback_records.json")
                 if os.path.exists(feedback_file):
                     with open(feedback_file, 'r') as f:
                         feedback_data = json.load(f)
@@ -587,7 +591,7 @@ def call_objective_question_generation_script(story_content, segments, objective
                 print(f"   Evaluator: {ev}")
         
         evaluator = ContextQEvaluationPipeline(
-            storage_file=os.path.join(os.path.dirname(__file__), "question_evaluations.json"),
+            storage_file=os.path.join(STORAGE_DIR, "question_evaluations.json"),
             feedback_records_file=None,
             dynamic_evaluators=dynamic_evaluators if dynamic_evaluators else None
         )
@@ -599,7 +603,7 @@ def call_objective_question_generation_script(story_content, segments, objective
         reformulated_instruction = ""
         try:
             import json
-            feedback_file = os.path.join(os.path.dirname(__file__), "teacher_feedback_records.json")
+            feedback_file = os.path.join(STORAGE_DIR, "teacher_feedback_records.json")
             if os.path.exists(feedback_file):
                 with open(feedback_file, 'r') as f:
                     feedback_data = json.load(f)
@@ -621,7 +625,7 @@ def call_objective_question_generation_script(story_content, segments, objective
         set_number = "set_001"  # Default for initial generation
         try:
             import json
-            eval_file = os.path.join(os.path.dirname(__file__), "question_evaluations.json")
+            eval_file = os.path.join(STORAGE_DIR, "question_evaluations.json")
             if os.path.exists(eval_file):
                 with open(eval_file, 'r') as f:
                     eval_data = json.load(f)
@@ -649,6 +653,51 @@ def call_objective_question_generation_script(story_content, segments, objective
         except Exception as e:
             print(f"[WARN]  Error determining set number: {e}")
         
+        # Helper functions for regeneration guidance
+        def _collect_failure_reasons(eval_results, questions):
+            failure_notes = []
+            for eval_result, q_text in zip(eval_results, questions):
+                if not eval_result or eval_result.get("decision") == "pass":
+                    continue
+                question_type = eval_result.get("question_type", "")
+                base_reason = (eval_result.get("evaluation_reasoning") or "").strip()
+                if base_reason:
+                    label = f"{question_type}: {base_reason}" if question_type else base_reason
+                    failure_notes.append(label)
+                dynamic_evals = eval_result.get("dynamic_evaluations", {}) or {}
+                for dyn_name, dyn_info in dynamic_evals.items():
+                    if dyn_info.get("decision") != "regenerate":
+                        continue
+                    dyn_reason = (dyn_info.get("reasoning") or "").strip()
+                    score = dyn_info.get("score")
+                    readable_name = dyn_name.replace("_", " ")
+                    if dyn_reason and score is not None:
+                        failure_notes.append(f"{readable_name}: {dyn_reason} (score={score})")
+                    elif dyn_reason:
+                        failure_notes.append(f"{readable_name}: {dyn_reason}")
+                    elif score is not None:
+                        failure_notes.append(f"{readable_name}: score={score} below threshold")
+            return failure_notes
+
+        def _build_failure_guidance(reasons_set):
+            if not reasons_set:
+                return ""
+            top_reasons = list(reasons_set)[:5]
+            joined = "; ".join(top_reasons)
+            return f"Avoid previous issues: {joined}"
+
+        def _compose_avoidance_instruction(base_instruction, guidance_text):
+            default_prompt = "Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties."
+            instructions = []
+            if base_instruction:
+                instructions.append(base_instruction.strip())
+            if guidance_text:
+                instructions.append(guidance_text)
+            instructions.append(default_prompt)
+            return " ".join(instructions).strip()
+
+        failure_reason_set = set()
+
         # Step 1: Generate an initial batch of 15 questions for diversity (to ensure we get 10 passing)
         result = question_generator.generate(
             story=story_content,
@@ -683,6 +732,8 @@ def call_objective_question_generation_script(story_content, segments, objective
             # Step 3: Filter for passing questions with uniqueness tracking
             passing_questions = []
             unique_questions = set()  # Track unique question texts
+
+            failure_reason_set.update(_collect_failure_reasons(evaluations_list, question_texts))
             
             for i, eval_result in enumerate(evaluations_list):
                 decision = eval_result.get("decision")
@@ -719,6 +770,8 @@ def call_objective_question_generation_script(story_content, segments, objective
                 attempts_remaining -= 1
                 print(f"[WARN]  Only {len(passing_questions)}/10 passing questions. Generating more... (Attempts remaining: {attempts_remaining})")
                 
+                avoidance_instruction = _compose_avoidance_instruction(reformulated_instruction, _build_failure_guidance(failure_reason_set))
+
                 # Generate additional questions
                 print(f"Generating {10 - len(passing_questions)} more questions...")
                 additional_result = question_generator.generate(
@@ -727,7 +780,7 @@ def call_objective_question_generation_script(story_content, segments, objective
                     objective=objective,
                     story_title=story_title,
                     moral_text=moral_text,
-                    avoidance_instructions=(reformulated_instruction + " Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.") if reformulated_instruction else "Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties."
+                    avoidance_instructions=avoidance_instruction
                 )
                 
                 new_questions = additional_result.get("questions", [])
@@ -758,6 +811,13 @@ def call_objective_question_generation_script(story_content, segments, objective
                 new_passing = sum(1 for (_, e) in new_evaluations if e.get("decision") == "pass")
                 new_regenerate = sum(1 for (_, e) in new_evaluations if e.get("decision") == "regenerate")
                 print(f"[INFO] New batch: {new_passing} passing, {new_regenerate} need regeneration out of {len(new_evaluations)} total")
+
+                failure_reason_set.update(
+                    _collect_failure_reasons(
+                        [e for (_, e) in new_evaluations],
+                        [q for (q, _) in new_evaluations]
+                    )
+                )
                 
                 # Add passing ones
                 for q_text, eval_result in new_evaluations:
@@ -908,7 +968,7 @@ def api_teacher_feedback():
         
         # Initialize feedback system
         feedback_system = TeacherFeedbackSystem(
-            storage_file=os.path.join(os.path.dirname(__file__), "teacher_feedback_records.json")
+            storage_file=os.path.join(STORAGE_DIR, "teacher_feedback_records.json")
         )
         
         # Process feedback
@@ -1056,7 +1116,7 @@ def api_regenerate_questions():
                 
                 # Initialize teacher feedback system
                 feedback_system = TeacherFeedbackSystem(
-                    storage_file=os.path.join(os.path.dirname(__file__), "teacher_feedback_records.json")
+                    storage_file=os.path.join(STORAGE_DIR, "teacher_feedback_records.json")
                 )
                 
                 # Record feedback for each storybook
@@ -1119,7 +1179,7 @@ def api_regenerate_questions():
                         question_evaluations = []
                         try:
                             import json as json_module
-                            eval_file = os.path.join(os.path.dirname(__file__), "question_evaluations.json")
+                            eval_file = os.path.join(STORAGE_DIR, "question_evaluations.json")
                             if os.path.exists(eval_file):
                                 with open(eval_file, 'r') as f:
                                     eval_data = json_module.load(f)
@@ -1168,7 +1228,7 @@ def api_regenerate_questions():
         dynamic_evaluators = []
         try:
             import json
-            feedback_file = os.path.join(os.path.dirname(__file__), "teacher_feedback_records.json")
+            feedback_file = os.path.join(STORAGE_DIR, "teacher_feedback_records.json")
             if os.path.exists(feedback_file):
                 with open(feedback_file, 'r') as f:
                     feedback_data = json.load(f)
@@ -1262,7 +1322,7 @@ def api_regenerate_questions():
                 try:
                     # Determine set number from evaluation data or use default
                     import json
-                    eval_file = os.path.join(os.path.dirname(__file__), "question_evaluations.json")
+                    eval_file = os.path.join(STORAGE_DIR, "question_evaluations.json")
                     if os.path.exists(eval_file):
                         with open(eval_file, 'r') as f:
                             eval_data = json.load(f)
@@ -1500,8 +1560,8 @@ def api_approve_moral():
                         
                         # Initialize evaluation pipeline
                         evaluation_pipeline = ContextQEvaluationPipeline(
-                            storage_file=os.path.join(os.path.dirname(__file__), "question_evaluations.json"),
-                            feedback_records_file=os.path.join(os.path.dirname(__file__), "teacher_feedback_records.json")
+                            storage_file=os.path.join(STORAGE_DIR, "question_evaluations.json"),
+                            feedback_records_file=os.path.join(STORAGE_DIR, "teacher_feedback_records.json")
                         )
                         
                         # Extract question texts for evaluation

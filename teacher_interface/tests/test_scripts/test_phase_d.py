@@ -507,10 +507,10 @@ class PhaseDTester:
             
             # Temporarily update paths for optimizer initialization
             import shutil
-            # question_generator.py looks for: services/../backend/ = backend/
-            backend_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'backend')
-            backend_feedback_file = os.path.join(backend_dir, 'teacher_feedback_records.json')
-            backend_eval_file = os.path.join(backend_dir, 'question_evaluations.json')
+            storage_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'backend', 'storage')
+            os.makedirs(storage_dir, exist_ok=True)
+            backend_feedback_file = os.path.join(storage_dir, 'teacher_feedback_records.json')
+            backend_eval_file = os.path.join(storage_dir, 'question_evaluations.json')
             
             # Backup existing files if they exist
             if os.path.exists(backend_feedback_file):
@@ -550,27 +550,7 @@ class PhaseDTester:
                 eval_test = json.load(f)
                 print(f"Eval records: {len(eval_test.get('evaluations', []))}")
             
-            # Show what path question_generator will look for
-            # question_generator.py is at: backend/services/question_generator.py
-            # It does: services/../backend/ = backend/backend/ (wrong!)
-            # Actually, it resolves from services/ -> backend/ -> then adds backend/ again
-            # So we need: backend/backend/teacher_feedback_records.json
-            services_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'backend', 'services')
-            expected_feedback_dir = os.path.join(services_dir, '..', 'backend')
-            expected_feedback_path = os.path.join(expected_feedback_dir, 'teacher_feedback_records.json')
-            expected_eval_path = os.path.join(expected_feedback_dir, 'question_evaluations.json')
-            
-            print(f"Expected feedback path by question_generator: {os.path.abspath(expected_feedback_path)}")
-            print(f"Actual feedback file location: {os.path.abspath(backend_feedback_file)}")
-            
-            # Create the expected directory structure and copy files there
-            os.makedirs(expected_feedback_dir, exist_ok=True)
-            if expected_feedback_path != backend_feedback_file:
-                print(f"Copying to expected location: {expected_feedback_path}")
-                shutil.copy(backend_feedback_file, expected_feedback_path)
-            if expected_eval_path != backend_eval_file:
-                print(f"Copying to expected location: {expected_eval_path}")
-                shutil.copy(backend_eval_file, expected_eval_path)
+            print(f"Optimizer storage directory: {os.path.abspath(storage_dir)}")
             
             generator = QuestionGeneratorModule(optimize_with_feedback=True)
             

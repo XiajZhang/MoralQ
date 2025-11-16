@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Source directory containing video files
-SRC_DIR="/Users/mariyamohiuddin/Desktop/MIT Media Lab Projects/MoralQ Assets/Session 1/"
+SRC_DIR="/Users/mariyamohiuddin/Desktop/MIT Media Lab Projects/MoralQ Assets/Session 3/"
 # Destination directory for audio files
-DEST_DIR="/Users/mariyamohiuddin/Desktop/MIT Media Lab Projects/MoralQ Assets/Session 1 Audio/"
+DEST_DIR="/Users/mariyamohiuddin/Desktop/MIT Media Lab Projects/MoralQ Assets/Session 3 Audio/"
 
 # Create destination directory if it doesn't exist
 mkdir -p "$DEST_DIR"

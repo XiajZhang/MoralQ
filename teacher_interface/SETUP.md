@@ -63,8 +63,9 @@ Understanding the project layout will help during setup:
 teacher_interface/
 ├── backend/                          # Python backend
 │   ├── server.py                     # Flask application (main entry point)
-│   ├── question_evaluations.json     # Evaluation results (auto-generated)
-│   ├── teacher_feedback_records.json # Feedback records (auto-generated)
+│   ├── storage/
+│   │   ├── teacher_feedback_records.json # Feedback records (auto-generated)
+│   │   └── question_evaluations.json     # Evaluation traces (auto-generated)
 │   └── services/                     # Core services
 │       ├── contextq_evaluators.py
 │       ├── gpt-moral-generation-structured.py
@@ -473,7 +474,7 @@ openai.error.AuthenticationError: Invalid API key
 
 1. **Check Backend Logs**: The terminal running `server.py` shows detailed logs
 2. **Check Frontend Console**: Browser DevTools (F12) shows client-side errors
-3. **Verify JSON Files**: Check `question_evaluations.json` and `teacher_feedback_records.json` for data
+3. **Verify JSON Files**: Check `backend/storage/question_evaluations.json` and `backend/storage/teacher_feedback_records.json` for data
 4. **Test Individual Components**: Run scripts in `services/` directory independently
 
 ## Development Workflow
@@ -494,8 +495,9 @@ openai.error.AuthenticationError: Invalid API key
 
 1. **Clear JSON files** (optional, for clean testing):
    ```bash
-   echo "{}" > backend/question_evaluations.json
-   echo "{}" > backend/teacher_feedback_records.json
+   echo '{"evaluations": []}' > backend/storage/question_evaluations.json
+   mkdir -p backend/storage
+   echo "{}" > backend/storage/teacher_feedback_records.json
    echo "{}" > q_testing.json
    ```
 

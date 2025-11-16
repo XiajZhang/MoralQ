@@ -80,9 +80,8 @@ def main():
     generator = StoryMoralGeneratorStructured()
     
     # Load paths from environment variables
-    assets_base = os.getenv('ASSETS_PATH', '/path/to/interactive-storybook-assets')
-    asset_path = os.path.join(assets_base, "qna_json") + "/"
-    output_path = os.getenv('OUTPUT_PATH', '/path/to/output') + "/"
+    asset_path = "/Users/mariyamohiuddin/Desktop/interactive-storybook-assets/qna_json/"
+    output_path = "/Users/mariyamohiuddin/Desktop/Outputs/"
     
     # Create output directory if it doesn't exist
     if not os.path.exists(output_path):

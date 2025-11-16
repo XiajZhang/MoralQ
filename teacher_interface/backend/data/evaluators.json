@@ -1,0 +1,59 @@
+{
+  "completion_suitability": {
+    "description": "Checks repetition and rhyming patterns in the story.",
+    "rubric": {
+      "criteria": [
+        "Question focuses on repeated phrases or rhymes.",
+        "Child can answer using completion of a known pattern."
+      ]
+    },
+    "default_weight": 0.15,
+    "module": "teacher_interface.backend.evaluators.suitability_evaluators"
+  },
+  "recall_suitability": {
+    "description": "Assesses the ability to recall story events or sequences.",
+    "rubric": {
+      "criteria": [
+        "Encourages recalling multiple story elements.",
+        "Supports narrative sequencing."
+      ]
+    },
+    "default_weight": 0.2,
+    "module": "teacher_interface.backend.evaluators.suitability_evaluators"
+  },
+  "open_ended_suitability": {
+    "description": "Encourages elaboration and personal interpretation.",
+    "rubric": {
+      "criteria": [
+        "Elicits detailed responses.",
+        "Discourages one-word answers.",
+        "Connects to feelings or opinions."
+      ]
+    },
+    "default_weight": 0.25,
+    "module": "teacher_interface.backend.evaluators.suitability_evaluators"
+  },
+  "wh_suitability": {
+    "description": "Targets factual questions about story details.",
+    "rubric": {
+      "criteria": [
+        "Question is answerable from the story context.",
+        "Focuses on who/what/where/when/why/how."
+      ]
+    },
+    "default_weight": 0.2,
+    "module": "teacher_interface.backend.evaluators.suitability_evaluators"
+  },
+  "distancing_suitability": {
+    "description": "Bridges story content with the child's own experiences.",
+    "rubric": {
+      "criteria": [
+        "Invites self-reflection.",
+        "Connects the story to real-world analogues."
+      ]
+    },
+    "default_weight": 0.2,
+    "module": "teacher_interface.backend.evaluators.suitability_evaluators"
+  }
+}
+

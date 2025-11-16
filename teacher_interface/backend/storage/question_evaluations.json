@@ -1,0 +1,810 @@
+{
+  "evaluations": [
+    {
+      "set_metadata": {
+        "storybook_id": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "set_number": "set_001",
+        "timestamp": "2025-10-28T18:57:38.156689"
+      }
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.156673",
+      "question": "What did Peter do to invite Amy to his party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"What did,\" which is a classic indicator of a Wh-question. It seeks specific information about Peter's actions regarding inviting Amy, rather than asking for a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question specifically asks about an action taken by a character (Peter) within the context of a story (inviting Amy to his party). It focuses on a detail that would be found in the narrative, making it a suitable Wh- question for story comprehension.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.157375",
+      "question": "Why did Peter want to write a letter to Amy instead of just asking her?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reason for Peter's choice, rather than a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question focuses on a specific detail from a story: Peter's motivation for choosing to write a letter to Amy rather than speaking to her directly. It requires understanding of character actions and reasoning within the narrative, making it a suitable Wh- question about story details.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.157665",
+      "question": "What happened to Peter’s letter when he tried to mail it?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a specific event or detail (\"what happened to Peter’s letter\") that occurred in the narrative, which is characteristic of a Recall question. It requires the respondent to remember and state a fact from the text.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to recall a specific event (what happened to Peter’s letter) which is a plot element or sequence of events. The answer can be determined from the current page if that event is depicted or described there, so it does not require referencing other parts of the story. Both criteria are fully met, resulting in a suitability score of 1.0 and a \"pass\" decision.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "recall_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.157931",
+      "question": "How do you think Peter felt when Amy ran away crying? Why?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How do you think...\" and asks for an explanation (\"Why?\"), prompting the respondent to infer and explain Peter's feelings based on the scenario. This aligns with the Wh question type, which typically starts with words like who, what, when, where, why, or how, and seeks an explanation or reasoning.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question directly references specific characters (Peter and Amy) and an event in the story (Amy running away crying). It asks for an interpretation of Peter's feelings in response to this event, which requires understanding and recalling story details. Therefore, it is suitable as a Wh- question focusing on story details.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.158272",
+      "question": "Who came to Peter’s party at the end, and how did everyone react?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Who\" and also asks \"how,\" both of which are classic Wh-question stems. It seeks specific information about attendees and their reactions, rather than a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about characters who attended Peter’s party and the reactions of those present, which are direct details from the story. It is clear, focused on narrative events, and suitable for comprehension or discussion purposes.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.158611",
+      "question": "If you were Peter, what would you do differently to invite Amy?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to imagine themselves as Peter and consider what they would do differently, which requires taking a perspective outside of themselves and speculating about alternative actions. This aligns with the \"Distancing\" question type, which involves hypothetical or perspective-taking scenarios.",
+      "suitability_score": 4.33,
+      "decision": "pass",
+      "evaluation_reasoning": "This question strongly encourages the child to reflect on their own ideas and experiences by asking what they would do differently if they were in Peter's position, which scores high for asking about personal experiences (4). It is difficult to answer in just one word, as it requires explanation or elaboration (4). The question is highly relevant to the current page, assuming the story is about Peter inviting Amy, so it scores a 5 for relevance. The average suitability score is above 3, so the question passes.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.158987",
+      "question": "Who did Peter want to invite to his party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Who,\" which is a classic indicator of a Wh-question. It seeks specific information about the person Peter wanted to invite, rather than asking for a yes/no answer, a completion, or a recall of a simple fact.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about a detail from a story (who Peter wanted to invite to his party), which is a key aspect of story comprehension. It is clear, focused on a character's action, and meets the criteria for a suitable Wh- question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 1,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.159473",
+      "question": "Why did Peter decide to write a letter instead of just asking Amy?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reason for Peter's choice, rather than a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about a character's motivation within the context of a story (\"Why did Peter decide to write a letter instead of just asking Amy?\"). It focuses on story details, such as character actions and reasoning, making it highly suitable for evaluating comprehension of narrative elements.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 1,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.160003",
+      "question": "How do you think Peter felt when the letter blew away?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How do you think,\" which asks for an explanation or inference about Peter's feelings, making it a Wh-type question that seeks a reasoned response rather than a simple fact or completion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question directly references a specific event in a story (\"when the letter blew away\") and asks about Peter's feelings in that context. It focuses on story details and encourages comprehension and inference, making it highly suitable as a Wh- question for story discussion.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 1,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "timestamp": "2025-10-28T18:57:38.161040",
+      "question": "What did Peter do when he saw Amy running toward the letter?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"What did,\" which is a classic indicator of a Wh-question. It seeks specific information about Peter's actions in a particular situation, rather than asking for a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about an action taken by a character (Peter) in response to another character's (Amy's) behavior within a story context. It directly focuses on story details, making it suitable for evaluating comprehension or prompting discussion about narrative events.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 1,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {}
+    },
+    {
+      "set_metadata": {
+        "storybook_id": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "set_number": "set_002",
+        "timestamp": "2025-10-28T19:02:06.765642"
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.765616",
+      "question": "What happened to Peter’s letter when he tried to mail it?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a specific event or detail (\"what happened to Peter’s letter\") that occurred in the narrative, which is characteristic of a Recall question. It requires the respondent to remember and state a fact from the text.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to recall a specific event (what happened to Peter’s letter) which is a plot element or sequence of events. The answer can be determined from the current page if that event is depicted or described there, so it does not require referencing other parts of the story. Both criteria are fully met, resulting in a suitability score of 1.0 and a \"pass\" decision.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "recall_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What happened to Peter’s letter when he tried to mail it?\" is mostly clear and direct, but the phrase \"What happened to\" and \"when he tried to mail it\" could be a bit abstract for 4-6 year olds. While the question avoids complex vocabulary, it could be made even simpler by using more concrete language, such as \"Did something happen to Peter's letter when he went to mail it?\" or \"What did the wind do to Peter's letter?\" The current version is understandable, but could be improved for this age group by breaking it down further or using more familiar words."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.767048",
+      "question": "How do you think Peter felt when Amy ran away crying? Why?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How do you think...\" and asks for an explanation (\"Why?\"), prompting the respondent to infer and explain Peter's feelings based on the scenario. This aligns with the Wh question type, which typically starts with words like who, what, when, where, why, or how, and seeks an explanation or reasoning.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question directly references specific characters (Peter and Amy) and an event in the story (Amy running away crying). It asks for an interpretation of Peter's feelings in response to this event, which requires understanding and recalling story details. Therefore, it is suitable as a Wh- question focusing on story details.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"How do you think Peter felt when Amy ran away crying? Why?\" is mostly age-appropriate but could be further simplified for 4-6 year olds. The phrase \"How do you think Peter felt\" is understandable, but \"when Amy ran away crying\" could be simplified to \"when Amy ran away\" or \"when Amy was sad.\" The follow-up \"Why?\" is open-ended and may be a bit challenging for the youngest in this age group, as it requires them to articulate reasoning. A more age-appropriate version might be: \"How did Peter feel when Amy ran away? Can you tell me?\" or \"Was Peter happy or sad when Amy ran away? Why?\" The question does avoid complex vocabulary, but the structure could be simpler."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.767839",
+      "question": "If you were Peter, what would you do to make Amy feel better after she ran away?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to imagine themselves in Peter's position and decide on an action, which requires distancing from their own perspective and taking on the perspective of a character. This fits the definition of a Distancing question.",
+      "suitability_score": 4.67,
+      "decision": "pass",
+      "evaluation_reasoning": "This question asks the child to put themselves in Peter's shoes and consider actions to help Amy, which strongly encourages personal reflection and empathy (score 4). It cannot be answered in one word, as it requires explanation and reasoning (score 5). The question is directly related to the story event where Amy runs away, ensuring strong relevance to the current page (score 5). The average score is well above 3, making it a suitable distancing question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you were Peter, what would you do to make Amy feel better after she ran away?\" is somewhat age-appropriate but could be simplified further for 4-6 year olds. The phrase \"If you were Peter\" is a bit abstract for this age group, and \"make Amy feel better\" is a more complex emotional concept. A simpler version might be, \"What could Peter do to help Amy feel happy again?\" or \"How can Peter help Amy after she ran away?\" The question does avoid complex vocabulary, but the structure and emotional reasoning required are on the higher end for this age group."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.768690",
+      "question": "If you could invite anyone to your birthday party, who would you invite and why?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a personal choice (\"who would you invite\") and a justification (\"why\"), which requires the respondent to generate their own answer rather than recalling a fact or providing a specific piece of information. It is not a simple recall, completion, or factual \"wh\" question, nor does it distance the respondent from the content. Therefore, it is classified as Open-Ended.",
+      "suitability_score": 4.5,
+      "decision": "pass",
+      "evaluation_reasoning": "This question strongly solicits ideas and opinions by asking the child to choose anyone they would invite and to explain their reasoning. It discourages one-word answers by including \"and why,\" prompting elaboration. It is somewhat difficult to opt out, as the child must make a choice and provide a reason, though they could still answer with \"no one\" or \"I don't know\" if they wish. The question is highly connected to personal experience, as it asks about the child's own birthday party and preferences. Overall, it is a highly suitable open-ended question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "open_ended_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you could invite anyone to your birthday party, who would you invite and why?\" is mostly understandable for 4-6 year olds, but it could be simplified further. The phrase \"If you could invite anyone\" is a bit abstract for this age group, and \"who would you invite and why?\" asks for both a choice and a reason, which may be challenging for younger children to articulate. A more age-appropriate version might be, \"Who do you want to come to your birthday party?\" or \"Who would you like to invite to your party?\" The \"why\" part could be asked separately or with more scaffolding, such as, \"Can you tell me why you want them to come?\" Overall, the question is close to being appropriate but could be made simpler in both language and structure."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.769414",
+      "question": "Who is Peter writing a letter to?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Who,\" which is a classic indicator of a Wh-question. It seeks specific information about the recipient of Peter's letter, rather than asking for a completion, recall, open-ended response, or distancing.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question directly asks about a specific detail in a story—namely, the recipient of Peter's letter. It is a classic Wh- question that checks comprehension of story events or character actions, making it highly suitable.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 4,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 5.0,
+          "decision": "pass",
+          "reasoning": "The question \"Who is Peter writing a letter to?\" is very simple and direct. It uses basic vocabulary (\"who,\" \"Peter,\" \"writing,\" \"letter,\" \"to\") that is appropriate for 4-6 year olds. The sentence structure is straightforward, and the concept of writing a letter to someone is familiar and concrete for children in this age group. There are no complex words or abstract ideas, making it easy for young children to understand and answer."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.770017",
+      "question": "What happens to Peter’s letter when he tries to mail it?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a specific event or detail from a story (\"What happens to Peter’s letter when he tries to mail it?\"), which requires recalling information directly from the text rather than generating new content or offering an open-ended response.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to recall a specific event (what happens to Peter’s letter) which is a sequence of actions in the plot. Additionally, the answer cannot be determined from a single page, as it requires knowledge of the events that occur when Peter tries to mail the letter, which may span multiple pages. Both criteria are fully met, so the question is suitable for recall.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 4,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "recall_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What happens to Peter’s letter when he tries to mail it?\" is mostly clear and direct, but the phrase \"What happens to\" is a bit abstract for 4-6 year olds, who may respond better to more concrete or guided questions. The use of \"tries to mail it\" is understandable, but could be simplified further to \"when Peter goes to mail his letter\" or \"when Peter takes his letter outside.\" The question does avoid complex vocabulary, but could be made even more age-appropriate by being more specific, such as \"What does the wind do to Peter's letter?\" or \"Where does Peter's letter go when he takes it outside?\" This would help younger children focus on the key event and use simpler language."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.770666",
+      "question": "How do you think Peter felt when the letter blew away? Why?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How do you think...\" and asks for an explanation (\"Why?\"), which is characteristic of Wh- questions that require reasoning, inference, or explanation beyond simple recall or completion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question directly references a specific event in a story (the letter blowing away) and asks about Peter's feelings, which requires understanding and interpreting story details. It is a suitable Wh- question for story comprehension.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 4,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"How do you think Peter felt when the letter blew away? Why?\" is mostly age-appropriate, but could be further simplified for 4-6 year olds. The phrase \"How do you think Peter felt\" is understandable, but \"when the letter blew away\" could be made more concrete, such as \"when the wind took his letter.\" The follow-up \"Why?\" is open-ended and may be challenging for the youngest in this age group, who might benefit from more scaffolding or a choice-based format. However, the question does avoid complex vocabulary and is generally accessible, though not optimally simplified."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.771332",
+      "question": "What did Peter do when he saw Amy running toward the letter?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"What did,\" which is a classic indicator of a Wh-question. It seeks specific information about Peter's actions in a particular situation, rather than asking for a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about an action taken by a character (Peter) in response to another character's (Amy's) behavior within a story context. It directly focuses on story details, making it suitable for evaluating comprehension or prompting discussion about narrative events.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 4,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter do when he saw Amy running toward the letter?\" is mostly clear and uses familiar words like \"do,\" \"saw,\" \"running,\" and \"letter.\" However, the structure is a bit complex for 4-6 year olds. The phrase \"when he saw Amy running toward the letter\" requires children to process a sequence of actions and understand cause and effect, which may be challenging for the youngest in this age group. A simpler version could be: \"What did Peter do when Amy came?\" or \"What did Peter do when Amy ran to the letter?\" This would reduce the cognitive load and make it more accessible."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.772036",
+      "question": "What did Peter worry about after Amy ran away?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a specific detail from a story (\"What did Peter worry about after Amy ran away?\"), which requires recalling information that was explicitly stated or implied in the text. It is not asking for an open-ended response, completion, or a distancing judgment, but rather for a factual answer based on memory.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks about Peter's worries after a specific event (Amy running away), which requires recalling a sequence of events and Peter's reaction—this is a plot element. Additionally, the answer likely cannot be determined from a single page, as it references events and character emotions that may be developed over several pages. Both criteria are fully met, so the question is suitable for recall.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 4,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "recall_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter worry about after Amy ran away?\" is mostly clear and direct, but the phrase \"worry about\" and \"after Amy ran away\" may be a bit abstract for 4-6 year olds. Young children might better understand simpler words like \"feel\" or \"think\" instead of \"worry about,\" and \"ran away\" could be confusing if they interpret it literally. A more age-appropriate version might be, \"How did Peter feel when Amy left?\" or \"What did Peter think when Amy ran away?\" The question is close to being suitable, but could be simplified further for this age group."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:02:06.773025",
+      "question": "If you were Peter, what would you do to make Amy feel better?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to imagine themselves as Peter and decide what actions they would take, which is characteristic of a Distancing question. It requires the respondent to take the perspective of another character rather than answer directly from their own viewpoint.",
+      "suitability_score": 4.33,
+      "decision": "pass",
+      "evaluation_reasoning": "This question asks the child to put themselves in Peter's shoes and consider actions to help Amy, which is a strong distancing prompt. It requires more than a one-word answer, as the child must explain what they would do and why. The question is also highly relevant to the story, assuming the current page involves Peter and Amy and a situation where Amy needs comforting. Overall, it is well-suited as a distancing question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 4,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "distancing_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you were Peter, what would you do to make Amy feel better?\" is somewhat age-appropriate but could be simplified further for 4-6 year olds. The phrase \"If you were Peter\" introduces a hypothetical scenario, which can be a bit abstract for younger children. Additionally, \"make Amy feel better\" is understandable, but the question could use more concrete language. For example, \"What could Peter do to help Amy feel happy?\" or \"How can Peter help Amy not be sad?\" would be simpler and more direct for this age group. The question does avoid complex vocabulary, but the structure could be more straightforward."
+        }
+      }
+    },
+    {
+      "set_metadata": {
+        "storybook_id": "A Letter To Amy",
+        "objective": "Narrative Skills",
+        "set_number": "set_003",
+        "timestamp": "2025-10-28T19:12:19.312648"
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.312584",
+      "question": "What happened to Peter’s letter when he tried to mail it?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a specific event or detail (\"what happened to Peter’s letter\") that occurred in the narrative, which is characteristic of a Recall question. It requires the respondent to remember and state a fact from the text.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to recall a specific event (what happened to Peter’s letter) which is a plot element or sequence of events. The answer can be determined from the current page if that event is depicted or described there, so it does not require referencing other parts of the story. Both criteria are fully met, resulting in a suitability score of 1.0 and a \"pass\" decision.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "recall_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What happened to Peter’s letter when he tried to mail it?\" is mostly clear and direct, but the phrase \"What happened to\" and \"when he tried to mail it\" could be a bit abstract for 4-6 year olds. While the question avoids complex vocabulary, it could be made even simpler by using more concrete language, such as \"Did something happen to Peter's letter when he went to mail it?\" or \"What did the wind do to Peter's letter?\" The current version is understandable, but could be improved for this age group by breaking it down further or using more familiar words."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question \"What happened to Peter’s letter when he tried to mail it?\" focuses on a specific and significant event in the story: the moment when Peter's letter is blown away by the wind and he chases after it. This is a key part of the narrative and is not overly repetitive, as it does not focus on the same segment as other common questions (such as \"What did Peter write in the letter?\" or \"Did Amy come to the party?\"). However, it does focus on a single event rather than covering a broader range of story events. To achieve a perfect score, the question could be broadened to encompass more of the story or ensure that other questions in the set do not also focus on this same mailing scene. Still, this question does a good job of avoiding repetition and covers an important plot point."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.314983",
+      "question": "If you were Peter, what would you do to make Amy feel better after she ran away?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to imagine themselves in Peter's position and decide on an action, which requires distancing from their own perspective and taking on the perspective of a character. This fits the definition of a Distancing question.",
+      "suitability_score": 4.67,
+      "decision": "pass",
+      "evaluation_reasoning": "This question asks the child to put themselves in Peter's shoes and consider actions to help Amy, which strongly encourages personal reflection and empathy (score 4). It cannot be answered in one word, as it requires explanation and reasoning (score 5). The question is directly related to the story event where Amy runs away, ensuring strong relevance to the current page (score 5). The average score is well above 3, making it a suitable distancing question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you were Peter, what would you do to make Amy feel better after she ran away?\" is somewhat age-appropriate but could be simplified further for 4-6 year olds. The phrase \"If you were Peter\" is a bit abstract for this age group, and \"make Amy feel better\" is a more complex emotional concept. A simpler version might be, \"What could Peter do to help Amy feel happy again?\" or \"How can Peter help Amy after she ran away?\" The question does avoid complex vocabulary, but the structure and emotional reasoning required are on the higher end for this age group."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question, \"If you were Peter, what would you do to make Amy feel better after she ran away?\" focuses on the event where Amy runs away crying after Peter accidentally bumps into her and tries to hide the letter. This is a significant moment in the story, but it is only one segment of the overall narrative. The story includes other important events, such as Peter writing the letter, mailing it, worrying about Amy coming to the party, and the party itself. While this question does not repeatedly focus on the same segment, it does not actively cover a wider range of story events either. It is centered on a single emotional moment rather than encouraging discussion about multiple parts of the story. However, since it does not show a pattern of repetition and is not overly narrow in a way that would violate the criteria, it earns a high score, but not a perfect one."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.316167",
+      "question": "If you could add a new animal friend to the story, who would it be and what would they say at the party?",
+      "question_type": "Completion",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to create or invent a new character and dialogue, which requires them to complete or extend the story. This fits the definition of a Completion question, as it prompts for original content rather than recalling information or providing an opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question does not deal with rhyming or repeated phrases. It asks the respondent to add a new animal character and imagine what they would say at a party, which is a creative and open-ended prompt suitable for a completion question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "completion_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you could add a new animal friend to the story, who would it be and what would they say at the party?\" is mostly age-appropriate for 4-6 year olds, but it could be simplified further. The phrase \"If you could add a new animal friend to the story\" is a bit abstract for younger children, who may not fully grasp the idea of \"adding\" a character to a story. Also, \"who would it be and what would they say at the party?\" is a two-part question, which can be challenging for this age group. Simpler language such as \"What animal would you like to come to the party? What would it say?\" would be more direct and easier for young children to understand and answer."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question, \"If you could add a new animal friend to the story, who would it be and what would they say at the party?\" encourages children to think creatively and connect with the party scene at the end of the story. This is a significant event in the narrative, involving multiple characters and the resolution of the main conflict. The question does not focus on the same segment repeatedly and instead invites children to expand on the party scene, which is only one of several key events (others include mailing the letter, chasing the letter, and Peter's worry about Amy). However, it could be improved by referencing or connecting to other story events, such as the mailing of the letter or Peter's feelings, to ensure even broader coverage. Still, it does not repeat focus on a single segment and instead opens up the story's conclusion for creative engagement."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.317390",
+      "question": "What did Peter do when he saw Amy running toward the letter?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"What did,\" which is a classic indicator of a Wh-question. It seeks specific information about Peter's actions in a particular situation, rather than asking for a simple recall, completion, or open-ended opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about an action taken by a character (Peter) in response to another character's (Amy's) behavior within a story context. It directly focuses on story details, making it suitable for evaluating comprehension or prompting discussion about narrative events.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 7,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter do when he saw Amy running toward the letter?\" is mostly clear and uses familiar words like \"do,\" \"saw,\" \"running,\" and \"letter.\" However, the structure is a bit complex for 4-6 year olds. The phrase \"when he saw Amy running toward the letter\" requires children to process a sequence of actions and understand cause and effect, which may be challenging for the youngest in this age group. A simpler version could be: \"What did Peter do when Amy came?\" or \"What did Peter do when Amy ran to the letter?\" This would reduce the cognitive load and make it more accessible."
+        },
+        "recall_suitability": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter do when he saw Amy running toward the letter?\" focuses on a specific event in the story—when Peter and Amy both run for the letter. While this is a significant moment, it is part of a segment that is often the focus of questions about this story (the chase for the letter and the interaction between Peter and Amy). The question does not cover other important events, such as Peter's decision to write the letter, his feelings about inviting Amy, the party itself, or the resolution when Amy arrives. However, it does not repeat the exact same moment as many typical questions (such as \"What happened when Peter lost the letter?\"), so it somewhat broadens the focus, but not substantially. Therefore, it meets the criteria at a basic level but could be improved by targeting less commonly questioned events."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.318671",
+      "question": "What did Peter worry about after Amy ran away?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a specific detail from a story (\"What did Peter worry about after Amy ran away?\"), which requires recalling information that was explicitly stated or implied in the text. It is not asking for an open-ended response, completion, or a distancing judgment, but rather for a factual answer based on memory.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks about Peter's worries after a specific event (Amy running away), which requires recalling a sequence of events and Peter's reaction—this is a plot element. Additionally, the answer likely cannot be determined from a single page, as it references events and character emotions that may be developed over several pages. Both criteria are fully met, so the question is suitable for recall.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 7,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "recall_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter worry about after Amy ran away?\" is mostly clear and direct, but the phrase \"worry about\" and \"after Amy ran away\" may be a bit abstract for 4-6 year olds. Young children might better understand simpler words like \"feel\" or \"think\" instead of \"worry about,\" and \"ran away\" could be confusing if they interpret it literally. A more age-appropriate version might be, \"How did Peter feel when Amy left?\" or \"What did Peter think when Amy ran away?\" The question is close to being suitable, but could be simplified further for this age group."
+        },
+        "recall_suitability": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter worry about after Amy ran away?\" focuses on a specific event in the story—Amy running away after Peter accidentally bumps into her and she cries. While this is an important moment, the question does not demonstrate coverage of a wider range of story events. It is centered on Peter's feelings and worries at a single point in the narrative, rather than encouraging recall or discussion of other significant events (such as mailing the letter, the party itself, or interactions with other characters). However, since this is not a repeated focus on the exact same segment as previous questions (assuming this is a single instance), it does not completely fail the criterion. It would be improved by ensuring that other questions in the set address different parts of the story."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.320016",
+      "question": "How did Peter feel when everyone arrived at his party but Amy wasn’t there?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How did,\" which is a Wh-question format. It asks for an explanation or description of Peter's feelings in a specific situation, rather than a simple recall, completion, or open-ended opinion. It is not distancing, as it is directly about the character's internal state.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question focuses on a specific detail from a story: Peter's feelings at a particular moment when everyone except Amy arrived at his party. It requires understanding of the narrative and character emotions, making it a suitable Wh- question about story details.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 7,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"How did Peter feel when everyone arrived at his party but Amy wasn’t there?\" is mostly clear and uses relatively simple language. The words \"feel,\" \"everyone,\" \"arrived,\" \"party,\" and \"wasn’t there\" are generally understandable for 4-6 year olds. However, the structure is a bit complex for this age group, especially the clause \"when everyone arrived at his party but Amy wasn’t there.\" Young children might struggle to process the two-part condition and the implied comparison. A more age-appropriate version would be: \"How did Peter feel when Amy didn’t come to his party?\" or even \"How did Peter feel when Amy was not at his party?\" This would make the question more direct and easier for young children to understand."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question \"How did Peter feel when everyone arrived at his party but Amy wasn’t there?\" focuses on a specific event near the end of the story—Peter's feelings when Amy hasn't arrived at his party yet. This is a significant moment, but it is closely related to the emotional arc that centers on Peter's concern about Amy coming to the party, which is a recurring theme throughout the story. While the question does not repeat the exact same segment as, for example, asking about Peter mailing the letter or chasing the letter, it still centers on the same emotional thread (Peter's worry about Amy). However, it does not focus on the exact same moment as other common questions (like \"How did Peter feel when Amy ran away crying?\"), so it does cover a slightly different event. For a perfect score, the question would need to address a more distinct or less frequently targeted event in the story, such as Peter's actions while mailing the letter or his interactions with his mother."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.321353",
+      "question": "What happened when Amy finally came to the party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"What happened,\" which is a classic Wh-question format, seeking specific information about an event (Amy coming to the party). It is not simply asking for recall, completion, or an open-ended opinion, but rather a factual account of an event.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about an event in the story—what occurred when Amy arrived at the party. It focuses on story details and is suitable for evaluating comprehension of narrative events.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 1,
+          "failed_questions_in_batch": 7,
+          "total_attempts": 2
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What happened when Amy finally came to the party?\" is mostly clear and uses relatively simple language. The word \"happened\" is generally understandable for 4-6 year olds, but the phrase \"finally came to the party\" could be a bit complex for this age group. The word \"finally\" introduces a time concept that may be challenging for younger children, and \"came to the party\" could be simplified to \"got to the party\" or \"when Amy got there.\" A more age-appropriate version might be: \"What did Amy do when she got to the party?\" or \"What happened when Amy got there?\" The question does avoid complex vocabulary, but could be made even simpler."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question \"What happened when Amy finally came to the party?\" focuses on a specific event near the end of the story—Amy's arrival at the party. This is a significant moment, but it does not repeat focus on the same segment as other common questions (such as Peter mailing the letter or chasing it in the rain). It covers a different event, expanding the range of story moments being questioned. However, it could be improved by ensuring that other questions in the set also cover different events, as this one alone cannot guarantee full coverage. Still, this question itself does not contribute to repetitive focus and thus meets the criteria well."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.322637",
+      "question": "What did Peter forget to write on the letter at first, and who helped him remember?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"What\" and \"who,\" both of which are classic Wh-question words. It is asking for specific information (what Peter forgot and who helped), not for a simple recall, completion, or open-ended opinion. It is not distancing, as it is directly about the story's events.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This Wh- question specifically asks about details from a story: what Peter forgot to write on the letter and who helped him remember. It requires knowledge of the narrative and focuses on concrete story events, making it fully suitable.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 3,
+          "failed_questions_in_batch": 8,
+          "total_attempts": 4
+        }
+      ],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter forget to write on the letter at first, and who helped him remember?\" is mostly clear, but it could be simplified further for 4-6 year olds. The phrase \"forget to write on the letter at first\" is a bit complex, and the two-part structure (\"what\" and \"who\") may be challenging for very young children. A simpler version might be: \"What did Peter forget to put on his letter? Who told him to add it?\" or even split into two separate questions. However, the vocabulary is mostly age-appropriate, and the concepts are understandable with some adult support."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question \"What did Peter forget to write on the letter at first, and who helped him remember?\" focuses on a specific event in the story: Peter forgetting to include the party time on the letter and his mother reminding him. This is a distinct event within the narrative and does not overlap with other major events such as mailing the letter, chasing it in the wind, or the party itself. The question does not repeatedly focus on the same segment but rather highlights a unique moment. However, if other questions in the set also focus on the letter-writing process, there could be some overlap. In isolation, this question covers a different aspect than, for example, questions about the party or Peter's feelings, so it generally meets the criteria for covering a wider range of story events."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.323968",
+      "question": "What do you think Peter wished for when he blew out the candles? Can you make up your own wish for Peter?",
+      "question_type": "Completion",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to create or invent a wish for Peter, which is a classic example of a Completion question. It requires the respondent to generate content rather than recall information or provide an opinion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question does not deal with rhyming or repeated phrases. It asks for a creative response about what Peter might have wished for and invites the responder to make up a wish for Peter. This fits the criteria for a completion question, as it prompts for an open-ended, imaginative answer rather than focusing on rhyme or repetition.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 3,
+          "failed_questions_in_batch": 8,
+          "total_attempts": 4
+        }
+      ],
+      "relevant_evaluator": "completion_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What do you think Peter wished for when he blew out the candles? Can you make up your own wish for Peter?\" is mostly age-appropriate, but could be simplified further for 4-6 year olds. The phrase \"What do you think Peter wished for\" is understandable, but \"Can you make up your own wish for Peter?\" uses the phrase \"make up,\" which might be a bit abstract for the youngest in this age group. A simpler version could be: \"What do you think Peter wished for? What would you wish for Peter?\" This would use more direct and familiar language. The concepts are not too complex, but the language could be more concrete and direct."
+        },
+        "recall_suitability": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"What do you think Peter wished for when he blew out the candles? Can you make up your own wish for Peter?\" focuses specifically on the birthday party scene, particularly the moment when Peter blows out the candles. While this is an important event in the story, it does not cover a wider range of story events. The question does not address other significant moments, such as Peter writing and mailing the letter, his worries about inviting Amy, or the chase for the letter in the rain. However, it does not repeatedly focus on the same segment within the question itself, and it does encourage creative thinking by asking for a made-up wish. Overall, the question could be improved by referencing or connecting to other events in the story, but it does not entirely fail the criteria."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-10-28T19:12:19.325355",
+      "question": "If you could invite anyone to your birthday party, who would you invite and why?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a personal choice (\"who would you invite\") and a justification (\"why\"), which requires the respondent to generate their own answer rather than recalling a fact or providing a specific piece of information. It is not a simple recall, completion, or factual \"wh\" question, nor does it distance the respondent from the content. Therefore, it is classified as Open-Ended.",
+      "suitability_score": 4.5,
+      "decision": "pass",
+      "evaluation_reasoning": "This question strongly solicits ideas and opinions by asking the child to choose anyone they would invite and to explain their reasoning. It discourages one-word answers by including \"and why,\" prompting elaboration. It is somewhat difficult to opt out, as the child must make a choice and provide a reason, though they could still answer with \"no one\" or \"I don't know\" if they wish. The question is highly connected to personal experience, as it asks about the child's own birthday party and preferences. Overall, it is a highly suitable open-ended question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "Narrative Skills",
+      "details": {},
+      "regenerated": true,
+      "regeneration_history": [
+        {
+          "attempt": 3,
+          "failed_questions_in_batch": 8,
+          "total_attempts": 4
+        }
+      ],
+      "relevant_evaluator": "open_ended_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you could invite anyone to your birthday party, who would you invite and why?\" is mostly understandable for 4-6 year olds, but it could be simplified further. The phrase \"If you could invite anyone\" is a bit abstract for this age group, and \"who would you invite and why?\" asks for both a choice and a reason, which may be challenging for younger children to articulate. A more age-appropriate version might be, \"Who do you want to come to your birthday party?\" or \"Who would you like to invite to your party?\" The \"why\" part could be asked separately or with more scaffolding, such as, \"Can you tell me why you want them to come?\" Overall, the question is close to being appropriate but could be made simpler in both language and structure."
+        },
+        "recall_suitability": {
+          "score": 4.0,
+          "decision": "pass",
+          "reasoning": "The question \"If you could invite anyone to your birthday party, who would you invite and why?\" is an open-ended question that encourages children to think beyond the specific events of the story and relate the theme of invitations and parties to their own lives. This approach helps avoid focusing repeatedly on the same segment of the story (such as Peter mailing the letter or chasing it in the rain). Instead, it draws on the broader context of the story—Peter inviting Amy to his party—and invites children to consider the concept of invitations and parties in a more general sense. However, while the question does not focus on a single repeated segment, it is still somewhat anchored to the party invitation theme, which is a central event in the story. To achieve a perfect score, the question could have incorporated other story events (such as the chase for the letter, the weather, or Amy's feelings) to ensure even broader coverage of the story's range of events."
+        }
+      }
+    }
+  ]
+}

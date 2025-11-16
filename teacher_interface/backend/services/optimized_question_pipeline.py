@@ -185,35 +185,26 @@ class {signature_class_name}(dspy.Signature):
         agent = dspy.Predict(signature_class)
         return agent
     
-    def create_new_evaluator(self, evaluator_name: str, evaluator_description: str) -> Optional[dspy.Predict]:
-        """
-        Create a complete evaluator agent with prompt engineering.
-        
-        Args:
-            evaluator_name: Name of the new evaluator
-            evaluator_description: Description of what it checks
-            
-        Returns:
-            A DSPy Predict agent that can evaluate questions
-        """
+    def create_new_evaluator(self, metadata: Dict[str, Any]) -> Dict[str, Any]:
+        evaluator_name = metadata.get("name")
+        if not evaluator_name:
+            raise ValueError("Dynamic evaluator metadata must include a 'name'.")
+
         if evaluator_name in self.created_evaluators:
             print(f"✅ Evaluator '{evaluator_name}' already exists")
-            return self.created_evaluators[evaluator_name]
-        
-        # Create the signature
-        signature_class = self.create_evaluator_signature(evaluator_name, evaluator_description)
-        
-        # Create the agent
+            existing = self.created_evaluators[evaluator_name]
+            return existing if isinstance(existing, dict) else {}
+
+        description = metadata.get("description") or evaluator_name.replace("_", " ").title()
+        prompt = metadata.get("prompt") or metadata.get("rubric", {}).get("instruction", "")
+        signature_class = self.create_evaluator_signature(evaluator_name, prompt)
         agent = self.create_evaluator_agent(signature_class)
-        
-        # Store in registry
-        self.created_evaluators[evaluator_name] = agent
-        
-        # Save to file
+
+        self.created_evaluators[evaluator_name] = {"metadata": metadata, "class": signature_class.__name__}
         self._save_evaluator_registry()
-        
-        print(f"✅ Created complete evaluator agent: {evaluator_name}")
-        return agent
+
+        print(f"✅ Created evaluator template in optimized pipeline: {evaluator_name}")
+        return metadata
     
     def _save_evaluator_registry(self):
         """Save the registry of created evaluators."""
@@ -320,11 +311,19 @@ class FeedbackBasedOptimizer:
                 "details": {}
             }
         
-        # Create a description for the new evaluator
         description = f"Evaluates questions for {evaluator_name.replace('_', ' ')} based on teacher feedback"
-        
-        # Create the evaluator
-        evaluator_agent = self.evaluator_creator.create_new_evaluator(evaluator_name, description)
+        prompt = interpretation.get("reformulated_instruction", "")
+        metadata = {
+            "name": evaluator_name,
+            "description": description,
+            "prompt": prompt,
+            "default_weight": 0.1,
+            "rubric": {"instruction": prompt},
+            "status": "active",
+            "template": "llm_dynamic",
+            "origin": {"feedback_record": feedback_record},
+        }
+        created_metadata = self.evaluator_creator.create_new_evaluator(metadata)
         
         return {
             "action": "create_new_evaluator",
@@ -332,7 +331,8 @@ class FeedbackBasedOptimizer:
             "details": {
                 "evaluator_name": evaluator_name,
                 "evaluator_description": description,
-                "status": "active"
+                "status": "active",
+                "metadata": created_metadata,
             }
         }
 
