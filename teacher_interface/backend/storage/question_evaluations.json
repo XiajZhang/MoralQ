@@ -1,97 +1,892 @@
 {
   "evaluations": [
     {
-      "timestamp": "2025-11-16T12:43:08.819575",
-      "question": "Why do you think the character helped their friend?",
-      "question_type": "Open-Ended",
-      "type_confidence": "High",
-      "type_reasoning": "Heuristic classification",
-      "suitability_score": 4.0,
-      "decision": "pass",
-      "evaluation_reasoning": "Elicits ideas and avoids one-word answers",
-      "story_context": "A short story about friendship and sharing cookies.",
-      "moral_or_objective": "Sharing and empathy",
-      "details": {},
-      "dynamic_evaluations": {}
+      "set_metadata": {
+        "storybook_id": "Asia",
+        "objective": "Learning to embrace curiosity about exploring new places",
+        "set_number": "set_001",
+        "timestamp": "2025-11-17T01:16:42.210015"
+      }
     },
     {
-      "timestamp": "2025-11-16T12:43:08.819827",
-      "question": "Who found the cookie on the table?",
+      "question": "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
       "question_type": "Open-Ended",
       "type_confidence": "High",
-      "type_reasoning": "Heuristic classification",
-      "suitability_score": 4.0,
+      "suitability_score": 4.25,
       "decision": "pass",
-      "evaluation_reasoning": "Elicits ideas and avoids one-word answers",
-      "story_context": "A short story about friendship and sharing cookies.",
-      "moral_or_objective": "Sharing and empathy",
-      "details": {},
-      "dynamic_evaluations": {}
-    },
-    {
-      "timestamp": "2025-11-16T12:43:08.820047",
-      "question": "Can you finish this line: The cat in the ____?",
-      "question_type": "Open-Ended",
-      "type_confidence": "High",
-      "type_reasoning": "Heuristic classification",
-      "suitability_score": 4.0,
-      "decision": "pass",
-      "evaluation_reasoning": "Elicits ideas and avoids one-word answers",
-      "story_context": "A short story about friendship and sharing cookies.",
-      "moral_or_objective": "Sharing and empathy",
-      "details": {},
-      "dynamic_evaluations": {}
-    },
-    {
-      "timestamp": "2025-11-16T13:00:17.126445",
-      "question": "Why do you think the character helped their friend?",
-      "question_type": "",
-      "type_confidence": "",
-      "suitability_score": 0.0,
-      "decision": "failed_after_max_attempts",
-      "evaluation_reasoning": "Question did not pass suitability checks after 3 attempts",
-      "story_context": "A short story about friendship and sharing cookies.",
-      "details": {},
+      "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain their reasoning, which strongly solicits opinions and ideas (score 5). It discourages one-word answers by including \"and why,\" prompting for an explanation (score 4). While a child could technically opt out by saying \"I don't know,\" the structure encourages engagement (score 4). The question allows for personal connections, such as sharing experiences or preferences related to pandas or tigers (score 4). The average score is above 3, making it suitable as an open-ended question.",
       "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.210000",
+      "type_reasoning": "The question asks the respondent to make a personal choice between two options and provide reasoning (\"which would you choose and why?\"). It does not require recalling specific information, completing a sentence, or answering a factual \"wh\" question. It is open to personal interpretation and opinion, fitting the Open-Ended category.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "open_ended_suitability"
+    },
+    {
+      "question": "What do you think it would feel like to stand on top of Mount Everest?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "suitability_score": 3.67,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to imagine and describe what it would feel like to stand on top of Mount Everest, which encourages personal reflection and imaginative thinking (score 4). It cannot be answered in one word, as it requires elaboration and explanation (score 5). However, unless the current page is specifically about Mount Everest, mountains, or extreme environments, the relevance to the current page may be limited (score 2). The average suitability score is above 3, so the question passes.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.210702",
+      "type_reasoning": "The question asks the respondent to imagine or hypothesize about an experience they likely have not had, requiring them to distance themselves from their own direct experience and speculate about what it would feel like to stand on top of Mount Everest.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability"
+    },
+    {
+      "question": "How is the Burj Khalifa different from buildings you see every day?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "suitability_score": 5.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to compare the Burj Khalifa to buildings they see every day, directly relating to their personal experiences (score 5). It cannot be answered in one word, as it requires explanation and comparison (score 5). The question is highly relevant to a page about the Burj Khalifa (score 5). The average suitability score is 5, so the question is suitable for use as a distancing question.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.211274",
+      "type_reasoning": "The question asks the respondent to compare the Burj Khalifa to buildings they see every day, which requires them to distance themselves from their immediate experience and think about differences between a famous landmark and their own environment. This aligns with the \"Distancing\" category, as it prompts reflection beyond direct recall or simple description.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability"
+    },
+    {
+      "question": "What is something you would like to see or do if you could visit Asia?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "suitability_score": 4.5,
+      "decision": "pass",
+      "evaluation_reasoning": "The question strongly solicits ideas and opinions by asking what the respondent would like to see or do, which encourages personal reflection and imagination. It discourages one-word answers because it asks for a specific activity or sight, often prompting elaboration. While a child could technically answer with \"nothing\" or \"I don't know,\" the phrasing makes it less likely, as it invites them to think about possibilities. The question is highly likely to connect to personal interests or experiences, as it is about their own wishes or dreams. The average score is well above 3, making it suitable as an open-ended question.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.211740",
+      "type_reasoning": "The question asks for a personal preference or desire (\"something you would like to see or do\") in a hypothetical scenario (\"if you could visit Asia\"), without seeking a specific fact, completion, or distancing. It invites a variety of possible responses, making it open-ended.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
       "regenerated": true,
-      "regeneration_history": [
-        {
-          "attempt": 1,
-          "candidate_question": "Why do you think the character helped their friend?",
-          "avoidance_instructions": "",
-          "decision": "regenerate",
-          "suitability_score": 2.0
-        },
-        {
-          "attempt": 1,
-          "avoidance_instructions": "Failed suitability: Simulated suitability (score: 2.0)",
-          "note": "Failed; refining with avoidance instructions"
-        },
-        {
-          "attempt": 2,
-          "candidate_question": "Why do you think the character helped their friend?",
-          "avoidance_instructions": "Failed suitability: Simulated suitability (score: 2.0)",
-          "decision": "regenerate",
-          "suitability_score": 2.0
-        },
-        {
-          "attempt": 2,
-          "avoidance_instructions": "Failed suitability: Simulated suitability (score: 2.0)",
-          "note": "Failed; refining with avoidance instructions"
-        },
-        {
-          "attempt": 3,
-          "candidate_question": "Why do you think the character helped their friend?",
-          "avoidance_instructions": "Failed suitability: Simulated suitability (score: 2.0)\nFailed suitability: Simulated suitability (score: 2.0)",
-          "decision": "regenerate",
-          "suitability_score": 2.0
-        },
-        {
-          "attempt": 3,
-          "avoidance_instructions": "Failed suitability: Simulated suitability (score: 2.0)",
-          "note": "Failed; refining with avoidance instructions"
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "What is the name of the biggest continent in the world?",
+        "original_failure_reason": "The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability.",
+        "original_batch": 1,
+        "regenerated_question": "What is something you would like to see or do if you could visit Asia?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.5,
+          "question_type": "Open-Ended",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 6,
+            "failing": 5,
+            "total": 11
+          }
         }
-      ]
+      },
+      "relevant_evaluator": "open_ended_suitability"
+    },
+    {
+      "question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+      "question_type": "Completion",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question does not involve rhyming or repeated phrases. It is a straightforward completion question asking for an animal from Asia and a unique characteristic, which fits the criteria for a suitable completion question.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.212224",
+      "type_reasoning": "The question asks the respondent to provide a specific example (an animal that lives in Asia) and an additional detail (what makes it special). This fits the \"Completion\" type, as it requires the respondent to complete a prompt with a factual or descriptive answer.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "If you could visit a street market in Asia, what would you like to see or buy?",
+        "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.",
+        "original_batch": 1,
+        "regenerated_question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 1.0,
+          "question_type": "Completion",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 6,
+            "failing": 5,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "completion_suitability"
+    },
+    {
+      "question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "suitability_score": 4.75,
+      "decision": "pass",
+      "evaluation_reasoning": "This question strongly encourages the child to share their own creative ideas and opinions by asking what they would build and why, which cannot be answered with a simple yes/no or one-word response. It is difficult to opt out, as the question requires some explanation or justification. The prompt also allows for personal connection, as the child can draw on their interests, experiences, or aspirations. Overall, it is highly suitable as an open-ended question.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.212737",
+      "type_reasoning": "The question asks for a creative, personal response about what the respondent would build and their reasoning, without a single correct answer or a request for factual recall. It encourages elaboration and subjective input, which is characteristic of Open-Ended questions.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "Why do you think people in Asia grow so much rice?",
+        "original_failure_reason": "The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.",
+        "original_batch": 1,
+        "regenerated_question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.75,
+          "question_type": "Open-Ended",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 6,
+            "failing": 5,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "open_ended_suitability"
+    },
+    {
+      "question": "How do people in Asia get their food? Can you remember one way from the story?",
+      "question_type": "Recall",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks students to recall a specific way people in Asia get their food as described in the story, which is a direct recall of a plot element or factual detail. It does not require information beyond the current page, making it fully suitable for a recall question. Both subcriteria are met, resulting in a perfect suitability score.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.213576",
+      "type_reasoning": "The question asks the respondent to remember and state one way people in Asia get their food, specifically referencing information from a story. This is a classic recall question, as it requires retrieving a specific fact from previously presented material.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "What kind of weather do monsoons bring to Asia?",
+        "original_failure_reason": "The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.",
+        "original_batch": 1,
+        "regenerated_question": "How do people in Asia get their food? Can you remember one way from the story?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 1.0,
+          "question_type": "Recall",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 6,
+            "failing": 5,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "recall_suitability"
+    },
+    {
+      "question": "Imagine you are a Komodo dragon. What would you do on your island?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "suitability_score": 4.67,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to imagine themselves as a Komodo dragon and describe what they would do on the island, which encourages them to draw on their own ideas and experiences in a distanced, imaginative way (score 4). It cannot be answered in one word, as it requires elaboration and creative thinking (score 5). The question is highly relevant to a page about Komodo dragons or their habitat (score 5). The average suitability score is 4.67, which is well above the threshold, making this a strong distancing question.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.214301",
+      "type_reasoning": "The question asks the respondent to imagine themselves as a Komodo dragon, which is a classic example of a distancing question. It requires the respondent to take on a perspective different from their own and answer from that viewpoint.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "If you could have a Komodo dragon as a pet, what would you name it and where would it live?",
+        "original_failure_reason": "The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.",
+        "original_batch": 1,
+        "regenerated_question": "Imagine you are a Komodo dragon. What would you do on your island?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.67,
+          "question_type": "Distancing",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 6,
+            "failing": 5,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "distancing_suitability"
+    },
+    {
+      "question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "suitability_score": 4.25,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain what they would ask, which encourages sharing ideas and opinions (score 5). It discourages one-word answers because the child is prompted to explain their choice and formulate a question for the animal (score 4). While a child could technically opt out by saying \"I don't know,\" the structure of the question makes it engaging and encourages participation (score 4). The question allows for personal connection, as children may relate their choice to their own interests or experiences with animals (score 4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.214938",
+      "type_reasoning": "The question asks for a personal choice (which animal to meet) and then invites the respondent to generate their own question for the animal, both of which require original thought and do not have a single correct answer. This fits the Open-Ended category.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": null,
+        "original_failure_reason": null,
+        "original_batch": null,
+        "regenerated_question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.25,
+          "question_type": "Open-Ended",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 6,
+            "failing": 5,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "open_ended_suitability"
+    },
+    {
+      "question": "Would you like to play in the snow like children in Japan? Why or why not?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "suitability_score": 4.33,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to consider their own preferences and experiences in relation to playing in the snow, similar to children in Japan, which scores high for asking about personal experiences. It cannot be answered with a simple \"yes\" or \"no\" because it also asks for a reason (\"Why or why not?\"), encouraging elaboration. The question is highly relevant to a page about children in Japan playing in the snow. The average score is above 3, so it passes as a suitable distancing question.",
+      "dynamic_evaluations": {},
+      "details": {},
+      "timestamp": "2025-11-17T01:16:42.215637",
+      "type_reasoning": "The question asks the respondent to consider whether they would like to engage in an activity (playing in the snow) as children in Japan do, and to explain their reasoning. This requires the respondent to put themselves in the place of someone else (children in Japan) and reflect on their own preferences in relation to that context, which is characteristic of a distancing question.",
+      "storybook_id": "Asia",
+      "objective": "Learning to embrace curiosity about exploring new places",
+      "regenerated": true,
+      "batch_number": 3,
+      "regeneration_history": {
+        "original_failed_question": "What kind of weather would you like to try: a monsoon rain or a snowy day? Why?",
+        "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria.",
+        "original_batch": 2,
+        "regenerated_question": "Would you like to play in the snow like children in Japan? Why or why not?",
+        "regenerated_batch": 3,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for a Completion question focused on rhyming or repeated phrases.; Wh: The question is broad and opinion-based, asking for a personal perspective on what makes Asia special to learn about. It does not focus on specific story details or factual information from a narrative, which is the primary criterion for suitability in this context.; Wh: The question asks about general differences in lifestyles between people in cities and villages in Asia, which is a broad, comparative, and factual inquiry. It does not focus on specific details from a particular story or narrative, which is the criterion for suitability. Therefore, it does not meet the requirement of focusing on story details.; Completion: The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.33,
+          "question_type": "Distancing",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 5,
+          "current_batch_performance": {
+            "passing": 4,
+            "failing": 8,
+            "total": 12
+          }
+        }
+      },
+      "relevant_evaluator": "distancing_suitability"
+    },
+    {
+      "set_metadata": {
+        "storybook_id": "A Letter To Amy",
+        "objective": "critical thinking",
+        "set_number": "set_001",
+        "timestamp": "2025-11-17T02:07:15.604421"
+      }
+    },
+    {
+      "question": "Why did Peter want to write a letter to Amy instead of just asking her to come to his party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks for the reason behind a character's specific action within the context of a story (Peter's choice to write a letter to Amy instead of asking her directly). This demonstrates a focus on story details, specifically character motivation, which is a key aspect of Wh- questions in reading comprehension. Therefore, it meets the criteria for suitability.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question uses complex sentence structure and abstract reasoning (\"instead of just asking her\") that may be difficult for 4-6 year olds to understand. It also assumes an understanding of alternative actions and motivations, which is advanced for this age group. Simpler language and a more direct question, such as \"Why did Peter write a letter to Amy?\" would be more appropriate."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.604393",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It asks for an explanation or reasoning behind Peter's choice, fitting the Wh-question type.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "question": "What do you think Peter was feeling when the letter blew away in the wind?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks about Peter's feelings in response to a specific event in the story (the letter blowing away in the wind). It directly references a story detail and prompts discussion or inference about the character's emotions, which is suitable for a Wh- question focused on story comprehension.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 5.0,
+          "reasoning": "The question uses simple language and focuses on basic emotions, which is appropriate for 4-6 year olds. It encourages children to think about feelings, a key social-emotional learning goal at this age, and does not require complex reasoning or abstract thinking."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.606032",
+      "type_reasoning": "The question begins with \"What do you think...\" and asks for an explanation or inference about Peter's feelings, which is characteristic of a Wh question. It requires the responder to interpret or infer information, not just recall or complete a sentence.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "question": "If you were Peter, what would you do if your letter almost got lost in the rain?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "suitability_score": 5.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks the child to imagine themselves in Peter's situation, which directly prompts them to consider their own actions and feelings in a similar scenario. It cannot be answered with a simple yes or no or a single word, as it requires explanation and reasoning. The scenario of a letter almost getting lost in the rain is specific to the events of the current page, making it highly relevant. All criteria are fully met, resulting in a perfect suitability score.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 4.0,
+          "reasoning": "The question uses a relatable scenario and simple language, making it accessible for 4-6 year olds. However, the phrase \"almost got lost in the rain\" may require some clarification for the youngest in this age group, as they may not fully grasp the concept of a letter being \"lost\" due to rain. Simplifying to \"got wet in the rain\" could improve clarity."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.607293",
+      "type_reasoning": "The question asks the respondent to imagine themselves in Peter's situation and decide what they would do, which is characteristic of a Distancing question. It requires the respondent to take the perspective of a character rather than recall information or provide a factual answer.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability"
+    },
+    {
+      "question": "Why do you think Amy ran away crying after Peter grabbed the letter?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks for a reason behind a character's action (Amy running away crying after Peter grabbed the letter), which directly references specific events and details from a story. It is a Wh- question that focuses on story details, making it suitable.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks for an inference about Amy's emotions and motivations, which may be too complex for 4-6 year olds. The phrasing \"Why do you think\" and the need to connect Peter's action to Amy's emotional response requires higher-level reasoning and language skills than typically expected at this age. Simpler language and more concrete questions (e.g., \"How did Amy feel when Peter grabbed the letter?\") would be more appropriate."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.608346",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It asks for an explanation or reason behind Amy's behavior, rather than a simple recall, completion, or open-ended opinion. It is not distancing, as it directly involves the characters and their motivations.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "question": "What could Peter have done differently to make sure Amy felt happy about the invitation?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "suitability_score": 4.25,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks for suggestions about what Peter could have done differently, which strongly solicits ideas and opinions (5). It discourages one-word answers because it requires explanation or reasoning (4). It is somewhat difficult to opt out, as the question expects a thoughtful response (4). The question allows for connection to personal experience, as children may relate to times when they or others felt left out or unhappy about an invitation (4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question uses complex phrasing (\"What could Peter have done differently...\") and abstract reasoning (\"make sure Amy felt happy about the invitation\") that may be challenging for 4-6 year olds. Simpler language and more concrete prompts would be more developmentally appropriate, such as \"How could Peter help Amy feel happy?\" or \"What could Peter say to make Amy smile?\""
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.609341",
+      "type_reasoning": "The question asks for possible alternative actions Peter could have taken, inviting multiple possible responses and encouraging creative or thoughtful answers. It does not seek a specific fact, a simple completion, or a distancing response, and it is not a standard Wh-question (who, what, where, when, why, how) but rather asks for suggestions or ideas.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "open_ended_suitability"
+    },
+    {
+      "question": "How do you think Peter felt when Amy finally came to the party? Why?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question focuses on specific story details by asking about Peter's feelings when Amy arrived at the party, and it also prompts for reasoning (\"Why?\"). It is a suitable Wh- question as it encourages discussion about character emotions and motivations within the context of the story.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks for an inference about Peter's feelings and a justification (\"Why?\"), which may be too complex for 4-6 year olds. The language (\"How do you think Peter felt...\") and the two-part structure require abstract thinking and verbal reasoning that are often beyond the developmental stage of this age group. Simpler, more direct questions like \"Was Peter happy or sad when Amy came to the party?\" would be more appropriate."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.610329",
+      "type_reasoning": "The question begins with \"How do you think...\" and follows up with \"Why?\", both of which are characteristic of Wh- questions. It asks for an explanation or reasoning about Peter's feelings, not just a recall of facts or a simple completion, and it is not distancing or purely open-ended.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "question": "Why do you think Peter made his own wish instead of listening to what the other children wanted him to wish for?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question directly references a character (Peter) and his actions within the story, specifically his decision to make his own wish rather than following the wishes of the other children. It requires understanding and analysis of story events and character motivations, which aligns perfectly with the criteria for suitable Wh- questions focusing on story details.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks for reasoning (\"Why do you think...\") and involves understanding another character's perspective and motivations, which can be challenging for 4-6 year olds. The language is also somewhat complex, with phrases like \"instead of listening to what the other children wanted him to wish for.\" Simpler language and a more concrete question would be more appropriate for this age group."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.611449",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It asks for reasoning or motivation behind Peter's actions, rather than a simple recall, completion, or open-ended opinion. It is not distancing, as it directly addresses the character's motivations.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": false,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "question": "Why do you think Peter wanted to write a letter to Amy instead of just asking her to come to his party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks about Peter's motivation for writing a letter to Amy instead of inviting her in person, which directly relates to specific actions and character decisions within the story. It requires understanding and inference based on story details, making it a suitable Wh- question.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks for reasoning about Peter's motivation and compares two social actions (\"writing a letter\" vs. \"just asking\"), which may be too abstract for 4-6 year olds. The language (\"instead of\") and the expectation to infer intent are likely too complex for this age group. Simpler phrasing, such as \"How did Peter ask Amy to come to his party?\" or \"What did Peter do to invite Amy?\" would be more appropriate."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.612556",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It asks for an explanation or reasoning behind Peter's choice, rather than a simple recall, completion, or open-ended opinion. It is not distancing, as it directly references the character's motivation.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "If you could invite anyone to your birthday party, who would it be and how would you invite them?",
+        "original_failure_reason": "The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is an open-ended question about inviting someone to a birthday party, not about completing a rhyme or a repeated phrase. Therefore, it does not meet the criteria for a Completion question as defined.",
+        "original_batch": 1,
+        "regenerated_question": "Why do you think Peter wanted to write a letter to Amy instead of just asking her to come to his party?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is an open-ended question about inviting someone to a birthday party, not about completing a rhyme or a repeated phrase. Therefore, it does not meet the criteria for a Completion question as defined. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 1.0,
+          "question_type": "Wh",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 1,
+          "current_batch_performance": {
+            "passing": 10,
+            "failing": 1,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "question": "What could have happened if Peter forgot to write the time of the party on the letter?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "suitability_score": 4.25,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks students to imagine possible outcomes if Peter forgot to write the time of the party, which encourages them to think creatively and share their ideas or opinions (score 5). It discourages one-word answers because a thoughtful response would require some explanation (score 4). It is somewhat difficult to opt out, as the question requires a hypothetical answer, though a child could still say \"nothing\" or \"I don't know\" (score 4). The question allows students to connect to personal experience, such as forgetting important information themselves or attending events with missing details (score 4). The average score is 4.25, making it a suitable open-ended question.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "reasoning": "The question asks about a hypothetical scenario, which can be challenging for 4-6 year olds as it requires some abstract thinking. However, the language is simple and the context (forgetting to write the time of a party) is relatable for young children. To better align with the objective, the question could be rephrased to be more concrete, such as \"What happens if you don't tell your friends what time the party is?\""
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.613628",
+      "type_reasoning": "The question asks for possible outcomes or scenarios (\"What could have happened if...\"), inviting the respondent to generate ideas or predictions rather than recall a specific fact, complete a sentence, or answer a factual \"wh\" question. It is not distancing, as it is not asking about someone else's thoughts or feelings about the situation.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": null,
+        "original_failure_reason": null,
+        "original_batch": null,
+        "regenerated_question": "What could have happened if Peter forgot to write the time of the party on the letter?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is an open-ended question about inviting someone to a birthday party, not about completing a rhyme or a repeated phrase. Therefore, it does not meet the criteria for a Completion question as defined. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.25,
+          "question_type": "Open-Ended",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 1,
+          "current_batch_performance": {
+            "passing": 10,
+            "failing": 1,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "open_ended_suitability"
+    },
+    {
+      "question": "Why did Peter not want Amy to see the letter before he mailed it?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks for the reason behind a character's action within a specific narrative context (\"Why did Peter not want Amy to see the letter before he mailed it?\"). This directly focuses on story details, specifically character motivation and plot events, which is suitable for a Wh- question about a story.",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question uses complex sentence structure (\"Why did Peter not want Amy to see the letter before he mailed it?\") and assumes an understanding of motives and privacy that may be too advanced for 4-6 year olds. The language could be simplified, for example: \"Why didn't Peter want Amy to look at the letter?\" or \"Why did Peter hide the letter from Amy?\" This would make it more accessible for the intended age group."
+        }
+      },
+      "details": {},
+      "timestamp": "2025-11-17T02:07:15.614909",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It seeks an explanation or reason for Peter's actions, rather than a simple recall, completion, or open-ended opinion.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": null,
+        "original_failure_reason": null,
+        "original_batch": null,
+        "regenerated_question": "Why did Peter not want Amy to see the letter before he mailed it?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is an open-ended question about inviting someone to a birthday party, not about completing a rhyme or a repeated phrase. Therefore, it does not meet the criteria for a Completion question as defined. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 1.0,
+          "question_type": "Wh",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 1,
+          "current_batch_performance": {
+            "passing": 10,
+            "failing": 1,
+            "total": 11
+          }
+        }
+      },
+      "relevant_evaluator": "wh_suitability"
+    },
+    {
+      "set_metadata": {
+        "storybook_id": "A Letter To Amy",
+        "objective": "critical thinking",
+        "set_number": "set_002",
+        "timestamp": "2025-11-17T02:10:35.945351"
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.945333",
+      "question": "Why do you think Peter wanted to write a letter to Amy instead of just asking her to come to his party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It asks for an explanation or reasoning behind Peter's choice, rather than a simple recall, completion, or open-ended opinion. It is not distancing, as it directly references the character's motivation.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks about Peter's motivation for writing a letter to Amy instead of inviting her in person, which directly relates to specific actions and character decisions within the story. It requires understanding and inference based on story details, making it a suitable Wh- question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks for reasoning about Peter's motivation and compares two social actions (\"writing a letter\" vs. \"just asking\"), which may be too abstract for 4-6 year olds. The language (\"instead of\") and the expectation to infer intent are likely too complex for this age group. Simpler phrasing, such as \"How did Peter ask Amy to come to his party?\" or \"What did Peter do to invite Amy?\" would be more appropriate."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.946813",
+      "question": "What could Peter have done differently when he saw Amy after chasing the letter?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for possible alternative actions Peter could have taken, inviting multiple possible responses and encouraging creative or critical thinking rather than recalling a specific fact or completing a sentence. It is not a simple recall, completion, or factual \"Wh\" question, nor does it distance the respondent from the content.",
+      "suitability_score": 4.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks what Peter could have done differently, which directly solicits ideas and opinions (score 5). It discourages one-word answers because it requires some explanation or suggestion (score 4). It is somewhat difficult to opt out, as the question expects a thoughtful response (score 4). While it is not directly about the child's own experience, a child could relate it to times when they might have acted differently in a situation, so it allows for some personal connection (score 3). The average score is 4.0, making it suitable as an open-ended question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "open_ended_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks about alternative actions Peter could have taken, which requires hypothetical thinking and understanding of cause and effect. This level of reasoning is generally too complex for 4-6 year olds, who benefit more from concrete questions about what actually happened rather than what could have happened. The language is also a bit abstract for this age group."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.947970",
+      "question": "How do you think Amy felt when she ran away crying? Why?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How do you think...\" and asks for an explanation (\"Why?\"), which is characteristic of Wh- questions. It seeks an explanation or reasoning about Amy's feelings, not just a recall of facts or a simple completion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks about Amy's feelings and the reasons behind her emotional response, which are specific details related to the story's events and character development. It requires understanding and inference based on the narrative, making it a suitable Wh- question focused on story details.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "reasoning": "The question asks about Amy's feelings and the reason behind them, which is a good approach for comprehension. However, the phrasing \"How do you think Amy felt when she ran away crying? Why?\" may be a bit complex for 4-6 year olds, especially the \"Why?\" part, which requires abstract reasoning. Simpler language such as \"How did Amy feel when she ran away crying?\" or \"Was Amy happy or sad when she ran away crying?\" would be more developmentally appropriate."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.949058",
+      "question": "If you were Peter, what would you wish for when blowing out the candles? Why?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to imagine themselves in Peter's position and make a personal choice, which is characteristic of a Distancing question. It requires the respondent to step into the character's shoes and reflect on their own wishes, rather than recalling information or providing a factual answer.",
+      "suitability_score": 5.0,
+      "decision": "pass",
+      "evaluation_reasoning": "This question asks the child to put themselves in Peter's shoes and imagine what they would wish for, which directly engages their personal experiences and imagination (score 5). It cannot be answered in one word, as it requires explanation and reasoning (score 5). The question is clearly related to the current page, assuming the context involves Peter blowing out candles, making it highly relevant (score 5). The average suitability score is 5, so the question is an excellent example of a distancing question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 3.0,
+          "reasoning": "The question asks children to imagine themselves as Peter and make a wish, which encourages creative thinking and empathy. However, the question \"Why?\" may be too abstract for 4-6 year olds, as it requires them to articulate reasoning that might be beyond their developmental stage. Simplifying the question to just \"What would you wish for if you were Peter?\" would be more appropriate for this age group."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.950119",
+      "question": "Why do you think Peter was worried about inviting a girl to his party? Do you think it was a good idea to invite Amy? Why or why not?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for the student's opinion and reasoning about Peter's feelings and the decision to invite Amy, rather than recalling specific facts or providing a single correct answer. It encourages personal interpretation and justification, which is characteristic of open-ended questions.",
+      "suitability_score": 4.5,
+      "decision": "pass",
+      "evaluation_reasoning": "This question strongly solicits ideas and opinions by asking \"Why do you think...\" and \"Do you think it was a good idea... Why or why not?\" It discourages one-word answers because it requires explanation and reasoning. It is somewhat difficult for a child to opt out, as both parts of the question require a thoughtful response, though a child could still say \"I don't know\" if pressed. The question allows for connection to personal experience, as children may relate to inviting friends to parties or feeling nervous about social situations. Overall, the question is highly suitable as an open-ended prompt.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "open_ended_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks for reasons behind Peter's feelings and an evaluation of his decision, which requires abstract thinking and perspective-taking that is challenging for 4-6 year olds. The language (\"Why do you think,\" \"Do you think it was a good idea,\" \"Why or why not?\") is also complex for this age group. Simpler, more concrete questions would be more appropriate, such as \"How did Peter feel about inviting Amy?\" or \"Do you think Peter should invite Amy to his party?\""
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.951262",
+      "question": "What might have happened if Peter had not chased after the letter? How would the story be different?",
+      "question_type": "Distancing",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks the respondent to consider an alternative scenario (\"What might have happened if...\") and to speculate on how the story would change, which requires distancing from the text and thinking hypothetically rather than recalling or directly interpreting information.",
+      "suitability_score": 4.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question does not directly ask about the child's own experiences (score 2), but it does require more than a one-word answer (score 5) and is highly relevant to the current page if Peter's actions are being discussed (score 5). The average suitability score is 4, which meets the threshold for passing. The question encourages prediction and analysis about the story, making it suitable as a distancing question even though it is not personal.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "distancing_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks children to imagine an alternative scenario and predict changes to the story, which requires abstract thinking and understanding of cause and effect. This level of hypothetical reasoning is generally too complex for 4-6 year olds, who benefit more from concrete, direct questions about the story's events or characters' feelings. The language (\"What might have happened if...\") and the concept of changing the story are not developmentally appropriate for this age group."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.952383",
+      "question": "How did Peter feel when Amy finally came to the party? How do you know?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"How did Peter feel...\" which is a classic Wh-question, asking for an explanation or description. The follow-up \"How do you know?\" also seeks justification or evidence, which is characteristic of Wh-questions that require more than a simple recall or completion.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks specifically about Peter's feelings when Amy arrived at the party, which is a detail likely found within the story. It also prompts for evidence from the story (\"How do you know?\"), ensuring the answer is grounded in the narrative. This meets the criteria for focusing on story details and is a suitable Wh- question.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": false,
+      "batch_number": null,
+      "regeneration_history": [],
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question asks about Peter's feelings and for evidence (\"How do you know?\"), which may be too complex for 4-6 year olds. Young children at this age can often identify basic emotions but may struggle to articulate reasoning or cite evidence from a story. The language could be simplified, for example: \"Was Peter happy or sad when Amy came to the party?\" and \"What did he do when she came?\" This would make it more developmentally appropriate."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.953472",
+      "question": "Why did Peter want to write a letter to Amy instead of just asking her to come to his party?",
+      "question_type": "Wh",
+      "type_confidence": "High",
+      "type_reasoning": "The question begins with \"Why,\" which is a classic indicator of a Wh-question. It asks for an explanation or reasoning behind Peter's choice, fitting the Wh-question type.",
+      "suitability_score": 1.0,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks for the reason behind a character's specific action within the context of a story (Peter's choice to write a letter to Amy instead of asking her directly). This demonstrates a focus on story details, specifically character motivation, which is a key aspect of Wh- questions in reading comprehension. Therefore, it meets the criteria for suitability.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": "Can you think of a time when you wanted to invite someone to play or to a party? What did you do?",
+        "original_failure_reason": "This question does not ask about specific plot elements or sequences from a text, but rather prompts the student to recall a personal experience. Additionally, answering it requires information beyond the current page, as it is not text-dependent. Therefore, it is not suitable as a recall question for text comprehension.",
+        "original_batch": 1,
+        "regenerated_question": "Why did Peter want to write a letter to Amy instead of just asking her to come to his party?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Recall: This question does not ask about specific plot elements or sequences from a text, but rather prompts the student to recall a personal experience. Additionally, answering it requires information beyond the current page, as it is not text-dependent. Therefore, it is not suitable as a recall question for text comprehension. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 1.0,
+          "question_type": "Wh",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 1,
+          "current_batch_performance": {
+            "passing": 12,
+            "failing": 0,
+            "total": 12
+          }
+        }
+      },
+      "relevant_evaluator": "wh_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 2.0,
+          "reasoning": "The question uses complex sentence structure and abstract reasoning (\"instead of just asking her\") that may be difficult for 4-6 year olds to understand. It also assumes an understanding of alternative actions and motivations, which is advanced for this age group. Simpler language and a more direct question, such as \"Why did Peter write a letter to Amy?\" would be more appropriate."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.954532",
+      "question": "What might have happened if Peter forgot to write the time of the party on the letter?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for a hypothetical scenario (\"What might have happened if...\") and invites the respondent to generate possible outcomes or explanations, rather than recalling a specific fact, completing a sentence, or providing a factual answer. This aligns with the Open-Ended category.",
+      "suitability_score": 4.25,
+      "decision": "pass",
+      "evaluation_reasoning": "The question asks students to imagine a scenario and predict possible outcomes, which strongly solicits ideas and opinions (5). It discourages one-word answers because a thoughtful explanation is needed (4), though a very brief answer is possible. It is somewhat difficult to opt out, as the question requires a response beyond \"I don't know\" (4). The question allows students to connect to personal experiences, such as forgetting important details themselves (4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": null,
+        "original_failure_reason": null,
+        "original_batch": null,
+        "regenerated_question": "What might have happened if Peter forgot to write the time of the party on the letter?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Recall: This question does not ask about specific plot elements or sequences from a text, but rather prompts the student to recall a personal experience. Additionally, answering it requires information beyond the current page, as it is not text-dependent. Therefore, it is not suitable as a recall question for text comprehension. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.25,
+          "question_type": "Open-Ended",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 1,
+          "current_batch_performance": {
+            "passing": 12,
+            "failing": 0,
+            "total": 12
+          }
+        }
+      },
+      "relevant_evaluator": "open_ended_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 4.0,
+          "reasoning": "The question uses simple language and a familiar scenario (forgetting to write something important), which is appropriate for 4-6 year olds. However, the phrase \"What might have happened if...\" introduces a hypothetical situation that may be a bit abstract for the youngest in this age group. Rephrasing to something like \"What would happen if Peter didn't say what time the party is?\" could make it even more accessible."
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-17T02:10:35.955659",
+      "question": "How do you think Peter felt when the letter blew away in the wind?",
+      "question_type": "Open-Ended",
+      "type_confidence": "High",
+      "type_reasoning": "The question asks for the respondent's interpretation or opinion about Peter's feelings, rather than a specific fact, recall, or a simple completion. It is not a Wh-question (who, what, where, when, why, how) seeking a factual answer, but rather invites personal reasoning or inference, which is characteristic of Open-Ended questions.",
+      "suitability_score": 4.25,
+      "decision": "pass",
+      "evaluation_reasoning": "This question asks the child to infer and express Peter's feelings, which solicits their ideas and opinions (score 5). While a one-word answer like \"sad\" is possible, the phrasing \"How do you think...\" encourages elaboration (score 4). The question is direct and requires a response, making it difficult to opt out (score 4). It also allows children to connect to their own experiences of losing something or feeling disappointed (score 4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+      "storybook_id": "A Letter To Amy",
+      "objective": "critical thinking",
+      "details": {},
+      "regenerated": true,
+      "batch_number": 2,
+      "regeneration_history": {
+        "original_failed_question": null,
+        "original_failure_reason": null,
+        "original_batch": null,
+        "regenerated_question": "How do you think Peter felt when the letter blew away in the wind?",
+        "regenerated_batch": 2,
+        "avoidance_instructions": "Avoid previous issues: Recall: This question does not ask about specific plot elements or sequences from a text, but rather prompts the student to recall a personal experience. Additionally, answering it requires information beyond the current page, as it is not text-dependent. Therefore, it is not suitable as a recall question for text comprehension. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+        "regeneration_metadata": {
+          "suitability_score": 4.25,
+          "question_type": "Open-Ended",
+          "decision": "pass",
+          "total_failed_in_previous_batch": 1,
+          "current_batch_performance": {
+            "passing": 12,
+            "failing": 0,
+            "total": 12
+          }
+        }
+      },
+      "relevant_evaluator": "open_ended_suitability",
+      "dynamic_evaluations": {
+        "complexity": {
+          "score": 5.0,
+          "reasoning": "The question uses simple language and focuses on feelings, which is appropriate for 4-6 year olds. It encourages children to empathize with the character and express emotions, aligning well with developmental expectations for this age group."
+        }
+      }
     }
   ]
 }

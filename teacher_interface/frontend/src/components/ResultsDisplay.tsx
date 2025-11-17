@@ -62,7 +62,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
     return (
       <>
         <TabNavigation
-          storybooks={results.map(result => result.storybook)}
+          storybooks={results.map(result => result.storybook).filter(Boolean)}
           activeTab={activeTab}
           onTabChange={setActiveTab}
         />
@@ -72,6 +72,18 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
             const startQuestionIndex = results
               .slice(0, index)
               .reduce((acc, r) => acc + (r.questions?.length || 0), 0);
+            
+            // Handle error results
+            if (result.error) {
+              return (
+                <div key={result.storybook?.id || index} className={`tab-panel ${activeTab === index ? 'active' : ''}`}>
+                  <div className="error">
+                    <h4>Error for {result.storybook?.title || 'Unknown Storybook'}</h4>
+                    <p>{result.error}</p>
+                  </div>
+                </div>
+              );
+            }
             
             return (
               <TabPanel
@@ -125,8 +137,20 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
 
   // Single storybook display
   const result = results[0];
+  
+  // Handle error cases
+  if (result.error) {
+    return (
+      <div className="error">
+        <h4>Error Generating Questions</h4>
+        <p>{result.error}</p>
+        <p>Please check the backend logs for more details.</p>
+      </div>
+    );
+  }
+  
   const { storybook, moral, objective, learning_objectives, questions } = result;
-  const moralText = moral.generated;
+  const moralText = moral?.generated || moral?.text || 'No moral lesson generated';
 
   return (
     <div className="results-container">

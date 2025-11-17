@@ -184,7 +184,7 @@ const App: React.FC = () => {
         // Find which storybook this question belongs to
         let currentIndex = 0;
         for (let i = 0; i < results.length; i++) {
-          const questionCount = results[i].questions.length;
+          const questionCount = results[i].questions?.length || 0;
           if (globalIndex < currentIndex + questionCount) {
             storybooksWithFeedback.add(i);
             break;
@@ -195,10 +195,10 @@ const App: React.FC = () => {
       
       const config = {
         selectedStorybooks: Array.from(storybooksWithFeedback).map(index => results[index].storybook),
-        objective: results[0].objective,
+        objective: results[0].objective || 'moral',
         generalFeedback: generalFeedback,
         questionFeedbacks: questionFeedbacksObj,
-        originalQuestions: Array.from(storybooksWithFeedback).map(index => results[index].questions)
+        originalQuestions: Array.from(storybooksWithFeedback).map(index => results[index].questions || [])
       };
       
       const data = await questionApi.regenerateQuestions(config);

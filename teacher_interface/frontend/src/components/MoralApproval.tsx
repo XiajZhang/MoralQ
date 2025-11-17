@@ -90,60 +90,64 @@ const MoralApproval: React.FC<MoralApprovalProps> = ({
               </div>
               <div className="storybook-header">
                 <h3>{result.storybook.title}</h3>
-                <div className="moral-status">
-                  <span className={`status-badge ${result.moral.status}`}>
-                    {result.moral.status}
-                  </span>
-                  {result.moral.regenerations > 0 && (
-                    <span className="regeneration-count">
-                      Regenerated {result.moral.regenerations} time(s)
+                {result.moral && (
+                  <div className="moral-status">
+                    <span className={`status-badge ${result.moral.status || 'pending'}`}>
+                      {result.moral.status || 'pending'}
                     </span>
-                  )}
-                </div>
+                    {(result.moral.regenerations || 0) > 0 && (
+                      <span className="regeneration-count">
+                        Regenerated {result.moral.regenerations} time(s)
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
             
-            <div className="moral-content">
-              <h4>Generated Moral Lesson:</h4>
-              {result.moral.candidates && result.moral.candidates.length > 0 ? (
-                <div className="moral-candidates">
-                  {result.moral.candidates.map((candidate, candidateIndex) => (
-                    <div key={candidate.candidate_id} className="moral-candidate">
-                      <div className="candidate-header">
-                        <div className="candidate-radio">
-                          <input
-                            type="radio"
-                            name={`moral-${index}`}
-                            id={`moral-${index}-candidate-${candidateIndex}`}
-                            defaultChecked={candidateIndex === 0}
-                          />
-                          <label htmlFor={`moral-${index}-candidate-${candidateIndex}`}>
-                            <span className="candidate-label">
-                              Candidate {candidateIndex + 1}
-                            </span>
-                            <span className="quality-score">
-                              Quality: {(candidate.quality_score * 100).toFixed(0)}%
-                            </span>
-                            <span className="generation-method">
-                              {candidate.generation_method}
-                            </span>
-                          </label>
+            {result.moral && (
+              <div className="moral-content">
+                <h4>Generated Moral Lesson:</h4>
+                {result.moral.candidates && result.moral.candidates.length > 0 ? (
+                  <div className="moral-candidates">
+                    {result.moral.candidates.map((candidate, candidateIndex) => (
+                      <div key={candidate.candidate_id} className="moral-candidate">
+                        <div className="candidate-header">
+                          <div className="candidate-radio">
+                            <input
+                              type="radio"
+                              name={`moral-${index}`}
+                              id={`moral-${index}-candidate-${candidateIndex}`}
+                              defaultChecked={candidateIndex === 0}
+                            />
+                            <label htmlFor={`moral-${index}-candidate-${candidateIndex}`}>
+                              <span className="candidate-label">
+                                Candidate {candidateIndex + 1}
+                              </span>
+                              <span className="quality-score">
+                                Quality: {(candidate.quality_score * 100).toFixed(0)}%
+                              </span>
+                              <span className="generation-method">
+                                {candidate.generation_method}
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="candidate-moral">
+                          {candidate.moral}
                         </div>
                       </div>
-                      <div className="candidate-moral">
-                        {candidate.moral}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="moral-text">
-                  {result.moral.generated}
-                </div>
-              )}
-            </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="moral-text">
+                    {result.moral.generated || result.moral.text || 'No moral lesson generated'}
+                  </div>
+                )}
+              </div>
+            )}
 
-            {result.moral.timestamp && (
+            {result.moral?.timestamp && (
               <div className="moral-meta">
                 <small>Generated: {new Date(result.moral.timestamp).toLocaleString()}</small>
               </div>

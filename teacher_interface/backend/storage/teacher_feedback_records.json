@@ -332,6 +332,117 @@
         "story_context": "",
         "generated_questions": [],
         "question_feedbacks": {}
+      },
+      {
+        "story_title": "A Letter To Amy",
+        "objective": "critical thinking",
+        "iteration_id": "set_005",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "Questions are too complex for 4-6 year olds and also repetitive addressing the same segment multiple times"
+        },
+        "interpretation": {
+          "interpretation": "Orchestrator suggests decrease (medium) for complexity",
+          "attribute": "complexity",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "medium",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Simplify the questions to be more age-appropriate for 4-6 year olds and avoid repeating questions about the same story segment."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {
+            "complexity": -0.2
+          },
+          "reason": "Orchestrator suggests decrease (medium) for complexity",
+          "reformulated_instruction": "Simplify the questions to be more age-appropriate for 4-6 year olds and avoid repeating questions about the same story segment.",
+          "details": null,
+          "confidence": 0.95
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator suggests decrease (medium) for complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {
+            "complexity": -0.2
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Simplify the questions to be more age-appropriate for 4-6 year olds and avoid repeating questions about the same story segment.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "complexity"
+          ],
+          "instruction": "Simplify the questions to be more age-appropriate for 4-6 year olds and avoid repeating questions about the same story segment."
+        },
+        "timestamp": "2025-11-17T02:08:12.127503",
+        "teacher_id": "default_teacher",
+        "school_id": "default_school",
+        "story_context": "A Letter to Amy\n\"I’m writing a letter to Amy.\" \"I’m inviting her to my party\",Peter announced. \"Why don’t you just ask her?\" \"You didn’t write to anyone else\", said his mother. Peter stared at the sheet of paper for a while and said, \"Well, this way it’s sort special.\"\nHe folded the letter quite a few times, put it in the envelope, and sealed it. \"Now I’ll mail it\", he said. \"What did you write?\" his mother asked. WILL YOU PLEASE COME TO MY BIRTHDAY PARTY. \"PETER. You should tell her when to come.\" So he wrote on the back of the envelope: IT IS THIS SATURDAY AT 2. \"Now I’ll mail it.\" \"Put on a stamp.\" He did, and started to leave. \"Wear your raincoat.\" \"It looks like rain.\" He put it on and said, \"It looks like rain.\" \"You’d better stay in, Willie,\" and ran out to mail his letter.\nWalking to the mailbox, Peter looked at the sky. Dark clouds raced across it like wild horses. He glanced up at Amy’s window. She wasn’t there. Only Pepe, her parrot, sat peering down. \"Willie! Didn’t I tell you to stay home?\"\nPeter thought. What will the boys say when they see a girl at my party? Suddenly there was a flash of lightning and a roar of thunder! A strong wind blew the letter out of his hand!\nPeter chased the letter. He tried to stop it with his foot, but it blew away.\nThen it flew high into the air –\nAnd landed, skipping across a hopscotch game.\nThe letter blew this way and that. Peter chased it this way and that. He couldn’t catch it.\nBig drops of rain began to fall.\nJust then someone turned the corner. It was Amy! She waved to him. The letter flew right toward her. She mustn’t see it, or the surprise will be spoiled! They both ran for the letter.\nIn his great hurry, Peter bumped into Amy. He caught the letter before she could see it was for her.\nQuickly he stuffed the letter into the mailbox.\nHe looked for Amy, but she had run off crying.\nNow she’ll never come to my party, thought Peter. He saw his reflection in the street. It looked all mixed up.\nWhen Peter got back to his house, his mother asked, \"Did you mail your letter?\" \"Yes\", he said sadly.\nSaturday came at last. Everybody arrived but Amy.\n\"Shall I bring the cake out now?\" his mother asked Peter. \"Let’s wait a little\", said Peter. \"Now! Bring it out now!\" chanted the boys. \"All right\", said Peter slowly, \"bring it out now.\"\nJust then the door opened. In walked Amy with her parrot! \"A girl – ugh!\" said Eddie.\n\"Happy Birthday\", Peter!\" said Amy. \"Haappy Birrrthday, PEEETERRR!\" repeated the parrot.\nPeter’s mother brought in the cake she had baked and lit the candles. Everyone sang. \"Make a wish!\" cried Amy. \"Wish for a truck full of ice cream!\" shouted Eddie. \"A store full of candy and no stomach-ache!\"\nBut Peter made his own wish, and blew out all the candles at once.",
+        "generated_questions": [
+          "Why did Peter want to write a letter to Amy instead of just asking her to come to his party?",
+          "What do you think Peter was feeling when the letter blew away in the wind?",
+          "If you were Peter, what would you do if your letter almost got lost in the rain?",
+          "Why do you think Amy ran away crying after Peter grabbed the letter?",
+          "What could Peter have done differently to make sure Amy felt happy about the invitation?",
+          "How do you think Peter felt when Amy finally came to the party? Why?",
+          "Why do you think Peter made his own wish instead of listening to what the other children wanted him to wish for?",
+          "Why do you think Peter wanted to write a letter to Amy instead of just asking her to come to his party?",
+          "What could have happened if Peter forgot to write the time of the party on the letter?",
+          "Why did Peter not want Amy to see the letter before he mailed it?"
+        ],
+        "question_feedbacks": {},
+        "routed_message": {
+          "action": "adjust_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {
+            "complexity": -0.2
+          },
+          "new_evaluator": null,
+          "reformulated_instruction": "Simplify the questions to be more age-appropriate for 4-6 year olds and avoid repeating questions about the same story segment.",
+          "confidence": 0.95,
+          "raw_feedback": "Questions are too complex for 4-6 year olds and also repetitive addressing the same segment multiple times",
+          "metadata": {
+            "attribute": "complexity",
+            "feedback_type": "negative",
+            "existing_evaluators": [
+              "distancing_suitability",
+              "wh_suitability",
+              "complexity",
+              "open_ended_suitability",
+              "completion_suitability",
+              "recall_suitability"
+            ],
+            "adjustment_direction": "decrease",
+            "adjustment_magnitude": "medium",
+            "reason": "Orchestrator suggests decrease (medium) for complexity"
+          }
+        },
+        "manager_response": {
+          "details": null,
+          "weights": {
+            "completion_suitability": 0.1422,
+            "recall_suitability": 0.1896,
+            "open_ended_suitability": 0.237,
+            "wh_suitability": 0.1896,
+            "distancing_suitability": 0.1896,
+            "complexity": 0.0521
+          }
+        }
       }
     ]
   }

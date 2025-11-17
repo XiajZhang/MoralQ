@@ -16,7 +16,7 @@ const TabPanel: React.FC<TabPanelProps> = ({
   isActive,
 }) => {
   const { storybook, moral, objective, learning_objectives, questions } = result;
-  const moralText = moral.generated;
+  const moralText = moral?.generated || moral?.text || 'No moral lesson generated';
 
   return (
     <div className={`tab-panel ${isActive ? 'active' : ''}`}>

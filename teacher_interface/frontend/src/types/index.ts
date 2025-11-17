@@ -35,13 +35,14 @@ export interface MoralCandidate {
 }
 
 export interface MoralData {
-  generated: string;
-  candidates: MoralCandidate[];
-  optimization_applied: boolean;
-  status: 'pending' | 'approved' | 'rejected';
-  feedback: 'positive' | 'negative' | null;
-  regenerations: number;
-  timestamp: string;
+  generated?: string; // Optional - may be missing in error cases
+  text?: string; // Optional fallback for generated
+  candidates?: MoralCandidate[];
+  optimization_applied?: boolean;
+  status?: 'pending' | 'approved' | 'rejected';
+  feedback?: 'positive' | 'negative' | null;
+  regenerations?: number;
+  timestamp?: string;
 }
 
 export interface QuestionsData {
@@ -54,11 +55,12 @@ export interface QuestionsData {
 
 export interface StorybookResult {
   storybook: Storybook;
-  objective: string;
-  moral: MoralData;
-  segments: Segment[];
-  questions: Question[];
+  objective?: string;
+  moral?: MoralData;
+  segments?: Segment[];
+  questions?: Question[];
   learning_objectives?: string[];
+  error?: string; // Error message if generation failed
 }
 
 export interface Configuration {
