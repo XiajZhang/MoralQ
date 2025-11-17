@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, Union
 
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, RootModel, validator
 
 
 class EvaluatorMetadataModel(BaseModel):
@@ -16,20 +16,25 @@ class EvaluatorMetadataModel(BaseModel):
         extra = "allow"
 
 
-class EvaluatorConfigModel(BaseModel):
-    __root__: Dict[str, EvaluatorMetadataModel] = Field(default_factory=dict)
+class EvaluatorConfigModel(RootModel[Dict[str, EvaluatorMetadataModel]]):
+    root: Dict[str, EvaluatorMetadataModel] = Field(default_factory=dict)
 
     def to_mapping(self) -> Dict[str, Dict[str, Any]]:
         return {
-            name: metadata.dict(exclude_none=True)
-            for name, metadata in self.__root__.items()
+            name: metadata.model_dump(exclude_none=True)
+            for name, metadata in self.root.items()
         }
 
     def keys(self):
-        return self.__root__.keys()
+        return self.root.keys()
 
     def items(self):
-        return self.__root__.items()
+        return self.root.items()
+    
+    @classmethod
+    def parse_obj(cls, obj):
+        # Compatibility method for Pydantic v1 style calls
+        return cls.model_validate(obj)
 
 
 class FeedbackActionModel(BaseModel):
@@ -71,7 +76,7 @@ class FeedbackRecordModel(BaseModel):
 class EvaluationResultModel(BaseModel):
     question: str
     question_type: Optional[str] = None
-    type_confidence: Optional[float] = None
+    type_confidence: Optional[Union[str, float]] = None  # Can be "High"/"Medium"/"Low" or numeric
     suitability_score: Optional[float] = None
     decision: Optional[str] = None
     evaluation_reasoning: Optional[str] = None

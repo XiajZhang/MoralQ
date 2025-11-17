@@ -11,8 +11,19 @@ Based on: "ContextQ: Generated Questions to Support Meaningful Parent-Child Dial
 import dspy
 import json
 import os
+import sys
 from typing import List, Dict, Any, Optional
 from datetime import datetime
+
+# Add parent directory to path for imports
+# File is at: MoralQ/teacher_interface/backend/services/contextq_evaluators.py
+# Need to add: MoralQ/ to path
+_file_dir = os.path.dirname(os.path.abspath(__file__))  # services/
+_backend_dir = os.path.dirname(_file_dir)  # backend/
+_teacher_interface_dir = os.path.dirname(_backend_dir)  # teacher_interface/
+_project_root = os.path.dirname(_teacher_interface_dir)  # MoralQ/
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 
 from teacher_interface.backend.models import EvaluationLogModel, EvaluationResultModel
 
@@ -39,22 +50,15 @@ from teacher_interface.backend.evaluators.suitability_evaluators import (
     WhSuitabilitySignature,
     DistancingSuitabilitySignature,
 )
+from teacher_interface.backend.evaluators.manager import EvaluatorManager
 
 
 # ============================================================================
 # DYNAMIC EVALUATOR SIGNATURE (Type-Agnostic)
 # ============================================================================
 
-class UniversalEvaluatorSignature(dspy.Signature):
-    """Legacy fallback signature used before templated dynamic evaluators.
-    Currently unused because dynamic_template creates evaluator-specific signatures."""
-    question = dspy.InputField(desc="The question to evaluate")
-    story_context = dspy.InputField(desc="The story context for the question")
-    question_type = dspy.InputField(desc="Type of question (Completion, Recall, Open-Ended, Wh, Distancing)")
-    evaluator_criteria = dspy.InputField(desc="The specific criteria this evaluator is checking for (e.g., 'Assess if the question uses simple language appropriate for 4-6 year olds and avoids complex vocabulary.')")
-    score = dspy.OutputField(desc="Numerical score from 1-5, where 5 means the question excellently meets the criteria and 1 means it does not meet it at all")
-    reasoning = dspy.OutputField(desc="Detailed explanation of how well the question meets the criteria, with specific examples from the question")
-    pass_decision = dspy.OutputField(desc="Output 'pass' if the score is 3 or higher (question meets the criteria), otherwise output 'regenerate'")
+# LEGACY: UniversalEvaluatorSignature was used before dynamic_template-based evaluators.
+# Dynamic evaluators are now first-class via the EvaluatorManager registry.
 
 
 # ============================================================================
@@ -62,139 +66,96 @@ class UniversalEvaluatorSignature(dspy.Signature):
 # ============================================================================
 
 class SuitabilityEvaluationProgram(dspy.Module):
-    """Routes questions to appropriate suitability agent based on their type."""
+    """Evaluates questions using central EvaluatorManager. Keeps type labeling via DSPy."""
     
     def __init__(self, dynamic_evaluators: List[Dict[str, Any]] = None):
         super().__init__()
         self.type_agent = dspy.Predict(TypeClassificationSignature)
-        self.completion_agent = dspy.Predict(CompletionSuitabilitySignature)
-        self.recall_agent = dspy.Predict(RecallSuitabilitySignature)
-        self.open_ended_agent = dspy.Predict(OpenEndedSuitabilitySignature)
-        self.wh_agent = dspy.Predict(WhSuitabilitySignature)
-        self.distancing_agent = dspy.Predict(DistancingSuitabilitySignature)
-        
-        # Store dynamic evaluators (created from teacher feedback)
-        self.dynamic_evaluators = dynamic_evaluators or []
-        if self.dynamic_evaluators:
-            for ev in self.dynamic_evaluators:
-                print(f"   Evaluator in program: {ev}")
+        # Centralized evaluator manager (weights + dynamic evaluators)
+        self.evaluator_manager = EvaluatorManager()
     
     def forward(self, question: str, story_context: Optional[str] = None) -> Dict[str, Any]:
-        """Evaluate question suitability based on ContextQ rubric."""
+        """Evaluate question with centralized evaluators and label its type.
         
-        # Step 1: Classify question type
+        OPTIMIZED: Only runs the relevant core evaluator (based on type) + dynamic evaluators,
+        instead of running all 5 core evaluators. This reduces LLM calls from ~9 to ~4 per question.
+        """
+        
+        # Type classification for labeling (not gating)
         type_result = self.type_agent(question=question)
-        question_type = type_result.question_type.replace("_", "-")  # Normalize naming
+        question_type = type_result.question_type.replace("_", "-") if hasattr(type_result, "question_type") else "Unknown"
         
-        # Step 2: Route to appropriate suitability agent
-        suitability_result = None
+        # Map question type to core evaluator name - only run the relevant one
+        type_to_core = {
+            "Completion": "completion_suitability",
+            "Recall": "recall_suitability",
+            "Open-Ended": "open_ended_suitability",
+            "Wh": "wh_suitability",
+            "Distancing": "distancing_suitability",
+        }
+        core_eval_name = type_to_core.get(question_type, None)
         
-        try:
-            if question_type == "Completion":
-                suitability_result = self.completion_agent(question=question)
-            elif question_type == "Recall":
-                suitability_result = self.recall_agent(question=question)
-            elif question_type == "Open-Ended":
-                suitability_result = self.open_ended_agent(question=question)
-            elif question_type == "Wh":
-                suitability_result = self.wh_agent(question=question)
-            elif question_type == "Distancing":
-                suitability_result = self.distancing_agent(question=question)
-            else:
-                # Unknown type - skip evaluation
-                suitability_result = {
-                    "suitability_score": 0.5,
-                    "decision": "skip",
-                    "reasoning": f"Unknown question type: {question_type}"
-                }
-        except Exception as e:
-            print(f"Error evaluating suitability: {e}")
-            suitability_result = {
-                "suitability_score": 0.0,
-                "decision": "error",
-                "reasoning": str(e)
-            }
+        # Only evaluate the relevant core evaluator (not all 5)
+        core = {}
+        if core_eval_name and core_eval_name in self.evaluator_manager.evaluators:
+            try:
+                core = self.evaluator_manager.evaluators[core_eval_name].evaluate(
+                    question=question,
+                    context={"story_context": story_context or ""}
+                )
+            except Exception as e:
+                print(f"[WARN] Error evaluating {core_eval_name}: {e}")
+                core = {"score": 0.0, "decision": "regenerate", "reasoning": f"Error: {e}"}
         
-        # Extract suitability_score and ensure proper type conversion
-        if isinstance(suitability_result, dict):
-            score = suitability_result.get("suitability_score", 0.0)
-            decision = suitability_result.get("decision", "unknown")
-            reasoning = suitability_result.get("reasoning", "")
-        else:
-            score = suitability_result.suitability_score
-            decision = suitability_result.decision
-            reasoning = suitability_result.reasoning
-        
-        # Convert score to float if string (for 1-5 scale)
-        try:
-            if isinstance(score, str):
-                score = float(score)
-            else:
-                score = float(score)
-        except (ValueError, TypeError):
-            score = 0.0
-        
-        # Override decision logic for ALL question types
-        
-        # Open-Ended and Distancing: numeric scores must be >= 3
-        if question_type in ["Open-Ended", "Distancing"]:
-            if score < 3:
-                decision = "regenerate"
-                reasoning += f" Score {score} is below threshold of 3."
-        
-        # Binary types (Completion, Recall, Wh-): score must be exactly 1.0 (all True)
-        elif question_type in ["Completion", "Recall", "Wh"]:
-            if score < 1.0:
-                decision = "regenerate"
-                reasoning += f" Score {score} indicates criteria not met."
-        
-        # Step 3: Apply ALL dynamic evaluators to this question (type-agnostic)
+        # Evaluate only dynamic evaluators (not all evaluators)
+        # Identify dynamic evaluators by checking if they're not in the core set
         dynamic_evaluations = {}
-        if self.dynamic_evaluators:
-            universal_agent = dspy.Predict(UniversalEvaluatorSignature)
-            for evaluator in self.dynamic_evaluators:
-                evaluator_name = evaluator.get("name", "unknown")
-                evaluator_criteria = evaluator.get("criteria", "")
-                
+        core_names = {
+            "completion_suitability",
+            "recall_suitability",
+            "open_ended_suitability",
+            "wh_suitability",
+            "distancing_suitability",
+        }
+        for name, evaluator in self.evaluator_manager.evaluators.items():
+            if name not in core_names:
                 try:
-                    result = universal_agent(
+                    dyn_result = evaluator.evaluate(
                         question=question,
-                        story_context=story_context or "",
-                        question_type=question_type,
-                        evaluator_criteria=evaluator_criteria
+                        context={"story_context": story_context or ""}
                     )
-                    
-                    # Extract score (1-5)
-                    dynamic_score = float(result.score)
-                    # Use pass_decision from result, or default based on score >= 3
-                    dynamic_decision = result.pass_decision if hasattr(result, 'pass_decision') else ("pass" if dynamic_score >= 3 else "regenerate")
-                    
-                    dynamic_evaluations[evaluator_name] = {
-                        "score": dynamic_score,
-                        "decision": dynamic_decision,
-                        "reasoning": result.reasoning
-                    }
-                    
-                    print(f"[INFO] Dynamic evaluator '{evaluator_name}' result: score={dynamic_score}, decision={dynamic_decision}")
-                    
-                    # If any dynamic evaluator fails, mark for regeneration
-                    if dynamic_decision == "regenerate":
-                        decision = "regenerate"
-                        reasoning += f"\n[{evaluator_name}]: Score {dynamic_score} below threshold."
-                        
+                    dynamic_evaluations[name] = dyn_result
+                    # Early exit: if any dynamic evaluator fails, we know the decision will be "regenerate"
+                    # Continue evaluating others to collect all failure reasons, but we can skip if we want
                 except Exception as e:
-                    print(f"[WARN]  Error applying dynamic evaluator {evaluator_name}: {e}")
-        
+                    print(f"[WARN] Error evaluating dynamic evaluator {name}: {e}")
+                    dynamic_evaluations[name] = {"score": 0.0, "decision": "regenerate", "reasoning": f"Error: {e}"}
+
+        # Fallbacks if core missing
+        score = core.get("score", 0.0) if isinstance(core, dict) else 0.0
+        decision = core.get("decision", "regenerate") if isinstance(core, dict) else "regenerate"
+        reasoning = core.get("reasoning", "") if isinstance(core, dict) else ""
+
+        # If any dynamic evaluator fails, force regeneration and append reasons
+        for dyn_name, dyn in dynamic_evaluations.items():
+            try:
+                if isinstance(dyn, dict) and dyn.get("decision") == "regenerate":
+                    decision = "regenerate"
+                    if dyn.get("reasoning"):
+                        reasoning += f"\n[{dyn_name}]: {dyn.get('reasoning')}"
+            except Exception:
+                continue
+
         return {
             "question": question,
             "question_type": question_type,
-            "type_confidence": type_result.confidence,
-            "type_reasoning": type_result.reasoning,
+            "type_confidence": getattr(type_result, "confidence", ""),
+            "type_reasoning": getattr(type_result, "reasoning", ""),
             "suitability_score": score,
             "decision": decision,
             "evaluation_reasoning": reasoning,
-            "dynamic_evaluations": dynamic_evaluations,  # Store dynamic evaluator results
-            "details": {}  # Don't store suitability_result as it contains non-serializable objects
+            "dynamic_evaluations": dynamic_evaluations,
+            "details": {},
         }
 
 
@@ -218,20 +179,52 @@ class EvaluationManager:
         self.evaluations = self._load_evaluations()
     
     def _load_evaluations(self) -> Dict[str, Any]:
-        """Load existing evaluations from storage file."""
+        """Load existing evaluations from storage file.
+        
+        Resilient loading: Skips invalid entries instead of failing completely.
+        Preserves set_metadata entries and valid question evaluations.
+        """
         if os.path.exists(self.storage_file):
             try:
                 with open(self.storage_file, 'r', encoding='utf-8') as f:
                     raw = json.load(f)
-                    if isinstance(raw, dict):
-                        log = EvaluationLogModel.parse_obj(raw)
+                    
+                # Handle both dict and list formats
+                if isinstance(raw, dict):
+                    evaluations_list = raw.get("evaluations", [])
+                else:
+                    evaluations_list = raw if isinstance(raw, list) else []
+                
+                # Filter and validate entries - preserve set_metadata, regeneration_summary, and valid questions
+                validated_list = []
+                for item in evaluations_list:
+                    # Preserve set_metadata entries (they don't have "question" field)
+                    if isinstance(item, dict) and "set_metadata" in item:
+                        validated_list.append(item)
+                    # Preserve regeneration_summary entries
+                    elif isinstance(item, dict) and "regeneration_summary" in item:
+                        validated_list.append(item)
+                    # Validate question evaluation entries
+                    elif isinstance(item, dict) and "question" in item:
+                        try:
+                            validated = EvaluationResultModel.parse_obj(item)
+                            validated_list.append(validated.dict(exclude_none=True))
+                        except Exception as e:
+                            print(f"[WARN] Skipping invalid evaluation entry: {e}")
+                            # Still preserve it as-is if it's close to valid
+                            validated_list.append(item)
                     else:
-                        log = EvaluationLogModel.parse_obj({"evaluations": raw})
-                    return log.dict()
+                        # Try to preserve other entries
+                        validated_list.append(item)
+                
+                return {"evaluations": validated_list}
             except Exception as e:
                 print(f"Error loading evaluations: {e}")
-                return {}
-        return {}
+                import traceback
+                traceback.print_exc()
+                # Return empty structure instead of empty dict to preserve structure
+                return {"evaluations": []}
+        return {"evaluations": []}
     
     def _save_evaluations(self):
         """Save evaluations to storage file."""
@@ -246,19 +239,90 @@ class EvaluationManager:
             traceback.print_exc()
     
     def store_evaluations(self, evaluations: List[Dict[str, Any]], clear_existing: bool = False):
-        """Store evaluation results."""
+        """Store evaluation results.
+        
+        Preserves existing evaluations unless clear_existing=True.
+        Reloads file before saving to ensure we don't lose data from other processes.
+        """
+        # Reload existing evaluations to ensure we have the latest data
+        # (important if multiple processes or rapid successive calls)
+        existing = self._load_evaluations()
+        
         if clear_existing:
             self.evaluations = {"evaluations": []}
+        else:
+            # Preserve existing evaluations
+            self.evaluations = existing
         
         if "evaluations" not in self.evaluations:
             self.evaluations["evaluations"] = []
         
-        validated = [
-            EvaluationResultModel.parse_obj(record).dict(exclude_none=True)
-            for record in evaluations
-        ]
+        # Validate and add new evaluations
+        validated = []
+        for record in evaluations:
+            try:
+                # Only validate entries that have a "question" field
+                if isinstance(record, dict) and "question" in record:
+                    validated_record = EvaluationResultModel.parse_obj(record)
+                    validated.append(validated_record.dict(exclude_none=True))
+                else:
+                    # Preserve non-question entries (like set_metadata, regeneration_summary) as-is
+                    validated.append(record)
+            except Exception as e:
+                print(f"[WARN] Skipping invalid evaluation record: {e}")
+                # Still try to preserve it
+                validated.append(record)
+        
         self.evaluations["evaluations"].extend(validated)
         self._save_evaluations()
+    
+    def store_regeneration_summary(self, storybook_id: str, objective: str, set_number: str, summary: Dict[str, Any]):
+        """Store regeneration summary for a set. Called from server.py after all questions are stored."""
+        try:
+            # Reload to get latest data
+            existing = self._load_evaluations()
+            self.evaluations = existing
+            
+            if "evaluations" not in self.evaluations:
+                self.evaluations["evaluations"] = []
+            
+            evaluations_list = self.evaluations["evaluations"]
+            
+            # Find the set_metadata entry for this set
+            set_metadata_idx = None
+            for idx, item in enumerate(evaluations_list):
+                if isinstance(item, dict) and "set_metadata" in item:
+                    meta = item.get("set_metadata", {})
+                    if (meta.get("storybook_id") == storybook_id and 
+                        meta.get("objective") == objective and 
+                        meta.get("set_number") == set_number):
+                        set_metadata_idx = idx
+                        break
+            
+            # If set_metadata exists, add summary right after it
+            if set_metadata_idx is not None:
+                # Check if summary already exists (avoid duplicates)
+                next_idx = set_metadata_idx + 1
+                if (next_idx < len(evaluations_list) and 
+                    isinstance(evaluations_list[next_idx], dict) and 
+                    "regeneration_summary" in evaluations_list[next_idx]):
+                    # Update existing summary
+                    evaluations_list[next_idx]["regeneration_summary"] = summary
+                else:
+                    # Insert new summary after set_metadata
+                    summary_entry = {"regeneration_summary": summary}
+                    evaluations_list.insert(next_idx, summary_entry)
+            else:
+                # If no set_metadata found, just append (shouldn't happen, but handle gracefully)
+                summary_entry = {"regeneration_summary": summary}
+                evaluations_list.append(summary_entry)
+            
+            self._save_evaluations()
+            print(f"[INFO] Stored regeneration summary for {storybook_id} - {set_number}")
+        except Exception as e:
+            print(f"[WARN] Error storing regeneration summary: {e}")
+            import traceback
+            traceback.print_exc()
     
     def get_evaluation_stats(self) -> Dict[str, Any]:
         """Get evaluation statistics."""
@@ -367,7 +431,6 @@ class ContextQEvaluationPipeline:
                 "question": question,
                 "question_type": result["question_type"],
                 "type_confidence": result["type_confidence"],
-                "type_reasoning": result["type_reasoning"],
                 "suitability_score": result["suitability_score"],
                 "decision": result["decision"],
                 "evaluation_reasoning": result["evaluation_reasoning"],
@@ -417,7 +480,10 @@ class ContextQEvaluationPipeline:
             List of suitable questions (only those with decision="pass")
         """
         suitable_questions = []
+        evaluation_records: List[Dict[str, Any]] = []
         total_regenerations = 0
+        # Capture full regeneration traces across all questions
+        overall_regeneration_log = []
         
         print(f"\n[INFO] Generating {num_questions} suitable questions with regeneration...")
         
@@ -426,8 +492,9 @@ class ContextQEvaluationPipeline:
             attempts = 0
             feedback_history = []
             best_candidate = None
+            per_question_regen_history = []
             
-            while attempts < 3:  # Max 3 attempts per question
+            while attempts < 5:  # Max 5 attempts per question
                 try:
                     # Generate question candidate
                     if attempts == 0:
@@ -462,6 +529,15 @@ class ContextQEvaluationPipeline:
                                     story_context=story_context
                                 )
                                 
+                                # Log this attempt
+                                per_question_regen_history.append({
+                                    "attempt": attempts + 1,
+                                    "candidate_question": question_text,
+                                    "avoidance_instructions": candidate_params or "",
+                                    "decision": eval_result.get("decision"),
+                                    "suitability_score": eval_result.get("suitability_score"),
+                                })
+                                
                                 # Check decision
                                 if eval_result.get("decision") == "pass":
                                     
@@ -473,9 +549,28 @@ class ContextQEvaluationPipeline:
                                             "question_type": eval_result.get("question_type"),
                                             "evaluation_reasoning": eval_result.get("evaluation_reasoning"),
                                             "type_confidence": eval_result.get("type_confidence"),
-                                            "type_reasoning": eval_result.get("type_reasoning")
+                                            # intentionally omit type_reasoning from storage record
                                         }
+                                        # Persist regeneration details on pass
+                                        candidate_q["suitability_evaluation"]["regenerated"] = attempts > 0
+                                        candidate_q["suitability_evaluation"]["regeneration_history"] = per_question_regen_history
                                         suitable_questions.append(candidate_q)
+                                        # Build evaluation record for storage
+                                        evaluation_records.append({
+                                            "timestamp": datetime.now().isoformat(),
+                                            "question": question_text,
+                                            "question_type": eval_result.get("question_type"),
+                                            "type_confidence": eval_result.get("type_confidence"),
+                                            "suitability_score": eval_result.get("suitability_score"),
+                                            "decision": eval_result.get("decision"),
+                                            "evaluation_reasoning": eval_result.get("evaluation_reasoning"),
+                                            "story_context": story_context,
+                                            "moral_or_objective": generator_params.get("objective") if isinstance(generator_params, dict) else None,
+                                            "details": {},
+                                            "dynamic_evaluations": eval_result.get("dynamic_evaluations", {}),
+                                            "regenerated": attempts > 0,
+                                            "regeneration_history": per_question_regen_history,
+                                        })
                                         found_passing = True
                                         break  # Found passing question from batch
                         
@@ -487,7 +582,12 @@ class ContextQEvaluationPipeline:
                             # We'll use feedback from the last evaluated question
                             feedback = "All questions in batch failed suitability checks. Generate different types of questions."
                             feedback_history.append(feedback)
-                            print(f"[WARN]  Question {q_idx + 1} batch failed suitability (attempt {attempts}/3)")
+                            per_question_regen_history.append({
+                                "attempt": attempts,
+                                "avoidance_instructions": feedback,
+                                "note": "Batch failed; requesting diverse alternatives"
+                            })
+                            print(f"[WARN]  Question {q_idx + 1} batch failed suitability (attempt {attempts}/5)")
                             continue
                     
                     # Handle case where generator returns single question
@@ -506,6 +606,15 @@ class ContextQEvaluationPipeline:
                             story_context=story_context
                         )
                         
+                        # Log this attempt
+                        per_question_regen_history.append({
+                            "attempt": attempts + 1,
+                            "candidate_question": question_text,
+                            "avoidance_instructions": candidate_params or "",
+                            "decision": eval_result.get("decision"),
+                            "suitability_score": eval_result.get("suitability_score"),
+                        })
+                        
                         # Check decision
                         if eval_result.get("decision") == "pass":
                             
@@ -517,8 +626,10 @@ class ContextQEvaluationPipeline:
                                     "question_type": eval_result.get("question_type"),
                                     "evaluation_reasoning": eval_result.get("evaluation_reasoning"),
                                     "type_confidence": eval_result.get("type_confidence"),
-                                    "type_reasoning": eval_result.get("type_reasoning")
+                                    # intentionally omit type_reasoning from storage record
                                 }
+                                candidate_result["suitability_evaluation"]["regenerated"] = attempts > 0
+                                candidate_result["suitability_evaluation"]["regeneration_history"] = per_question_regen_history
                                 suitable_questions.append(candidate_result)
                             else:
                                 # If candidate is just a string, wrap it
@@ -530,43 +641,96 @@ class ContextQEvaluationPipeline:
                                         "question_type": eval_result.get("question_type"),
                                         "evaluation_reasoning": eval_result.get("evaluation_reasoning"),
                                         "type_confidence": eval_result.get("type_confidence"),
-                                        "type_reasoning": eval_result.get("type_reasoning")
+                                        # intentionally omit type_reasoning from storage record
                                     }
                                 })
                             
-                            # Store evaluation
-                            self._store_evaluation_record(question_text, eval_result, story_context)
+                            # Store evaluation (build record for storage)
+                            # Attach regeneration info for logging
+                            eval_result["regenerated"] = attempts > 0
+                            eval_result["regeneration_history"] = per_question_regen_history
+                            evaluation_records.append({
+                                "timestamp": datetime.now().isoformat(),
+                                "question": question_text,
+                                "question_type": eval_result.get("question_type"),
+                                "type_confidence": eval_result.get("type_confidence"),
+                                "suitability_score": eval_result.get("suitability_score"),
+                                "decision": eval_result.get("decision"),
+                                "evaluation_reasoning": eval_result.get("evaluation_reasoning"),
+                                "story_context": story_context,
+                                "moral_or_objective": generator_params.get("objective") if isinstance(generator_params, dict) else None,
+                                "details": {},
+                                "dynamic_evaluations": eval_result.get("dynamic_evaluations", {}),
+                                "regenerated": eval_result.get("regenerated", False),
+                                "regeneration_history": eval_result.get("regeneration_history", []),
+                            })
                             break  # Success!
                         else:
                             # Failed - collect feedback
                             attempts += 1
                             feedback = f"Failed suitability: {eval_result.get('evaluation_reasoning')} (score: {eval_result.get('suitability_score')})"
                             feedback_history.append(feedback)
+                            per_question_regen_history.append({
+                                "attempt": attempts,
+                                "avoidance_instructions": feedback,
+                                "note": "Failed; refining with avoidance instructions"
+                            })
                             print(f"[WARN]  Attempt {attempts}/3: {feedback}")
                             best_candidate = candidate_result  # Keep track of best attempt
                     else:
                         attempts += 1
-                        print(f"[WARN]  Generated empty question (attempt {attempts}/3)")
+                        print(f"[WARN]  Generated empty question (attempt {attempts}/5)")
                 
                 except Exception as e:
                     attempts += 1
-                    print(f"[WARN]  Error generating question (attempt {attempts}/3): {e}")
+                    print(f"[WARN]  Error generating question (attempt {attempts}/5): {e}")
                     import traceback
                     traceback.print_exc()
             
             # If all attempts failed, add best candidate anyway (marked as potentially unsuitable)
-            if attempts >= 3 and best_candidate:
-                print(f"[WARN]  Question {q_idx + 1} failed after 3 attempts, including best candidate")
+            if attempts >= 5 and best_candidate:
+                print(f"[WARN]  Question {q_idx + 1} failed after 5 attempts, including best candidate")
                 if isinstance(best_candidate, dict):
                     best_candidate["suitability_evaluation"] = {
                         "decision": "failed_after_max_attempts",
-                        "warning": "Question did not pass suitability checks after 3 attempts"
+                        "warning": "Question did not pass suitability checks after 5 attempts"
                     }
+                    # Include regeneration trace even on failure
+                    best_candidate["suitability_evaluation"]["regenerated"] = True
+                    best_candidate["suitability_evaluation"]["regeneration_history"] = per_question_regen_history
                     suitable_questions.append(best_candidate)
+                    # Build failed evaluation record for storage
+                    evaluation_records.append({
+                        "timestamp": datetime.now().isoformat(),
+                        "question": best_candidate.get("question") if isinstance(best_candidate, dict) else "",
+                        "question_type": "",  # unknown on failure
+                        "type_confidence": "",
+                        "suitability_score": 0.0,
+                        "decision": "failed_after_max_attempts",
+                        "evaluation_reasoning": "Question did not pass suitability checks after 3 attempts",
+                        "story_context": story_context,
+                        "moral_or_objective": generator_params.get("objective") if isinstance(generator_params, dict) else None,
+                        "details": {},
+                        "dynamic_evaluations": {},
+                        "regenerated": True,
+                        "regeneration_history": per_question_regen_history,
+                    })
             
             total_regenerations += attempts
+            overall_regeneration_log.append({
+                "question_index": q_idx + 1,
+                "attempts": attempts,
+                "regeneration_history": per_question_regen_history
+            })
         
         print(f"\n[INFO] Generated {len(suitable_questions)}/{num_questions} suitable questions after {total_regenerations} regeneration attempts")
+        
+        # Persist evaluation records for this generation batch
+        if evaluation_records:
+            try:
+                self.storage.store_evaluations(evaluation_records, clear_existing=False)
+            except Exception as e:
+                print(f"[WARN] Could not persist regeneration evaluations: {e}")
         
         return suitable_questions
     
@@ -624,7 +788,8 @@ class ContextQEvaluationPipeline:
                 "objective": objective,
                 "details": serializable_details,
                 "regenerated": eval_result.get("regenerated", False),
-                "regeneration_history": eval_result.get("regeneration_history", []),
+                "batch_number": eval_result.get("batch_number"),  # Which batch this question came from (1 = initial, 2+ = regenerated)
+                "regeneration_history": eval_result.get("regeneration_history", []),  # Use actual regeneration history from eval_result
                 "relevant_evaluator": relevant_evaluator,  # Only the evaluator for this question type
                 "dynamic_evaluations": dynamic_eval_scores  # Dynamic evaluators apply to all
             }

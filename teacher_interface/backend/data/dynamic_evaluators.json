@@ -1,2 +1,20 @@
-{}
-
+{
+  "complexity": {
+    "description": "Evaluates questions for complexity based on teacher feedback",
+    "rubric": {
+      "instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds."
+    },
+    "default_weight": 0.1,
+    "module": "teacher_interface.backend.evaluators.suitability_evaluators",
+    "status": "active",
+    "prompt": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+    "template": "llm_dynamic",
+    "origin": {
+      "feedback_text": "questions are too complex for 4-6 year olds",
+      "attribute": "complexity",
+      "timestamp": "2025-11-17T01:28:08.817967"
+    },
+    "created_at": "2025-11-17T01:28:08.817983",
+    "name": "complexity"
+  }
+}

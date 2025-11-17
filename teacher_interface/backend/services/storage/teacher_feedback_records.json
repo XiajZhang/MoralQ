@@ -1,0 +1,1707 @@
+{
+  "test_school": {
+    "test_teacher": [
+      {
+        "story_title": "Asia",
+        "objective": "Learning to embrace curiosity about exploring new places",
+        "iteration_id": "set_001",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "questions are too complex for 4-6 year olds"
+        },
+        "interpretation": {
+          "interpretation": "Teacher provided negative feedback: questions are too complex for 4-6 year olds",
+          "attribute": "",
+          "action_type": "no_action",
+          "affected_evaluators": [],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.3
+        },
+        "action_taken": {
+          "type": "no_action",
+          "affected": [],
+          "delta": {},
+          "reason": "Teacher provided negative feedback: questions are too complex for 4-6 year olds",
+          "reformulated_instruction": "",
+          "details": null,
+          "confidence": 0.0
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [
+          {
+            "timestamp": "2025-11-17T01:16:42.210000",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to make a personal choice between two options and provide reasoning (\"which would you choose and why?\"). It does not require recalling specific information, completing a sentence, or answering a factual \"wh\" question. It is open to personal interpretation and opinion, fitting the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain their reasoning, which strongly solicits opinions and ideas (score 5). It discourages one-word answers by including \"and why,\" prompting for an explanation (score 4). While a child could technically opt out by saying \"I don't know,\" the structure encourages engagement (score 4). The question allows for personal connections, such as sharing experiences or preferences related to pandas or tigers (score 4). The average score is above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.210702",
+            "question": "What do you think it would feel like to stand on top of Mount Everest?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine or hypothesize about an experience they likely have not had, requiring them to distance themselves from their own direct experience and speculate about what it would feel like to stand on top of Mount Everest.",
+            "suitability_score": 3.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine and describe what it would feel like to stand on top of Mount Everest, which encourages personal reflection and imaginative thinking (score 4). It cannot be answered in one word, as it requires elaboration and explanation (score 5). However, unless the current page is specifically about Mount Everest, mountains, or extreme environments, the relevance to the current page may be limited (score 2). The average suitability score is above 3, so the question passes.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211274",
+            "question": "How is the Burj Khalifa different from buildings you see every day?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to compare the Burj Khalifa to buildings they see every day, which requires them to distance themselves from their immediate experience and think about differences between a famous landmark and their own environment. This aligns with the \"Distancing\" category, as it prompts reflection beyond direct recall or simple description.",
+            "suitability_score": 5.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to compare the Burj Khalifa to buildings they see every day, directly relating to their personal experiences (score 5). It cannot be answered in one word, as it requires explanation and comparison (score 5). The question is highly relevant to a page about the Burj Khalifa (score 5). The average suitability score is 5, so the question is suitable for use as a distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211740",
+            "question": "What is something you would like to see or do if you could visit Asia?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal preference or desire (\"something you would like to see or do\") in a hypothetical scenario (\"if you could visit Asia\"), without seeking a specific fact, completion, or distancing. It invites a variety of possible responses, making it open-ended.",
+            "suitability_score": 4.5,
+            "decision": "pass",
+            "evaluation_reasoning": "The question strongly solicits ideas and opinions by asking what the respondent would like to see or do, which encourages personal reflection and imagination. It discourages one-word answers because it asks for a specific activity or sight, often prompting elaboration. While a child could technically answer with \"nothing\" or \"I don't know,\" the phrasing makes it less likely, as it invites them to think about possibilities. The question is highly likely to connect to personal interests or experiences, as it is about their own wishes or dreams. The average score is well above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What is the name of the biggest continent in the world?",
+              "original_failure_reason": "The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability.",
+              "original_batch": 1,
+              "regenerated_question": "What is something you would like to see or do if you could visit Asia?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.5,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212224",
+            "question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+            "question_type": "Completion",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to provide a specific example (an animal that lives in Asia) and an additional detail (what makes it special). This fits the \"Completion\" type, as it requires the respondent to complete a prompt with a factual or descriptive answer.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question does not involve rhyming or repeated phrases. It is a straightforward completion question asking for an animal from Asia and a unique characteristic, which fits the criteria for a suitable completion question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could visit a street market in Asia, what would you like to see or buy?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.",
+              "original_batch": 1,
+              "regenerated_question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Completion",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "completion_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212737",
+            "question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a creative, personal response about what the respondent would build and their reasoning, without a single correct answer or a request for factual recall. It encourages elaboration and subjective input, which is characteristic of Open-Ended questions.",
+            "suitability_score": 4.75,
+            "decision": "pass",
+            "evaluation_reasoning": "This question strongly encourages the child to share their own creative ideas and opinions by asking what they would build and why, which cannot be answered with a simple yes/no or one-word response. It is difficult to opt out, as the question requires some explanation or justification. The prompt also allows for personal connection, as the child can draw on their interests, experiences, or aspirations. Overall, it is highly suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "Why do you think people in Asia grow so much rice?",
+              "original_failure_reason": "The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.",
+              "original_batch": 1,
+              "regenerated_question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.75,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.213576",
+            "question": "How do people in Asia get their food? Can you remember one way from the story?",
+            "question_type": "Recall",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to remember and state one way people in Asia get their food, specifically referencing information from a story. This is a classic recall question, as it requires retrieving a specific fact from previously presented material.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks students to recall a specific way people in Asia get their food as described in the story, which is a direct recall of a plot element or factual detail. It does not require information beyond the current page, making it fully suitable for a recall question. Both subcriteria are met, resulting in a perfect suitability score.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather do monsoons bring to Asia?",
+              "original_failure_reason": "The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.",
+              "original_batch": 1,
+              "regenerated_question": "How do people in Asia get their food? Can you remember one way from the story?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Recall",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "recall_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214301",
+            "question": "Imagine you are a Komodo dragon. What would you do on your island?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine themselves as a Komodo dragon, which is a classic example of a distancing question. It requires the respondent to take on a perspective different from their own and answer from that viewpoint.",
+            "suitability_score": 4.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine themselves as a Komodo dragon and describe what they would do on the island, which encourages them to draw on their own ideas and experiences in a distanced, imaginative way (score 4). It cannot be answered in one word, as it requires elaboration and creative thinking (score 5). The question is highly relevant to a page about Komodo dragons or their habitat (score 5). The average suitability score is 4.67, which is well above the threshold, making this a strong distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could have a Komodo dragon as a pet, what would you name it and where would it live?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.",
+              "original_batch": 1,
+              "regenerated_question": "Imagine you are a Komodo dragon. What would you do on your island?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.67,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214938",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal choice (which animal to meet) and then invites the respondent to generate their own question for the animal, both of which require original thought and do not have a single correct answer. This fits the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain what they would ask, which encourages sharing ideas and opinions (score 5). It discourages one-word answers because the child is prompted to explain their choice and formulate a question for the animal (score 4). While a child could technically opt out by saying \"I don't know,\" the structure of the question makes it engaging and encourages participation (score 4). The question allows for personal connection, as children may relate their choice to their own interests or experiences with animals (score 4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": null,
+              "original_failure_reason": null,
+              "original_batch": null,
+              "regenerated_question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.25,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.215637",
+            "question": "Would you like to play in the snow like children in Japan? Why or why not?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to consider whether they would like to engage in an activity (playing in the snow) as children in Japan do, and to explain their reasoning. This requires the respondent to put themselves in the place of someone else (children in Japan) and reflect on their own preferences in relation to that context, which is characteristic of a distancing question.",
+            "suitability_score": 4.33,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to consider their own preferences and experiences in relation to playing in the snow, similar to children in Japan, which scores high for asking about personal experiences. It cannot be answered with a simple \"yes\" or \"no\" because it also asks for a reason (\"Why or why not?\"), encouraging elaboration. The question is highly relevant to a page about children in Japan playing in the snow. The average score is above 3, so it passes as a suitable distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 3,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather would you like to try: a monsoon rain or a snowy day? Why?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria.",
+              "original_batch": 2,
+              "regenerated_question": "Would you like to play in the snow like children in Japan? Why or why not?",
+              "regenerated_batch": 3,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for a Completion question focused on rhyming or repeated phrases.; Wh: The question is broad and opinion-based, asking for a personal perspective on what makes Asia special to learn about. It does not focus on specific story details or factual information from a narrative, which is the primary criterion for suitability in this context.; Wh: The question asks about general differences in lifestyles between people in cities and villages in Asia, which is a broad, comparative, and factual inquiry. It does not focus on specific details from a particular story or narrative, which is the criterion for suitability. Therefore, it does not meet the requirement of focusing on story details.; Completion: The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.33,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 4,
+                  "failing": 8,
+                  "total": 12
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          }
+        ],
+        "course_of_action": {
+          "action_type": "no_action",
+          "rationale": "Teacher provided negative feedback: questions are too complex for 4-6 year olds",
+          "affected_evaluators": [],
+          "weight_changes": {},
+          "training_strategy": "no_action",
+          "reformulated_instruction": "",
+          "dspy_action": "no_optimization"
+        },
+        "timestamp": "2025-11-17T01:26:13.466459",
+        "teacher_id": "test_teacher",
+        "school_id": "test_school",
+        "story_context": "Story: Asia\nObjective: Learning to embrace curiosity about exploring new places",
+        "generated_questions": [
+          "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+          "What do you think it would feel like to stand on top of Mount Everest?",
+          "How is the Burj Khalifa different from buildings you see every day?",
+          "What is something you would like to see or do if you could visit Asia?",
+          "Can you name one animal that lives in Asia and tell us what makes it special?",
+          "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+          "How do people in Asia get their food? Can you remember one way from the story?",
+          "Imagine you are a Komodo dragon. What would you do on your island?",
+          "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+          "Would you like to play in the snow like children in Japan? Why or why not?"
+        ],
+        "question_feedbacks": {},
+        "routed_message": {
+          "action": "no_action",
+          "affected": [],
+          "delta": {},
+          "new_evaluator": null,
+          "reformulated_instruction": "",
+          "confidence": 0.0,
+          "raw_feedback": "questions are too complex for 4-6 year olds",
+          "metadata": {
+            "reason": "Teacher provided negative feedback: questions are too complex for 4-6 year olds",
+            "attribute": "",
+            "feedback_type": "negative",
+            "existing_evaluators": [
+              "open_ended_suitability",
+              "distancing_suitability",
+              "recall_suitability",
+              "wh_suitability",
+              "completion_suitability"
+            ]
+          }
+        },
+        "manager_response": {}
+      },
+      {
+        "story_title": "Asia",
+        "objective": "Learning to embrace curiosity about exploring new places",
+        "iteration_id": "set_002",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "questions are too complex for 4-6 year olds"
+        },
+        "interpretation": {
+          "interpretation": "Orchestrator determined new evaluator required: complexity",
+          "attribute": "complexity",
+          "action_type": "add_new_evaluator",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "none",
+          "adjustment_magnitude": "none",
+          "new_evaluator_needed": true,
+          "new_evaluator_name": "complexity",
+          "confidence": 0.95,
+          "reformulated_instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds."
+        },
+        "action_taken": {
+          "type": "add_new_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {},
+          "reason": "Orchestrator determined new evaluator required: complexity",
+          "reformulated_instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+          "details": {
+            "description": "Evaluates questions for complexity based on teacher feedback",
+            "rubric": {
+              "instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds."
+            },
+            "default_weight": 0.1,
+            "module": "teacher_interface.backend.evaluators.suitability_evaluators",
+            "status": "active",
+            "prompt": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+            "template": "llm_dynamic",
+            "origin": {
+              "feedback_text": "questions are too complex for 4-6 year olds",
+              "attribute": "complexity",
+              "timestamp": "2025-11-17T01:28:08.817967"
+            },
+            "created_at": "2025-11-17T01:28:08.817983",
+            "name": "complexity",
+            "evaluator_name": "complexity",
+            "weight": 0.0909,
+            "weights_snapshot": {
+              "completion_suitability": 0.1364,
+              "recall_suitability": 0.1818,
+              "open_ended_suitability": 0.2273,
+              "wh_suitability": 0.1818,
+              "distancing_suitability": 0.1818,
+              "complexity": 0.0909
+            }
+          },
+          "confidence": 0.95
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [
+          {
+            "timestamp": "2025-11-17T01:16:42.210000",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to make a personal choice between two options and provide reasoning (\"which would you choose and why?\"). It does not require recalling specific information, completing a sentence, or answering a factual \"wh\" question. It is open to personal interpretation and opinion, fitting the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain their reasoning, which strongly solicits opinions and ideas (score 5). It discourages one-word answers by including \"and why,\" prompting for an explanation (score 4). While a child could technically opt out by saying \"I don't know,\" the structure encourages engagement (score 4). The question allows for personal connections, such as sharing experiences or preferences related to pandas or tigers (score 4). The average score is above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.210702",
+            "question": "What do you think it would feel like to stand on top of Mount Everest?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine or hypothesize about an experience they likely have not had, requiring them to distance themselves from their own direct experience and speculate about what it would feel like to stand on top of Mount Everest.",
+            "suitability_score": 3.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine and describe what it would feel like to stand on top of Mount Everest, which encourages personal reflection and imaginative thinking (score 4). It cannot be answered in one word, as it requires elaboration and explanation (score 5). However, unless the current page is specifically about Mount Everest, mountains, or extreme environments, the relevance to the current page may be limited (score 2). The average suitability score is above 3, so the question passes.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211274",
+            "question": "How is the Burj Khalifa different from buildings you see every day?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to compare the Burj Khalifa to buildings they see every day, which requires them to distance themselves from their immediate experience and think about differences between a famous landmark and their own environment. This aligns with the \"Distancing\" category, as it prompts reflection beyond direct recall or simple description.",
+            "suitability_score": 5.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to compare the Burj Khalifa to buildings they see every day, directly relating to their personal experiences (score 5). It cannot be answered in one word, as it requires explanation and comparison (score 5). The question is highly relevant to a page about the Burj Khalifa (score 5). The average suitability score is 5, so the question is suitable for use as a distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211740",
+            "question": "What is something you would like to see or do if you could visit Asia?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal preference or desire (\"something you would like to see or do\") in a hypothetical scenario (\"if you could visit Asia\"), without seeking a specific fact, completion, or distancing. It invites a variety of possible responses, making it open-ended.",
+            "suitability_score": 4.5,
+            "decision": "pass",
+            "evaluation_reasoning": "The question strongly solicits ideas and opinions by asking what the respondent would like to see or do, which encourages personal reflection and imagination. It discourages one-word answers because it asks for a specific activity or sight, often prompting elaboration. While a child could technically answer with \"nothing\" or \"I don't know,\" the phrasing makes it less likely, as it invites them to think about possibilities. The question is highly likely to connect to personal interests or experiences, as it is about their own wishes or dreams. The average score is well above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What is the name of the biggest continent in the world?",
+              "original_failure_reason": "The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability.",
+              "original_batch": 1,
+              "regenerated_question": "What is something you would like to see or do if you could visit Asia?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.5,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212224",
+            "question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+            "question_type": "Completion",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to provide a specific example (an animal that lives in Asia) and an additional detail (what makes it special). This fits the \"Completion\" type, as it requires the respondent to complete a prompt with a factual or descriptive answer.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question does not involve rhyming or repeated phrases. It is a straightforward completion question asking for an animal from Asia and a unique characteristic, which fits the criteria for a suitable completion question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could visit a street market in Asia, what would you like to see or buy?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.",
+              "original_batch": 1,
+              "regenerated_question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Completion",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "completion_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212737",
+            "question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a creative, personal response about what the respondent would build and their reasoning, without a single correct answer or a request for factual recall. It encourages elaboration and subjective input, which is characteristic of Open-Ended questions.",
+            "suitability_score": 4.75,
+            "decision": "pass",
+            "evaluation_reasoning": "This question strongly encourages the child to share their own creative ideas and opinions by asking what they would build and why, which cannot be answered with a simple yes/no or one-word response. It is difficult to opt out, as the question requires some explanation or justification. The prompt also allows for personal connection, as the child can draw on their interests, experiences, or aspirations. Overall, it is highly suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "Why do you think people in Asia grow so much rice?",
+              "original_failure_reason": "The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.",
+              "original_batch": 1,
+              "regenerated_question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.75,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.213576",
+            "question": "How do people in Asia get their food? Can you remember one way from the story?",
+            "question_type": "Recall",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to remember and state one way people in Asia get their food, specifically referencing information from a story. This is a classic recall question, as it requires retrieving a specific fact from previously presented material.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks students to recall a specific way people in Asia get their food as described in the story, which is a direct recall of a plot element or factual detail. It does not require information beyond the current page, making it fully suitable for a recall question. Both subcriteria are met, resulting in a perfect suitability score.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather do monsoons bring to Asia?",
+              "original_failure_reason": "The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.",
+              "original_batch": 1,
+              "regenerated_question": "How do people in Asia get their food? Can you remember one way from the story?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Recall",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "recall_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214301",
+            "question": "Imagine you are a Komodo dragon. What would you do on your island?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine themselves as a Komodo dragon, which is a classic example of a distancing question. It requires the respondent to take on a perspective different from their own and answer from that viewpoint.",
+            "suitability_score": 4.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine themselves as a Komodo dragon and describe what they would do on the island, which encourages them to draw on their own ideas and experiences in a distanced, imaginative way (score 4). It cannot be answered in one word, as it requires elaboration and creative thinking (score 5). The question is highly relevant to a page about Komodo dragons or their habitat (score 5). The average suitability score is 4.67, which is well above the threshold, making this a strong distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could have a Komodo dragon as a pet, what would you name it and where would it live?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.",
+              "original_batch": 1,
+              "regenerated_question": "Imagine you are a Komodo dragon. What would you do on your island?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.67,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214938",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal choice (which animal to meet) and then invites the respondent to generate their own question for the animal, both of which require original thought and do not have a single correct answer. This fits the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain what they would ask, which encourages sharing ideas and opinions (score 5). It discourages one-word answers because the child is prompted to explain their choice and formulate a question for the animal (score 4). While a child could technically opt out by saying \"I don't know,\" the structure of the question makes it engaging and encourages participation (score 4). The question allows for personal connection, as children may relate their choice to their own interests or experiences with animals (score 4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": null,
+              "original_failure_reason": null,
+              "original_batch": null,
+              "regenerated_question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.25,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.215637",
+            "question": "Would you like to play in the snow like children in Japan? Why or why not?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to consider whether they would like to engage in an activity (playing in the snow) as children in Japan do, and to explain their reasoning. This requires the respondent to put themselves in the place of someone else (children in Japan) and reflect on their own preferences in relation to that context, which is characteristic of a distancing question.",
+            "suitability_score": 4.33,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to consider their own preferences and experiences in relation to playing in the snow, similar to children in Japan, which scores high for asking about personal experiences. It cannot be answered with a simple \"yes\" or \"no\" because it also asks for a reason (\"Why or why not?\"), encouraging elaboration. The question is highly relevant to a page about children in Japan playing in the snow. The average score is above 3, so it passes as a suitable distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 3,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather would you like to try: a monsoon rain or a snowy day? Why?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria.",
+              "original_batch": 2,
+              "regenerated_question": "Would you like to play in the snow like children in Japan? Why or why not?",
+              "regenerated_batch": 3,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for a Completion question focused on rhyming or repeated phrases.; Wh: The question is broad and opinion-based, asking for a personal perspective on what makes Asia special to learn about. It does not focus on specific story details or factual information from a narrative, which is the primary criterion for suitability in this context.; Wh: The question asks about general differences in lifestyles between people in cities and villages in Asia, which is a broad, comparative, and factual inquiry. It does not focus on specific details from a particular story or narrative, which is the criterion for suitability. Therefore, it does not meet the requirement of focusing on story details.; Completion: The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.33,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 4,
+                  "failing": 8,
+                  "total": 12
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          }
+        ],
+        "course_of_action": {
+          "action_type": "add_new_evaluator",
+          "rationale": "Orchestrator determined new evaluator required: complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {},
+          "training_strategy": "create_dynamic_evaluator",
+          "reformulated_instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+          "dspy_action": "create_and_integrate_evaluator",
+          "new_evaluator_name": "complexity",
+          "new_evaluator_description": "Evaluates questions for complexity based on teacher feedback",
+          "instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds."
+        },
+        "timestamp": "2025-11-17T01:28:08.820028",
+        "teacher_id": "test_teacher",
+        "school_id": "test_school",
+        "story_context": "Story: Asia\nObjective: Learning to embrace curiosity about exploring new places",
+        "generated_questions": [
+          "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+          "What do you think it would feel like to stand on top of Mount Everest?",
+          "How is the Burj Khalifa different from buildings you see every day?",
+          "What is something you would like to see or do if you could visit Asia?",
+          "Can you name one animal that lives in Asia and tell us what makes it special?",
+          "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+          "How do people in Asia get their food? Can you remember one way from the story?",
+          "Imagine you are a Komodo dragon. What would you do on your island?",
+          "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+          "Would you like to play in the snow like children in Japan? Why or why not?"
+        ],
+        "question_feedbacks": {},
+        "routed_message": {
+          "action": "add_new_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {},
+          "new_evaluator": {
+            "name": "complexity",
+            "description": "Evaluates questions for complexity based on teacher feedback",
+            "rubric": {
+              "instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds."
+            },
+            "weight": 0.1,
+            "status": "active",
+            "prompt": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+            "template": "llm_dynamic",
+            "origin": {
+              "feedback_text": "questions are too complex for 4-6 year olds",
+              "attribute": "complexity",
+              "timestamp": "2025-11-17T01:28:08.817967"
+            }
+          },
+          "reformulated_instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+          "confidence": 0.95,
+          "raw_feedback": "questions are too complex for 4-6 year olds",
+          "metadata": {
+            "attribute": "complexity",
+            "feedback_type": "negative",
+            "existing_evaluators": [
+              "wh_suitability",
+              "recall_suitability",
+              "distancing_suitability",
+              "open_ended_suitability",
+              "completion_suitability"
+            ],
+            "adjustment_direction": "none",
+            "adjustment_magnitude": "none",
+            "reason": "Orchestrator determined new evaluator required: complexity"
+          }
+        },
+        "manager_response": {
+          "details": {
+            "description": "Evaluates questions for complexity based on teacher feedback",
+            "rubric": {
+              "instruction": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds."
+            },
+            "default_weight": 0.1,
+            "module": "teacher_interface.backend.evaluators.suitability_evaluators",
+            "status": "active",
+            "prompt": "Ensure questions are developmentally appropriate and use simpler language and concepts suitable for 4-6 year olds.",
+            "template": "llm_dynamic",
+            "origin": {
+              "feedback_text": "questions are too complex for 4-6 year olds",
+              "attribute": "complexity",
+              "timestamp": "2025-11-17T01:28:08.817967"
+            },
+            "created_at": "2025-11-17T01:28:08.817983",
+            "name": "complexity",
+            "evaluator_name": "complexity",
+            "weight": 0.0909,
+            "weights_snapshot": {
+              "completion_suitability": 0.1364,
+              "recall_suitability": 0.1818,
+              "open_ended_suitability": 0.2273,
+              "wh_suitability": 0.1818,
+              "distancing_suitability": 0.1818,
+              "complexity": 0.0909
+            }
+          },
+          "weights": {
+            "completion_suitability": 0.1364,
+            "recall_suitability": 0.1818,
+            "open_ended_suitability": 0.2273,
+            "wh_suitability": 0.1818,
+            "distancing_suitability": 0.1818,
+            "complexity": 0.0909
+          }
+        }
+      },
+      {
+        "story_title": "Asia",
+        "objective": "Learning to embrace curiosity about exploring new places",
+        "iteration_id": "set_003",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "questions are too complex for 4-6 year olds"
+        },
+        "interpretation": {
+          "interpretation": "Orchestrator suggests decrease (large) for complexity",
+          "attribute": "complexity",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "large",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Simplify the questions so they are more appropriate for 4-6 year olds; use simpler language and concepts."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {
+            "complexity": -0.3
+          },
+          "reason": "Orchestrator suggests decrease (large) for complexity",
+          "reformulated_instruction": "Simplify the questions so they are more appropriate for 4-6 year olds; use simpler language and concepts.",
+          "details": null,
+          "confidence": 0.95
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [
+          {
+            "timestamp": "2025-11-17T01:16:42.210000",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to make a personal choice between two options and provide reasoning (\"which would you choose and why?\"). It does not require recalling specific information, completing a sentence, or answering a factual \"wh\" question. It is open to personal interpretation and opinion, fitting the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain their reasoning, which strongly solicits opinions and ideas (score 5). It discourages one-word answers by including \"and why,\" prompting for an explanation (score 4). While a child could technically opt out by saying \"I don't know,\" the structure encourages engagement (score 4). The question allows for personal connections, such as sharing experiences or preferences related to pandas or tigers (score 4). The average score is above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.210702",
+            "question": "What do you think it would feel like to stand on top of Mount Everest?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine or hypothesize about an experience they likely have not had, requiring them to distance themselves from their own direct experience and speculate about what it would feel like to stand on top of Mount Everest.",
+            "suitability_score": 3.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine and describe what it would feel like to stand on top of Mount Everest, which encourages personal reflection and imaginative thinking (score 4). It cannot be answered in one word, as it requires elaboration and explanation (score 5). However, unless the current page is specifically about Mount Everest, mountains, or extreme environments, the relevance to the current page may be limited (score 2). The average suitability score is above 3, so the question passes.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211274",
+            "question": "How is the Burj Khalifa different from buildings you see every day?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to compare the Burj Khalifa to buildings they see every day, which requires them to distance themselves from their immediate experience and think about differences between a famous landmark and their own environment. This aligns with the \"Distancing\" category, as it prompts reflection beyond direct recall or simple description.",
+            "suitability_score": 5.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to compare the Burj Khalifa to buildings they see every day, directly relating to their personal experiences (score 5). It cannot be answered in one word, as it requires explanation and comparison (score 5). The question is highly relevant to a page about the Burj Khalifa (score 5). The average suitability score is 5, so the question is suitable for use as a distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211740",
+            "question": "What is something you would like to see or do if you could visit Asia?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal preference or desire (\"something you would like to see or do\") in a hypothetical scenario (\"if you could visit Asia\"), without seeking a specific fact, completion, or distancing. It invites a variety of possible responses, making it open-ended.",
+            "suitability_score": 4.5,
+            "decision": "pass",
+            "evaluation_reasoning": "The question strongly solicits ideas and opinions by asking what the respondent would like to see or do, which encourages personal reflection and imagination. It discourages one-word answers because it asks for a specific activity or sight, often prompting elaboration. While a child could technically answer with \"nothing\" or \"I don't know,\" the phrasing makes it less likely, as it invites them to think about possibilities. The question is highly likely to connect to personal interests or experiences, as it is about their own wishes or dreams. The average score is well above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What is the name of the biggest continent in the world?",
+              "original_failure_reason": "The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability.",
+              "original_batch": 1,
+              "regenerated_question": "What is something you would like to see or do if you could visit Asia?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.5,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212224",
+            "question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+            "question_type": "Completion",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to provide a specific example (an animal that lives in Asia) and an additional detail (what makes it special). This fits the \"Completion\" type, as it requires the respondent to complete a prompt with a factual or descriptive answer.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question does not involve rhyming or repeated phrases. It is a straightforward completion question asking for an animal from Asia and a unique characteristic, which fits the criteria for a suitable completion question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could visit a street market in Asia, what would you like to see or buy?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.",
+              "original_batch": 1,
+              "regenerated_question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Completion",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "completion_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212737",
+            "question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a creative, personal response about what the respondent would build and their reasoning, without a single correct answer or a request for factual recall. It encourages elaboration and subjective input, which is characteristic of Open-Ended questions.",
+            "suitability_score": 4.75,
+            "decision": "pass",
+            "evaluation_reasoning": "This question strongly encourages the child to share their own creative ideas and opinions by asking what they would build and why, which cannot be answered with a simple yes/no or one-word response. It is difficult to opt out, as the question requires some explanation or justification. The prompt also allows for personal connection, as the child can draw on their interests, experiences, or aspirations. Overall, it is highly suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "Why do you think people in Asia grow so much rice?",
+              "original_failure_reason": "The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.",
+              "original_batch": 1,
+              "regenerated_question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.75,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.213576",
+            "question": "How do people in Asia get their food? Can you remember one way from the story?",
+            "question_type": "Recall",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to remember and state one way people in Asia get their food, specifically referencing information from a story. This is a classic recall question, as it requires retrieving a specific fact from previously presented material.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks students to recall a specific way people in Asia get their food as described in the story, which is a direct recall of a plot element or factual detail. It does not require information beyond the current page, making it fully suitable for a recall question. Both subcriteria are met, resulting in a perfect suitability score.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather do monsoons bring to Asia?",
+              "original_failure_reason": "The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.",
+              "original_batch": 1,
+              "regenerated_question": "How do people in Asia get their food? Can you remember one way from the story?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Recall",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "recall_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214301",
+            "question": "Imagine you are a Komodo dragon. What would you do on your island?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine themselves as a Komodo dragon, which is a classic example of a distancing question. It requires the respondent to take on a perspective different from their own and answer from that viewpoint.",
+            "suitability_score": 4.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine themselves as a Komodo dragon and describe what they would do on the island, which encourages them to draw on their own ideas and experiences in a distanced, imaginative way (score 4). It cannot be answered in one word, as it requires elaboration and creative thinking (score 5). The question is highly relevant to a page about Komodo dragons or their habitat (score 5). The average suitability score is 4.67, which is well above the threshold, making this a strong distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could have a Komodo dragon as a pet, what would you name it and where would it live?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.",
+              "original_batch": 1,
+              "regenerated_question": "Imagine you are a Komodo dragon. What would you do on your island?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.67,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214938",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal choice (which animal to meet) and then invites the respondent to generate their own question for the animal, both of which require original thought and do not have a single correct answer. This fits the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain what they would ask, which encourages sharing ideas and opinions (score 5). It discourages one-word answers because the child is prompted to explain their choice and formulate a question for the animal (score 4). While a child could technically opt out by saying \"I don't know,\" the structure of the question makes it engaging and encourages participation (score 4). The question allows for personal connection, as children may relate their choice to their own interests or experiences with animals (score 4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": null,
+              "original_failure_reason": null,
+              "original_batch": null,
+              "regenerated_question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.25,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.215637",
+            "question": "Would you like to play in the snow like children in Japan? Why or why not?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to consider whether they would like to engage in an activity (playing in the snow) as children in Japan do, and to explain their reasoning. This requires the respondent to put themselves in the place of someone else (children in Japan) and reflect on their own preferences in relation to that context, which is characteristic of a distancing question.",
+            "suitability_score": 4.33,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to consider their own preferences and experiences in relation to playing in the snow, similar to children in Japan, which scores high for asking about personal experiences. It cannot be answered with a simple \"yes\" or \"no\" because it also asks for a reason (\"Why or why not?\"), encouraging elaboration. The question is highly relevant to a page about children in Japan playing in the snow. The average score is above 3, so it passes as a suitable distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 3,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather would you like to try: a monsoon rain or a snowy day? Why?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria.",
+              "original_batch": 2,
+              "regenerated_question": "Would you like to play in the snow like children in Japan? Why or why not?",
+              "regenerated_batch": 3,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for a Completion question focused on rhyming or repeated phrases.; Wh: The question is broad and opinion-based, asking for a personal perspective on what makes Asia special to learn about. It does not focus on specific story details or factual information from a narrative, which is the primary criterion for suitability in this context.; Wh: The question asks about general differences in lifestyles between people in cities and villages in Asia, which is a broad, comparative, and factual inquiry. It does not focus on specific details from a particular story or narrative, which is the criterion for suitability. Therefore, it does not meet the requirement of focusing on story details.; Completion: The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.33,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 4,
+                  "failing": 8,
+                  "total": 12
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator suggests decrease (large) for complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {
+            "complexity": -0.3
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Simplify the questions so they are more appropriate for 4-6 year olds; use simpler language and concepts.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "complexity"
+          ],
+          "instruction": "Simplify the questions so they are more appropriate for 4-6 year olds; use simpler language and concepts."
+        },
+        "timestamp": "2025-11-17T01:29:15.746599",
+        "teacher_id": "test_teacher",
+        "school_id": "test_school",
+        "story_context": "Story: Asia\nObjective: Learning to embrace curiosity about exploring new places",
+        "generated_questions": [
+          "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+          "What do you think it would feel like to stand on top of Mount Everest?",
+          "How is the Burj Khalifa different from buildings you see every day?",
+          "What is something you would like to see or do if you could visit Asia?",
+          "Can you name one animal that lives in Asia and tell us what makes it special?",
+          "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+          "How do people in Asia get their food? Can you remember one way from the story?",
+          "Imagine you are a Komodo dragon. What would you do on your island?",
+          "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+          "Would you like to play in the snow like children in Japan? Why or why not?"
+        ],
+        "question_feedbacks": {},
+        "routed_message": {
+          "action": "adjust_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {
+            "complexity": -0.3
+          },
+          "new_evaluator": null,
+          "reformulated_instruction": "Simplify the questions so they are more appropriate for 4-6 year olds; use simpler language and concepts.",
+          "confidence": 0.95,
+          "raw_feedback": "questions are too complex for 4-6 year olds",
+          "metadata": {
+            "attribute": "complexity",
+            "feedback_type": "negative",
+            "existing_evaluators": [
+              "distancing_suitability",
+              "open_ended_suitability",
+              "recall_suitability",
+              "completion_suitability",
+              "wh_suitability",
+              "complexity"
+            ],
+            "adjustment_direction": "decrease",
+            "adjustment_magnitude": "large",
+            "reason": "Orchestrator suggests decrease (large) for complexity"
+          }
+        },
+        "manager_response": {
+          "details": null,
+          "weights": {
+            "completion_suitability": 0.1422,
+            "recall_suitability": 0.1896,
+            "open_ended_suitability": 0.237,
+            "wh_suitability": 0.1896,
+            "distancing_suitability": 0.1896,
+            "complexity": 0.0521
+          }
+        }
+      },
+      {
+        "story_title": "Asia",
+        "objective": "Learning to embrace curiosity about exploring new places",
+        "iteration_id": "set_004",
+        "teacher_feedback": {
+          "feedback": "negative",
+          "reason": "questions are too complex for 4-6 year olds"
+        },
+        "interpretation": {
+          "interpretation": "Orchestrator suggests decrease (large) for complexity",
+          "attribute": "complexity",
+          "action_type": "adjust_evaluator",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "adjustment_direction": "decrease",
+          "adjustment_magnitude": "large",
+          "new_evaluator_needed": false,
+          "new_evaluator_name": "none",
+          "confidence": 0.95,
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate and easier for 4-6 year olds to understand and answer."
+        },
+        "action_taken": {
+          "type": "adjust_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {
+            "complexity": -0.3
+          },
+          "reason": "Orchestrator suggests decrease (large) for complexity",
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate and easier for 4-6 year olds to understand and answer.",
+          "details": null,
+          "confidence": 0.95
+        },
+        "evaluator_scores": {},
+        "question_evaluations": [
+          {
+            "timestamp": "2025-11-17T01:16:42.210000",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to make a personal choice between two options and provide reasoning (\"which would you choose and why?\"). It does not require recalling specific information, completing a sentence, or answering a factual \"wh\" question. It is open to personal interpretation and opinion, fitting the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain their reasoning, which strongly solicits opinions and ideas (score 5). It discourages one-word answers by including \"and why,\" prompting for an explanation (score 4). While a child could technically opt out by saying \"I don't know,\" the structure encourages engagement (score 4). The question allows for personal connections, such as sharing experiences or preferences related to pandas or tigers (score 4). The average score is above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.210702",
+            "question": "What do you think it would feel like to stand on top of Mount Everest?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine or hypothesize about an experience they likely have not had, requiring them to distance themselves from their own direct experience and speculate about what it would feel like to stand on top of Mount Everest.",
+            "suitability_score": 3.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine and describe what it would feel like to stand on top of Mount Everest, which encourages personal reflection and imaginative thinking (score 4). It cannot be answered in one word, as it requires elaboration and explanation (score 5). However, unless the current page is specifically about Mount Everest, mountains, or extreme environments, the relevance to the current page may be limited (score 2). The average suitability score is above 3, so the question passes.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211274",
+            "question": "How is the Burj Khalifa different from buildings you see every day?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to compare the Burj Khalifa to buildings they see every day, which requires them to distance themselves from their immediate experience and think about differences between a famous landmark and their own environment. This aligns with the \"Distancing\" category, as it prompts reflection beyond direct recall or simple description.",
+            "suitability_score": 5.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to compare the Burj Khalifa to buildings they see every day, directly relating to their personal experiences (score 5). It cannot be answered in one word, as it requires explanation and comparison (score 5). The question is highly relevant to a page about the Burj Khalifa (score 5). The average suitability score is 5, so the question is suitable for use as a distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": false,
+            "batch_number": null,
+            "regeneration_history": [],
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.211740",
+            "question": "What is something you would like to see or do if you could visit Asia?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal preference or desire (\"something you would like to see or do\") in a hypothetical scenario (\"if you could visit Asia\"), without seeking a specific fact, completion, or distancing. It invites a variety of possible responses, making it open-ended.",
+            "suitability_score": 4.5,
+            "decision": "pass",
+            "evaluation_reasoning": "The question strongly solicits ideas and opinions by asking what the respondent would like to see or do, which encourages personal reflection and imagination. It discourages one-word answers because it asks for a specific activity or sight, often prompting elaboration. While a child could technically answer with \"nothing\" or \"I don't know,\" the phrasing makes it less likely, as it invites them to think about possibilities. The question is highly likely to connect to personal interests or experiences, as it is about their own wishes or dreams. The average score is well above 3, making it suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What is the name of the biggest continent in the world?",
+              "original_failure_reason": "The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability.",
+              "original_batch": 1,
+              "regenerated_question": "What is something you would like to see or do if you could visit Asia?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.5,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212224",
+            "question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+            "question_type": "Completion",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to provide a specific example (an animal that lives in Asia) and an additional detail (what makes it special). This fits the \"Completion\" type, as it requires the respondent to complete a prompt with a factual or descriptive answer.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question does not involve rhyming or repeated phrases. It is a straightforward completion question asking for an animal from Asia and a unique characteristic, which fits the criteria for a suitable completion question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could visit a street market in Asia, what would you like to see or buy?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.",
+              "original_batch": 1,
+              "regenerated_question": "Can you name one animal that lives in Asia and tell us what makes it special?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Completion",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "completion_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.212737",
+            "question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a creative, personal response about what the respondent would build and their reasoning, without a single correct answer or a request for factual recall. It encourages elaboration and subjective input, which is characteristic of Open-Ended questions.",
+            "suitability_score": 4.75,
+            "decision": "pass",
+            "evaluation_reasoning": "This question strongly encourages the child to share their own creative ideas and opinions by asking what they would build and why, which cannot be answered with a simple yes/no or one-word response. It is difficult to opt out, as the question requires some explanation or justification. The prompt also allows for personal connection, as the child can draw on their interests, experiences, or aspirations. Overall, it is highly suitable as an open-ended question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "Why do you think people in Asia grow so much rice?",
+              "original_failure_reason": "The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.",
+              "original_batch": 1,
+              "regenerated_question": "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.75,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.213576",
+            "question": "How do people in Asia get their food? Can you remember one way from the story?",
+            "question_type": "Recall",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to remember and state one way people in Asia get their food, specifically referencing information from a story. This is a classic recall question, as it requires retrieving a specific fact from previously presented material.",
+            "suitability_score": 1.0,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks students to recall a specific way people in Asia get their food as described in the story, which is a direct recall of a plot element or factual detail. It does not require information beyond the current page, making it fully suitable for a recall question. Both subcriteria are met, resulting in a perfect suitability score.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather do monsoons bring to Asia?",
+              "original_failure_reason": "The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.",
+              "original_batch": 1,
+              "regenerated_question": "How do people in Asia get their food? Can you remember one way from the story?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 1.0,
+                "question_type": "Recall",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "recall_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214301",
+            "question": "Imagine you are a Komodo dragon. What would you do on your island?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to imagine themselves as a Komodo dragon, which is a classic example of a distancing question. It requires the respondent to take on a perspective different from their own and answer from that viewpoint.",
+            "suitability_score": 4.67,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to imagine themselves as a Komodo dragon and describe what they would do on the island, which encourages them to draw on their own ideas and experiences in a distanced, imaginative way (score 4). It cannot be answered in one word, as it requires elaboration and creative thinking (score 5). The question is highly relevant to a page about Komodo dragons or their habitat (score 5). The average suitability score is 4.67, which is well above the threshold, making this a strong distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": "If you could have a Komodo dragon as a pet, what would you name it and where would it live?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.",
+              "original_batch": 1,
+              "regenerated_question": "Imagine you are a Komodo dragon. What would you do on your island?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.67,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.214938",
+            "question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+            "question_type": "Open-Ended",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks for a personal choice (which animal to meet) and then invites the respondent to generate their own question for the animal, both of which require original thought and do not have a single correct answer. This fits the Open-Ended category.",
+            "suitability_score": 4.25,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to make a choice between two animals and explain what they would ask, which encourages sharing ideas and opinions (score 5). It discourages one-word answers because the child is prompted to explain their choice and formulate a question for the animal (score 4). While a child could technically opt out by saying \"I don't know,\" the structure of the question makes it engaging and encourages participation (score 4). The question allows for personal connection, as children may relate their choice to their own interests or experiences with animals (score 4). The average score is above 3, so the question is suitable as an open-ended prompt.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 2,
+            "regeneration_history": {
+              "original_failed_question": null,
+              "original_failure_reason": null,
+              "original_batch": null,
+              "regenerated_question": "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+              "regenerated_batch": 2,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Wh: The question asks about a general fact related to agriculture in Asia, not about specific details from a story. The criteria require the Wh- question to focus on story details, which this question does not meet.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for completion questions focused on rhyming or repeated phrases.; Wh: The question asks about the general effects of monsoons in Asia, which is a factual, science-based inquiry rather than one focused on the details of a specific story. It does not reference or require knowledge of a narrative or story context.; Wh: The question asks for a factual piece of information about geography (the biggest continent), not about details from a specific story. Therefore, it does not focus on story details and does not meet the criteria for suitability. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.25,
+                "question_type": "Open-Ended",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 6,
+                  "failing": 5,
+                  "total": 11
+                }
+              }
+            },
+            "relevant_evaluator": "open_ended_suitability",
+            "dynamic_evaluations": {}
+          },
+          {
+            "timestamp": "2025-11-17T01:16:42.215637",
+            "question": "Would you like to play in the snow like children in Japan? Why or why not?",
+            "question_type": "Distancing",
+            "type_confidence": "High",
+            "type_reasoning": "The question asks the respondent to consider whether they would like to engage in an activity (playing in the snow) as children in Japan do, and to explain their reasoning. This requires the respondent to put themselves in the place of someone else (children in Japan) and reflect on their own preferences in relation to that context, which is characteristic of a distancing question.",
+            "suitability_score": 4.33,
+            "decision": "pass",
+            "evaluation_reasoning": "The question asks the child to consider their own preferences and experiences in relation to playing in the snow, similar to children in Japan, which scores high for asking about personal experiences. It cannot be answered with a simple \"yes\" or \"no\" because it also asks for a reason (\"Why or why not?\"), encouraging elaboration. The question is highly relevant to a page about children in Japan playing in the snow. The average score is above 3, so it passes as a suitable distancing question.",
+            "storybook_id": "Asia",
+            "objective": "Learning to embrace curiosity about exploring new places",
+            "details": {},
+            "regenerated": true,
+            "batch_number": 3,
+            "regeneration_history": {
+              "original_failed_question": "What kind of weather would you like to try: a monsoon rain or a snowy day? Why?",
+              "original_failure_reason": "The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria.",
+              "original_batch": 2,
+              "regenerated_question": "Would you like to play in the snow like children in Japan? Why or why not?",
+              "regenerated_batch": 3,
+              "avoidance_instructions": "Avoid previous issues: Completion: The question does not deal with rhyming or repeated phrases, which is the primary criterion for suitability in this context. It is a creative question about naming a pet and its living arrangements, not about completing a rhyming or repetitive phrase. Therefore, it does not meet the required criteria.; Completion: The question does not deal with rhyming or repeated phrases. It is an open-ended question about preferences at a street market in Asia, which does not meet the criteria for a Completion question focused on rhyming or repeated phrases.; Wh: The question is broad and opinion-based, asking for a personal perspective on what makes Asia special to learn about. It does not focus on specific story details or factual information from a narrative, which is the primary criterion for suitability in this context.; Wh: The question asks about general differences in lifestyles between people in cities and villages in Asia, which is a broad, comparative, and factual inquiry. It does not focus on specific details from a particular story or narrative, which is the criterion for suitability. Therefore, it does not meet the requirement of focusing on story details.; Completion: The question does not deal with rhyming or repeated phrases. It is a preference-based question about weather experiences, not a completion prompt that requires finishing a sentence, phrase, or pattern, nor does it involve rhyming or repetition. Therefore, it is not suitable for a completion question as per the specified criteria. Generate at least 12 diverse, unique questions that avoid previous issues and vary types/difficulties.",
+              "regeneration_metadata": {
+                "suitability_score": 4.33,
+                "question_type": "Distancing",
+                "decision": "pass",
+                "total_failed_in_previous_batch": 5,
+                "current_batch_performance": {
+                  "passing": 4,
+                  "failing": 8,
+                  "total": 12
+                }
+              }
+            },
+            "relevant_evaluator": "distancing_suitability",
+            "dynamic_evaluations": {}
+          }
+        ],
+        "course_of_action": {
+          "action_type": "adjust_evaluator",
+          "rationale": "Orchestrator suggests decrease (large) for complexity",
+          "affected_evaluators": [
+            "complexity"
+          ],
+          "weight_changes": {
+            "complexity": -0.3
+          },
+          "training_strategy": "bootstrap_fewshot_with_adjusted_weights",
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate and easier for 4-6 year olds to understand and answer.",
+          "dspy_action": "optimize_question_generator",
+          "optimization_target": [
+            "complexity"
+          ],
+          "instruction": "Simplify the questions so they are more age-appropriate and easier for 4-6 year olds to understand and answer."
+        },
+        "timestamp": "2025-11-17T01:30:09.712762",
+        "teacher_id": "test_teacher",
+        "school_id": "test_school",
+        "story_context": "Story: Asia\nObjective: Learning to embrace curiosity about exploring new places",
+        "generated_questions": [
+          "If you could meet a giant panda or a Bengal tiger, which would you choose and why?",
+          "What do you think it would feel like to stand on top of Mount Everest?",
+          "How is the Burj Khalifa different from buildings you see every day?",
+          "What is something you would like to see or do if you could visit Asia?",
+          "Can you name one animal that lives in Asia and tell us what makes it special?",
+          "If you could build something amazing in Asia, like the Burj Khalifa, what would you build and why?",
+          "How do people in Asia get their food? Can you remember one way from the story?",
+          "Imagine you are a Komodo dragon. What would you do on your island?",
+          "If you could meet a giant panda or a Bengal tiger, which would you choose? What would you ask it?",
+          "Would you like to play in the snow like children in Japan? Why or why not?"
+        ],
+        "question_feedbacks": {},
+        "routed_message": {
+          "action": "adjust_evaluator",
+          "affected": [
+            "complexity"
+          ],
+          "delta": {
+            "complexity": -0.3
+          },
+          "new_evaluator": null,
+          "reformulated_instruction": "Simplify the questions so they are more age-appropriate and easier for 4-6 year olds to understand and answer.",
+          "confidence": 0.95,
+          "raw_feedback": "questions are too complex for 4-6 year olds",
+          "metadata": {
+            "attribute": "complexity",
+            "feedback_type": "negative",
+            "existing_evaluators": [
+              "complexity",
+              "wh_suitability",
+              "open_ended_suitability",
+              "recall_suitability",
+              "distancing_suitability",
+              "completion_suitability"
+            ],
+            "adjustment_direction": "decrease",
+            "adjustment_magnitude": "large",
+            "reason": "Orchestrator suggests decrease (large) for complexity"
+          }
+        },
+        "manager_response": {
+          "details": null,
+          "weights": {
+            "completion_suitability": 0.1422,
+            "recall_suitability": 0.1896,
+            "open_ended_suitability": 0.237,
+            "wh_suitability": 0.1896,
+            "distancing_suitability": 0.1896,
+            "complexity": 0.0521
+          }
+        }
+      }
+    ]
+  }
+}

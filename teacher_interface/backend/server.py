@@ -280,15 +280,42 @@ def api_generate_moral():
                         }
                         results.append(result)
                     else:
-                        print(f"[WARN]  Failed to generate questions for {story_title}")
+                        error_msg = f"Failed to generate questions for {story_title}: questions_data was None or empty"
+                        print(f"[WARN]  {error_msg}")
+                        # Add error result for debugging
+                        results.append({
+                            "storybook": storybook,
+                            "error": error_msg,
+                            "questions": []
+                        })
                 else:
-                    print(f"[WARN]  Structured moral generation failed for {story_title}")
+                    error_msg = f"Structured moral generation failed for {story_title}"
+                    print(f"[WARN]  {error_msg}")
+                    results.append({
+                        "storybook": storybook,
+                        "error": error_msg,
+                        "questions": []
+                    })
                     
             except Exception as e:
-                print(f"[WARN]  Error generating moral/questions for {story_title}: {e}")
+                error_msg = f"Error generating moral/questions for {story_title}: {str(e)}"
+                print(f"[WARN]  {error_msg}")
                 import traceback
                 traceback.print_exc()
+                results.append({
+                    "storybook": storybook,
+                    "error": error_msg,
+                    "questions": []
+                })
                 continue
+        
+        if not results:
+            return jsonify({
+                "results": [],
+                "stage": "results",
+                "success": False,
+                "error": "No results generated. Check backend logs for details."
+            }), 200
         
         return jsonify({
             "results": results,
@@ -298,7 +325,13 @@ def api_generate_moral():
         
     except Exception as e:
         print(f"Error in generate-moral endpoint: {e}")
-        return jsonify({"error": str(e)}), 500
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            "results": [],
+            "success": False,
+            "error": str(e)
+        }), 500
 
 @app.route("/api/generate-questions", methods=["POST"])
 def api_generate_questions():
@@ -530,8 +563,20 @@ def log_to_testing_file(story_title, objective, set_number, questions, feedback=
     except Exception as e:
         print(f"[WARN]  Error logging to testing file: {e}")
 
-def call_objective_question_generation_script(story_content, segments, objective, story_title, moral_text=None, dynamic_evaluators=None):
-    """Generate questions with automatic suitability checking and regeneration."""
+def call_objective_question_generation_script(story_content, segments, objective, story_title, moral_text=None, dynamic_evaluators=None, optimize_with_feedback=False):
+    """Generate questions with automatic suitability checking and regeneration.
+    
+    Args:
+        story_content: Full story text
+        segments: Story segments
+        objective: Learning objective
+        story_title: Story title
+        moral_text: Moral lesson text (optional)
+        dynamic_evaluators: List of dynamic evaluators (optional)
+        optimize_with_feedback: If True, use DSPy optimizer with teacher feedback.
+                               Should be True only when regenerating after feedback collection.
+                               Default False for initial generation.
+    """
     try:
         import sys
         sys.path.append(os.path.join(os.path.dirname(__file__), 'services'))
@@ -597,7 +642,8 @@ def call_objective_question_generation_script(story_content, segments, objective
         )
         
         # Initialize question generator module for the actual question generation
-        question_generator = QuestionGeneratorModule()
+        # Only enable optimization when regenerating after teacher feedback
+        question_generator = QuestionGeneratorModule(optimize_with_feedback=optimize_with_feedback)
         
         # Load the most recent feedback's reformulated instruction
         reformulated_instruction = ""
@@ -732,9 +778,11 @@ def call_objective_question_generation_script(story_content, segments, objective
             # Step 3: Filter for passing questions with uniqueness tracking
             passing_questions = []
             unique_questions = set()  # Track unique question texts
+            all_failed_questions = []  # Track all failed questions across batches for history (initialize here)
 
             failure_reason_set.update(_collect_failure_reasons(evaluations_list, question_texts))
             
+            # Track failed questions from initial batch (batch 1)
             for i, eval_result in enumerate(evaluations_list):
                 decision = eval_result.get("decision")
                 question_text = question_texts[i]
@@ -760,12 +808,28 @@ def call_objective_question_generation_script(story_content, segments, objective
                         "dynamic_evaluations": eval_result.get("dynamic_evaluations", {})  # Include dynamic evaluator results
                     }
                     passing_questions.append(q_obj)
+                elif decision != "pass":
+                    # Track failed questions from initial batch
+                    all_failed_questions.append({
+                        "question": question_text,
+                        "decision": decision,
+                        "reasoning": eval_result.get("evaluation_reasoning", ""),
+                        "batch_attempt": 1  # Initial batch is batch 1
+                    })
             
             print(f"[INFO] Found {len(passing_questions)} unique passing questions")
             
             # Step 4: If we don't have enough (10), keep regenerating until we have 10
             attempts_remaining = 20  # Increased attempts to improve chances of reaching 10
             regeneration_attempt = 1
+            # Track regeneration stats for summary
+            regeneration_stats = {
+                "total_batches": 1,  # Start with initial batch
+                "batches_with_regeneration": [],
+                "total_questions_generated": len(initial_questions),
+                "total_questions_passed": len(passing_questions),
+                "total_questions_failed": len([e for e in evaluations_list if e.get("decision") != "pass"])
+            }
             while len(passing_questions) < 10 and attempts_remaining > 0:
                 attempts_remaining -= 1
                 print(f"[WARN]  Only {len(passing_questions)}/10 passing questions. Generating more... (Attempts remaining: {attempts_remaining})")
@@ -792,25 +856,41 @@ def call_objective_question_generation_script(story_content, segments, objective
                 # Evaluate new questions
                 new_evaluations = []
                 regeneration_attempt += 1
-                failed_questions = []  # Track failed questions for history
+                failed_questions = []  # Track failed questions for this batch
                 
                 for q_text in [q.get("question", "") if isinstance(q, dict) else str(q) for q in new_questions]:
                     if q_text and q_text not in unique_questions:
                         eval_result = evaluator.suitability_program(question=q_text, story_context=story_content)
                         new_evaluations.append((q_text, eval_result))
                         
-                        # Track failed questions
+                        # Track failed questions (both for this batch and overall)
                         if eval_result.get("decision") != "pass":
-                            failed_questions.append({
+                            failed_q_info = {
                                 "question": q_text,
                                 "decision": eval_result.get("decision"),
-                                "reasoning": eval_result.get("evaluation_reasoning")
-                            })
+                                "reasoning": eval_result.get("evaluation_reasoning"),
+                                "batch_attempt": regeneration_attempt
+                            }
+                            failed_questions.append(failed_q_info)
+                            all_failed_questions.append(failed_q_info)  # Keep track across batches
                 
                 # Log new evaluation summary
                 new_passing = sum(1 for (_, e) in new_evaluations if e.get("decision") == "pass")
                 new_regenerate = sum(1 for (_, e) in new_evaluations if e.get("decision") == "regenerate")
                 print(f"[INFO] New batch: {new_passing} passing, {new_regenerate} need regeneration out of {len(new_evaluations)} total")
+                
+                # Track batch performance for summary
+                regeneration_stats["total_batches"] = regeneration_attempt
+                regeneration_stats["batches_with_regeneration"].append({
+                    "batch_number": regeneration_attempt,
+                    "questions_generated": len(new_evaluations),
+                    "questions_passed": new_passing,
+                    "questions_failed": new_regenerate,
+                    "avoidance_instructions": avoidance_instruction[:150] + "..." if len(avoidance_instruction) > 150 else avoidance_instruction
+                })
+                regeneration_stats["total_questions_generated"] += len(new_evaluations)
+                regeneration_stats["total_questions_passed"] += new_passing
+                regeneration_stats["total_questions_failed"] += new_regenerate
 
                 failure_reason_set.update(
                     _collect_failure_reasons(
@@ -819,11 +899,51 @@ def call_objective_question_generation_script(story_content, segments, objective
                     )
                 )
                 
-                # Add passing ones
+                # Add passing ones - create 1:1 mapping: one failed question → one regenerated question
+                # Track which failed questions we've already paired
+                used_failed_questions = set()
+                
                 for q_text, eval_result in new_evaluations:
                     if eval_result.get("decision") == "pass" and len(passing_questions) < 10:
                         unique_questions.add(q_text)
                         q_obj = {"question": q_text}
+                        
+                        # Get failed questions from the immediately previous batch
+                        previous_batch_failures = [
+                            fq for fq in all_failed_questions 
+                            if fq.get("batch_attempt", regeneration_attempt) == regeneration_attempt - 1
+                        ]
+                        
+                        # Find one unused failed question to pair with this regenerated question
+                        paired_failed_question = None
+                        for failed_q in previous_batch_failures:
+                            failed_q_text = failed_q.get("question", "")
+                            if failed_q_text and failed_q_text not in used_failed_questions:
+                                paired_failed_question = failed_q
+                                used_failed_questions.add(failed_q_text)
+                                break
+                        
+                        # Build regeneration history with all metadata in one place
+                        regeneration_history = {
+                            "original_failed_question": paired_failed_question.get("question", "") if paired_failed_question else None,
+                            "original_failure_reason": paired_failed_question.get("reasoning", "") if paired_failed_question else None,
+                            "original_batch": paired_failed_question.get("batch_attempt", regeneration_attempt - 1) if paired_failed_question else None,
+                            "regenerated_question": q_text,  # This is the current question
+                            "regenerated_batch": regeneration_attempt,
+                            "avoidance_instructions": avoidance_instruction,
+                            "regeneration_metadata": {
+                                "suitability_score": eval_result.get("suitability_score"),
+                                "question_type": eval_result.get("question_type"),
+                                "decision": "pass",
+                                "total_failed_in_previous_batch": len(previous_batch_failures),
+                                "current_batch_performance": {
+                                    "passing": new_passing,
+                                    "failing": new_regenerate,
+                                    "total": len(new_evaluations)
+                                }
+                            }
+                        }
+                        
                         q_obj["suitability_evaluation"] = {
                             "decision": eval_result.get("decision"),
                             "suitability_score": eval_result.get("suitability_score"),
@@ -831,12 +951,9 @@ def call_objective_question_generation_script(story_content, segments, objective
                             "evaluation_reasoning": eval_result.get("evaluation_reasoning"),
                             "type_confidence": eval_result.get("type_confidence"),
                             "type_reasoning": eval_result.get("type_reasoning"),
-                            "regenerated": True,  # This came from regeneration
-                            "regeneration_history": [{
-                                "attempt": regeneration_attempt - 1,
-                                "failed_questions_in_batch": len(failed_questions),
-                                "total_attempts": regeneration_attempt
-                            }],
+                            "regenerated": True,  # This came from a regeneration batch
+                            "batch_number": regeneration_attempt,  # Which batch this question came from
+                            "regeneration_history": regeneration_history,  # Complete 1:1 mapping with metadata
                             "dynamic_evaluations": eval_result.get("dynamic_evaluations", {})  # Include dynamic evaluator results
                         }
                         passing_questions.append(q_obj)
@@ -849,8 +966,9 @@ def call_objective_question_generation_script(story_content, segments, objective
             # Take exactly 10 unique passing questions (or as many as we have)
             suitable_questions = passing_questions[:10]
             
-            # Now store ONLY the final questions to JSON with regeneration history
+            # Now store ONLY the final questions to JSON (all metadata is per-question in regeneration_history)
             print(f"[INFO] Storing {len(suitable_questions)} final questions to JSON...")
+            
             for q in suitable_questions:
                 q_text = q.get("question", "")
                 if q_text:
@@ -868,6 +986,9 @@ def call_objective_question_generation_script(story_content, segments, objective
                         "dynamic_evaluations": suitability_eval.get("dynamic_evaluations", {})  # Include dynamic evaluator results
                     }
                     # Store with metadata: storybook_id, objective, and set_number
+                    # Note: batch_number is included in eval_result if regenerated
+                    if suitability_eval.get("batch_number"):
+                        eval_result["batch_number"] = suitability_eval.get("batch_number")
                     evaluator._store_evaluation_record(q_text, eval_result, story_content, 
                                                       storybook_id=story_title, 
                                                       objective=objective,
@@ -1309,7 +1430,12 @@ def api_regenerate_questions():
             
             # Generate new questions using the structured script (with feedback learning)
             # Pass dynamic evaluators to ensure they are applied during evaluation
-            questions_data = call_objective_question_generation_script(story_content, segments_data, objective, story_title, moral, dynamic_evaluators=dynamic_evaluators)
+            # Enable optimization when regenerating after teacher feedback
+            questions_data = call_objective_question_generation_script(
+                story_content, segments_data, objective, story_title, moral, 
+                dynamic_evaluators=dynamic_evaluators, 
+                optimize_with_feedback=True  # Enable optimizer after feedback
+            )
             
             # Extract questions from the returned data
             # NOTE: Evaluation is already handled inside call_objective_question_generation_script

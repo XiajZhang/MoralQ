@@ -19,6 +19,17 @@ from typing import List, Dict, Any, Optional
 from pathlib import Path
 from datetime import datetime
 
+# Add parent directory to path for imports (if not already added)
+# File is at: MoralQ/teacher_interface/backend/services/question_generator.py
+# Need to add: MoralQ/ to path
+import sys
+_file_dir = os.path.dirname(os.path.abspath(__file__))  # services/
+_backend_dir = os.path.dirname(_file_dir)  # backend/
+_teacher_interface_dir = os.path.dirname(_backend_dir)  # teacher_interface/
+_project_root = os.path.dirname(_teacher_interface_dir)  # MoralQ/
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 from teacher_interface.backend.models import EvaluationLogModel
 from teacher_interface.backend.evaluators import EvaluatorManager
 
@@ -263,7 +274,7 @@ class SuitabilityProgram(dspy.Module):
     def __init__(self, evaluator_manager: EvaluatorManager):
         super().__init__()
         self.evaluator_manager = evaluator_manager
-        self.weight_params: Dict[str, dspy.Parameter] = {}
+        self.weight_params: Dict[str, Any] = {}  # Can be dspy.Parameter or float
         self.refresh_parameters()
 
     def forward(self, question: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
@@ -278,10 +289,14 @@ class SuitabilityProgram(dspy.Module):
                 continue
             param = self.weight_params.get(name)
             if param is not None:
-                try:
-                    weight = float(param())
-                except TypeError:
-                    weight = float(getattr(param, "value", self.evaluator_manager.weights.get(name, 0.0)))
+                # Handle both dspy.Parameter and direct float values
+                if isinstance(param, (int, float)):
+                    weight = float(param)
+                else:
+                    try:
+                        weight = float(param())
+                    except (TypeError, AttributeError):
+                        weight = float(getattr(param, "value", self.evaluator_manager.weights.get(name, 0.0)))
             else:
                 weight = self.evaluator_manager.weights.get(name, 0.0)
             weighted_sum += score * weight
@@ -295,10 +310,18 @@ class SuitabilityProgram(dspy.Module):
         }
 
     def refresh_parameters(self) -> None:
-        self.weight_params = {
-            name: dspy.Parameter(init=weight)
-            for name, weight in self.evaluator_manager.weights.items()
-        }
+        # Use dspy.Parameter if available (for optimizer tuning), otherwise use weights directly
+        if hasattr(dspy, 'Parameter'):
+            self.weight_params = {
+                name: dspy.Parameter(init=weight)
+                for name, weight in self.evaluator_manager.weights.items()
+            }
+        else:
+            # Fallback: store weights directly without Parameter wrapper
+            self.weight_params = {
+                name: weight
+                for name, weight in self.evaluator_manager.weights.items()
+            }
 
 
 class QuestionGeneratorModule:
@@ -307,8 +330,15 @@ class QuestionGeneratorModule:
     This is the core of the system, with feedback collection and optimization.
     """
     
-    def __init__(self, feedback_file: str = "feedback_dataset.json", optimize_with_feedback: bool = True):
-        """Initialize question generator with feedback collection and optional optimization."""
+    def __init__(self, feedback_file: str = "feedback_dataset.json", optimize_with_feedback: bool = False):
+        """Initialize question generator with feedback collection and optional optimization.
+        
+        Args:
+            feedback_file: Path to feedback dataset file
+            optimize_with_feedback: If True, initialize DSPy optimizer with teacher feedback.
+                                   Should only be True when regenerating after feedback collection.
+                                   Default False for initial generation.
+        """
         self.question_generator = dspy.Predict(QuestionGenerationSignature)
         self.feedback_collector = FeedbackCollector(feedback_file)
         self.optimize_with_feedback = optimize_with_feedback
@@ -318,7 +348,8 @@ class QuestionGeneratorModule:
         self.evaluator_manager = EvaluatorManager()
         self.suitability_program = SuitabilityProgram(self.evaluator_manager)
         
-        # Initialize optimizer if feedback exists
+        # Initialize optimizer ONLY if explicitly requested (after teacher feedback)
+        # Initial generation should NOT optimize - just generate and do simple regeneration
         if optimize_with_feedback:
             self._check_and_initialize_optimizer()
         
@@ -341,8 +372,11 @@ class QuestionGeneratorModule:
             feedback_file = os.path.join(storage_dir, "teacher_feedback_records.json")
             question_eval_file = os.path.join(storage_dir, "question_evaluations.json")
 
-            # Refresh evaluator metadata to include newly registered dynamics
+            # CRITICAL: Refresh evaluator manager to load latest weights and dynamic evaluators
+            # This ensures optimizer uses manager-adjusted weights (from orchestrator feedback)
+            print("[INFO] Refreshing evaluator manager to load latest weights and dynamic evaluators...")
             self.evaluator_manager.refresh()
+            print(f"[INFO] Current evaluator weights: {self.evaluator_manager.weights}")
             self.suitability_program.refresh_parameters()
             
             if not os.path.exists(feedback_file) or not os.path.exists(question_eval_file):
@@ -356,9 +390,9 @@ class QuestionGeneratorModule:
             with open(question_eval_file, 'r') as f:
                 raw_eval = json.load(f)
                 if isinstance(raw_eval, dict):
-                    eval_data = EvaluationLogModel.parse_obj(raw_eval).dict()
+                    eval_data = EvaluationLogModel.parse_obj(raw_eval).model_dump()
                 else:
-                    eval_data = EvaluationLogModel.parse_obj({"evaluations": raw_eval}).dict()
+                    eval_data = EvaluationLogModel.parse_obj({"evaluations": raw_eval}).model_dump()
             
             # Count feedback records (check all school/teacher combinations)
             records = []
@@ -529,11 +563,18 @@ class QuestionGeneratorModule:
             
             if len(trainset) >= 1:
                 # Initialize optimizer with rubric-based metric
+                # Note: BootstrapFewShot optimizes prompts, not weights
+                # Weights are managed by orchestrator/manager and already loaded via refresh()
+                print(f"[INFO] Initializing optimizer with {len(trainset)} training examples...")
+                print(f"   Using manager-adjusted weights: {self.evaluator_manager.weights}")
+                print(f"   SuitabilityProgram will use these weights in metric evaluation")
+                
                 self.optimizer = BootstrapFewShot(metric=self._rubric_based_quality_metric)
                 
-                # Optimize the generator
-                print(f"[INFO] Compiling optimizer with {len(trainset)} training examples...")
-                print(f"   Using rubric-based optimization signal")
+                # Optimize the generator (prompts only, weights remain as set by manager)
+                print(f"[INFO] Compiling optimizer...")
+                print(f"   Optimizing question generation prompts")
+                print(f"   Weights remain as adjusted by orchestrator/manager system")
                 self.question_generator = self.optimizer.compile(
                     self.question_generator, 
                     trainset=trainset
@@ -541,6 +582,9 @@ class QuestionGeneratorModule:
                 
                 self.optimized = True
                 print("[INFO] Question generator optimized with rubric-based feedback!")
+                print(f"   Final weights (unchanged by optimizer): {self.evaluator_manager.weights}")
+                # Note: _update_weights_from_parameters() is called but BootstrapFewShot doesn't tune weights
+                # It's kept for potential future use with different optimizers
                 self._update_weights_from_parameters()
             else:
                 print("[WARN]  Not enough training examples (need at least 1)")
@@ -679,9 +723,9 @@ class QuestionGeneratorModule:
             print(f"Moral context: {moral_text[:50]}...")
         print("=" * 80)
         
-        # Check for new feedback and re-initialize optimizer if needed
-        if self.optimize_with_feedback:
-            self._check_and_initialize_optimizer()
+        # Note: Optimizer is only initialized in __init__ if optimize_with_feedback=True
+        # We do NOT re-check here during generation - optimization happens after teacher feedback
+        # This method just generates questions with simple regeneration if they don't pass threshold
         
         try:
             # Format segments

@@ -5,8 +5,9 @@ import os
 from datetime import datetime
 from typing import Any, Dict, Optional
 
-from .registry import create_evaluator
+from .registry import create_evaluator as registry_create_evaluator
 from .suitability_evaluators import (
+    create_evaluator as create_evaluator_with_metadata,
     get_evaluator_metadata,
     list_registered_dynamic_evaluators,
     list_registered_evaluators,
@@ -48,8 +49,9 @@ class EvaluatorManager:
         combined.update(dynamic_meta)
 
         for name, meta in combined.items():
-            metadata = EvaluatorMetadataModel.parse_obj(meta).dict(exclude_none=True)
-            evaluator = create_evaluator(name)
+            metadata = EvaluatorMetadataModel.parse_obj(meta).model_dump(exclude_none=True)
+            # Create evaluator with metadata-aware factory to pass name/description/rubric/weight
+            evaluator = create_evaluator_with_metadata(name)
             evaluator.weight = metadata.get("default_weight", evaluator.weight)
             self.evaluators[name] = evaluator
             self.weights[name] = metadata.get("default_weight", evaluator.weight)
@@ -137,7 +139,7 @@ class EvaluatorManager:
         }
 
         metadata_model = EvaluatorMetadataModel.parse_obj(metadata_payload)
-        metadata_payload = metadata_model.dict(exclude_none=True)
+        metadata_payload = metadata_model.model_dump(exclude_none=True)
         metadata_payload["default_weight"] = metadata_payload.get("default_weight", weight)
 
         if self.dynamic_creator:

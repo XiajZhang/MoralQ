@@ -9,12 +9,12 @@ import dspy
 
 from .base_evaluator import BaseEvaluator
 from .registry import (
-    create_evaluator as registry_create_evaluator,
     list_core_evaluators,
     list_dynamic_evaluators,
     register_core_evaluator,
     register_dynamic_evaluator,
     set_fallback_evaluator,
+    get_evaluator_class,
 )
 from teacher_interface.backend.models import EvaluatorConfigModel, EvaluatorMetadataModel
 from .dynamic_template import make_dynamic_evaluator_class, make_dynamic_signature
@@ -112,7 +112,7 @@ def persist_dynamic_metadata(name: str, metadata: Dict[str, Any]) -> None:
     metadata_dict = dict(metadata)
     metadata_dict.setdefault("module", "teacher_interface.backend.evaluators.suitability_evaluators")
     meta_model = EvaluatorMetadataModel.parse_obj(metadata_dict)
-    metadata_sanitized = meta_model.dict(exclude_none=True)
+    metadata_sanitized = meta_model.model_dump(exclude_none=True)
 
     _dynamic_metadata[name] = metadata_sanitized
     _ensure_module_loaded(metadata_sanitized.get("module"))
@@ -122,8 +122,8 @@ def persist_dynamic_metadata(name: str, metadata: Dict[str, Any]) -> None:
 
 def create_evaluator(name: str) -> BaseEvaluator:
     metadata = get_evaluator_metadata(name)
-    return registry_create_evaluator(
-        name,
+    cls = get_evaluator_class(name)
+    return cls(
         name=name,
         description=metadata.get("description", name.replace("_", " ")),
         rubric=metadata.get("rubric", {}),
