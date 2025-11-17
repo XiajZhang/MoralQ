@@ -61,7 +61,7 @@ class EvaluatorManager:
     def load_from_json(self, path: str) -> Dict[str, Any]:
         with open(path, "r", encoding="utf-8") as handle:
             data = json.load(handle)
-        evaluators = {key: create_evaluator(key) for key in data.keys()}
+        evaluators = {key: create_evaluator_with_metadata(key) for key in data.keys()}
         return evaluators
 
     def update_weight(self, name: str, delta: float, clamp: bool = True) -> None:
